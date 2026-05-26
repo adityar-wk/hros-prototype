@@ -681,6 +681,10 @@
 
     <!-- AI Chat Popup — lives inside the phone frame, above the iframe -->
     <div id="ai-popup">
+      <!-- AI Screen Content (actual screen design) -->
+      <iframe id="ai-screen-frame" style="position:absolute; inset:0; width:100%; height:100%; border:none; border-radius:48px; display:none;"></iframe>
+
+      <!-- Chat Fallback (shown if no screen content) -->
       <div id="ai-sheet">
         <div id="ai-header">
           <div id="ai-title">
@@ -728,9 +732,9 @@ let _history = [];
 let _current = null;
 
 function goTo(id) {
-  // AI screens → popup, not navigation
+  // AI screens → show in popup overlay, not full navigation
   if (AI_SCREENS.has(id)) {
-    openAIChat();
+    openAIChat(id);
     return;
   }
   if (!SCREENS[id]) {
@@ -786,9 +790,24 @@ const AI_RESPONSES = [
 ];
 let _aiIdx = 0;
 
-function openAIChat() {
-  document.getElementById('ai-popup').classList.add('open');
-  document.getElementById('ai-input').focus();
+function openAIChat(screenId) {
+  const popup = document.getElementById('ai-popup');
+  const screenFrame = document.getElementById('ai-screen-frame');
+  const chatSheet = document.getElementById('ai-sheet');
+
+  popup.classList.add('open');
+
+  // If screenId provided, show actual AI screen content
+  if (screenId && SCREENS[screenId]) {
+    screenFrame.srcdoc = SCREENS[screenId];
+    screenFrame.style.display = 'block';
+    chatSheet.style.display = 'none';
+  } else {
+    // Fallback to chat UI
+    screenFrame.style.display = 'none';
+    chatSheet.style.display = 'flex';
+    document.getElementById('ai-input').focus();
+  }
 }
 window.openAIChat = openAIChat;
 
