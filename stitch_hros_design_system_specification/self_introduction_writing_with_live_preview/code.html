@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom scrollbar for better reductionist look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e1e3;
+            border-radius: 10px;
+        }
+        .ai-concierge-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#dce2f3",
+                      "primary": "#00000b",
+                      "surface-tint": "#5d5c74",
+                      "inverse-on-surface": "#f4f0f2",
+                      "tertiary-fixed": "#f2e1b7",
+                      "surface-container-highest": "#e5e1e3",
+                      "surface-dim": "#ddd9db",
+                      "on-background": "#1c1b1d",
+                      "inverse-primary": "#c6c4df",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-primary-container": "#83829b",
+                      "background": "#fcf8fa",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#45455b",
+                      "on-secondary-container": "#5e6572",
+                      "outline": "#78767d",
+                      "on-primary-fixed": "#1a1a2e",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#dce2f3",
+                      "error": "#ba1a1a",
+                      "surface-container": "#f1edef",
+                      "secondary": "#585f6c",
+                      "on-tertiary-fixed": "#231b02",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#1a1a2e",
+                      "on-secondary-fixed-variant": "#404754",
+                      "surface": "#fcf8fa",
+                      "primary-fixed-dim": "#c6c4df",
+                      "on-surface-variant": "#47464c",
+                      "on-surface": "#1c1b1d",
+                      "tertiary-container": "#b9aa83",
+                      "primary-fixed": "#e2e0fc",
+                      "outline-variant": "#c8c5cd",
+                      "on-tertiary-container": "#493f20"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "md": "16px",
+                      "xs": "8px",
+                      "xl": "32px",
+                      "mobile-margin": "24px",
+                      "base": "4px",
+                      "xxl": "48px",
+                      "sm": "12px",
+                      "huge": "64px",
+                      "touch-target-min": "44px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Geist"],
+                      "label-sm-bold": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "display": ["Geist"],
+                      "body-md-bold": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant flex items-center h-touch-target-min px-mobile-margin max-w-md mx-auto">
+<div class="flex items-center gap-md w-full">
+<button aria-label="Go back" class="material-symbols-outlined text-primary active:scale-95 transition-transform">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Your Introduction</h1>
+</div>
+</header>
+<main class="flex-1 w-full max-w-md mx-auto px-mobile-margin pt-lg pb-huge">
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-highest h-1 rounded-full mb-xl overflow-hidden">
+<div class="bg-primary h-full w-2/3 transition-all duration-500"></div>
+</div>
+<section class="space-y-xl">
+<!-- Form Fields Stack -->
+<div class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Professional background</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-md text-body-md focus:border-primary focus:ring-0 transition-colors resize-none h-24" id="field-background" placeholder="e.g. 5 years in Product Design at TechCorp..."></textarea>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">What you're looking forward to</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-md text-body-md focus:border-primary focus:ring-0 transition-colors resize-none h-24" id="field-future" placeholder="e.g. Building impactful enterprise tools..."></textarea>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Interests &amp; Hobbies</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md h-touch-target-min text-body-md focus:border-primary focus:ring-0 transition-colors" id="field-hobbies" placeholder="e.g. Padel tennis, vintage watches" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">A question for the team</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md h-touch-target-min text-body-md focus:border-primary focus:ring-0 transition-colors" id="field-question" placeholder="e.g. Best local lunch spot?" type="text"/>
+</div>
+</div>
+<!-- Live Preview Section -->
+<div class="space-y-md pt-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-[#34A853]"></span>
+<h2 class="font-label-sm-bold text-label-sm-bold uppercase tracking-wider text-on-surface-variant">Live Preview</h2>
+</div>
+<span class="text-label-sm text-on-surface-variant">Post to Feed</span>
+</div>
+<!-- Feed Post Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img alt="Arjun Sharma" class="w-full h-full object-cover" data-alt="A professional headshot of a young South Asian man with a warm, confident smile. He is wearing a minimalist navy blue blazer against a soft, out-of-focus modern office background. The lighting is bright and natural, reflecting a clean and professional corporate aesthetic consistent with a high-end enterprise software environment. The overall mood is welcoming and intelligent." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWFK37U0j85mkIf-trXiSQD5_UZB9JEJph6dOQvLfDF-FV7AnAR2K6Yi85G4lGoIdOvlr4qBPLghiDSFP5i3QZsBwCDDTdxxEU6j0zkQfxkJGpmpmaDvtHZyia_XYP-_r4HnXv49_Bg9ugiY0uT-sHqxyOjGjICpKwlF-wzNtpeRvTcz3frm1YDi7pm3asfxocfUm2zhflxl6BJQJ5rX34mKG2VJw6slJfUB2J5_Q3JoK09Ayv2m3yE1YO-XRlUfW0XORGtAwGHEJW"/>
+</div>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold">Arjun Sharma</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">New Joiner • Today</p>
+</div>
+</div>
+<div class="space-y-md text-body-md leading-relaxed">
+<p class="text-on-surface italic opacity-60" id="preview-text">Start typing above to see your introduction here...</p>
+<div class="hidden space-y-md" id="preview-content">
+<p>Hi everyone! I'm joining with a background in <span class="font-body-md-bold" id="prev-bg">...</span>.</p>
+<p>I'm particularly looking forward to <span class="font-body-md-bold" id="prev-future">...</span>.</p>
+<p>Outside of work, you'll find me <span class="font-body-md-bold" id="prev-hobbies">...</span>.</p>
+<div class="bg-surface-container p-md rounded-lg border-l-4 border-primary">
+<p class="text-label-sm-bold mb-base">My question for you:</p>
+<p class="text-body-md" id="prev-question">...</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-lg pt-base border-t border-outline-variant text-on-surface-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span class="text-label-sm">0</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="text-label-sm">0</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="pt-lg">
+<button onclick="window.top.goTo('self_introduction_published_confirmation')">
+                Next: Choose Audience
+            </button>
+<p class="text-center text-label-sm text-on-surface-variant mt-md px-xl">
+                    By proceeding, you agree to share this introduction with the organization.
+                </p>
+</div>
+</section>
+</main>
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center h-huge px-md pb-safe">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-xs py-base active:scale-90 transition-all duration-200" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<script>
+        // Live Preview Logic
+        const fields = {
+            'field-background': 'prev-bg',
+            'field-future': 'prev-future',
+            'field-hobbies': 'prev-hobbies',
+            'field-question': 'prev-question'
+        };
+
+        const previewText = document.getElementById('preview-text');
+        const previewContent = document.getElementById('preview-content');
+
+        Object.keys(fields).forEach(fieldId => {
+            document.getElementById(fieldId).addEventListener('input', (e) => {
+                const targetId = fields[fieldId];
+                const value = e.target.value;
+                
+                document.getElementById(targetId).textContent = value || '...';
+
+                // Toggle preview states
+                const anyContent = Object.keys(fields).some(id => document.getElementById(id).value.length > 0);
+                if (anyContent) {
+                    previewText.classList.add('hidden');
+                    previewContent.classList.remove('hidden');
+                } else {
+                    previewText.classList.remove('hidden');
+                    previewContent.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

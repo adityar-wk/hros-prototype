@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#5d5c74",
+                    "inverse-primary": "#c6c4df",
+                    "surface-dim": "#ddd9db",
+                    "primary": "#00000b",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "surface-variant": "#e5e1e3",
+                    "inverse-surface": "#313032",
+                    "surface-container": "#f1edef",
+                    "on-error": "#ffffff",
+                    "outline": "#78767d",
+                    "tertiary-fixed": "#f2e1b7",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c8c5cd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1d",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "primary-fixed-dim": "#c6c4df",
+                    "primary-container": "#1a1a2e",
+                    "tertiary-container": "#b9aa83",
+                    "surface-bright": "#fcf8fa",
+                    "on-primary-fixed-variant": "#45455b",
+                    "on-surface": "#1c1b1d",
+                    "secondary": "#585f6c",
+                    "on-secondary-fixed": "#151c27",
+                    "secondary-container": "#dce2f3",
+                    "on-tertiary-container": "#493f20",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ebe7e9",
+                    "surface": "#fcf8fa",
+                    "background": "#fcf8fa",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-highest": "#e5e1e3",
+                    "secondary-fixed": "#dce2f3",
+                    "tertiary": "#695d3c",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-container-low": "#f6f2f4",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-surface-variant": "#47464c",
+                    "on-primary-container": "#83829b",
+                    "on-secondary-container": "#5e6572",
+                    "inverse-on-surface": "#f4f0f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "md": "16px",
+                    "huge": "64px",
+                    "base": "4px",
+                    "xs": "8px",
+                    "touch-target-min": "44px",
+                    "xl": "32px",
+                    "mobile-margin": "24px",
+                    "lg": "24px",
+                    "xxl": "48px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-huge">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-background border-b border-outline-variant dark:border-outline z-50 transition-colors duration-200">
+<div class="flex justify-between items-center px-lg py-md w-full">
+<div class="flex items-center gap-md">
+<button class="w-touch-target-min h-touch-target-min flex items-center justify-center hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary">arrow_back</span>
+</button>
+<h1 class="font-display text-display text-primary dark:text-inverse-primary font-headline-lg-mobile text-headline-lg-mobile">HROS</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant">notifications</span>
+<div class="w-touch-target-min h-touch-target-min rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of Anjali Das, a South Asian woman with a warm, confident smile, set against a clean, minimalist office background. The lighting is soft and natural, emphasizing a high-end, professional corporate aesthetic with muted tones and sharp focus, reflecting the calm efficiency of a premium HR operating system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLskJ4ra4qu8q7YOC9eoRErgpom1S3XgeYvMyHMKTHWOBoCgrV96Ra7cE9mXB_97pNYz5LHiq3kLfeplwTB6ZSjIU_zmvwhHSCJKWjsy23Dkobyzr7su1YyECzrIuz43x9tSo8VeojUrb78CHHdfoH6Di-rLi5zdfW7vlnudkuXbuwNGI88gGEsHbnYn3ESQSjdhM5yyetJnJMa2b1H7MENmuA2YriAB38_Qot1-i2C-zakKL7rtRszcWkNMvCTQAeR0tSAfSt8yWn"/>
+</div>
+</div>
+</div>
+</header>
+<main class="px-mobile-margin py-lg space-y-xl max-w-md mx-auto">
+<!-- Profile & Status Section -->
+<section class="space-y-md">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-secondary">Session Finalized</span>
+</div>
+<div class="space-y-xs">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Your HRBP onboarding session is complete</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Anjali Das • Senior HRBP</p>
+<div class="inline-flex items-center gap-xs px-sm py-xs bg-surface-container rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm">Completed Oct 24, 11:45 AM</span>
+</div>
+</div>
+</section>
+<!-- Visual Confirmation Canvas -->
+<section class="relative aspect-video rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest">
+<img alt="Success Visual" class="w-full h-full object-cover opacity-80" data-alt="A minimalist, high-end meeting room in a modern Indian office with large windows showing a glimpse of a clean cityscape. The room is empty but feels recently used, with a single sleek laptop on a light wood table. The style is professional and calm, with a palette of whites, light greys, and subtle warm wood tones, captured in bright, diffused daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrmb5tQQzalSMaZMbke4P84huau_nrcnQkzwik4Y3k6wtKhDuUp3Y4lnfKydXi3VSS4TgaydNMsckw98_06AkqgGdvvUxqTt1EtzhZfN0DqPCZ_xAFAEdiifseQOxjr3aTdlo55YXBt8v6tSh71zAgroZcbVzBCxwTnqQq2yDqOGJ0NuRMQeMDADmUFzZII7Xyrw8R8H4g6s3pS75asbGIUbwMEOZZZGJ0a63-Alkbcn4adPM9_4kpTpZ1nna_iODpcdkyJ7I0l8f1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent flex items-center justify-center">
+<div class="bg-surface/90 backdrop-blur-md p-md rounded-full border border-white/20">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</section>
+<!-- Follow-up actions -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Follow-up actions</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 items</span>
+</div>
+<div class="space-y-sm">
+<!-- Action Card 1 -->
+<div class="p-md bg-surface-container-lowest border border-outline-variant rounded-xl flex gap-md items-start transition-colors hover:bg-surface-container duration-200">
+<div class="p-xs bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div class="flex-1 space-y-base">
+<p class="font-body-md-bold text-body-md-bold text-primary">Review updated medical policy</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">A copy has been sent to your registered email address for digital signing.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<!-- Action Card 2 -->
+<div class="p-md bg-surface-container-lowest border border-outline-variant rounded-xl flex gap-md items-start transition-colors hover:bg-surface-container duration-200">
+<div class="p-xs bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">person_check</span>
+</div>
+<div class="flex-1 space-y-base">
+<p class="font-body-md-bold text-body-md-bold text-primary">Confirm nomination details</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Please finalize your dependents' information in the You tab.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Compliance Block -->
+<section class="p-md bg-surface-container-low border border-outline-variant rounded-xl space-y-sm">
+<h4 class="font-label-sm-bold text-label-sm-bold text-primary flex items-center gap-xs uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">gavel</span> DPDP Compliance
+            </h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                Your data is processed in accordance with the Digital Personal Data Protection (DPDP) Act. All session logs and personal identifiers are encrypted and stored within sovereign cloud boundaries.
+            </p>
+</section>
+<!-- injected Continue CTA -->
+<div style="position:fixed;bottom:72px;left:0;right:0;padding:0 24px;z-index:100;">
+  <button onclick="window.location.href='../journey_map_current_stage_expanded/code.html'" style="width:100%;height:44px;background:#00000b;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+    Continue <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">arrow_forward</span>
+  </button>
+</div></main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface dark:bg-background border-t border-outline-variant dark:border-outline transition-colors duration-200">
+<div class="flex justify-around items-center w-full px-mobile-margin py-xs" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<!-- Journey (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-xl p-xs transition-transform duration-150 scale-95 active:scale-90" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-xs hover:text-primary dark:hover:text-inverse-primary transition-transform duration-150 scale-95 active:scale-90" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-xs hover:text-primary dark:hover:text-inverse-primary transition-transform duration-150 scale-95 active:scale-90" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-xs hover:text-primary dark:hover:text-inverse-primary transition-transform duration-150 scale-95 active:scale-90" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-xs hover:text-primary dark:hover:text-inverse-primary transition-transform duration-150 scale-95 active:scale-90" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</a>
+</div>
+</nav>
+<script>
+        // Micro-interaction for cards
+        document.querySelectorAll('.rounded-xl').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('touchend', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

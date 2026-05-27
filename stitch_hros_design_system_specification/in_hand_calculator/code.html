@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Geist', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .input-field { font-weight: 400; font-size: 14px; }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col" style="background:#fcf8fa; color:#1c1b1d;">
+
+<!-- Top App Bar with Back Button -->
+<header style="background:#fcf8fa; border-bottom:1px solid #c8c5cd;" class="w-full top-0 sticky z-40 flex justify-between items-center px-4 h-14">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+  <div class="flex-grow">
+    <h1 style="margin:0; font-size:18px;">In-Hand Calculator</h1>
+  </div>
+  <div style="width:40px;"></div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-grow px-6 pt-6 pb-24 hide-scrollbar overflow-y-auto">
+
+  <!-- Calculator Section -->
+  <div style="margin-bottom:24px;">
+    <h2 style="margin-bottom:16px;">Salary Breakdown</h2>
+
+    <!-- Input Section -->
+    <div style="background:#fff; border:1px solid #c8c5cd; border-radius:12px; padding:16px; margin-bottom:16px;">
+      <div style="margin-bottom:16px;">
+        <label class="label-text" style="display:block; margin-bottom:8px;">Annual CTC</label>
+        <input type="number" value="4200000" style="width:100%; padding:12px; border:1px solid #e0e0e0; border-radius:8px; font-size:14px;" id="annual-ctc"/>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label class="label-text" style="display:block; margin-bottom:8px;">HRA (₹/month)</label>
+        <input type="number" value="30000" style="width:100%; padding:12px; border:1px solid #e0e0e0; border-radius:8px; font-size:14px;" id="hra-input"/>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label class="label-text" style="display:block; margin-bottom:8px;">80C Investments (₹)</label>
+        <input type="number" value="150000" style="width:100%; padding:12px; border:1px solid #e0e0e0; border-radius:8px; font-size:14px;" id="investment-80c"/>
+      </div>
+
+      <button onclick="calculateSalary()" style="width:100%; padding:12px; background:#00000b; color:#fff; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Calculate</button>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results" style="display:none;">
+      <div style="background:#e2e0fc; border:1px solid #c6c4df; border-radius:12px; padding:16px; margin-bottom:16px;">
+        <div style="font-size:13px; color:#45455b; margin-bottom:12px; font-weight:500;">MONTHLY BREAKDOWN</div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+          <div>
+            <div class="body-small" style="margin-bottom:4px;">Gross Monthly</div>
+            <div style="font-size:18px; font-weight:600; color:#1c1b1d;" id="gross-monthly">₹0</div>
+          </div>
+          <div>
+            <div class="body-small" style="margin-bottom:4px;">Income Tax</div>
+            <div style="font-size:18px; font-weight:600; color:#d32f2f;" id="income-tax">₹0</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+          <div>
+            <div class="body-small" style="margin-bottom:4px;">PF Contribution</div>
+            <div style="font-size:16px; font-weight:600; color:#1c1b1d;" id="pf-contrib">₹0</div>
+          </div>
+          <div>
+            <div class="body-small" style="margin-bottom:4px;">Professional Tax</div>
+            <div style="font-size:16px; font-weight:600; color:#1c1b1d;" id="prof-tax">₹0</div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #c6c4df; padding-top:12px; margin-top:12px;">
+          <div style="display:flex; justify-content:space-between;">
+            <div style="font-weight:600; color:#1c1b1d;">Take Home (Net)</div>
+            <div style="font-size:20px; font-weight:700; color:#10b981;" id="take-home">₹0</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #c8c5cd; border-radius:12px; padding:16px;">
+        <div style="font-size:13px; color:#45455b; margin-bottom:12px; font-weight:500;">ANNUAL SUMMARY</div>
+
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span class="body-regular">Annual Gross</span>
+          <span id="annual-gross" style="font-weight:600;">₹0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span class="body-regular">Annual Tax</span>
+          <span id="annual-tax-total" style="font-weight:600;">₹0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding-top:8px; border-top:1px solid #c8c5cd;">
+          <span class="body-regular" style="font-weight:600;">Annual Net</span>
+          <span id="annual-net" style="font-weight:600; font-size:16px;">₹0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:24px;"></div>
+
+</main>
+
+<!-- Bottom Nav Bar -->
+<nav style="position:fixed; bottom:0; left:0; width:100%; z-index:50; display:flex; justify-content:space-around; align-items:center; padding:12px 4px 12px; background:#fff; border-top:1px solid #c8c5cd; height:64px;">
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../journey_map_current_stage_expanded/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">route</span>
+    <span style="font-size:12px; margin-top:2px;">Journey</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../tasks_active_state/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">assignment</span>
+    <span style="font-size:12px; margin-top:2px;">Tasks</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../feed_active_content_mix/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">dynamic_feed</span>
+    <span style="font-size:12px; margin-top:2px;">Feed</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../ai_concierge_active_chat/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">auto_awesome</span>
+    <span style="font-size:12px; margin-top:2px;">AI</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../data_rights_pane/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">person</span>
+    <span style="font-size:12px; margin-top:2px;">You</span>
+  </a>
+</nav>
+
+<script>
+function calculateSalary() {
+  const ctc = parseFloat(document.getElementById('annual-ctc').value) || 0;
+  const hra = parseFloat(document.getElementById('hra-input').value) || 0;
+  const invest80c = parseFloat(document.getElementById('investment-80c').value) || 0;
+
+  // Monthly calculations
+  const grossMonthly = ctc / 12;
+  const pfContrib = grossMonthly * 0.12;
+  const professionalTax = grossMonthly > 15000 ? 200 : 0;
+
+  // Income tax calculation (simplified)
+  const taxableIncome = ctc - invest80c - (hra * 12);
+  const annualTax = taxableIncome > 500000 ? (taxableIncome - 500000) * 0.20 : 0;
+  const monthlyTax = annualTax / 12;
+
+  const takeHome = grossMonthly - monthlyTax - pfContrib - professionalTax;
+  const annualNet = takeHome * 12;
+
+  // Format currency
+  const fmt = (n) => '₹' + Math.round(n).toLocaleString('en-IN');
+
+  // Update UI
+  document.getElementById('gross-monthly').textContent = fmt(grossMonthly);
+  document.getElementById('income-tax').textContent = fmt(monthlyTax);
+  document.getElementById('pf-contrib').textContent = fmt(pfContrib);
+  document.getElementById('prof-tax').textContent = fmt(professionalTax);
+  document.getElementById('take-home').textContent = fmt(takeHome);
+  document.getElementById('annual-gross').textContent = fmt(ctc);
+  document.getElementById('annual-tax-total').textContent = fmt(annualTax);
+  document.getElementById('annual-net').textContent = fmt(annualNet);
+
+  document.getElementById('results').style.display = 'block';
+}
+
+// Auto-calculate on load
+calculateSalary();
+</script>
+
+</body>
+</html>

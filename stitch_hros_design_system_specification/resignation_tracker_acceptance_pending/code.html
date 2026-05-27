@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#e2e0fc",
+                    "outline-variant": "#c8c5cd",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-container": "#f1edef",
+                    "primary-container": "#1a1a2e",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-dim": "#ddd9db",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-primary-container": "#83829b",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e5e1e3",
+                    "surface": "#fcf8fa",
+                    "inverse-primary": "#c6c4df",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#dce2f3",
+                    "tertiary": "#695d3c",
+                    "secondary-fixed": "#dce2f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#493f20",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-low": "#f6f2f4",
+                    "secondary": "#585f6c",
+                    "on-secondary-container": "#5e6572",
+                    "on-surface": "#1c1b1d",
+                    "on-tertiary-fixed": "#231b02",
+                    "tertiary-fixed": "#f2e1b7",
+                    "inverse-surface": "#313032",
+                    "surface-tint": "#5d5c74",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#47464c",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-secondary": "#ffffff",
+                    "background": "#fcf8fa",
+                    "tertiary-container": "#b9aa83",
+                    "on-secondary-fixed": "#151c27",
+                    "on-background": "#1c1b1d",
+                    "error-container": "#ffdad6",
+                    "primary": "#00000b",
+                    "surface-bright": "#fcf8fa",
+                    "primary-fixed-dim": "#c6c4df",
+                    "outline": "#78767d",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "xl": "32px",
+                    "xs": "8px",
+                    "sm": "12px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "huge": "64px",
+                    "mobile-margin": "24px"
+            },
+            "fontFamily": {
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-huge">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flex items-center justify-between px-mobile-margin h-touch-target-min w-full">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:opacity-70 transition-opacity" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed">Resignation Tracker</h1>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:opacity-70 transition-opacity">help_outline</button>
+</header>
+<main class="mt-touch-target-min px-mobile-margin py-lg space-y-lg">
+<!-- Section Progress -->
+<div class="w-full bg-surface-container h-base rounded-full overflow-hidden">
+<div class="bg-primary h-full transition-all duration-700" style="width: 60%;"></div>
+</div>
+<!-- Status Context -->
+<div class="flex items-center gap-sm">
+<div class="w-xs h-xs rounded-full bg-tertiary"></div>
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Step 3: Acceptance Pending</p>
+</div>
+<!-- Task Card: Resignation Summary (Uploaded State) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface">Resignation Proof</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Uploaded on Oct 24, 2023</p>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold bg-[#D1FAE5] text-[#065F46] px-sm py-base rounded-full">Verified</span>
+</div>
+<div class="flex items-center gap-md p-sm bg-surface-container-low rounded-lg border border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-primary">description</span>
+<div class="flex-1 overflow-hidden">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface truncate">resignation_notice_final.pdf</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">2.4 MB</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">visibility</button>
+</div>
+</div>
+<!-- New Section: Acceptance Upload (Unlocked) -->
+<section class="space-y-md animate-in slide-in-from-bottom-4 duration-500">
+<div class="flex items-center gap-sm">
+<div class="w-xs h-xs rounded-full bg-primary"></div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">Has your resignation been accepted?</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Please upload the formal acceptance letter or email confirmation from your employer to proceed with the offboarding.</p>
+<!-- Upload Zone -->
+<div class="bg-surface-container-low border border-dashed border-outline rounded-xl p-xl flex flex-col items-center justify-center text-center gap-md hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="w-huge h-huge bg-surface-container-lowest rounded-full flex items-center justify-center border border-outline-variant group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary-tint text-[32px]">upload_file</span>
+</div>
+<div class="space-y-xs">
+<p class="font-body-md-bold text-body-md-bold text-on-surface">Tap to upload Acceptance Letter</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">PDF, JPEG or PNG (Max 10MB)</p>
+</div>
+<div class="flex gap-md w-full mt-sm">
+<button class="flex-1 flex flex-col items-center gap-xs p-sm bg-surface-container-lowest border border-outline-variant rounded-lg active:bg-surface-container">
+<span class="material-symbols-outlined">photo_camera</span>
+<span class="font-label-sm text-label-sm">Camera</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-xs p-sm bg-surface-container-lowest border border-outline-variant rounded-lg active:bg-surface-container">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-label-sm text-label-sm">Files</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Compliance Block -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-md">
+<div class="flex gap-md">
+<input class="mt-1 h-touch-target-min w-touch-target-min rounded border-outline text-primary focus:ring-primary" id="dpdp" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="dpdp">
+                    I confirm that this document is a genuine record of my resignation acceptance and complies with the <span class="font-label-sm-bold underline">DPDP Act (2023)</span> guidelines for digital data sharing within Indian enterprise systems.
+                </label>
+</div>
+</div>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- Bottom Action Bar (Fixed) -->
+<div class="fixed bottom-[72px] left-0 w-full bg-surface/80 backdrop-blur-md px-mobile-margin py-md border-t border-outline-variant/30 flex gap-md z-40">
+<button onclick="window.top.goTo('journey_map_current_stage_expanded')">
+                Submit Acceptance
+            </button>
+</div>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline flex justify-around items-center px-sm py-xs pb-safe">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all px-md py-base">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm-bold text-label-sm-bold">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-secondary-container dark:bg-primary-container rounded-full px-md py-base transition-all" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-label-sm-bold text-label-sm-bold">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all px-md py-base" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="font-label-sm-bold text-label-sm-bold">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all px-md py-base">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-sm-bold text-label-sm-bold">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-all px-md py-base">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">Profile</span>
+</div>
+</nav>
+<script>
+        // Simple haptic-like interaction for buttons
+        document.querySelectorAll('button, .cursor-pointer').forEach(el => {
+            el.addEventListener('touchstart', () => {
+                el.style.transform = 'scale(0.98)';
+            });
+            el.addEventListener('touchend', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+
+        // Toggle FAB pulse effect
+        const fab = document.querySelector('button .material-symbols-outlined[style*="FILL"]');
+        setInterval(() => {
+            fab.parentElement.classList.add('ring-2', 'ring-primary/20');
+            setTimeout(() => {
+                fab.parentElement.classList.remove('ring-2', 'ring-primary/20');
+            }, 1000);
+        }, 3000);
+    </script>
+<script src="../nav.js"></script>
+</body></html>

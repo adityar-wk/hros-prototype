@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS - Data Capture Edge Cases</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#f2e1b7",
+                    "outline-variant": "#c8c5cd",
+                    "error": "#ba1a1a",
+                    "background": "#fcf8fa",
+                    "on-surface": "#1c1b1d",
+                    "secondary-fixed": "#dce2f3",
+                    "on-tertiary-container": "#493f20",
+                    "on-secondary-fixed": "#151c27",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "on-secondary-fixed-variant": "#404754",
+                    "inverse-surface": "#313032",
+                    "secondary": "#585f6c",
+                    "on-surface-variant": "#47464c",
+                    "tertiary-container": "#b9aa83",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-secondary-container": "#5e6572",
+                    "inverse-on-surface": "#f4f0f2",
+                    "primary-fixed-dim": "#c6c4df",
+                    "surface-dim": "#ddd9db",
+                    "tertiary": "#695d3c",
+                    "surface-container-high": "#ebe7e9",
+                    "surface-tint": "#5d5c74",
+                    "surface-container": "#f1edef",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "surface-container-low": "#f6f2f4",
+                    "surface-bright": "#fcf8fa",
+                    "on-background": "#1c1b1d",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "primary-container": "#1a1a2e",
+                    "primary": "#00000b",
+                    "on-tertiary-fixed": "#231b02",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#dce2f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-variant": "#e5e1e3",
+                    "on-primary-fixed": "#1a1a2e",
+                    "primary-fixed": "#e2e0fc",
+                    "on-primary-container": "#83829b",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#c6c4df",
+                    "outline": "#78767d",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "lg": "24px",
+                    "sm": "12px",
+                    "touch-target-min": "44px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "mobile-margin": "24px",
+                    "xs": "8px",
+                    "huge": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm-bold": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar Shell -->
+<header class="w-full top-0 sticky bg-background border-b border-outline-variant z-50 flex justify-between items-center px-mobile-margin h-touch-target-min transition-opacity duration-200">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">HROS</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-outline" data-icon="more_vert">more_vert</span>
+</div>
+</header>
+<main class="flex-grow p-mobile-margin max-w-[375px] mx-auto w-full pb-32">
+<!-- Page Title -->
+<div class="mb-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Data Capture</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Edge Case States</p>
+</div>
+<!-- REJECTED STATE SECTION -->
+<section class="mb-huge">
+<div class="flex items-center gap-xs mb-md">
+<span class="w-3 h-3 rounded-full bg-error" title="Blocked"></span>
+<h3 class="font-body-md-bold text-body-md-bold">Identity Verification</h3>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md overflow-hidden relative">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">PAN Card Scan</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Document ID: PAN-9920-X</p>
+</div>
+<!-- Status Pill: Rejected -->
+<span class="px-2 py-0.5 rounded-full bg-error/10 text-error font-label-sm-bold text-[11px] uppercase tracking-wider">Rejected</span>
+</div>
+<!-- Immediate Escalation Card -->
+<div class="bg-error-container/30 border border-error/20 rounded-lg p-md mt-md">
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-error text-[20px]" data-icon="report_problem">report_problem</span>
+<div class="flex-1">
+<p class="font-label-sm text-label-sm text-on-error-container leading-tight">
+                                Your submission was not accepted. Please contact your HRBP, Siddharth Jain, at <span class="font-bold">+91 98765 43210</span> or via the AI Concierge.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full mt-lg h-touch-target-min bg-primary text-on-primary font-body-md-bold text-body-md-bold rounded-xl transition-all active:scale-95" onclick="window.location.href='../feed_active_content_mix/code.html'">
+                    Retry Upload
+                </button>
+</div>
+</section>
+<!-- NOT APPLICABLE STATE SECTION -->
+<section>
+<div class="flex items-center gap-xs mb-md">
+<span class="w-3 h-3 rounded-full bg-tertiary-container" title="Action Needed"></span>
+<h3 class="font-body-md-bold text-body-md-bold">Professional History</h3>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
+<div class="flex justify-between items-center mb-md">
+<p class="font-body-md-bold text-body-md-bold text-on-surface">Previous Employment</p>
+<div class="flex items-center gap-xs">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" id="na-toggle" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface" for="na-toggle">N/A</label>
+</div>
+</div>
+<!-- Required Reason Field -->
+<div class="mt-md space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Reason for N/A*</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-sm font-body-md text-body-md focus:outline-none focus:border-primary min-h-[100px]" placeholder="e.g. Fresher - No prior corporate experience">I am a recent university graduate with no prior full-time corporate employment history.</textarea>
+</div>
+<!-- Visibility Note -->
+<div class="flex gap-xs mt-md p-sm bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="visibility">visibility</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant italic">
+                        Note: HR retains visibility of this selection for compliance audit trails.
+                    </p>
+</div>
+<!-- DPDP Consent Block -->
+<div class="mt-lg p-sm border border-outline-variant rounded-lg bg-surface-container-lowest">
+<div class="flex gap-sm items-start">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" type="checkbox"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-snug">
+                            I declare that the information provided is true to the best of my knowledge. Under Indian DPDP compliance, I consent to the processing of this justification.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger (Ambient Shadow Layer) -->
+
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-base pb-safe h-16 bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-transform duration-150 active:scale-90" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 transition-transform duration-150 active:scale-90" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-transform duration-150 active:scale-90" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-transform duration-150 active:scale-90" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-transform duration-150 active:scale-90" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<!-- Fixed Bottom Declaration Bar -->
+<div class="fixed bottom-16 left-0 w-full bg-background border-t border-outline-variant p-md flex flex-col gap-sm z-40">
+ onclick="window.top.goTo('data_capture_submission_status_feedback')">
+                Save Progress
+            </button>
+</div>
+<script>
+        // Micro-interaction for the N/A toggle to show/hide content
+        const toggle = document.getElementById('na-toggle');
+        const reasonContainer = toggle.closest('div').parentElement;
+        
+        toggle.addEventListener('change', (e) => {
+            if(!e.target.checked) {
+                reasonContainer.style.opacity = '0.5';
+                reasonContainer.style.pointerEvents = 'none';
+            } else {
+                reasonContainer.style.opacity = '1';
+                reasonContainer.style.pointerEvents = 'auto';
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
+

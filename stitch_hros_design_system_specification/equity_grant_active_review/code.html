@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#514627",
+                    "outline": "#78767d",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-low": "#f6f2f4",
+                    "tertiary-fixed": "#f2e1b7",
+                    "secondary-fixed": "#dce2f3",
+                    "secondary-container": "#dce2f3",
+                    "tertiary-container": "#b9aa83",
+                    "primary": "#00000b",
+                    "on-primary-fixed": "#1a1a2e",
+                    "error-container": "#ffdad6",
+                    "secondary": "#585f6c",
+                    "surface-container": "#f1edef",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#5e6572",
+                    "on-background": "#1c1b1d",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-container": "#493f20",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#ddd9db",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface": "#fcf8fa",
+                    "on-tertiary-fixed": "#231b02",
+                    "primary-container": "#1a1a2e",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-tint": "#5d5c74",
+                    "primary-fixed": "#e2e0fc",
+                    "on-surface-variant": "#47464c",
+                    "on-secondary-fixed": "#151c27",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "surface-container-high": "#ebe7e9",
+                    "inverse-primary": "#c6c4df",
+                    "tertiary": "#695d3c",
+                    "surface-container-highest": "#e5e1e3",
+                    "surface-bright": "#fcf8fa",
+                    "surface-variant": "#e5e1e3",
+                    "on-surface": "#1c1b1d",
+                    "outline-variant": "#c8c5cd",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-primary-container": "#83829b",
+                    "on-primary": "#ffffff",
+                    "background": "#fcf8fa",
+                    "inverse-surface": "#313032",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "mobile-margin": "24px",
+                    "base": "4px",
+                    "huge": "64px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "xl": "32px",
+                    "touch-target-min": "44px",
+                    "xxl": "48px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 0px; background: transparent; }
+        .ambient-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-40">
+<!-- TopAppBar -->
+<header class="flex items-center w-full px-mobile-margin h-touch-target-min bg-surface dark:bg-surface docked full-width top-0 border-b border-outline-variant dark:border-outline fixed z-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed cursor-pointer transition-colors duration-200 active:opacity-70">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Equity Grant</h1>
+</div>
+</header>
+<main class="pt-huge px-mobile-margin max-w-md mx-auto">
+<!-- Section Progress -->
+<div class="w-full bg-surface-container-low h-1 mt-md mb-lg rounded-full overflow-hidden">
+<div class="bg-primary h-full w-2/3 transition-all duration-700 ease-out"></div>
+</div>
+<!-- Grant Summary Section -->
+<section class="mb-xl">
+<div class="flex items-center gap-xs mb-md">
+<div class="w-3 h-3 rounded-full bg-[#10b981]"></div>
+<h2 class="font-body-md-bold text-body-md-bold uppercase tracking-wider text-on-surface-variant">Grant Summary</h2>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl mb-md">
+<div class="mb-lg">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Instrument Type</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-primary">ESOP Grant</p>
+</div>
+<div class="grid grid-cols-2 gap-lg border-t border-outline-variant pt-lg">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Units Granted</p>
+<p class="font-body-md-bold text-body-md-bold">1,200 units</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Exercise Price</p>
+<p class="font-body-md-bold text-body-md-bold">₹10.00</p>
+</div>
+</div>
+</div>
+<!-- Vesting Timeline -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<p class="font-body-md-bold text-body-md-bold mb-xl">Vesting Schedule</p>
+<div class="relative flex justify-between items-start mb-base">
+<!-- Line -->
+<div class="absolute top-[10px] left-0 w-full h-[2px] bg-outline-variant"></div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center gap-sm">
+<div class="w-[20px] h-[20px] rounded-full bg-primary ring-4 ring-surface-container-lowest"></div>
+<div class="text-center">
+<p class="font-label-sm-bold text-label-sm-bold">Year 1</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant">25% (Cliff)</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-sm">
+<div class="w-[20px] h-[20px] rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></div>
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Year 2</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant">25%</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-sm">
+<div class="w-[20px] h-[20px] rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></div>
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Year 3</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant">25%</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-sm">
+<div class="w-[20px] h-[20px] rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></div>
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Year 4</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant">25%</p>
+</div>
+</div>
+</div>
+<div class="mt-xl flex items-center gap-sm text-on-secondary-container bg-secondary-container/10 p-md rounded-lg">
+<span class="material-symbols-outlined text-[18px]">event_repeat</span>
+<p class="font-label-sm text-label-sm">Exercise window: 90 days post-termination.</p>
+</div>
+</div>
+</section>
+<!-- What It Could Be Worth Section -->
+<section class="mb-xl">
+<h2 class="font-body-md-bold text-body-md-bold uppercase tracking-wider text-on-surface-variant mb-md">What It Could Be Worth</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="p-md font-label-sm-bold text-label-sm-bold border-b border-outline-variant">Scenario</th>
+<th class="p-md font-label-sm-bold text-label-sm-bold border-b border-outline-variant text-right">Est. Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-md font-body-md text-body-md border-b border-outline-variant">Current Valuation</td>
+<td class="p-md font-body-md-bold text-body-md-bold border-b border-outline-variant text-right">₹12,00,000</td>
+</tr>
+<tr>
+<td class="p-md font-body-md text-body-md border-b border-outline-variant">2x Growth</td>
+<td class="p-md font-body-md-bold text-body-md-bold border-b border-outline-variant text-right">₹24,00,000</td>
+</tr>
+<tr>
+<td class="p-md font-body-md text-body-md">5x Growth</td>
+<td class="p-md font-body-md-bold text-body-md-bold text-right">₹60,00,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="mt-md font-label-sm text-label-sm text-on-surface-variant italic">
+                This is illustrative. Actual value depends on company performance and your tenure.
+            </p>
+</section>
+<!-- Tax Treatment Section -->
+<section class="mb-xl">
+<h2 class="font-body-md-bold text-body-md-bold uppercase tracking-wider text-on-surface-variant mb-md">Tax Treatment</h2>
+<div class="space-y-md">
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+<div>
+<p class="font-body-md-bold text-body-md-bold">At Exercise</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">Taxed as a 'perquisite' (salary income) based on the difference between FMV and your exercise price.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+<div>
+<p class="font-body-md-bold text-body-md-bold">At Sale</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">Taxed as 'capital gains' based on the duration you hold the shares and the appreciation in value.</p>
+</div>
+</div>
+</div>
+<button class="mt-lg flex items-center gap-xs text-primary font-label-sm-bold text-label-sm-bold underline decoration-1 underline-offset-4">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+                Ask the AI Concierge about ESOP taxes
+            </button>
+</section>
+<!-- Legal Section -->
+<section class="mb-xl">
+<h2 class="font-body-md-bold text-body-md-bold uppercase tracking-wider text-on-surface-variant mb-md">Legal &amp; Compliance</h2>
+<div class="bg-surface-container-low/50 border-l-4 border-primary p-md rounded-r-lg">
+<ul class="space-y-sm">
+<li class="flex gap-xs items-start">
+<span class="material-symbols-outlined text-[16px] mt-1">gavel</span>
+<p class="font-label-sm text-label-sm"><span class="font-bold">Clawback:</span> Shares may be subject to recovery in cases of gross misconduct or violation of non-compete clauses.</p>
+</li>
+<li class="flex gap-xs items-start">
+<span class="material-symbols-outlined text-[16px] mt-1">speed</span>
+<p class="font-label-sm text-label-sm"><span class="font-bold">Acceleration:</span> In the event of an IPO or acquisition, unvested units may vest immediately as per plan terms.</p>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+<div class="fixed bottom-32 right-md z-50">
+<button class="w-huge h-huge bg-primary-container text-on-primary-fixed rounded-full flex items-center justify-center ambient-shadow transition-transform active:scale-90 overflow-hidden">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">bolt</span>
+</button>
+</div>
+<!-- Declaration Confirm & Action Bar -->
+<div class="fixed bottom-huge w-full bg-surface-bright border-t border-outline-variant px-mobile-margin py-lg z-50">
+<div class="max-w-md mx-auto">
+<label class="flex items-start gap-md mb-lg cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input class="peer h-touch-target-min w-touch-target-min opacity-0 absolute cursor-pointer" id="acknowledge" type="checkbox"/>
+<div class="h-6 w-6 border-2 border-outline rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary transition-all">
+<span class="material-symbols-outlined text-white text-[18px] hidden peer-checked:block">check</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface pt-1">I have read and understood my equity grant terms.</span>
+</label>
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold text-body-md-bold rounded-lg transition-all duration-150 active:scale-95 disabled:opacity-30" disabled="" id="submit-btn" onclick="window.top.goTo('journey_map_current_stage_expanded')">
+                Acknowledge Grant
+            </button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-huge bg-surface dark:bg-surface px-md border-t border-outline-variant dark:border-outline">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-label-sm-bold transition-transform duration-150 active:scale-95" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" data-weight="fill">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim transition-transform duration-150 active:scale-95 hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">Portfolio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim transition-transform duration-150 active:scale-95 hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-sm text-label-sm">Docs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim transition-transform duration-150 active:scale-95 hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-label-sm text-label-sm">Concierge</span>
+</a>
+</nav>
+<script>
+        // Simple logic for the acknowledgment button
+        const checkbox = document.getElementById('acknowledge');
+        const submitBtn = document.getElementById('submit-btn');
+
+        checkbox.addEventListener('change', () => {
+            submitBtn.disabled = !checkbox.checked;
+        });
+
+        // Hover interaction for bottom nav
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('touchstart', () => {
+                item.classList.add('opacity-70');
+            });
+            item.addEventListener('touchend', () => {
+                item.classList.remove('opacity-70');
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

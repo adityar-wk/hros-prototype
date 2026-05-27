@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DPDP Vendor Consent - Verified</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e5e1e3",
+                    "surface-dim": "#ddd9db",
+                    "on-primary-container": "#83829b",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-container-high": "#ebe7e9",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#231b02",
+                    "background": "#fcf8fa",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#695d3c",
+                    "outline-variant": "#c8c5cd",
+                    "primary-container": "#1a1a2e",
+                    "inverse-primary": "#c6c4df",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-secondary-container": "#5e6572",
+                    "secondary": "#585f6c",
+                    "primary": "#00000b",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#313032",
+                    "on-surface-variant": "#47464c",
+                    "tertiary-container": "#b9aa83",
+                    "on-primary-fixed-variant": "#45455b",
+                    "tertiary-fixed": "#f2e1b7",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1c1b1d",
+                    "surface-container-low": "#f6f2f4",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#f1edef",
+                    "on-tertiary-container": "#493f20",
+                    "surface-container-highest": "#e5e1e3",
+                    "surface": "#fcf8fa",
+                    "on-background": "#1c1b1d",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed": "#dce2f3",
+                    "primary-fixed-dim": "#c6c4df",
+                    "outline": "#78767d",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-secondary-fixed": "#151c27",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "primary-fixed": "#e2e0fc",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#dce2f3",
+                    "surface-tint": "#5d5c74"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "touch-target-min": "44px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "mobile-margin": "24px",
+                    "xxl": "48px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "huge": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md-bold": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #fcf8fa; color: #1c1b1d; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e5e1e3; border-radius: 10px; }
+        
+        /* Toggle Switch Styling */
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #00000b;
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            left: 20px;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 bg-background dark:bg-background border-b border-outline-variant dark:border-outline-variant z-50">
+<div class="flex items-center px-mobile-margin h-touch-target-min w-full max-w-7xl mx-auto">
+<button class="mr-md text-primary dark:text-primary-fixed transition-colors duration-200 active:opacity-80">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed">Tasks</h1>
+</div>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-mobile-margin py-lg pb-huge">
+<!-- Section Header -->
+<div class="flex items-center gap-xs mb-lg">
+<div class="w-3 h-3 rounded-full bg-[#10b981]"></div> <!-- Readiness Signal: Green -->
+<h2 class="font-body-md-bold text-body-md-bold uppercase tracking-widest text-on-surface-variant">Vendor Data Consent</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl leading-relaxed">
+            Review and manage how shared vendors process your enterprise data under the Digital Personal Data Protection (DPDP) Act.
+        </p>
+<!-- Bento Grid Layout for Consent Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Identity Verification Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between transition-all duration-200 hover:bg-surface-container-low">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-body-md-bold text-body-md-bold">Identity Verification</h3>
+<div class="relative inline-block w-11 h-6 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-transparent appearance-none cursor-pointer" id="toggle1" name="toggle1" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all" for="toggle1"></label>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Allow processing of Aadhar and PAN details for background verification and tax compliance.</p>
+</div>
+<div class="flex gap-xs">
+<span class="px-sm py-base bg-[#10b981]/10 text-[#059669] font-label-sm-bold rounded-full text-[11px] uppercase">Verified</span>
+</div>
+</div>
+<!-- Financial Records Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between transition-all duration-200 hover:bg-surface-container-low">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-body-md-bold text-body-md-bold">Financial Records</h3>
+<div class="relative inline-block w-11 h-6 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-transparent appearance-none cursor-pointer" id="toggle2" name="toggle2" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all" for="toggle2"></label>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Consent for processing bank account information and payment history for automated settlements.</p>
+</div>
+<div class="flex gap-xs">
+<span class="px-sm py-base bg-[#10b981]/10 text-[#059669] font-label-sm-bold rounded-full text-[11px] uppercase">Active</span>
+</div>
+</div>
+<!-- Performance Analytics Card (Spans 2 columns on desktop) -->
+<div class="md:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col md:flex-row gap-md items-start md:items-center transition-all duration-200 hover:bg-surface-container-low">
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-base">
+<h3 class="font-body-md-bold text-body-md-bold">Performance &amp; Log Data</h3>
+<div class="relative inline-block w-11 h-6 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-transparent appearance-none cursor-pointer" id="toggle3" name="toggle3" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all" for="toggle3"></label>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Sharing service-level metadata to improve AI-driven operational efficiency and vendor benchmarking.</p>
+</div>
+<div class="flex-shrink-0 w-full md:w-32 h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="w-full h-full bg-primary transition-all duration-700"></div>
+</div>
+</div>
+<!-- Geolocation Tracking -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md transition-all duration-200 hover:bg-surface-container-low">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-body-md-bold text-body-md-bold">Logistics &amp; Geo-Tracking</h3>
+<div class="relative inline-block w-11 h-6 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-transparent appearance-none cursor-pointer" id="toggle4" name="toggle4" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all" for="toggle4"></label>
+</div>
+</div>
+<div class="h-24 w-full rounded-lg mb-sm bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover opacity-60 grayscale" data-alt="A clean, minimalist monochrome map interface of a city grid in Bangalore, India. The map uses a light grey and white color palette with subtle black hairline strokes for roads. The aesthetic is modern and professional, reflecting an enterprise software dashboard for logistics tracking under bright, even studio lighting." data-location="Bangalore" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9DFJ8QEGmgsLCltfdw37C-fIfdGqcUzU0n5qaj1te-zr-BQ5S-mUkoZCafTFa9y6FMQ8fzhF-DVSoeGJWZjpbbPSHnffQwSmwvquZQMN51BJDeo0P8So-632_gynBzxdN6ZaG-bhIJRJHYyVrlHHdMGBFk_rtZkSS9tbYnAJi9Nak9u68SUXSSQd_f6mIHF2nvzQ0M5miKK9APpBn_7jaqhRtIFJ6tFhHZaOa-MwIQTmZiah-q8jDmlfWbtVKFysAybkjtMgrub1f"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Real-time tracking of delivery fleet for insurance and safety audits.</p>
+</div>
+<!-- AI Concierge Insight -->
+<div class="bg-primary text-on-primary rounded-xl p-md flex flex-col justify-between shadow-lg">
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="font-body-md-bold text-body-md-bold text-white">AI Hub Recommendation</h3>
+</div>
+<p class="font-label-sm text-white/80 leading-snug mb-md">
+                    Based on your industry standard, giving full consent unlocks "Instant Settlements" and reduces audit cycle time by 14 days.
+                </p>
+<div class="font-label-sm-bold text-white uppercase text-[10px] flex items-center gap-base">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                    Optimal Compliance Achieved
+                </div>
+</div>
+</div>
+<!-- DPDP Consent Block -->
+<div class="mt-xl border border-outline-variant bg-surface-container-low rounded-xl p-md">
+<h4 class="font-body-md-bold text-body-md-bold mb-xs">Legal Declaration</h4>
+<div class="max-h-24 overflow-y-auto custom-scrollbar mb-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                    By clicking "Save my consent preferences", I hereby certify that I am the authorized representative of the vendor entity and provide voluntary consent for the processing of digital personal data as specified above, in accordance with the Digital Personal Data Protection (DPDP) Act of India. I understand that I can withdraw or modify this consent at any time through the platform settings, though withdrawal may impact specific service functionalities.
+                </p>
+</div>
+<label class="flex items-start gap-sm cursor-pointer group">
+<input checked="" class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface transition-colors group-hover:text-primary">I confirm that all provided information is accurate and the consent is given without coercion.</span>
+</label>
+</div>
+</main>
+<!-- Declaration Confirm & FAB -->
+<div class="fixed bottom-touch-target-min md:bottom-lg right-lg z-40">
+<button class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-xl transition-all duration-200 active:scale-90 hover:shadow-2xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+</div>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 w-full bg-surface border-t border-outline-variant px-mobile-margin py-sm md:py-md z-50">
+<div class="max-w-7xl mx-auto">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold rounded-lg transition-all duration-200 active:scale-[0.98] hover:bg-on-primary-fixed-variant" onclick="window.location.href='../vendor_consent_preferences_saved/code.html'">
+                Save my consent preferences
+            </button>
+</div>
+</div>
+<!-- Hidden Bottom Nav for top-level context (Visual placeholder for architecture) -->
+<nav class="fixed bottom-0 w-full z-40 hidden md:hidden">
+<div class="flex justify-around items-center px-xs py-base bg-surface border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary font-label-sm-bold" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined">assignment</span>
+<span>Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined">description</span>
+<span>Docs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined">bolt</span>
+<span>AI Hub</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined">person</span>
+<span>Profile</span>
+</div>
+</div>
+</nav>
+<script>
+        // Micro-interactions: Toggle effect
+        document.querySelectorAll('.toggle-checkbox').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const card = this.closest('.bg-surface-container-lowest');
+                if(this.checked) {
+                    card.style.borderColor = 'rgba(0,0,0,0.1)';
+                } else {
+                    card.style.borderColor = 'transparent';
+                }
+            });
+        });
+
+        // Atmospheric Effect: Subtle mouse tracking on the primary button
+        const cta = document.querySelector('button.bg-primary');
+        cta.addEventListener('mousemove', (e) => {
+            const rect = cta.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            cta.style.setProperty('--x', `${x}px`);
+            cta.style.setProperty('--y', `${y}px`);
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

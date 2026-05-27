@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "secondary-container": "#dce2f3",
+                  "primary": "#00000b",
+                  "surface-tint": "#5d5c74",
+                  "inverse-on-surface": "#f4f0f2",
+                  "tertiary-fixed": "#f2e1b7",
+                  "surface-container-highest": "#e5e1e3",
+                  "surface-dim": "#ddd9db",
+                  "on-background": "#1c1b1d",
+                  "inverse-primary": "#c6c4df",
+                  "on-tertiary-fixed-variant": "#514627",
+                  "on-primary-container": "#83829b",
+                  "background": "#fcf8fa",
+                  "surface-container-low": "#f6f2f4",
+                  "secondary-fixed-dim": "#c0c7d6",
+                  "tertiary": "#695d3c",
+                  "on-error-container": "#93000a",
+                  "inverse-surface": "#313032",
+                  "surface-variant": "#e5e1e3",
+                  "on-primary": "#ffffff",
+                  "on-tertiary": "#ffffff",
+                  "tertiary-fixed-dim": "#d5c59d",
+                  "on-secondary-fixed": "#151c27",
+                  "surface-container-high": "#ebe7e9",
+                  "surface-container-lowest": "#ffffff",
+                  "on-error": "#ffffff",
+                  "error-container": "#ffdad6",
+                  "on-primary-fixed-variant": "#45455b",
+                  "on-secondary-container": "#5e6572",
+                  "outline": "#78767d",
+                  "on-primary-fixed": "#1a1a2e",
+                  "surface-bright": "#fcf8fa",
+                  "secondary-fixed": "#dce2f3",
+                  "error": "#ba1a1a",
+                  "surface-container": "#f1edef",
+                  "secondary": "#585f6c",
+                  "on-tertiary-fixed": "#231b02",
+                  "on-secondary": "#ffffff",
+                  "primary-container": "#1a1a2e",
+                  "on-secondary-fixed-variant": "#404754",
+                  "surface": "#fcf8fa",
+                  "primary-fixed-dim": "#c6c4df",
+                  "on-surface-variant": "#47464c",
+                  "on-surface": "#1c1b1d",
+                  "tertiary-container": "#b9aa83",
+                  "primary-fixed": "#e2e0fc",
+                  "outline-variant": "#c8c5cd",
+                  "on-tertiary-container": "#493f20"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "lg": "24px",
+                  "md": "16px",
+                  "xs": "8px",
+                  "xl": "32px",
+                  "mobile-margin": "24px",
+                  "base": "4px",
+                  "xxl": "48px",
+                  "sm": "12px",
+                  "huge": "64px",
+                  "touch-target-min": "44px"
+          },
+          "fontFamily": {
+                  "headline-lg": ["Geist"],
+                  "label-sm-bold": ["Geist"],
+                  "headline-lg-mobile": ["Geist"],
+                  "display": ["Geist"],
+                  "body-md-bold": ["Geist"],
+                  "label-sm": ["Geist"],
+                  "body-md": ["Geist"]
+          },
+          "fontSize": {
+                  "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                  "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                  "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Geist', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .success-pulse {
+      animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 0.5; }
+      50% { transform: scale(1.05); opacity: 0.3; }
+      100% { transform: scale(0.8); opacity: 0.5; }
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant">
+<div class="flex items-center h-touch-target-min px-mobile-margin w-full max-w-md mx-auto">
+<button class="active:scale-95 transition-transform duration-100 hover:bg-surface-container-low p-xs rounded-full">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="ml-md font-headline-lg-mobile text-headline-lg-mobile text-primary">Success</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-md px-mobile-margin py-xxl flex flex-col items-center justify-center text-center">
+<!-- Success Animation/Icon Area -->
+<div class="relative mb-xl">
+<!-- Ambient Decorative Pulse -->
+<div class="absolute inset-0 bg-secondary-container rounded-full success-pulse"></div>
+<div class="relative w-24 h-24 bg-primary rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-[48px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Confirmation Text -->
+<div class="space-y-md mb-xxl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Introduction Published</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px] mx-auto">
+        We'll share this with your team on Oct 24th. You can edit or remove this from your profile at any time.
+      </p>
+</div>
+<!-- Content Card Example (Visual Polish) -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl p-md mb-xl text-left flex items-start gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional studio portrait of a young Indian software engineer in a clean white environment. The lighting is soft and airy, reflecting a high-end minimalist corporate aesthetic. The image uses a neutral color palette with crisp focus and a shallow depth of field, conveying competence and warmth in a modern enterprise software context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGG2dpUx5c74cGaOsve4jsY1lYeFd0yBnrE2B5H3RULrefkXQuaNvKQN6M5JlYybOKcHaIL3XZU7FMQa7zNcTHl1ZKIOJ4-5br3GJyz4zdbb_GgnbVlnTNHLcVY7Zxx6Y2llKvyDpYQXAlRlpZFJGDNmZXczy9dDTGWfhiRhtApcw5jNWi0K1VTUqA1j-lS2z19ZDl6zy1bntjMwkjc4WB8fUyYhuMvD4yoEpaQChZHmGpByTOQqL000HISdvky_PTTIY0Nh7gN6h7"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-base">
+<span class="font-body-md-bold text-body-md-bold text-on-surface">Your Profile Preview</span>
+<div class="flex items-center gap-xs">
+<div class="w-[12px] h-[12px] rounded-full bg-[#4ADE80]"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Ready</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Shared with 14 team members</p>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary text-on-primary font-body-md-bold text-body-md-bold h-touch-target-min rounded-xl active:scale-[0.98] transition-all duration-200 hover:opacity-90 shadow-sm">
+      Return to Tasks
+    </button>
+</main>
+<!-- AI Concierge Trigger (Floating Persistent Layer) -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex justify-around items-center h-huge w-full px-md pb-safe max-w-md mx-auto" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<!-- Journey -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors rounded-xl" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</a>
+<!-- Tasks (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-xs py-base active:scale-90 transition-all duration-200" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors rounded-xl" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors rounded-xl" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors rounded-xl" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</a>
+</div>
+</nav>
+<script src="../nav.js"></script>
+</body></html>

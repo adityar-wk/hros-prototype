@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Birthday Celebration | Journey</title>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-container-high": "#ebe7e9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#45455b",
+                    "inverse-surface": "#313032",
+                    "surface-variant": "#e5e1e3",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1d",
+                    "inverse-primary": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-primary-container": "#83829b",
+                    "background": "#fcf8fa",
+                    "surface-container-low": "#f6f2f4",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "tertiary": "#695d3c",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#dce2f3",
+                    "primary": "#00000b",
+                    "surface-tint": "#5d5c74",
+                    "inverse-on-surface": "#f4f0f2",
+                    "tertiary-fixed": "#f2e1b7",
+                    "surface-container-highest": "#e5e1e3",
+                    "surface-dim": "#ddd9db",
+                    "surface": "#fcf8fa",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-surface-variant": "#47464c",
+                    "on-surface": "#1c1b1d",
+                    "tertiary-container": "#b9aa83",
+                    "primary-fixed": "#e2e0fc",
+                    "outline-variant": "#c8c5cd",
+                    "on-tertiary-container": "#493f20",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a1a2e",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-primary-fixed": "#1a1a2e",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed": "#dce2f3",
+                    "error": "#ba1a1a",
+                    "surface-container": "#f1edef",
+                    "secondary": "#585f6c",
+                    "on-tertiary-fixed": "#231b02",
+                    "on-secondary-container": "#5e6572",
+                    "outline": "#78767d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "mobile-margin": "24px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "sm": "12px",
+                    "huge": "64px",
+                    "touch-target-min": "44px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "body-md": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md-bold": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                    "label-sm-bold": ["13px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                    "label-sm": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                    "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                    "body-md-bold": ["16px", { "lineHeight": "1.5", "fontWeight": "600" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #fcf8fa;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-texture {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="flex flex-col items-center justify-center min-h-screen p-lg max-w-[375px] mx-auto overflow-hidden">
+<!-- Splash Container (Full Screen Celebration) -->
+<main class="w-full flex flex-col items-center justify-between h-[795px] animate-in fade-in duration-700">
+<!-- Header & Message Section -->
+<div class="w-full space-y-md text-center mt-xxl">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-fixed mb-xs">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">cake</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">
+                Happy Birthday, Aravind
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant px-md leading-relaxed">
+                The entire team at Radical Reduction HR wishes you a wonderful day ahead. We are glad to have you with us.
+            </p>
+</div>
+<!-- Hero Card (The Gift) -->
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-1/2 w-full relative">
+<img alt="Celebratory Gift" class="w-full h-full object-cover" data-alt="A minimalist and high-end close-up of a premium gift box wrapped in textured light grey paper with a thin black silk ribbon. The lighting is soft, natural, and bright, creating a clean light-mode aesthetic that feels professional and intentional. The background is a soft-focus office interior with warm wood tones and minimalist furniture, conveying a sense of corporate gratitude and high-trust hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAbZ8w4APyUWcE6KTIB4aRWDZEvOyVH4nPybgavn-zkTQirGi4X2YTqGO5ksiOj_YaazHZK_N4CJnywqT_cXJKGUhwEnTwJoGEL0piowNcd-zNO6fiyx8AiUeX-qH-sMINTk0tbbI2-UimFDWXywysCJjGSK4Tx52IJa0vXCutVjGNzuYnFaD3UTXWmd-_PWdv0PPBRVEKJYLcbsBkVjX4V3RXuCByxd-HDrPbSgwxPTLpE_7OGEMAr01NLGETaNqroDZ5VNPNX-wT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+<div class="p-lg flex flex-col justify-between flex-grow">
+<div class="space-y-xs">
+<span class="font-label-sm-bold text-label-sm-bold uppercase text-on-surface-variant opacity-60">A Small Token</span>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">Radical Reduction HR has sent you a birthday gift voucher.</p>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-label-sm-bold text-label-sm-bold rounded-lg transition-transform active:scale-95 duration-150 flex items-center justify-center gap-xs" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+                    See it
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Quiet Controls Section -->
+<div class="w-full flex flex-col gap-lg items-center mb-xl">
+<!-- Sharing Toggle -->
+<div class="flex items-center justify-between w-full px-md py-sm bg-surface-container-low rounded-lg border border-outline-variant/30">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="share-toggle">Share with my team?</label>
+<button aria-checked="false" class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-outline-variant" id="share-toggle" onclick="toggleSwitch()" role="switch">
+<span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 translate-x-0 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out" id="switch-handle"></span>
+</button>
+</div>
+</div>
+</main>
+<!-- Subtle AI Concierge Floating Trigger (From Design System) -->
+<div class="fixed bottom-lg right-lg z-50">
+<button class="w-12 h-12 bg-primary-container text-on-primary-fixed flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 active:scale-90 border border-on-primary-fixed-variant/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</button>
+</div>
+<!-- Background Decorative Elements (Radical Reduction Style) -->
+<div class="fixed inset-0 -z-10 bento-texture pointer-events-none opacity-40"></div>
+<script>
+        let isShared = false;
+        function toggleSwitch() {
+            isShared = !isShared;
+            const toggle = document.getElementById('share-toggle');
+            const handle = document.getElementById('switch-handle');
+            
+            if (isShared) {
+                toggle.classList.remove('bg-outline-variant');
+                toggle.classList.add('bg-primary-container');
+                handle.classList.add('translate-x-5');
+                handle.classList.remove('translate-x-0');
+            } else {
+                toggle.classList.add('bg-outline-variant');
+                toggle.classList.remove('bg-primary-container');
+                handle.classList.remove('translate-x-5');
+                handle.classList.add('translate-x-0');
+            }
+        }
+
+        // Simple entrance animation for elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate-in');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    el.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

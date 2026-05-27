@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family &amp; Nominees</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #fcf8fa;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-tint": "#5d5c74",
+                    "primary-container": "#1a1a2e",
+                    "on-tertiary-fixed": "#231b02",
+                    "on-tertiary-container": "#493f20",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e5e1e3",
+                    "surface-container-low": "#f6f2f4",
+                    "on-primary-container": "#83829b",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#78767d",
+                    "on-secondary-container": "#5e6572",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#e2e0fc",
+                    "on-background": "#1c1b1d",
+                    "surface": "#fcf8fa",
+                    "on-surface-variant": "#47464c",
+                    "surface-dim": "#ddd9db",
+                    "surface-container": "#f1edef",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "inverse-primary": "#c6c4df",
+                    "secondary-container": "#dce2f3",
+                    "inverse-surface": "#313032",
+                    "background": "#fcf8fa",
+                    "tertiary-container": "#b9aa83",
+                    "surface-bright": "#fcf8fa",
+                    "secondary": "#585f6c",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#695d3c",
+                    "primary-fixed-dim": "#c6c4df",
+                    "inverse-on-surface": "#f4f0f2",
+                    "outline-variant": "#c8c5cd",
+                    "on-secondary-fixed-variant": "#404754",
+                    "secondary-fixed": "#dce2f3",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-container-high": "#ebe7e9",
+                    "on-surface": "#1c1b1d",
+                    "primary": "#00000b",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "huge": "64px",
+                    "lg": "24px",
+                    "mobile-margin": "24px",
+                    "xs": "8px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md": ["Geist"],
+                    "display": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background border-b border-surface-variant dark:border-on-surface-variant flex items-center justify-between px-mobile-margin h-touch-target-min w-full max-w-md mx-auto sticky top-0 z-40">
+<div class="flex items-center gap-xs">
+<button class="flex items-center justify-center w-touch-target-min h-touch-target-min text-primary dark:text-primary-fixed Active: opacity-80 transition-opacity duration-150" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Family &amp; Nominees</h1>
+</div>
+<div class="w-touch-target-min"></div> <!-- Spacer for symmetry -->
+</header>
+<main class="flex-1 w-full max-w-md mx-auto px-mobile-margin py-xl flex flex-col items-center">
+<!-- Readiness Signal & Section Header -->
+<div class="w-full mb-lg flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-tertiary-container animate-pulse"></div>
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-wider">Setup Required</p>
+</div>
+<!-- Hero Illustration / Visual Anchor (Glassmorphism & Pattern) -->
+<div class="relative w-full aspect-square mb-xl flex items-center justify-center">
+<!-- Background Decoration (Geometric Radical Reduction) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="w-full h-full border border-outline-variant rounded-full scale-125"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-outline-variant rounded-full"></div>
+</div>
+<!-- Central Visual Node -->
+<div class="relative z-10 w-64 h-64 bg-surface-container-lowest border border-surface-variant rounded-xl flex items-center justify-center ambient-shadow overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="A minimalist and high-end digital illustration of a multi-generational family silhouette, set against a soft, bright white minimalist background. The style is clean and professional, using fine hairline strokes and a limited palette of deep blacks and soft greys. The lighting is bright and ethereal, reflecting a modern light-mode enterprise OS aesthetic. The composition is centered and calm, conveying a sense of security and trust in an AI-native digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBbPveYrOFypGPPQBQ_l8HWc2lOKFHXN2gvnzSftEXbb42gmVyupeg-aQ7NHQbAbG2pFtAl-XpAhA08cOrRsu7svWC-Xu706HdlANAQLl89BnFzwKkE3u2Mw_6lcb5dGYJ9e3jpWGP9Rd1louvl6-t2_tABwhYVRO8hdgx47sFMB5YOMfBuAhFDxe5NaBJbUrapIBYQUDio4wrgqEXNkknKZRHqcbFlDjcJ8IUEmtrGGuUSEIBdfDUckRirLt5HCbbyGRzrFOqrnBG"/>
+<!-- Glassmorphism Overlay Label -->
+<div class="absolute bottom-md left-md right-md bg-white/70 backdrop-blur-md border border-white/40 p-sm rounded-lg">
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center">Your legacy starts here</p>
+</div>
+</div>
+<!-- Floating Ready Indicator -->
+<div class="absolute top-1/4 right-xs w-10 h-10 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center ambient-shadow">
+<span class="material-symbols-outlined" data-icon="family_history">family_history</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="w-full space-y-md text-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary leading-tight">Your family details set up your PF, insurance, and gratuity nominations.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">You enter this once — it flows everywhere. Keep your loved ones protected across all benefits.</p>
+</div>
+<!-- Primary Action -->
+<div class="w-full mt-huge">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold text-body-md-bold flex items-center justify-center gap-xs Active: scale-95 transition-transform duration-200 shadow-lg" onclick="window.location.href='../family_nominees_nominee_selection/code.html'">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                Add Family Member
+            </button>
+<p class="mt-md text-center font-label-sm text-label-sm text-outline">Takes about 2 minutes to complete.</p>
+</div>
+<!-- Contextual Information (DPDP Minimal Block) -->
+<div class="mt-xl p-md border border-surface-variant rounded-lg bg-surface-container-low w-full">
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-outline text-lg" data-icon="lock">lock</span>
+<div class="space-y-xs">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface">Privacy First</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">Your family data is encrypted and used only for statutory compliance and benefit administration as per DPDP guidelines.</p>
+</div>
+</div>
+</div>
+</main>
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-huge px-xs bg-surface dark:bg-on-background border-t border-surface-variant dark:border-on-surface-variant z-50">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors p-xs rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Tasks (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-label-sm-bold hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors p-xs rounded-lg" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<!-- Concierge -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors p-xs rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Concierge</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors p-xs rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions
+        document.querySelector('button').addEventListener('click', function() {
+            console.log('Navigating to Add Family Member flow');
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

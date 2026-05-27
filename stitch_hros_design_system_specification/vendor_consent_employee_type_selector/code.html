@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Geist', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .choice-card { padding:24px; border:2px solid #c8c5cd; border-radius:12px; cursor:pointer; transition:all 0.2s; margin-bottom:16px; }
+    .choice-card:hover { border-color:#00000b; background:#f5f5f5; }
+    .choice-card.selected { border-color:#00000b; background:#e2e0fc; }
+    .choice-icon { font-size:48px; margin-bottom:12px; }
+    .choice-title { font-weight:600; font-size:16px; color:#1c1b1d; margin-bottom:8px; }
+    .choice-desc { font-size:13px; color:#47464c; line-height:1.5; }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col" style="background:#fcf8fa; color:#1c1b1d;">
+
+<!-- Top App Bar with Back Button -->
+<header style="background:#fcf8fa; border-bottom:1px solid #c8c5cd;" class="w-full top-0 sticky z-40 flex justify-between items-center px-4 h-14">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+  <div class="flex-grow">
+    <h1 style="margin:0; font-size:18px;">Vendor Consent</h1>
+  </div>
+  <div style="width:40px;"></div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-grow px-6 pt-6 pb-24 hide-scrollbar overflow-y-auto">
+
+  <!-- Info Section -->
+  <div style="margin-bottom:24px;">
+    <h2 style="margin-bottom:12px;">Employment Type</h2>
+    <p class="body-regular" style="margin:0; line-height:1.6;">Please select your employment type. This will determine which vendors require your consent for data sharing.</p>
+  </div>
+
+  <!-- Choice Cards -->
+  <div class="choice-card" onclick="selectType(this, 'full-time')">
+    <div class="choice-icon">👨‍💼</div>
+    <div class="choice-title">Full-Time Employee</div>
+    <div class="choice-desc">You are a direct employee on the company payroll</div>
+    <div style="margin-top:12px; padding-top:12px; border-top:1px solid #e0e0e0;">
+      <div class="body-small">Requires consent for:</div>
+      <div class="body-small" style="margin-top:4px;">• Payroll providers</div>
+      <div class="body-small">• HR platforms</div>
+      <div class="body-small">• Compliance vendors</div>
+    </div>
+  </div>
+
+  <div class="choice-card" onclick="selectType(this, 'vendor')">
+    <div class="choice-icon">🤝</div>
+    <div class="choice-title">Contract / Vendor Role</div>
+    <div class="choice-desc">You are a contractor or service vendor</div>
+    <div style="margin-top:12px; padding-top:12px; border-top:1px solid #e0e0e0;">
+      <div class="body-small">Requires consent for:</div>
+      <div class="body-small" style="margin-top:4px;">• Vendor management systems</div>
+      <div class="body-small">• Invoice & payment platforms</div>
+      <div class="body-small">• Contract management tools</div>
+    </div>
+  </div>
+
+  <!-- Continue Button -->
+  <div style="position:fixed; bottom:72px; left:0; right:0; padding:16px; background:#fcf8fa; border-top:1px solid #c8c5cd;">
+    <button id="continue-btn" onclick="continueFlow()" disabled style="width:100%; padding:14px; background:#ccc; color:#999; border:none; border-radius:8px; font-weight:600; font-size:14px; cursor:not-allowed;">
+      Select employment type to continue
+    </button>
+  </div>
+
+  <div style="height:60px;"></div>
+
+</main>
+
+<!-- Bottom Nav Bar -->
+<nav style="position:fixed; bottom:0; left:0; width:100%; z-index:50; display:flex; justify-content:space-around; align-items:center; padding:12px 4px 12px; background:#fff; border-top:1px solid #c8c5cd; height:64px;">
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../journey_map_current_stage_expanded/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">route</span>
+    <span style="font-size:12px; margin-top:2px;">Journey</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../tasks_active_state/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">assignment</span>
+    <span style="font-size:12px; margin-top:2px;">Tasks</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../feed_active_content_mix/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">dynamic_feed</span>
+    <span style="font-size:12px; margin-top:2px;">Feed</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../ai_concierge_active_chat/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">auto_awesome</span>
+    <span style="font-size:12px; margin-top:2px;">AI</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../data_rights_pane/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">person</span>
+    <span style="font-size:12px; margin-top:2px;">You</span>
+  </a>
+</nav>
+
+<script>
+let selectedType = null;
+
+function selectType(element, type) {
+  // Remove previous selection
+  document.querySelectorAll('.choice-card').forEach(el => el.classList.remove('selected'));
+  // Add selection to current
+  element.classList.add('selected');
+  selectedType = type;
+
+  // Enable continue button
+  const btn = document.getElementById('continue-btn');
+  btn.disabled = false;
+  btn.style.background = '#00000b';
+  btn.style.color = '#fff';
+  btn.style.cursor = 'pointer';
+  btn.textContent = 'Continue as ' + (type === 'full-time' ? 'Full-Time Employee' : 'Contractor/Vendor');
+}
+
+function continueFlow() {
+  if (!selectedType) return;
+
+  // Route to appropriate vendor consent flow
+  if (selectedType === 'full-time') {
+    window.location.href = '../vendor_consent_all_pending/code.html';
+  } else {
+    // Could route to a different vendor list for contractors
+    window.location.href = '../vendor_consent_all_pending/code.html';
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+  <style>
+    * { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    body { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; font-family: 'Geist', sans-serif; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; font-family: 'Geist', sans-serif; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; font-family: 'Geist', sans-serif; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; font-family: 'Geist', sans-serif; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; font-family: 'Geist', sans-serif; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; font-family: 'Geist', sans-serif; }
+
+    .tab-button { padding: 12px 16px; border: none; background: transparent; cursor: pointer; font-weight: 500; font-size: 13px; color: #78767d; border-bottom: 2px solid transparent; transition: all 0.2s; }
+    .tab-button.active { color: #1c1b1d; border-bottom-color: #00000b; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .task-card { padding: 16px; background: #fff; border: 1px solid #c8c5cd; border-radius: 12px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s; display: flex; gap: 12px; }
+    .task-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .task-card.completed { opacity: 0.6; }
+
+    .task-checkbox { width: 24px; height: 24px; border: 2px solid #c8c5cd; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #fcf8fa; }
+    .task-card.completed .task-checkbox { background: #00000b; border-color: #00000b; }
+    .task-checkbox span { color: #fff; font-size: 14px; }
+
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; color: #1c1b1d; font-size: 14px; margin-bottom: 4px; }
+    .task-desc { font-size: 12px; color: #78767d; margin-bottom: 6px; }
+    .task-meta { display: flex; gap: 8px; }
+    .task-badge { padding: 2px 8px; font-size: 10px; border-radius: 4px; font-weight: 600; }
+    .task-badge.red { background: #ffebee; color: #d32f2f; }
+    .task-badge.yellow { background: #fff3e0; color: #f57c00; }
+
+    .task-arrow { display: flex; align-items: center; color: #78767d; }
+
+    .progress-section { background: #dce2f3; border: 1px solid #c6c4df; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+    .progress-label { font-size: 12px; color: #45455b; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
+    .progress-bar { height: 6px; background: #c6c4df; border-radius: 3px; overflow: hidden; margin-bottom: 4px; }
+    .progress-fill { height: 100%; background: #10b981; transition: width 0.3s; }
+    .progress-text { font-size: 12px; color: #1c1b1d; font-weight: 600; }
+
+    .fab { position: fixed; bottom: 88px; right: 16px; width: 56px; height: 56px; border-radius: 50%; background: #00000b; color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 40; transition: all 0.2s; }
+    .fab:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col" style="background:#fcf8fa; color:#1c1b1d;">
+
+<!-- Top App Bar -->
+<header style="background:#fcf8fa; border-bottom:1px solid #c8c5cd;" class="w-full top-0 sticky z-40 flex justify-between items-center px-4 h-14">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+  <div class="flex-grow">
+    <h1 style="margin:0; font-size:18px;">My Tasks</h1>
+  </div>
+  <div style="width:40px;"></div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-grow px-6 pt-4 pb-24 hide-scrollbar overflow-y-auto">
+
+  <!-- Tab Navigation -->
+  <div style="display:flex; border-bottom:1px solid #c8c5cd; margin:16px -6px 0 -6px; padding:0 6px; overflow-x:auto;">
+    <button class="tab-button active" onclick="switchTab(this, 'priority')">Priority Now</button>
+    <button class="tab-button" onclick="switchTab(this, 'before-joining')">Before Joining</button>
+    <button class="tab-button" onclick="switchTab(this, 'post-joining')">Post-Joining</button>
+    <button class="tab-button" onclick="switchTab(this, 'optional')">Optional</button>
+  </div>
+
+  <!-- PRIORITY NOW TAB -->
+  <div id="priority" class="tab-content active" style="margin-top:16px;">
+    <div class="progress-section">
+      <div class="progress-label">Required Before Day 1</div>
+      <div class="progress-bar"><div class="progress-fill" id="priority-fill" style="width:0%"></div></div>
+      <div class="progress-text"><span id="priority-count">0</span>/6 Complete</div>
+    </div>
+
+    <!-- Personal Information -->
+    <div class="task-card" onclick="navigateTo('data_capture_personal_records_category_a')">
+      <div class="task-checkbox" id="check-personal"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Personal Information</div>
+        <div class="task-desc">Name, DOB, address</div>
+        <div class="task-meta">
+          <span class="task-badge red">REQUIRED</span>
+          <span class="body-small">Due: Today</span>
+        </div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <!-- Work History -->
+    <div class="task-card" onclick="navigateTo('data_capture_previous_employment_category_c')">
+      <div class="task-checkbox" id="check-work"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Work History</div>
+        <div class="task-desc">Previous employers and roles</div>
+        <div class="task-meta">
+          <span class="task-badge red">REQUIRED</span>
+          <span class="body-small">Due: Today</span>
+        </div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <!-- Identity Verification -->
+    <div class="task-card" onclick="navigateTo('data_capture_identity_verification_category_f')">
+      <div class="task-checkbox" id="check-identity"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Identity Verification</div>
+        <div class="task-desc">Aadhaar, PAN, Passport</div>
+        <div class="task-meta">
+          <span class="task-badge red">REQUIRED</span>
+          <span class="body-small">Due: Today</span>
+        </div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <!-- BGV Consent -->
+    <div class="task-card" onclick="navigateTo('bgv_consent_state')">
+      <div class="task-checkbox" id="check-bgv"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Background Verification</div>
+        <div class="task-desc">Give BGV consent</div>
+        <div class="task-meta">
+          <span class="task-badge yellow">TIME-SENSITIVE</span>
+          <span class="body-small">Due: Sep 30</span>
+        </div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <!-- Document Signing -->
+    <div class="task-card" onclick="navigateTo('document_signing_queue_state')">
+      <div class="task-checkbox" id="check-docs"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Document Signing</div>
+        <div class="task-desc">Sign required documents</div>
+        <div class="task-meta">
+          <span class="task-badge yellow">TIME-SENSITIVE</span>
+          <span class="body-small">Due: Oct 10</span>
+        </div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <!-- Appointment Letter -->
+    <div class="task-card" onclick="navigateTo('appointment_letter_preview_consent')">
+      <div class="task-checkbox" id="check-letter"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Appointment Letter</div>
+        <div class="task-desc">Review and sign</div>
+        <div class="task-meta">
+          <span class="task-badge yellow">TIME-SENSITIVE</span>
+          <span class="body-small">Due: Oct 12</span>
+        </div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+  </div>
+
+  <!-- BEFORE JOINING TAB -->
+  <div id="before-joining" class="tab-content" style="margin-top:16px;">
+    <div class="progress-section">
+      <div class="progress-label">Complete Before Your Start Date</div>
+      <div class="progress-bar"><div class="progress-fill" id="before-fill" style="width:0%"></div></div>
+      <div class="progress-text"><span id="before-count">0</span>/10 Complete</div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('tax_setup_timing_preference')">
+      <div class="task-checkbox" id="check-tax"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Tax Setup</div>
+        <div class="task-desc">Configure tax regime and investments</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('family_nominees_empty_state')">
+      <div class="task-checkbox" id="check-family"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Family Nominees</div>
+        <div class="task-desc">Add beneficiary information</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('flexi_allocation_default_state')">
+      <div class="task-checkbox" id="check-flexi"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Flexi Allocation</div>
+        <div class="task-desc">Allocate flexible benefits</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('pf_nps_retirement_elections')">
+      <div class="task-checkbox" id="check-pf"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">PF & NPS Elections</div>
+        <div class="task-desc">Configure retirement savings</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('benefits_insurance_expanded_view')">
+      <div class="task-checkbox" id="check-benefits"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Benefits & Insurance</div>
+        <div class="task-desc">Enroll in health coverage</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('medical_insurance_coverage_dependents')">
+      <div class="task-checkbox" id="check-medical"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Medical Insurance Dependents</div>
+        <div class="task-desc">Add family members to coverage</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('salary_preview_review_window_open')">
+      <div class="task-checkbox" id="check-salary"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Salary Preview</div>
+        <div class="task-desc">Review and confirm salary</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('payroll_readiness_green_state_confirmed')">
+      <div class="task-checkbox" id="check-payroll"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Payroll Readiness</div>
+        <div class="task-desc">Confirm all payroll details</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('vendor_consent_employee_type_selector')">
+      <div class="task-checkbox" id="check-vendor"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Vendor Consent</div>
+        <div class="task-desc">Grant vendor data sharing permissions</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('policy_queue_pending_state')">
+      <div class="task-checkbox" id="check-policies"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Policies & POSH</div>
+        <div class="task-desc">Read and acknowledge policies</div>
+        <div class="task-meta"><span class="body-small">Due: Oct 12</span></div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+  </div>
+
+  <!-- POST-JOINING TAB -->
+  <div id="post-joining" class="tab-content" style="margin-top:16px;">
+    <div class="progress-section">
+      <div class="progress-label">Complete After Your Start Date</div>
+      <div class="progress-bar"><div class="progress-fill" id="post-fill" style="width:0%"></div></div>
+      <div class="progress-text"><span id="post-count">0</span>/4 Complete</div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('conflict_of_interest_declaration')">
+      <div class="task-checkbox" id="check-conflict"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Conflict of Interest</div>
+        <div class="task-desc">Declare any conflicts</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('legal_case_declaration')">
+      <div class="task-checkbox" id="check-legal"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Legal Declaration</div>
+        <div class="task-desc">Disclose any legal cases</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('bonus_clawback_terms_presentation')">
+      <div class="task-checkbox" id="check-clawback"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Bonus Clawback</div>
+        <div class="task-desc">Acknowledge clawback terms</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('post_joining_confirmation_review_window_open')">
+      <div class="task-checkbox" id="check-postjoin"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Post-Joining Confirmation</div>
+        <div class="task-desc">Finalize onboarding declaration</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+  </div>
+
+  <!-- OPTIONAL TAB -->
+  <div id="optional" class="tab-content" style="margin-top:16px;">
+    <div class="progress-section">
+      <div class="progress-label">Nice-to-Have Activities</div>
+      <div class="progress-bar"><div class="progress-fill" id="optional-fill" style="width:0%"></div></div>
+      <div class="progress-text"><span id="optional-count">0</span>/5 Complete</div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('equity_grant_active_review')">
+      <div class="task-checkbox" id="check-equity"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Equity Grant Review</div>
+        <div class="task-desc">Review your stock options</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('self_introduction_audience_selected')">
+      <div class="task-checkbox" id="check-intro"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Self Introduction</div>
+        <div class="task-desc">Share about yourself with the team</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('community_surfacing')">
+      <div class="task-checkbox" id="check-community"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Community Surfacing</div>
+        <div class="task-desc">Meet your team members</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('hrbp_session_upcoming_detail')">
+      <div class="task-checkbox" id="check-hrbp"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">HRBP Session</div>
+        <div class="task-desc">Connect with your HRBP</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+
+    <div class="task-card" onclick="navigateTo('pulse_survey_privacy_notice')">
+      <div class="task-checkbox" id="check-survey"><span class="material-symbols-outlined" style="font-size:14px; display:none;">check</span></div>
+      <div class="task-content">
+        <div class="task-title">Pulse Survey</div>
+        <div class="task-desc">Share your feedback</div>
+      </div>
+      <div class="task-arrow"><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+    </div>
+  </div>
+
+  <div style="height:24px;"></div>
+
+</main>
+
+<!-- AI Floating Action Button -->
+<button class="fab" onclick="window.top.openAIChat ? window.top.openAIChat('ai_concierge_active_chat') : alert('AI not available')">
+  <span class="material-symbols-outlined" style="font-size:28px;">auto_awesome</span>
+</button>
+
+<!-- Bottom Nav Bar -->
+<nav style="position:fixed; bottom:0; left:0; width:100%; z-index:50; display:flex; justify-content:space-around; align-items:center; padding:12px 4px 12px; background:#fff; border-top:1px solid #c8c5cd; height:64px;">
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; background:#e2e0fc; color:#1a1a2e; border-radius:8px; padding:8px 12px; text-decoration:none; flex:1; margin:0 2px;" href="../tasks_active_state/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px; font-variation-settings:'FILL' 1;">assignment</span>
+    <span style="font-size:12px; font-weight:600; margin-top:2px;">Tasks</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../feed_active_content_mix/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">dynamic_feed</span>
+    <span style="font-size:12px; margin-top:2px;">Feed</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../journey_map_current_stage_expanded/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">route</span>
+    <span style="font-size:12px; margin-top:2px;">Journey</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../data_rights_pane/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">person</span>
+    <span style="font-size:12px; margin-top:2px;">Profile</span>
+  </a>
+</nav>
+
+<script>
+// Task completion tracking
+const COMPLETED_TASKS = 'completed_tasks';
+
+function getCompletedTasks() {
+  const stored = localStorage.getItem(COMPLETED_TASKS);
+  return stored ? JSON.parse(stored) : [];
+}
+
+function markTaskComplete(taskId) {
+  const completed = getCompletedTasks();
+  if (!completed.includes(taskId)) {
+    completed.push(taskId);
+    localStorage.setItem(COMPLETED_TASKS, JSON.stringify(completed));
+  }
+  updateProgress();
+}
+
+function navigateTo(screenId) {
+  markTaskComplete(screenId);
+  window.location.href = '../' + screenId + '/code.html';
+}
+
+function switchTab(button, tab) {
+  document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  button.classList.add('active');
+  document.getElementById(tab).classList.add('active');
+}
+
+function updateProgress() {
+  const completed = getCompletedTasks();
+
+  // Priority tasks
+  const priorityTasks = ['data_capture_personal_records_category_a', 'data_capture_previous_employment_category_c', 'data_capture_identity_verification_category_f', 'bgv_consent_state', 'document_signing_queue_state', 'appointment_letter_preview_consent'];
+  const priorityComplete = priorityTasks.filter(t => completed.includes(t)).length;
+  document.getElementById('priority-count').textContent = priorityComplete;
+  document.getElementById('priority-fill').style.width = (priorityComplete / priorityTasks.length * 100) + '%';
+
+  // Before joining tasks
+  const beforeTasks = ['tax_setup_timing_preference', 'family_nominees_empty_state', 'flexi_allocation_default_state', 'pf_nps_retirement_elections', 'benefits_insurance_expanded_view', 'medical_insurance_coverage_dependents', 'salary_preview_review_window_open', 'payroll_readiness_green_state_confirmed', 'vendor_consent_employee_type_selector', 'policy_queue_pending_state'];
+  const beforeComplete = beforeTasks.filter(t => completed.includes(t)).length;
+  document.getElementById('before-count').textContent = beforeComplete;
+  document.getElementById('before-fill').style.width = (beforeComplete / beforeTasks.length * 100) + '%';
+
+  // Post joining tasks
+  const postTasks = ['conflict_of_interest_declaration', 'legal_case_declaration', 'bonus_clawback_terms_presentation', 'post_joining_confirmation_review_window_open'];
+  const postComplete = postTasks.filter(t => completed.includes(t)).length;
+  document.getElementById('post-count').textContent = postComplete;
+  document.getElementById('post-fill').style.width = (postComplete / postTasks.length * 100) + '%';
+
+  // Optional tasks
+  const optionalTasks = ['equity_grant_active_review', 'self_introduction_audience_selected', 'community_surfacing', 'hrbp_session_upcoming_detail', 'pulse_survey_privacy_notice'];
+  const optionalComplete = optionalTasks.filter(t => completed.includes(t)).length;
+  document.getElementById('optional-count').textContent = optionalComplete;
+  document.getElementById('optional-fill').style.width = (optionalComplete / optionalTasks.length * 100) + '%';
+
+  // Update checkboxes
+  document.querySelectorAll('.task-card').forEach(card => {
+    const screenId = card.getAttribute('onclick').match(/'([^']+)'/)[1];
+    const checkbox = card.querySelector('.task-checkbox span');
+    if (completed.includes(screenId)) {
+      card.classList.add('completed');
+      checkbox.style.display = 'inline';
+    } else {
+      card.classList.remove('completed');
+      checkbox.style.display = 'none';
+    }
+  });
+}
+
+// Initialize
+updateProgress();
+window.addEventListener('pageshow', updateProgress);
+</script>
+
+</body>
+</html>

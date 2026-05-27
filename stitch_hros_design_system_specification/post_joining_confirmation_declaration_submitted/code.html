@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS - Configuration Locked</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-primary-fixed-variant": "#45455b",
+                    "tertiary": "#695d3c",
+                    "primary-container": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#313032",
+                    "error": "#ba1a1a",
+                    "primary": "#00000b",
+                    "on-background": "#1c1b1d",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-container": "#83829b",
+                    "secondary": "#585f6c",
+                    "secondary-container": "#dce2f3",
+                    "inverse-on-surface": "#f4f0f2",
+                    "on-primary-fixed": "#1a1a2e",
+                    "surface-tint": "#5d5c74",
+                    "surface": "#fcf8fa",
+                    "primary-fixed": "#e2e0fc",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "surface-container-highest": "#e5e1e3",
+                    "outline": "#78767d",
+                    "on-tertiary-fixed": "#231b02",
+                    "inverse-primary": "#c6c4df",
+                    "secondary-fixed": "#dce2f3",
+                    "background": "#fcf8fa",
+                    "primary-fixed-dim": "#c6c4df",
+                    "outline-variant": "#c8c5cd",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#ddd9db",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-container": "#f1edef",
+                    "on-secondary-container": "#5e6572",
+                    "tertiary-container": "#b9aa83",
+                    "on-tertiary-container": "#493f20",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1c1b1d",
+                    "surface-container-low": "#f6f2f4",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed-dim": "#c0c7d6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "12px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "lg": "24px",
+                    "huge": "64px",
+                    "touch-target-min": "44px",
+                    "mobile-margin": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .lock-active {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .canvas-bg {
+            background-color: #f8f9fa;
+        }
+        .hairline-border {
+            border: 1px solid #E5E7EB;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-xxl">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-50 bg-background border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">HROS</h1>
+</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-outline" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-outline" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="max-w-[375px] mx-auto px-mobile-margin pt-lg space-y-lg">
+<!-- Success Banner -->
+<section class="bg-primary-container text-on-primary-container p-md rounded-xl flex items-center justify-between shadow-sm animate-pulse-subtle">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-body-md-bold text-body-md-bold">Configuration Locked ✓</span>
+</div>
+</section>
+<!-- Status Context -->
+<div class="flex flex-col gap-base">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Onboarding Progress</p>
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full w-4/5 bg-primary rounded-full"></div>
+</div>
+<div class="flex items-center gap-xs mt-base">
+<div class="w-[12px] h-[12px] rounded-full bg-[#10B981]"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Identity Verified &amp; Locked</span>
+</div>
+</div>
+<!-- Configuration Summary (Bento-style Grid) -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Tax Regime Card -->
+<div class="bg-surface-container-lowest hairline-border p-md rounded-lg opacity-80">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Taxation Regime</span>
+<h3 class="font-body-md-bold text-body-md-bold">New Tax Regime (FY 24-25)</h3>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container/30 px-xs py-base rounded">Optimized</span>
+</div>
+</div>
+<!-- Flexi Components Card -->
+<div class="bg-surface-container-lowest hairline-border p-md rounded-lg opacity-80">
+<div class="flex justify-between items-start mb-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Flexi-Benefit Allocation</span>
+<h3 class="font-body-md-bold text-body-md-bold">Annual Flexi: ₹1,42,000</h3>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center py-base border-b border-outline-variant/30">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant scale-75" data-icon="restaurant">restaurant</span>
+<span class="font-label-sm text-label-sm">Meal Pass</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">₹26,400</span>
+</div>
+<div class="flex justify-between items-center py-base border-b border-outline-variant/30">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant scale-75" data-icon="directions_car">directions_car</span>
+<span class="font-label-sm text-label-sm">Fuel &amp; Maintenance</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">₹48,000</span>
+</div>
+<div class="flex justify-between items-center py-base">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant scale-75" data-icon="devices">devices</span>
+<span class="font-label-sm text-label-sm">Gadget Allowance</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">₹67,600</span>
+</div>
+</div>
+</div>
+<!-- Nominee Details -->
+<div class="bg-surface-container-lowest hairline-border p-md rounded-lg opacity-80">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Primary Nominee</span>
+<h3 class="font-body-md-bold text-body-md-bold">Anita Sharma (Spouse)</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-base">Allocation: 100%</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+</div>
+<!-- Timeline / Status Section -->
+<section class="bg-surface-container-low p-lg rounded-xl border border-dashed border-outline-variant mt-lg">
+<div class="flex flex-col items-center text-center space-y-md">
+<div class="w-huge h-huge rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[32px] animate-pulse" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<div class="space-y-xs">
+<p class="font-body-md-bold text-body-md-bold text-on-surface">Submission Finalized</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Your configuration has been transmitted to HR. Changes are no longer permitted.</p>
+</div>
+<div class="bg-white px-md py-sm rounded-full border border-outline-variant">
+<span class="font-label-sm-bold text-label-sm-bold text-primary">Locked. Salary preview available by Oct 31.</span>
+</div>
+</div>
+</section>
+<!-- Compliance Block -->
+<div class="bg-surface-container-highest/30 p-md rounded-lg border border-outline-variant mt-lg">
+<div class="flex gap-sm items-start">
+<span class="material-symbols-outlined text-outline scale-75" data-icon="policy">policy</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                    This selection is digitally signed and compliant with the DPDP Act 2023. Data encryption ensures your financial choices are only accessible by authorized payroll entities.
+                </p>
+</div>
+</div>
+<!-- injected Continue CTA -->
+<div style="position:fixed;bottom:72px;left:0;right:0;padding:0 24px;z-index:100;">
+  <button onclick="window.location.href='../journey_map_current_stage_expanded/code.html'" style="width:100%;height:44px;background:#00000b;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+    Continue <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">arrow_forward</span>
+  </button>
+</div></main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-base pb-safe h-16 bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 scale-95 transition-transform duration-150 active:scale-90 hover:bg-surface-container" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 scale-95 transition-transform duration-150 active:scale-90" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 scale-95 transition-transform duration-150 active:scale-90 hover:bg-surface-container" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 scale-95 transition-transform duration-150 active:scale-90 hover:bg-surface-container" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 scale-95 transition-transform duration-150 active:scale-90 hover:bg-surface-container" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<!-- AI Concierge Trigger (Ambient Shadow applies) -->
+
+<script>
+        // Micro-interactions: Subtle parallax on cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.bg-surface-container-lowest');
+            const mouseX = (e.clientX / window.innerWidth) - 0.5;
+            const mouseY = (e.clientY / window.innerHeight) - 0.5;
+            
+            cards.forEach(card => {
+                card.style.transform = `translate(${mouseX * 5}px, ${mouseY * 5}px)`;
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

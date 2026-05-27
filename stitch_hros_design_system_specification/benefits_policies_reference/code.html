@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .accordion-content.expanded {
+            max-height: 1000px;
+            opacity: 1;
+        }
+        .chevron-rotate {
+            transition: transform 0.3s ease;
+        }
+        .expanded .chevron-rotate {
+            transform: rotate(180deg);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c6c4df",
+                        "primary-fixed-dim": "#c6c4df",
+                        "inverse-surface": "#313032",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-surface-variant": "#47464c",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#151c27",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dce2f3",
+                        "on-error": "#ffffff",
+                        "secondary": "#585f6c",
+                        "primary-container": "#1a1a2e",
+                        "on-secondary-container": "#5e6572",
+                        "surface-container-highest": "#e5e1e3",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-fixed": "#dce2f3",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-tint": "#5d5c74",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#1a1a2e",
+                        "surface-dim": "#ddd9db",
+                        "surface-container": "#f1edef",
+                        "on-tertiary-container": "#493f20",
+                        "surface-variant": "#e5e1e3",
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface": "#fcf8fa",
+                        "on-primary-container": "#83829b",
+                        "primary": "#00000b",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f6f2f4",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-background": "#1c1b1d",
+                        "outline-variant": "#c8c5cd",
+                        "outline": "#78767d",
+                        "tertiary": "#695d3c",
+                        "background": "#fcf8fa",
+                        "tertiary-container": "#b9aa83",
+                        "surface-container-high": "#ebe7e9",
+                        "primary-fixed": "#e2e0fc",
+                        "on-surface": "#1c1b1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "huge": "64px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "touch-target-min": "44px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "body-md-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-huge">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-background border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Benefits</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-on-surface-variant p-2 hover:opacity-80 transition-opacity duration-200" data-icon="search">search</span>
+</div>
+</header>
+<main class="px-mobile-margin py-lg space-y-lg">
+<!-- Header Banner Section -->
+<section class="space-y-sm">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 bg-green-500 rounded-full" title="System Ready"></span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-wider">All Systems Active</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Explore your perks, manage your leave, and access wellbeing resources tailored for your growth at HROS.
+            </p>
+</section>
+<!-- Benefit Categories -->
+<div class="space-y-md">
+<!-- Category 1: Medical Insurance -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden" onclick="toggleAccordion('med-ins')">
+<div class="p-md flex justify-between items-center cursor-pointer">
+<div class="space-y-base">
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Medical Insurance</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Comprehensive health coverage for you and your family</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant chevron-rotate" data-icon="expand_more" id="chevron-med-ins">expand_more</span>
+</div>
+<div class="accordion-content px-md pb-md" id="content-med-ins">
+<div class="pt-sm border-t border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Coverage details, TPA links, and digital health cards will appear here after enrollment verification.</p>
+</div>
+</div>
+</div>
+<!-- Category 2: Leave & Time Off (Expanded) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden" onclick="toggleAccordion('leave')">
+<div class="p-md flex justify-between items-center cursor-pointer">
+<div class="space-y-base">
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Leave &amp; Time Off</h3>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm-bold text-label-sm-bold text-primary">18 Days Available</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant chevron-rotate rotate-180" data-icon="expand_more" id="chevron-leave">expand_more</span>
+</div>
+<div class="accordion-content expanded px-md pb-md" id="content-leave">
+<div class="pt-sm border-t border-outline-variant space-y-lg">
+<!-- Section A -->
+<div class="space-y-xs">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase">What you have</p>
+<div class="bg-surface-container-low p-md rounded-lg border border-outline-variant/30">
+<p class="font-body-md text-body-md text-on-surface">
+                                    You have <span class="font-body-md-bold text-primary">18 earned leave days</span> per year. <span class="font-body-md-bold text-primary">1.5 days</span> accrue per month. Carry-forward limit: <span class="font-body-md-bold text-primary">30 days</span>.
+                                </p>
+</div>
+</div>
+<!-- Section B -->
+<div class="space-y-xs">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase">How to use it</p>
+<div class="space-y-sm">
+<div class="flex gap-md">
+<span class="w-6 h-6 flex items-center justify-center bg-primary text-on-primary rounded-full font-label-sm-bold text-label-sm-bold shrink-0">1</span>
+<p class="font-label-sm text-label-sm text-on-surface">Open the leave module (accessible <span class="font-label-sm-bold">post-Day-60</span>).</p>
+</div>
+<div class="flex gap-md">
+<span class="w-6 h-6 flex items-center justify-center bg-primary text-on-primary rounded-full font-label-sm-bold text-label-sm-bold shrink-0">2</span>
+<p class="font-label-sm text-label-sm text-on-surface">Select leave type and dates.</p>
+</div>
+<div class="flex gap-md">
+<span class="w-6 h-6 flex items-center justify-center bg-primary text-on-primary rounded-full font-label-sm-bold text-label-sm-bold shrink-0">3</span>
+<p class="font-label-sm text-label-sm text-on-surface">Your manager approves within <span class="font-label-sm-bold">2 working days</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 3: Provident Fund -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden" onclick="toggleAccordion('pf')">
+<div class="p-md flex justify-between items-center cursor-pointer">
+<div class="flex items-start gap-md">
+<div class="space-y-base">
+<div class="flex items-center gap-xs">
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Provident Fund (PF)</h3>
+<span class="w-2 h-2 bg-amber-500 rounded-full" title="Action Needed"></span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Long-term retirement savings and employer contribution</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant chevron-rotate" data-icon="expand_more" id="chevron-pf">expand_more</span>
+</div>
+<div class="accordion-content px-md pb-md" id="content-pf">
+<div class="pt-sm border-t border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Action required: Link your UAN to the portal to continue employer contributions.</p>
+<button class="mt-md h-touch-target-min px-lg bg-primary text-on-primary rounded-lg font-label-sm-bold text-label-sm-bold w-full">Update UAN Number</button>
+</div>
+</div>
+</div>
+<!-- Category 4: EAP Support -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden" onclick="toggleAccordion('eap')">
+<div class="p-md flex justify-between items-center cursor-pointer">
+<div class="space-y-base">
+<h3 class="font-body-md-bold text-body-md-bold text-primary">EAP Support</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Free and confidential mental health and wellbeing support</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant chevron-rotate" data-icon="expand_more" id="chevron-eap">expand_more</span>
+</div>
+<div class="accordion-content px-md pb-md" id="content-eap">
+<div class="pt-sm border-t border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Contact our 24/7 helpline at 1800-PULSE-OS for immediate support.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Holiday Calendar Section -->
+<section class="pt-xl border-t border-outline-variant/50 space-y-md">
+<h2 class="font-body-md-bold text-body-md-bold text-primary">Holiday Calendar</h2>
+<div class="space-y-sm">
+<!-- October (Current month) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden" onclick="toggleAccordion('oct-holidays')">
+<div class="p-md flex justify-between items-center cursor-pointer">
+<h4 class="font-label-sm-bold text-label-sm-bold text-primary uppercase">October</h4>
+<span class="material-symbols-outlined text-on-surface-variant chevron-rotate rotate-180" data-icon="expand_more" id="chevron-oct-holidays">expand_more</span>
+</div>
+<div class="accordion-content expanded px-md pb-md" id="content-oct-holidays">
+<ul class="divide-y divide-outline-variant/30">
+<li class="py-sm flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Gandhi Jayanti</span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Oct 2</span>
+</li>
+<li class="py-sm flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Dussehra</span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Oct 24</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- November -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden" onclick="toggleAccordion('nov-holidays')">
+<div class="p-md flex justify-between items-center cursor-pointer">
+<h4 class="font-label-sm-bold text-label-sm-bold text-primary uppercase">November</h4>
+<span class="material-symbols-outlined text-on-surface-variant chevron-rotate" data-icon="expand_more" id="chevron-nov-holidays">expand_more</span>
+</div>
+<div class="accordion-content px-md pb-md" id="content-nov-holidays">
+<ul class="divide-y divide-outline-variant/30">
+<li class="py-sm flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Diwali</span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Nov 12</span>
+</li>
+<li class="py-sm flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Guru Nanak Jayanti</span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Nov 27</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-base pb-safe h-16 bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 transition-transform duration-150 active:scale-90 cursor-pointer" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container px-3 py-1 transition-transform duration-150 active:scale-90 cursor-pointer" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container px-3 py-1 transition-transform duration-150 active:scale-90 cursor-pointer" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container px-3 py-1 transition-transform duration-150 active:scale-90 cursor-pointer" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container px-3 py-1 transition-transform duration-150 active:scale-90 cursor-pointer" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(`content-${id}`);
+            const chevron = document.getElementById(`chevron-${id}`);
+            const isExpanded = content.classList.contains('expanded');
+
+            // Close other accordions in the same group? 
+            // Optional, let's keep it simple as per requirement.
+
+            if (isExpanded) {
+                content.classList.remove('expanded');
+                chevron.classList.remove('rotate-180');
+            } else {
+                content.classList.add('expanded');
+                chevron.classList.add('rotate-180');
+            }
+        }
+
+        // Preventing parent click on button inside accordion
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => e.stopPropagation());
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

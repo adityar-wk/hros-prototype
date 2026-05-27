@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface-bright": "#fcf8fa",
+                        "primary-container": "#1a1a2e",
+                        "background": "#fcf8fa",
+                        "on-surface-variant": "#47464c",
+                        "tertiary": "#695d3c",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-container-high": "#ebe7e9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-low": "#f6f2f4",
+                        "on-secondary-container": "#5e6572",
+                        "surface-variant": "#e5e1e3",
+                        "tertiary-fixed": "#f2e1b7",
+                        "secondary-container": "#dce2f3",
+                        "primary-fixed": "#e2e0fc",
+                        "on-background": "#1c1b1d",
+                        "secondary": "#585f6c",
+                        "surface-tint": "#5d5c74",
+                        "outline": "#78767d",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#dce2f3",
+                        "surface-container-highest": "#e5e1e3",
+                        "primary": "#00000b",
+                        "on-tertiary-container": "#493f20",
+                        "surface-dim": "#ddd9db",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#83829b",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#313032",
+                        "surface": "#fcf8fa",
+                        "on-primary-fixed": "#1a1a2e",
+                        "surface-container": "#f1edef",
+                        "outline-variant": "#c8c5cd",
+                        "inverse-primary": "#c6c4df",
+                        "tertiary-container": "#b9aa83",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "on-secondary-fixed": "#151c27"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xs": "8px",
+                        "huge": "64px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "md": "16px",
+                        "sm": "12px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background border-b border-outline-variant z-40">
+<div class="flex justify-between items-center px-mobile-margin h-touch-target-min">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">HROS</h1>
+</div>
+<div class="flex items-center">
+<button class="p-2 hover:opacity-80 transition-opacity duration-200" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined text-outline" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content (Chat Canvas) -->
+<main class="flex-1 overflow-y-auto px-mobile-margin py-lg flex flex-col gap-lg pb-[180px]">
+<!-- Welcome Message -->
+<div class="flex flex-col gap-xs max-w-[85%] self-start">
+<div class="flex items-center gap-xs mb-1">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-wider">Concierge</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<p class="font-body-md text-body-md text-on-surface">Hi Arjun, I'm your Concierge. I'm here to help with your transition to HROS.</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline ml-1">10:42 AM</span>
+</div>
+<!-- Previous Message History Mock -->
+<div class="flex flex-col gap-xs max-w-[85%] self-end">
+<div class="bg-primary text-on-primary rounded-xl p-md">
+<p class="font-body-md text-body-md">Can you explain the new attendance policy?</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline self-end mr-1">10:45 AM</span>
+</div>
+<div class="flex flex-col gap-xs max-w-[85%] self-start">
+<div class="flex items-center gap-xs mb-1">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-wider">Concierge</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<p class="font-body-md text-body-md text-on-surface">Of course. HROS introduces a 15-minute grace period for daily clock-ins. Beyond this, a half-day deduction is applied unless approved by your manager.</p>
+<div class="mt-md pt-sm border-t border-outline-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]" data-icon="verified">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">Per your establishment's policy, v2.1</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline ml-1">10:46 AM</span>
+</div>
+<!-- Quick Action Chips Section -->
+<div class="flex flex-col gap-md mt-sm">
+<h3 class="font-label-sm-bold text-label-sm-bold text-outline">SUGGESTED ACTIONS</h3>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-xs rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container transition-colors duration-150 flex items-center gap-xs shadow-sm">
+<span class="font-label-sm text-label-sm text-primary">What happens next?</span>
+</button>
+<button class="px-md py-xs rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container transition-colors duration-150 flex items-center gap-xs shadow-sm">
+<span class="font-label-sm text-label-sm text-primary">When does data capture start?</span>
+</button>
+<button class="px-md py-xs rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container transition-colors duration-150 flex items-center gap-xs shadow-sm">
+<span class="font-label-sm text-label-sm text-primary">Who is my HRBP?</span>
+</button>
+</div>
+</div>
+</main>
+
+</div>
+<!-- Sticky Interaction Area -->
+<div class="fixed bottom-16 left-0 w-full bg-background/80 backdrop-blur-md px-mobile-margin pt-sm pb-lg z-40 flex flex-col gap-sm">
+<div class="relative flex items-center">
+<input class="w-full h-touch-target-min bg-surface-container-low border border-outline-variant rounded-xl px-md pr-12 focus:outline-none focus:border-primary transition-colors text-body-md font-body-md" placeholder="Ask anything about HROS..." type="text"/>
+<button class="absolute right-2 w-8 h-8 flex items-center justify-center bg-primary text-on-primary rounded-lg transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+</button>
+</div>
+<div class="flex items-center gap-xs self-center px-lg py-1 bg-surface-container border border-outline-variant rounded-full">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="info">info</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">DPDP Compliant Session</span>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center px-base pb-safe h-16">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-transform duration-150 scale-95 active:scale-90" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-transform duration-150 scale-95 active:scale-90" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-transform duration-150 scale-95 active:scale-90" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</button>
+<!-- AI (ACTIVE) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 transition-transform duration-150 scale-95 active:scale-90" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-transform duration-150 scale-95 active:scale-90" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for chips
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Future implementation for chip clicks
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
+

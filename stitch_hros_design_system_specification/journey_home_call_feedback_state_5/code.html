@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#5e6572",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#313032",
+                        "on-primary-container": "#83829b",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "primary-container": "#1a1a2e",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary-fixed": "#151c27",
+                        "primary-fixed": "#e2e0fc",
+                        "primary": "#00000b",
+                        "tertiary-fixed": "#f2e1b7",
+                        "tertiary-container": "#b9aa83",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary-container": "#493f20",
+                        "surface-container": "#f1edef",
+                        "on-primary-fixed": "#1a1a2e",
+                        "surface-container-low": "#f6f2f4",
+                        "on-error": "#ffffff",
+                        "background": "#fcf8fa",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-surface-variant": "#47464c",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "on-error-container": "#93000a",
+                        "secondary": "#585f6c",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "secondary-fixed": "#dce2f3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-tint": "#5d5c74",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1c1b1d",
+                        "secondary-container": "#dce2f3",
+                        "outline": "#78767d",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface-variant": "#e5e1e3",
+                        "surface-dim": "#ddd9db",
+                        "surface": "#fcf8fa",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "huge": "64px",
+                        "lg": "24px",
+                        "touch-target-min": "44px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Geist', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-background border-b border-outline-variant flex items-center justify-between px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC93Q7DkoIOovlvupyYdEolARGXILApq-V9Y_RpC2Up6SQYLUqAkubHmSHch3QG0PraPhgfTs4hLa9jV2xvI1iYhmpbZl986XOazQGkU_2TDXCkibCfhgsvCZDRug_IUMcJiv0wuVI2kCu5RtnlEc-5nQX6Xa_HmqEQQmetMALSttvzuyBvMuXfX4tlBn2KWvkeT_2X9hyMPd4ZhqZSg0q9fojBBXTyIV8lkSilyiJsQ8IbvsVAV9L04bRwQQJPztUoEArkYPZ9lVZo"/>
+</div>
+<span class="text-body-md-bold font-body-md-bold text-primary">HROS</span>
+</div>
+<button class="text-primary hover:bg-surface-container-low transition-colors p-xs rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="w-full max-w-[375px] px-mobile-margin py-lg flex flex-col gap-lg pb-huge">
+<!-- Welcome Message -->
+<section>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Good afternoon, Aarav</p>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-primary mt-base">Journey: Day 1</h1>
+</section>
+<!-- Feedback Card (Call Marked Complete State) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md transition-all duration-300 animate-in fade-in slide-in-from-top-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[#10B981]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md-bold font-body-md-bold">Siddharth Jain call — Done ✓</span>
+</div>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-xs">
+<p class="text-label-sm font-label-sm text-on-surface-variant">How did it go?</p>
+<div class="flex justify-between items-center px-base">
+<!-- Emoji Reactions -->
+<button class="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity active:scale-90">
+<span class="text-2xl">😫</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity active:scale-90">
+<span class="text-2xl">😕</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity active:scale-90">
+<span class="text-2xl">😐</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-100 transition-opacity active:scale-90">
+<span class="text-2xl">😊</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity active:scale-90">
+<span class="text-2xl">🤩</span>
+</button>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant px-base">
+<span>Struggled</span>
+<span>Excellent</span>
+</div>
+</div>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-sm text-label-sm font-label-sm focus:ring-1 focus:ring-primary focus:border-primary transition-all resize-none h-20 placeholder:text-on-surface-variant/50" placeholder="Anything you want to remember from the call?"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-sm rounded-lg text-label-sm-bold font-label-sm-bold active:scale-[0.98] transition-transform">
+                Save Note
+            </button>
+</section>
+<!-- Journey Map Visualization -->
+<section class="flex flex-col gap-md">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#10B981]"></div>
+<h2 class="text-body-md-bold font-body-md-bold">Today's Path</h2>
+</div>
+<!-- Timeline/Map -->
+<div class="relative pl-xs flex flex-col gap-huge">
+<!-- Vertical Line -->
+<div class="absolute left-[11px] top-4 bottom-4 w-[2px] bg-outline-variant"></div>
+<!-- Item 1: Complete -->
+<div class="relative flex items-start gap-lg">
+<div class="z-10 w-6 h-6 rounded-full bg-[#10B981] flex items-center justify-center border-4 border-background">
+<span class="material-symbols-outlined text-[12px] text-white" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-1 bg-surface-container-low/50 border border-outline-variant p-md rounded-xl opacity-60">
+<p class="text-label-sm font-label-sm text-on-surface-variant">09:00 AM</p>
+<p class="text-body-md-bold font-body-md-bold">Introductory Call</p>
+<p class="text-label-sm font-label-sm">Siddharth Jain, HRBP</p>
+</div>
+</div>
+<!-- Item 2: Active -->
+<div class="relative flex items-start gap-lg">
+<div class="z-10 w-6 h-6 rounded-full bg-primary flex items-center justify-center border-4 border-background ring-4 ring-primary/10">
+<div class="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest border border-primary p-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-base">
+<p class="text-label-sm font-label-sm text-primary">Next: 02:00 PM</p>
+<span class="bg-primary-container text-on-primary-container px-xs py-[2px] rounded-full text-[10px] font-bold">LIVE</span>
+</div>
+<p class="text-body-md-bold font-body-md-bold">Compliance Module</p>
+<p class="text-label-sm font-label-sm">4 modules remaining • 15m</p>
+<div class="mt-md w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="w-1/4 h-full bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Item 3: Upcoming -->
+<div class="relative flex items-start gap-lg opacity-40">
+<div class="z-10 w-6 h-6 rounded-full bg-outline-variant flex items-center justify-center border-4 border-background">
+</div>
+<div class="flex-1 bg-surface-container-low/30 border border-outline-variant border-dashed p-md rounded-xl">
+<p class="text-label-sm font-label-sm">04:30 PM</p>
+<p class="text-body-md-bold font-body-md-bold">Team Intro</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tasks Bento -->
+<section class="grid grid-cols-2 gap-md">
+<div class="col-span-2 border border-outline-variant rounded-xl p-md bg-surface-container-lowest">
+<div class="flex justify-between items-center mb-sm">
+<h3 class="text-body-md-bold font-body-md-bold">Pending Tasks</h3>
+<span class="text-label-sm font-label-sm text-primary">View all</span>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-md p-xs hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer">
+<div class="w-touch-target-min h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="description">description</span>
+</div>
+<div>
+<p class="text-body-md font-body-md">Sign DPDP Consent</p>
+<p class="text-label-sm font-label-sm text-error">Action Needed</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-sm py-xs bg-surface border-t border-outline-variant z-50 rounded-t-xl shadow-[0_-4px_12px_rgba(0,0,0,0.02)]">
+<!-- Journey (Active) -->
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl p-xs transition-all" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" data-icon="route" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="text-label-sm-bold font-label-sm-bold">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="text-label-sm-bold font-label-sm-bold">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="text-label-sm-bold font-label-sm-bold">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-label-sm-bold font-label-sm-bold">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-sm-bold font-label-sm-bold">You</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for feedback emojis
+        document.querySelectorAll('.flex.justify-between.items-center button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Reset all
+                document.querySelectorAll('.flex.justify-between.items-center button').forEach(b => b.style.opacity = '0.4');
+                // Highlight selected
+                this.style.opacity = '1';
+                this.classList.add('scale-125');
+                setTimeout(() => this.classList.remove('scale-125'), 200);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for minimalist look */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e5e1e3; border-radius: 10px; }
+        
+        .loading-shimmer {
+            background: linear-gradient(90deg, #f1edef 25%, #e5e1e3 50%, #f1edef 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#5d5c74",
+                        "primary-fixed": "#e2e0fc",
+                        "secondary-container": "#dce2f3",
+                        "on-tertiary-container": "#493f20",
+                        "on-secondary-container": "#5e6572",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#83829b",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface": "#fcf8fa",
+                        "surface-container-high": "#ebe7e9",
+                        "inverse-primary": "#c6c4df",
+                        "surface-bright": "#fcf8fa",
+                        "primary": "#00000b",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#1a1a2e",
+                        "inverse-on-surface": "#f4f0f2",
+                        "secondary-fixed": "#dce2f3",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-surface-variant": "#47464c",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1c1b1d",
+                        "outline": "#78767d",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-secondary-fixed-variant": "#404754",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#ddd9db",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary-container": "#b9aa83",
+                        "background": "#fcf8fa",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "secondary": "#585f6c",
+                        "inverse-surface": "#313032",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-background": "#1c1b1d",
+                        "surface-container": "#f1edef",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f6f2f4",
+                        "tertiary": "#695d3c",
+                        "primary-container": "#1a1a2e",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "mobile-margin": "24px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "huge": "64px",
+                        "sm": "12px",
+                        "lg": "24px",
+                        "xxl": "48px",
+                        "xs": "8px",
+                        "touch-target-min": "44px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-huge">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant flex items-center justify-between px-lg h-huge">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<button class="material-symbols-outlined text-primary active:opacity-80">menu</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Identity Verification</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a corporate employee for a user profile avatar. The lighting is bright and airy with a neutral studio background, maintaining a minimalist-professional aesthetic consistent with a modern Indian enterprise operating system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk-vJ8ZL3zqGIBff4wo8uKJ75Cq4RWOyo5gXrwh2WCueEvjBPQhL1IwaQk792OkP87Is_8O_E-TTHy_0N6QBEFKDWHsreKsFCXIVedb8YT708SVkayL4HIgthD6migqqUr4-Kd1nb3q0sH_55UBvCX8T-2OjSjzMY4ng27x4yw-Z9HmS9KzpLZoeplTsgaKLlP2NeTtD0dziTaM5TLWqfu32l-bs7xv_SLRtKgWtv8KGE2XqRoIvatOPfkxE1j2WlD5xMSth7p9UrW"/>
+</div>
+</header>
+<main class="pt-huge px-mobile-margin max-w-md mx-auto">
+<!-- Progress and Status -->
+<div class="mt-lg mb-xl">
+<div class="flex justify-between items-end mb-xs">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="bg-tertiary-container text-on-tertiary-container px-sm py-1 rounded-full font-label-sm-bold text-label-sm-bold">In Progress</span>
+</div>
+<span class="text-on-surface-variant font-label-sm text-label-sm">40% Complete</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-700 ease-out" style="width: 40%;"></div>
+</div>
+</div>
+<!-- Header Content -->
+<section class="mb-xl">
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                Your identity documents enable payroll, PF, statutory filings, and bank account verification.
+            </p>
+</section>
+<!-- DPDP Consent Block -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md mb-xl">
+<div class="flex items-start gap-md">
+<div class="pt-1">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" id="dpdp-consent" type="checkbox"/>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant leading-tight" for="dpdp-consent">
+                    I consent to the collection and processing of my PAN and Aadhaar data for employment verification as per the <span class="text-primary font-label-sm-bold underline">Digital Personal Data Protection (DPDP) Act</span>. I understand this data is stored securely.
+                </label>
+</div>
+</div>
+<!-- Verification Form -->
+<form class="space-y-xl" id="identity-form">
+<!-- PAN Section -->
+<div class="space-y-md">
+<label class="block font-body-md-bold text-body-md-bold text-on-surface">PAN Number</label>
+<input class="w-full h-touch-target-min px-md rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-0 font-body-md placeholder:text-outline transition-colors" maxlength="10" placeholder="ABCDE1234F" type="text"/>
+<!-- Upload Zone PAN -->
+<div class="grid grid-cols-2 gap-md">
+<button class="flex flex-col items-center justify-center p-md border border-dashed border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors group" type="button">
+<span class="material-symbols-outlined text-primary mb-xs">camera_alt</span>
+<span class="font-label-sm text-label-sm">Capture Photo</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md border border-dashed border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors group" type="button">
+<span class="material-symbols-outlined text-primary mb-xs">upload_file</span>
+<span class="font-label-sm text-label-sm">DigiLocker PDF</span>
+</button>
+</div>
+</div>
+<!-- Aadhaar Section -->
+<div class="space-y-md">
+<div class="flex justify-between items-center">
+<label class="block font-body-md-bold text-body-md-bold text-on-surface">Aadhaar Number</label>
+<span class="w-3 h-3 rounded-full bg-error"></span>
+</div>
+<input class="w-full h-touch-target-min px-md rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-0 font-body-md placeholder:text-outline transition-colors" maxlength="14" placeholder="XXXX XXXX XXXX" type="text"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-70 italic">Note: Only the last 4 digits of your Aadhaar number will be visible after you submit.</p>
+<!-- Upload Zone Aadhaar -->
+<div class="grid grid-cols-2 gap-md">
+<button class="flex flex-col items-center justify-center p-md border border-dashed border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors group" type="button">
+<span class="material-symbols-outlined text-primary mb-xs">camera_alt</span>
+<span class="font-label-sm text-label-sm">Capture Photo</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md border border-dashed border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors group" type="button">
+<span class="material-symbols-outlined text-primary mb-xs">cloud_download</span>
+<span class="font-label-sm text-label-sm">Fetch from DigiLocker</span>
+</button>
+</div>
+</div>
+<!-- Interaction State: Verifying (Hidden by default) -->
+<div class="hidden p-lg bg-surface-container-low rounded-xl border border-outline-variant flex items-center gap-lg" id="verifying-state">
+<div class="w-10 h-10 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+<div>
+<h4 class="font-body-md-bold text-body-md-bold text-primary">Verifying...</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Real-time API check with NSDL and UIDAI in progress.</p>
+</div>
+</div>
+<!-- Interaction State: Error (Example) -->
+<div class="hidden p-md bg-error-container border border-error rounded-xl flex items-start gap-md" id="error-state">
+<span class="material-symbols-outlined text-error">error</span>
+<div>
+<p class="font-label-sm-bold text-label-sm-bold text-on-error-container">Invalid Format</p>
+<p class="font-label-sm text-label-sm text-on-error-container opacity-80">The PAN number entered does not match the expected pattern (e.g., ABCDE1234F).</p>
+</div>
+</div>
+<!-- Interaction State: Success (Example) -->
+<div class="hidden p-md bg-secondary-container border border-outline-variant rounded-xl flex items-center justify-between" id="success-state">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md-bold text-body-md-bold text-on-secondary-container">KYC Documents Verified</span>
+</div>
+<span class="bg-surface-container-lowest px-sm py-1 rounded-full text-label-sm-bold font-label-sm-bold text-primary">Secure</span>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-huge bg-primary text-on-primary rounded-xl font-body-md-bold flex items-center justify-center gap-md active:scale-95 transition-transform" onclick="window.top.goTo('journey_map_current_stage_expanded')" type="button">
+                Submit and Verify
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center h-huge px-md pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-colors hover:bg-surface-container-high p-xs rounded-lg" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-label-sm-bold transition-colors p-xs rounded-lg bg-surface-container-high" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-colors hover:bg-surface-container-high p-xs rounded-lg" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-colors hover:bg-surface-container-high p-xs rounded-lg" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-colors hover:bg-surface-container-high p-xs rounded-lg" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</button>
+</nav>
+<script>
+        function triggerVerification() {
+            const form = document.getElementById('identity-form');
+            const verifying = document.getElementById('verifying-state');
+            const error = document.getElementById('error-state');
+            const success = document.getElementById('success-state');
+            const submitBtn = form.querySelector('button[type="button"]');
+
+            // Toggle UI states to simulate API call
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-50');
+            verifying.classList.remove('hidden');
+            error.classList.add('hidden');
+            success.classList.add('hidden');
+
+            // Simulate real-time API delay
+            setTimeout(() => {
+                verifying.classList.add('hidden');
+                
+                // Demo logic: If field is empty, show error, else show success
+                const panInput = form.querySelector('input[placeholder="ABCDE1234F"]').value;
+                if (!panInput || panInput.length < 10) {
+                    error.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-50');
+                } else {
+                    success.classList.remove('hidden');
+                    submitBtn.textContent = "Verified Successfully";
+                    submitBtn.classList.add('bg-secondary', 'text-on-secondary');
+                }
+            }, 2500);
+        }
+
+        // Masking Aadhaar input simulation
+        const aadhaarInput = document.querySelector('input[placeholder="XXXX XXXX XXXX"]');
+        aadhaarInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            let formatted = '';
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) formatted += ' ';
+                formatted += value[i];
+            }
+            e.target.value = formatted;
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

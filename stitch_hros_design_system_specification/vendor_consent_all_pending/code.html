@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DPDP Vendor Consent Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-toggle:checked + .toggle-dot {
+            transform: translateX(100%);
+            background-color: white;
+        }
+        .custom-toggle:checked + .toggle-bg {
+            background-color: #00000b;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e5e1e3",
+                      "surface-dim": "#ddd9db",
+                      "on-primary-container": "#83829b",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "on-secondary-fixed-variant": "#404754",
+                      "surface-container-high": "#ebe7e9",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#231b02",
+                      "background": "#fcf8fa",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#695d3c",
+                      "outline-variant": "#c8c5cd",
+                      "primary-container": "#1a1a2e",
+                      "inverse-primary": "#c6c4df",
+                      "on-primary-fixed": "#1a1a2e",
+                      "on-secondary-container": "#5e6572",
+                      "secondary": "#585f6c",
+                      "primary": "#00000b",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#313032",
+                      "on-surface-variant": "#47464c",
+                      "tertiary-container": "#b9aa83",
+                      "on-primary-fixed-variant": "#45455b",
+                      "tertiary-fixed": "#f2e1b7",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1c1b1d",
+                      "surface-container-low": "#f6f2f4",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#f1edef",
+                      "on-tertiary-container": "#493f20",
+                      "surface-container-highest": "#e5e1e3",
+                      "surface": "#fcf8fa",
+                      "on-background": "#1c1b1d",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#dce2f3",
+                      "primary-fixed-dim": "#c6c4df",
+                      "outline": "#78767d",
+                      "inverse-on-surface": "#f4f0f2",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-secondary-fixed": "#151c27",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "primary-fixed": "#e2e0fc",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#dce2f3",
+                      "surface-tint": "#5d5c74"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "touch-target-min": "44px",
+                      "xs": "8px",
+                      "base": "4px",
+                      "mobile-margin": "24px",
+                      "xxl": "48px",
+                      "sm": "12px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "huge": "64px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display": ["Geist"],
+                      "label-sm-bold": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "body-md-bold": ["Geist"]
+              },
+              "fontSize": {
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 bg-background dark:bg-background border-b border-outline-variant z-50">
+<div class="flex items-center px-mobile-margin h-touch-target-min w-full max-w-7xl mx-auto">
+<button aria-label="Back" class="mr-md transition-colors duration-200 active:opacity-80" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Tasks</h1>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-mobile-margin py-lg pb-huge">
+<!-- Header Text -->
+<section class="mb-xl">
+<div class="flex items-center gap-xs mb-sm">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-error uppercase tracking-wider">Action Needed</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                Here are the organisations outside <span class="font-body-md-bold text-body-md-bold">Nexus Labs</span> that will handle your personal data. Your consent for each is separate.
+            </p>
+</section>
+<!-- Vendor List -->
+<div class="space-y-md">
+<!-- Vendor Card 1 -->
+<article class="bg-surface-container-lowest border border-outline-variant p-md rounded-lg transition-all active:scale-[0.99]">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">AuthBridge</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Category: BGV (Background Verification)</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer custom-toggle" onchange="toggleButtonState()" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer toggle-bg transition-colors duration-300"></div>
+<div class="absolute left-1 top-1 w-4 h-4 bg-outline rounded-full transition-transform duration-300 toggle-dot"></div>
+</label>
+</div>
+<div class="space-y-sm mb-md">
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface block mb-base">Shared data</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Employment history, Education, and Identity records.</p>
+</div>
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface block mb-base">Purpose</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">To verify your professional background for employment eligibility.</p>
+</div>
+</div>
+<a class="font-label-sm-bold text-label-sm-bold text-primary underline underline-offset-4 flex items-center gap-xs" href="#">
+                    Vendor Privacy Summary
+                    <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</article>
+<!-- Vendor Card 2 -->
+<article class="bg-surface-container-lowest border border-outline-variant p-md rounded-lg transition-all active:scale-[0.99]">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">MediBuddy</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Category: Insurance TPA</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer custom-toggle" onchange="toggleButtonState()" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer toggle-bg transition-colors duration-300"></div>
+<div class="absolute left-1 top-1 w-4 h-4 bg-outline rounded-full transition-transform duration-300 toggle-dot"></div>
+</label>
+</div>
+<div class="space-y-sm mb-md">
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface block mb-base">Shared data</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Employment history, Education, and Identity records.</p>
+</div>
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface block mb-base">Purpose</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">To verify your professional background for employment eligibility.</p>
+</div>
+</div>
+<a class="font-label-sm-bold text-label-sm-bold text-primary underline underline-offset-4 flex items-center gap-xs" href="#">
+                    Vendor Privacy Summary
+                    <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</article>
+<!-- Vendor Card 3 -->
+<article class="bg-surface-container-lowest border border-outline-variant p-md rounded-lg transition-all active:scale-[0.99]">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">RazorpayX</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Category: Payroll</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer custom-toggle" onchange="toggleButtonState()" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer toggle-bg transition-colors duration-300"></div>
+<div class="absolute left-1 top-1 w-4 h-4 bg-outline rounded-full transition-transform duration-300 toggle-dot"></div>
+</label>
+</div>
+<div class="space-y-sm mb-md">
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface block mb-base">Shared data</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Employment history, Education, and Identity records.</p>
+</div>
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface block mb-base">Purpose</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">To verify your professional background for employment eligibility.</p>
+</div>
+</div>
+<a class="font-label-sm-bold text-label-sm-bold text-primary underline underline-offset-4 flex items-center gap-xs" href="#">
+                    Vendor Privacy Summary
+                    <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</article>
+</div>
+<!-- DPDP Compliance Section -->
+<section class="mt-xl border-t border-outline-variant pt-lg">
+<div class="p-md bg-surface-container-low rounded-lg mb-lg">
+<h3 class="font-label-sm-bold text-label-sm-bold text-on-surface mb-xs">DPDP Consent Block</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                    By providing your consent, you acknowledge that you have read the Vendor Privacy Summaries and agree to the processing of your personal data as described. You may withdraw your consent at any time through the Privacy Settings.
+                </p>
+<div class="flex items-start gap-md mt-md">
+<input class="w-5 h-5 rounded border-outline focus:ring-0 text-primary mt-base" id="dpdp-confirm" onchange="toggleButtonState()" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface" for="dpdp-confirm">
+                        I confirm that I have reviewed the data sharing arrangements and voluntarily provide my consent.
+                    </label>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-[72px] left-0 w-full bg-surface border-t border-outline-variant px-mobile-margin py-md z-40">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold text-body-md-bold rounded-lg disabled:opacity-30 disabled:grayscale transition-all active:scale-[0.98]" disabled="" id="save-btn">
+            Save my consent preferences
+        </button>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 border-t border-outline-variant flex justify-around items-center px-xs py-base bg-surface dark:bg-surface">
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm hover:bg-surface-container-low transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-label-sm-bold hover:bg-surface-container-low transition-all duration-200 active:scale-95" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm hover:bg-surface-container-low transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-sm text-label-sm">Docs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm hover:bg-surface-container-low transition-all duration-200 active:scale-95" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-label-sm text-label-sm">AI Hub</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm hover:bg-surface-container-low transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- AI Concierge Trigger -->
+<button class="fixed bottom-32 right-md w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center z-40 transition-transform active:scale-90" style="box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+<script>
+        function toggleButtonState() {
+            const toggles = document.querySelectorAll('.custom-toggle');
+            const dpdpConfirm = document.getElementById('dpdp-confirm');
+            const saveBtn = document.getElementById('save-btn');
+            
+            let anyToggleChecked = Array.from(toggles).some(t => t.checked);
+            
+            if (anyToggleChecked && dpdpConfirm.checked) {
+                saveBtn.disabled = false;
+            } else {
+                saveBtn.disabled = true;
+            }
+        }
+    </script>
+<script src="../nav.js"></script>
+</body></html>

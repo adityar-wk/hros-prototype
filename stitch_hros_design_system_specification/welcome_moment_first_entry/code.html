@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@import url(https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap);
+body {
+    font-family: "Geist", sans-serif;
+    background-color: #fcf8fa;
+    color: #1c1b1d;
+    overflow-x: hidden
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+.ambient-glow {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    background: radial-gradient(circle at center, rgba(198, 196, 223, 0.15) 0%, rgba(252, 248, 250, 0) 70%);
+    z-index: -1;
+    pointer-events: none
+    }
+.fade-in {
+    animation: fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards
+    }
+.slide-up {
+    opacity: 0;
+    transform: translatey(20px);
+    animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards
+    }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        } to {
+        opacity: 1;
+        }
+    }
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        } to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+.hairline-border {
+    border: 1px solid #e5e1e3
+    }
+.noise-texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.02;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBQzqbz9UdyzokRqb6mWk1BgbiuYrWaE3XlNSWNQa3VIVpBn0OZTA6-dgdQDkmYUTxiZ8XSCERQ83WFK1cpVsBQKbSr2sAsrBj1cL2Kh-Xdmx6BNf_KJ49osY1ojCIM_AXI_-ubzo-4hm-ITOaF_j_h8kJBhPl9pehlBgxnhluJaIWf2LFWQ1EimOolYf50heSbPaFeGOpQucVDDT766x_PDcuzoB3dgztcQZh9_wMZg5urT_KqXmLlEPOrkBo1YCGqMJLcHojBLYRa)
+    }
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#151c27",
+                        "surface-dim": "#ddd9db",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf8fa",
+                        "background": "#fcf8fa",
+                        "primary-fixed": "#e2e0fc",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#695d3c",
+                        "secondary-fixed": "#dce2f3",
+                        "secondary": "#585f6c",
+                        "on-background": "#1c1b1d",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#47464c",
+                        "inverse-surface": "#313032",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-bright": "#fcf8fa",
+                        "inverse-primary": "#c6c4df",
+                        "primary": "#00000b",
+                        "outline-variant": "#c8c5cd",
+                        "secondary-container": "#dce2f3",
+                        "on-primary-container": "#83829b",
+                        "on-surface": "#1c1b1d",
+                        "on-tertiary-container": "#493f20",
+                        "tertiary-fixed": "#f2e1b7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f1edef",
+                        "on-secondary-container": "#5e6572",
+                        "on-primary-fixed-variant": "#45455b",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "on-secondary-fixed-variant": "#404754",
+                        "outline": "#78767d",
+                        "surface-container-high": "#ebe7e9",
+                        "tertiary-container": "#b9aa83",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-low": "#f6f2f4",
+                        "primary-container": "#1a1a2e",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#5d5c74"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "mobile-margin": "24px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "touch-target-min": "44px",
+                        "sm": "12px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "huge": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col justify-center items-center px-mobile-margin py-huge relative overflow-hidden">
+<div class="ambient-glow"></div>
+<div class="noise-texture"></div>
+<!-- Header Section -->
+<header class="w-full max-w-sm text-center mb-huge fade-in">
+<div class="flex justify-center mb-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">signal_cellular_alt</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary px-sm tracking-tight">
+            Arjun. Here's your journey from today through Day 60.
+        </h1>
+</header>
+<!-- Hero Identity Card -->
+<main class="w-full max-w-sm slide-up">
+<div class="bg-surface-container-lowest hairline-border rounded-xl p-lg flex flex-col gap-lg shadow-sm">
+<!-- User Profile Quick View -->
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 rounded-full overflow-hidden hairline-border">
+<img alt="Arjun profile" class="w-full h-full object-cover" data-alt="A professional studio portrait of a modern Indian male professional in his late 20s. He has a clean-cut look and is wearing a minimalist dark grey charcoal polo shirt. The background is a soft, out-of-focus modern office environment with warm morning sunlight filtering through large glass windows. The lighting is soft and flattering, emphasizing a mood of confident quiet efficiency and readiness for a new career journey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx6nStjzPTtmhDFTtzsDLhCSfxT7LYrw1EhFH_AjY_p-5BDwSGPOU9PyxFuhJTHiUhjCUo_kIa68f_eWEIzvOuh1b-uX8cevAB95rejTE-DzOXV0rkdSXL25Qc_sZB1DTRW_Xo_1f9A_sfCoVOxmMVjlF3659EO8lxVL38Pu3PdvT9-AsquUII8oE-pAWuqZo96Hsrz5iW3CG8K5z-edHEf086FWp2wHfdD6K41OrddsEy-KwDANGUDbz-3MhRXyQ_b3y9Ums-PhZF"/>
+</div>
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">Arjun K.</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Senior Product Designer</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<!-- Detail Row 1 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">calendar_today</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Start Date</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface">Oct 15, 2024</span>
+</div>
+<!-- Detail Row 2 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">badge</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reports to</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface">Siddharth V.</span>
+</div>
+<!-- Detail Row 3 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">location_on</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Location</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface">Bangalore</span>
+</div>
+</div>
+<!-- Readiness Signal Bar -->
+<div class="mt-xs pt-md border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-[#10b981]"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">System Ready</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-surface-container-lowest bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-primary-fixed">psychology</span>
+</div>
+<div class="w-6 h-6 rounded-full border border-surface-container-lowest bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-secondary-fixed">rocket_launch</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Call to Action -->
+<footer class="w-full max-w-sm mt-xl slide-up" style="animation-delay: 0.5s;">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold text-body-md-bold transition-transform duration-200 active:scale-95 flex items-center justify-center gap-sm group" onclick="handleTransition()">
+            Get Started
+            <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</button>
+<p class="text-center mt-md font-label-sm text-label-sm text-outline px-lg">
+            By continuing, you acknowledge the Indian DPDP compliance protocols for data privacy.
+        </p>
+</footer>
+<!-- AI Concierge Presence -->
+<div class="fixed bottom-8 right-8 slide-up" style="animation-delay: 0.8s;">
+<div class="w-12 h-12 bg-white hairline-border rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<script>
+        function handleTransition() {
+            const body = document.body;
+            body.style.transition = 'opacity 0.5s ease-out';
+            body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = '../journey_map_current_stage_expanded/code.html';
+            }, 500);
+        }
+
+        // Lightweight parallax effect for the glow
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.ambient-glow');
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            glow.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .journey-line {
+            background: repeating-linear-gradient(to bottom, #c8c5cd 0, #c8c5cd 4px, transparent 4px, transparent 8px);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f2e1b7",
+                        "primary": "#00000b",
+                        "on-surface-variant": "#47464c",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary-fixed": "#231b02",
+                        "background": "#fcf8fa",
+                        "outline-variant": "#c8c5cd",
+                        "tertiary-container": "#b9aa83",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1edef",
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#78767d",
+                        "on-secondary-container": "#5e6572",
+                        "on-primary-fixed-variant": "#45455b",
+                        "primary-fixed-dim": "#c6c4df",
+                        "secondary-container": "#dce2f3",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2e0fc",
+                        "surface-container-high": "#ebe7e9",
+                        "surface": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#404754",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-background": "#1c1b1d",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-primary-container": "#83829b",
+                        "surface-tint": "#5d5c74",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed": "#dce2f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#151c27",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "primary-container": "#1a1a2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "huge": "64px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min w-full fixed z-50">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a young employee for a corporate profile. The setting is a bright, modern office with soft daylight and a clean, minimalist background. The lighting is flattering and high-key, maintaining the light-mode professional aesthetic of the enterprise portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9N8x2DZEGXeW0ITVoqWomwiR4VKvwv5fA34uXbU-ytR-uhQEuk1rEXTwpMzTaFCAwoqevEmMhww4DmwkLma4Ml68kRk0nuADs7ka1Eto45p4XQNJnW0M2K_uNSbk6II5r9gdcHWl37_exz_JWtk16VGHX0kDqzpXyQoLdJiLg2t-oDaVo5TMDqYY1SVK8kd_6jFhBcjFpdki61fcAIF9puKQVfcnq4l6--3qcw9Y1xg1HAyrsQDUKmxcPgr_85LTzsyYUMmxF67oH"/>
+</div>
+<span class="font-display text-headline-lg-mobile font-bold text-primary">HROS</span>
+</div>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full" onclick="window.location.href='../feed_active_content_mix/code.html'">notifications</button>
+</header>
+<main class="w-full max-w-[375px] pt-[64px] pb-[100px] px-mobile-margin flex flex-col gap-lg overflow-x-hidden">
+<!-- Welcome Hero Section -->
+<section class="mt-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Welcome, Aditi</h1>
+<p class="font-body-md text-on-surface-variant mt-base">It's your first day at the Bengaluru HQ.</p>
+</section>
+<!-- Section Progress -->
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-1/4 transition-all duration-700 ease-out" id="progress-bar"></div>
+</div>
+<!-- Schedule Section -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 bg-[#4CAF50] rounded-full"></span>
+<h2 class="font-body-md-bold text-body-md-bold uppercase tracking-wider text-on-surface-variant">Today's Schedule</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mon, Oct 23</span>
+</div>
+<!-- Schedule Bento Grid Layout -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Active Task -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm shadow-sm">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-0.5 rounded-full text-[11px] font-semibold">ONGOING</span>
+<h3 class="font-body-md-bold text-body-md-bold mt-xs">Hardware Setup</h3>
+</div>
+<span class="material-symbols-outlined text-outline">laptop_mac</span>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-sm text-label-sm">10:00 AM - 11:30 AM</span>
+</div>
+<div class="flex items-center gap-sm mt-xs">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]">person</span>
+</div>
+<span class="font-label-sm text-label-sm">Rohan from IT</span>
+</div>
+</div>
+<!-- Upcoming 1 -->
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md-bold text-body-md-bold">Team Lunch: Welcome Aditi</h3>
+<span class="material-symbols-outlined text-outline">restaurant</span>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-sm text-label-sm">01:00 PM - 02:00 PM</span>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label-sm text-label-sm" data-location="Bengaluru">The Pantry, 4th Floor</span>
+</div>
+</div>
+<!-- Upcoming 2 -->
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md-bold text-body-md-bold">Policy Induction</h3>
+<span class="material-symbols-outlined text-outline">gavel</span>
+</div>
+<div class="flex items-center gap-xs text-outline">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-sm text-label-sm">03:00 PM - 04:30 PM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Journey Map Section -->
+<section>
+<div class="flex items-center gap-xs mb-md">
+<span class="w-3 h-3 bg-tertiary rounded-full"></span>
+<h2 class="font-body-md-bold text-body-md-bold uppercase tracking-wider text-on-surface-variant">The Journey Map</h2>
+</div>
+<div class="relative pl-lg border-l-2 border-outline-variant/30 ml-2 space-y-lg">
+<!-- Node 1: Completed -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 bg-primary rounded-full border-4 border-background flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="font-label-sm-bold text-label-sm-bold text-on-surface">Digital Onboarding</h4>
+<p class="font-label-sm text-label-sm text-outline">Completed at 9:15 AM</p>
+</div>
+</div>
+<!-- Node 2: Current -->
+<div class="relative">
+<div class="absolute -left-[33px] top-0 w-4 h-4 bg-background border-2 border-primary rounded-full animate-pulse"></div>
+<div>
+<h4 class="font-label-sm-bold text-label-sm-bold text-primary">Day 1: Immersion</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">In progress • 25% Complete</p>
+<div class="mt-md p-md bg-secondary-container/30 border border-outline-variant/30 rounded-lg">
+<p class="font-label-sm text-label-sm text-on-secondary-container">Tip: Visit the IT desk early to avoid the afternoon rush for badge activation.</p>
+</div>
+</div>
+</div>
+<!-- Node 3: Future -->
+<div class="relative opacity-50">
+<div class="absolute -left-[33px] top-0 w-4 h-4 bg-outline-variant rounded-full border-4 border-background"></div>
+<div>
+<h4 class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">The First Week</h4>
+<p class="font-label-sm text-label-sm text-outline">Unlocks tomorrow</p>
+</div>
+</div>
+</div>
+</section>
+<!-- DPDP Compliance Block -->
+<section class="bg-surface-container-highest/30 border border-outline-variant rounded-xl p-md">
+<div class="flex gap-md items-start">
+<input class="mt-1 w-5 h-5 rounded border-outline text-primary focus:ring-primary" id="dpdp" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed" for="dpdp">
+                    I acknowledge the processing of my biometric and professional data for badge generation in accordance with the Indian DPDP Act (2023). 
+                    <a class="text-primary font-body-md-bold underline decoration-outline-variant" href="#">Learn more</a>.
+                </label>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 full-width z-50 flex justify-around items-center w-full px-xs h-huge bg-surface/95 backdrop-blur-md border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-primary bg-secondary-container/50 rounded-lg px-3 py-1 scale-95" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm semibold">Journey</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm semibold">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm semibold">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm semibold">AI</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</button>
+</nav>
+<script>
+        // Simple intersection observer for reveal effects
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-500', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+
+        // Toggle checkbox interaction
+        const dpdpCheckbox = document.getElementById('dpdp');
+        dpdpCheckbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                // Potential for haptic or visual feedback
+                console.log('Consent granted');
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
+

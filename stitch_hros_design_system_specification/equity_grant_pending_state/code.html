@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#514627",
+                    "outline": "#78767d",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-low": "#f6f2f4",
+                    "tertiary-fixed": "#f2e1b7",
+                    "secondary-fixed": "#dce2f3",
+                    "secondary-container": "#dce2f3",
+                    "tertiary-container": "#b9aa83",
+                    "primary": "#00000b",
+                    "on-primary-fixed": "#1a1a2e",
+                    "error-container": "#ffdad6",
+                    "secondary": "#585f6c",
+                    "surface-container": "#f1edef",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#5e6572",
+                    "on-background": "#1c1b1d",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-container": "#493f20",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#ddd9db",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface": "#fcf8fa",
+                    "on-tertiary-fixed": "#231b02",
+                    "primary-container": "#1a1a2e",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-tint": "#5d5c74",
+                    "primary-fixed": "#e2e0fc",
+                    "on-surface-variant": "#47464c",
+                    "on-secondary-fixed": "#151c27",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "surface-container-high": "#ebe7e9",
+                    "inverse-primary": "#c6c4df",
+                    "tertiary": "#695d3c",
+                    "surface-container-highest": "#e5e1e3",
+                    "surface-bright": "#fcf8fa",
+                    "surface-variant": "#e5e1e3",
+                    "on-surface": "#1c1b1d",
+                    "outline-variant": "#c8c5cd",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-primary-container": "#83829b",
+                    "on-primary": "#ffffff",
+                    "background": "#fcf8fa",
+                    "inverse-surface": "#313032",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "mobile-margin": "24px",
+                    "base": "4px",
+                    "huge": "64px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "xl": "32px",
+                    "touch-target-min": "44px",
+                    "xxl": "48px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Geist', sans-serif; }
+        .hairline-border { border: 1px solid #E5E7EB; }
+        .ambient-shadow { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface flex items-center w-full px-mobile-margin h-touch-target-min docked full-width top-0 border-b border-outline-variant transition-colors duration-200 z-50 sticky">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors duration-200 active:opacity-70 rounded-full p-2" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Equity Grant</h1>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 px-mobile-margin py-xl flex flex-col items-center justify-center text-center">
+<!-- Radical Reduction Empty State Graphic -->
+<div class="mb-xl relative group">
+<div class="w-48 h-48 rounded-full bg-surface-container flex items-center justify-center hairline-border transition-all duration-500 group-hover:scale-[1.02]">
+<!-- Geometric Minimal Illustration -->
+<div class="relative w-24 h-24">
+<div class="absolute inset-0 border-2 border-primary rounded-xl opacity-20 transform -rotate-12 animate-pulse"></div>
+<div class="absolute inset-2 border-2 border-primary rounded-lg opacity-40 transform rotate-6"></div>
+<div class="absolute inset-4 bg-primary rounded shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-surface text-[40px]" style="font-variation-settings: 'FILL' 1;">update</span>
+</div>
+</div>
+</div>
+<!-- Readiness Signal (Amber - Action Needed/Pending) -->
+<div class="absolute top-2 right-2 w-4 h-4 bg-amber-500 rounded-full border-4 border-background"></div>
+</div>
+<!-- Main Message -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-md max-w-[280px] mx-auto">
+            Grant terms pending
+        </h2>
+<p class="font-body-md text-on-surface-variant mb-xl max-w-[300px]">
+            Your equity grant terms will be shared within 4 weeks of joining. This screen will update when ready.
+        </p>
+<!-- Explanation Card (Task Card Style) -->
+<div class="w-full bg-surface-container-lowest hairline-border p-md rounded-lg text-left max-w-sm mb-huge">
+<div class="flex items-start gap-md">
+<div class="mt-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">info</span>
+</div>
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block mb-base">Current Status</span>
+<p class="font-body-md text-on-surface">Awaiting board approval for current quarter grants.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- AI Concierge Trigger (Ambient Shadow only element) -->
+<button class="fixed bottom-24 right-mobile-margin w-touch-target-min h-touch-target-min bg-primary text-on-primary rounded-full flex items-center justify-center ambient-shadow z-40 transition-transform active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-huge bg-surface border-t border-outline-variant px-md">
+<!-- Tasks (Active) -->
+<button class="flex flex-col items-center justify-center text-primary font-label-sm-bold transition-transform duration-150 active:scale-95 hover:bg-surface-container-low p-2 rounded-lg" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</button>
+<!-- Portfolio -->
+<button class="flex flex-col items-center justify-center text-secondary transition-transform duration-150 active:scale-95 hover:bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">Portfolio</span>
+</button>
+<!-- Docs -->
+<button class="flex flex-col items-center justify-center text-secondary transition-transform duration-150 active:scale-95 hover:bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1">description</span>
+<span class="font-label-sm text-label-sm">Docs</span>
+</button>
+<!-- Concierge -->
+<button class="flex flex-col items-center justify-center text-secondary transition-transform duration-150 active:scale-95 hover:bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1">bolt</span>
+<span class="font-label-sm text-label-sm">Concierge</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction: Subtle parallax on the illustration
+        document.addEventListener('mousemove', (e) => {
+            const illustration = document.querySelector('.group');
+            const x = (window.innerWidth / 2 - e.pageX) / 40;
+            const y = (window.innerHeight / 2 - e.pageY) / 40;
+            illustration.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

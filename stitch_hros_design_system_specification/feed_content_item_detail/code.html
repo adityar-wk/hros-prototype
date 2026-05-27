@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#313032",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5e6572",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#83829b",
+                        "on-primary-fixed-variant": "#45455b",
+                        "primary-container": "#1a1a2e",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "primary": "#00000b",
+                        "primary-fixed": "#e2e0fc",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary-fixed": "#151c27",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary-container": "#493f20",
+                        "tertiary-container": "#b9aa83",
+                        "tertiary-fixed": "#f2e1b7",
+                        "background": "#fcf8fa",
+                        "surface-container-low": "#f6f2f4",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f1edef",
+                        "on-primary-fixed": "#1a1a2e",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-surface-variant": "#47464c",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary": "#695d3c",
+                        "secondary": "#585f6c",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1c1b1d",
+                        "secondary-fixed": "#dce2f3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-tint": "#5d5c74",
+                        "primary-fixed-dim": "#c6c4df",
+                        "secondary-container": "#dce2f3",
+                        "outline": "#78767d",
+                        "on-background": "#1c1b1d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e5e1e3",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#ddd9db",
+                        "surface": "#fcf8fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "44px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xxl": "48px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "huge": "64px",
+                        "mobile-margin": "24px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "serif": ["Instrument Serif", "serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #fcf8fa;
+        }
+        .reading-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top AppBar (Back Button only for deep reading state) -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant h-touch-target-min flex items-center px-mobile-margin">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div class="ml-4 font-body-md-bold text-primary">Feed</div>
+</nav>
+<main class="pt-touch-target-min pb-huge">
+<!-- Hero Section -->
+<section class="relative w-full aspect-[4/5] md:aspect-video overflow-hidden">
+<img alt="Founder in office" class="w-full h-full object-cover" data-alt="A high-end, minimalist portrait of a visionary founder sitting in a sun-drenched, modern architectural office. The lighting is soft and natural, emphasizing clean lines and expansive glass windows. The color palette is restricted to warm whites, deep charcoals, and natural oak wood textures. The atmosphere is quiet, professional, and deeply focused, embodying the radical reduction design philosophy of an AI-native operating system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyVbOOxpNuRPTJ8CU29bIPmUxIhSdB-MrvCj9P8QguADw6iYx0NfVag1m17rcdrnq0-DTYDuK32s1tNG0ugQDN7681-AJntBLwaEGHEcIAEPwdH4nYQhaXvKaU5EvJlzQsOR7K_adSOOPty3_wDAmtRaSD4mugU89MMNlN5Qm6YLHlUg3Zlko3yw_or-x-Sr0Jwf28920WyYkZdXymdGq-c4YfTmh9pVTN91aMMBP3Kykiw2jACa_QgFML80pKWzVTs-kcOxMxzUKk"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</section>
+<!-- Content Area -->
+<article class="px-mobile-margin mt-xl reading-container">
+<!-- Metadata & Tag -->
+<header class="mb-lg">
+<div class="flex items-center gap-xs mb-md">
+<span class="px-3 py-1 bg-primary text-on-primary rounded-full font-label-sm-bold text-[11px] uppercase tracking-wider">Founder</span>
+<span class="text-on-surface-variant font-label-sm">8 min read</span>
+</div>
+<h1 class="font-serif text-[44px] md:text-[64px] leading-[1.1] text-primary mb-lg">
+                    A Note from Our Founder
+                </h1>
+<div class="flex items-center gap-md py-md border-y border-outline-variant">
+<img alt="Author profile" class="w-12 h-12 rounded-full object-cover grayscale" data-alt="A professional headshot of a mature corporate leader with a confident and kind expression. The lighting is high-key and studio-quality, set against a neutral light grey background that matches the minimalist UI aesthetic. The style is clean, professional, and sharply focused, using a muted color palette to maintain visual serenity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz1sgYEMBXKwy69lnn8RQaE8ctDKCOEl1lNUxon1mKzHAjOCj4RJqSxoMRqVCuAWO7OYSayjY5SKPDFKaH-oZubOjFfEj2JwlK0zDD8zMKqh5KzVVmyzKZ1zFf2y0YG26g95IlI45Jz3XCGVKsouxT5cnwTpE7DWkUCh_nkfwZFQlGLWHddmDdmgvQsicPZT_kh3_7bz478hALN9K9ceNJdZu657jDzOJpdWwWCwGl420NJvBCvSlNTPSgOenKhSC98NVzWLUJgIuo"/>
+<div>
+<div class="font-body-md-bold text-primary">Arjun Mehta</div>
+<div class="text-on-surface-variant font-label-sm">CEO &amp; Founder, HROS</div>
+</div>
+</div>
+</header>
+<!-- Body Text -->
+<div class="space-y-lg text-on-surface leading-relaxed text-[18px] md:text-[20px]">
+<p class="first-letter:text-5xl first-letter:font-serif first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                    When we first envisioned HROS, the goal wasn't to build another enterprise tool. It was to solve a fundamental friction: the gap between human potential and administrative overhead. In the modern Indian enterprise, that gap has become a chasm. 
+                </p>
+<p>
+                    The "Radical Reduction" philosophy you see in our interface today isn't just a design choice—it's a commitment to your focus. We believe that an operating system should be invisible. It should act as a quiet partner, surfacing what matters exactly when it matters, and receding when you need to do your best work.
+                </p>
+<!-- Quote Block -->
+<blockquote class="my-xl py-xl border-l-2 border-primary pl-lg italic font-serif text-2xl md:text-3xl text-on-surface-variant">
+                    "Efficiency is not about doing more; it's about doing only what is necessary, with total clarity."
+                </blockquote>
+<p>
+                    As we navigate the complexities of DPDP compliance and the integration of native AI layers, our promise remains the same. We will protect your data with the highest standards of integrity while simplifying the way you interact with your organization. 
+                </p>
+<p>
+                    This note is a thank you for trusting us to be the backbone of your professional journey. We are just getting started on redefining what work feels like in the age of intelligence.
+                </p>
+<div class="pt-huge">
+<p class="font-serif text-2xl mb-xs">Arjun Mehta</p>
+<p class="text-on-surface-variant font-label-sm">March 2024</p>
+</div>
+</div>
+</article>
+</main>
+<!-- AI Concierge Trigger (Mandatory for identity) -->
+
+<!-- Bottom Action Bar (Contextual) -->
+<div class="fixed bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-md border-t border-outline-variant p-md flex items-center justify-between reading-container w-full mx-auto md:mb-md md:rounded-xl md:border md:shadow-sm">
+<div class="flex items-center gap-md">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-sm">1.2k</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-sm">48</span>
+</button>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<script>
+        // Simple micro-interaction for the back button and scroll progress
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            // You could add a progress bar here if needed
+        };
+
+        // Suppress bottom nav logic as per instructions for deep-reading state
+        // The HTML structure already reflects this by omitting BottomNavBar
+    </script>
+<script src="../nav.js"></script>
+</body></html>

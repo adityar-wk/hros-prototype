@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background: rgba(252, 248, 250, 0.8);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-background": "#1c1b1d",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#404754",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#ebe7e9",
+                        "surface": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "primary-container": "#1a1a2e",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dce2f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "inverse-primary": "#c6c4df",
+                        "on-primary-container": "#83829b",
+                        "surface-tint": "#5d5c74",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary-fixed": "#1a1a2e",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary-fixed": "#231b02",
+                        "background": "#fcf8fa",
+                        "primary": "#00000b",
+                        "on-surface-variant": "#47464c",
+                        "tertiary-fixed": "#f2e1b7",
+                        "primary-fixed": "#e2e0fc",
+                        "secondary-container": "#dce2f3",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-primary-fixed-variant": "#45455b",
+                        "outline": "#78767d",
+                        "on-secondary-container": "#5e6572",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary-container": "#b9aa83",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1edef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "sm": "12px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "huge": "64px",
+                        "base": "4px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-md-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-[80px]">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50 flex justify-between items-center px-lg h-[64px]">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVZe8BE1ipAePuL7pK8o8WJicAKcDNJR0VeDFLDeNWw15uULYEIkMTl8aZzddyE0FnNkDo5TGR0XLob4rWOIXhX3TR8IyLVEd_71Tf_oXuHkfDrPztDKklhAG9dmFdN1EofhKtSUJipUoadzz3FUtJ5A3R3Y07eFAp2EWWovTCARPy8YHtydI-277gGtwCIjzUWDEs_fz2zbs2ekZmBA0WXgajauwer2mvxth37UppXUJBf7yfE4Y4ZzS3HfF-8Flw3mtanH5HfohK"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Tax Planning</h1>
+</div>
+<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low transition-colors rounded-full" data-icon="notifications">notifications</button>
+</header>
+<main class="px-mobile-margin py-lg space-y-lg">
+<!-- Status Header -->
+<section class="flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<div class="w-[12px] h-[12px] rounded-full bg-[#10b981]"></div>
+<span class="font-body-md-bold text-body-md-bold">Current Cycle Status</span>
+</div>
+<div class="bg-[#10b981]/10 px-sm py-[2px] rounded-full border border-[#10b981]/20">
+<span class="text-[13px] font-semibold text-[#059669]">Verified</span>
+</div>
+</section>
+<!-- Main Confirmation Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl space-y-md">
+<div class="flex items-start gap-md">
+<div class="bg-primary text-on-primary p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="space-y-base">
+<h2 class="font-body-md-bold text-body-md-bold text-primary">Setup Locked</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                        Your tax regime and declarations are certified for the current payroll cycle.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Bento Grid Details -->
+<section class="grid grid-cols-2 gap-md">
+<!-- Regime Card -->
+<div class="col-span-1 bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-sm">
+<span class="font-label-sm text-on-surface-variant block">Selected Regime</span>
+<div class="flex items-center gap-xs">
+<span class="font-body-md-bold text-body-md-bold">New Regime</span>
+</div>
+</div>
+<!-- Salary Security Card -->
+<div class="col-span-1 bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-sm">
+<span class="font-label-sm text-on-surface-variant block">Integrity</span>
+<div class="flex items-center gap-xs text-[#059669]">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm-bold text-label-sm-bold">Secured for Salary</span>
+</div>
+</div>
+<!-- Visualization Area (Radical Reduction Style) -->
+<div class="col-span-2 relative h-[180px] bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden group">
+<img class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply transition-transform duration-700 group-hover:scale-105" data-alt="A macro photograph of an architectural model with clean white lines and sharp shadows, representing structure and precision. The lighting is bright and high-contrast, echoing a light-mode enterprise UI. The composition is minimalist and abstract, focusing on geometric perfection and the concept of stability. Soft gray and pristine white tones dominate the frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2-sr7k1Z3fGLZ8qLUYxNmoLmf9vvlNOO2beu2BYuer30gyKHLUBHIO32J_F3xxHZFRLsv9B8m6XQI7-6zoEsO7RDY_l4AD1MODpESljtwIY63rZluULbcxwKs5oCGhWty955YTkvJ12a0tyvsz4rj7d-irRMxAQKBPVK12wMa0uGZYlq7wsr59Xm4Eh4Jdohb0Y7OdGd0u0uc9B1_nqIeIS4nk3NO7YS0T4jQdcKFNgTOTEvnB1dyQfvmb8ZVgoJrM1C015OsAll3"/>
+<div class="absolute inset-0 p-lg flex flex-col justify-end">
+<div class="glass-effect p-md rounded-lg border border-outline-variant inline-block max-w-max">
+<p class="font-label-sm-bold text-label-sm-bold text-primary">FY 2024-25 Declaration Summary</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Computed based on Section 115BAC</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<section class="space-y-md pt-md">
+<button class="w-full h-touch-target-min flex items-center justify-center gap-xs border border-outline-variant rounded-lg font-body-md-bold text-on-surface-variant bg-surface-container-low active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit_note">edit_note</span>
+                Request Change
+            </button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant italic">
+                Requires HR approval • Current window closed
+            </p>
+</section>
+<!-- Compliance Block -->
+<footer class="mt-xxl border border-outline-variant rounded-lg p-md bg-surface-container-low/50">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="gavel">gavel</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-tight">
+                    Information secured under Indian DPDP Act guidelines. Your declarations are digitally signed and timestamped for audit readiness.
+                </p>
+</div>
+</footer>
+<!-- injected Continue CTA -->
+<div style="position:fixed;bottom:72px;left:0;right:0;padding:0 24px;z-index:100;">
+  <button onclick="window.location.href='../journey_map_current_stage_expanded/code.html'" style="width:100%;height:44px;background:#00000b;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+    Continue <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">arrow_forward</span>
+  </button>
+</div></main>
+
+<div class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm active:scale-95 transition-transform duration-150 cursor-pointer" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>You</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for the "Request Change" button to show the constraint message
+        const requestBtn = document.querySelector('button:contains("Request Change")');
+        if(requestBtn) {
+            requestBtn.addEventListener('click', () => {
+                alert('Tax regime changes are restricted during active payroll processing. Please contact HR for manual intervention.');
+            });
+        }
+        
+        // Custom selector for text content in vanilla JS
+        document.querySelectorAll('button').forEach(btn => {
+            if (btn.innerText.includes('Request Change')) {
+                btn.onclick = () => {
+                    btn.classList.add('animate-pulse');
+                    setTimeout(() => btn.classList.remove('animate-pulse'), 1000);
+                }
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

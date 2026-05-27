@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accept Offer | Welcome Aboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-secondary-container": "#5e6572",
+                        "primary-fixed": "#e2e0fc",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "tertiary-container": "#b9aa83",
+                        "surface-bright": "#fcf8fa",
+                        "primary": "#00000b",
+                        "on-surface-variant": "#47464c",
+                        "surface-variant": "#e5e1e3",
+                        "on-error": "#ffffff",
+                        "background": "#fcf8fa",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "primary-container": "#1a1a2e",
+                        "on-primary-fixed": "#1a1a2e",
+                        "outline": "#78767d",
+                        "surface-dim": "#ddd9db",
+                        "secondary": "#585f6c",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface-container-high": "#ebe7e9",
+                        "inverse-surface": "#313032",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-primary-fixed-variant": "#45455b",
+                        "error-container": "#ffdad6",
+                        "surface": "#fcf8fa",
+                        "on-secondary-fixed": "#151c27",
+                        "outline-variant": "#c8c5cd",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary-container": "#493f20",
+                        "on-primary-container": "#83829b",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-surface": "#1c1b1d",
+                        "tertiary": "#695d3c",
+                        "secondary-container": "#dce2f3",
+                        "on-background": "#1c1b1d",
+                        "tertiary-fixed": "#f2e1b7",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dce2f3",
+                        "inverse-primary": "#c6c4df",
+                        "surface-tint": "#5d5c74",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#f1edef",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f4f0f2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "sm": "12px",
+                        "mobile-margin": "24px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "md": "16px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "huge": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant fixed top-0 w-full z-50 flex items-center justify-between px-mobile-margin h-touch-target-min">
+<button aria-label="Go back" class="flex items-center justify-center w-10 h-10 active:scale-95 transition-transform duration-200 hover:bg-surface-container-low" onclick="window.location.href='../joining_date_pending_task_2/code.html'">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Accept Offer</h1>
+<div class="w-10"></div> <!-- Placeholder for symmetry -->
+</header>
+<main class="w-full max-w-[375px] pt-[64px] pb-xl px-mobile-margin flex flex-col gap-lg">
+<!-- Welcome Hero Section (Asymmetric Layout) -->
+<section class="mt-lg">
+<div class="relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant h-48 mb-md">
+<img alt="Office environment" class="w-full h-full object-cover grayscale opacity-80" data-alt="A minimalist architectural shot of a bright, modern corporate atrium with clean lines and expansive glass windows. The lighting is soft and airy, creating a professional light-mode aesthetic with a palette of whites, cool grays, and deep black accents. The mood is welcoming and sophisticated, representing a high-end enterprise environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH6q0WONdIJJiP9Hpl4bNVY7BmX5JJdVkw7TBH2Donjg7j9aRvLCn7GogOvIWF_cboHjPnNUEMd_5ASbd8gcpfieoa0w4T74_hj2NSkIbGOqapdbO1cIeNbZGQyqq1Xwmptwuo6KTnAET8vC05LnGKjRyqzDs8B7IzXI1O38mA22wFMb5ZiJtvnTj3iW9qrG8MSIXeE5t7L1vjLbo0RvyvqyJfv_DkPetH4BnacqrPH0CszMgqFGwr8hneh-zSd1lRlPRT4Wrem9bW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-xs">OFFER ACCEPTED</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-tight">Welcome to the team, Rohan.</h2>
+</section>
+<!-- Progress Signal -->
+<div class="flex items-center gap-xs">
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-1/4 bg-primary transition-all duration-700 ease-out"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Step 1 of 4</span>
+</div>
+<!-- Task Card: The Central Unit -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col gap-md transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 bg-amber-500 rounded-full" title="Action Needed"></span>
+<span class="font-label-sm-bold text-label-sm-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">REQUIRED</span>
+</div>
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Set your joining date</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="event_upcoming">event_upcoming</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Confirming your date allows us to prepare your workstation and induction schedule. This is the final step before we can issue your onboarding kit.
+            </p>
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<p class="font-label-sm text-label-sm text-on-surface">Induction slots are currently available for every Monday.</p>
+</div>
+</div>
+</div>
+<!-- Secondary Guidance (Progressive Disclosure) -->
+<details class="group border border-outline-variant rounded-xl bg-surface-container-low overflow-hidden">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-label-sm-bold text-label-sm-bold text-primary">Why is this important?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-md pt-0 border-t border-outline-variant/50">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    Setting your date triggers several workflows: workstation allocation, IT credentials setup, and your 1-on-1 session with the hiring manager.
+                </p>
+</div>
+</details>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant p-md z-50 flex flex-col gap-md">
+<div class="flex items-center gap-md">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="confirm" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="confirm">
+                I understand that this date will be used for all legal and logistical preparation.
+            </label>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold text-body-md-bold rounded-xl active:scale-95 transition-all duration-150 disabled:opacity-50 disabled:active:scale-100" disabled="" id="cta-button">
+            Set my joining date
+        </button>
+</footer>
+<!-- AI Concierge Trigger (Ambient Layer) -->
+
+<script>
+        // Simple Interaction logic for the CTA activation
+        const checkbox = document.getElementById('confirm');
+        const cta = document.getElementById('cta-button');
+
+        checkbox.addEventListener('change', (e) => {
+            cta.disabled = !e.target.checked;
+        });
+
+        cta.addEventListener('click', () => {
+            cta.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>';
+            setTimeout(() => {
+                window.top.goTo('joining_date_pending_task_2');
+            }, 800);
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

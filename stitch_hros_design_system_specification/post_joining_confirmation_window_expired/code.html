@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Post-Joining Confirmation - Expired</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-primary-fixed-variant": "#45455b",
+                        "tertiary": "#695d3c",
+                        "primary-container": "#1a1a2e",
+                        "on-surface-variant": "#47464c",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "primary": "#00000b",
+                        "on-background": "#1c1b1d",
+                        "surface-container-high": "#ebe7e9",
+                        "on-primary-container": "#83829b",
+                        "secondary": "#585f6c",
+                        "secondary-container": "#dce2f3",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-primary-fixed": "#1a1a2e",
+                        "surface-tint": "#5d5c74",
+                        "surface": "#fcf8fa",
+                        "primary-fixed": "#e2e0fc",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e1e3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-highest": "#e5e1e3",
+                        "outline": "#78767d",
+                        "on-tertiary-fixed": "#231b02",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed": "#dce2f3",
+                        "background": "#fcf8fa",
+                        "primary-fixed-dim": "#c6c4df",
+                        "outline-variant": "#c8c5cd",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#ddd9db",
+                        "on-secondary-fixed": "#151c27",
+                        "surface-container": "#f1edef",
+                        "on-secondary-container": "#5e6572",
+                        "tertiary-container": "#b9aa83",
+                        "on-tertiary-container": "#493f20",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-low": "#f6f2f4",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-fixed-dim": "#c0c7d6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "12px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "xxl": "48px",
+                        "lg": "24px",
+                        "huge": "64px",
+                        "touch-target-min": "44px",
+                        "mobile-margin": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .locked-overlay {
+            background: linear-gradient(180deg, rgba(252, 248, 250, 0.05) 0%, rgba(252, 248, 250, 0.4) 100%);
+            pointer-events: none;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky bg-background border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min z-40">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">HROS</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Profile" data-alt="A professional studio headshot of a young Indian executive in a minimalist office setting. The lighting is soft and natural, emphasizing a clean and efficient workspace. The overall aesthetic is high-key and modern, with a neutral color palette that complements a premium software interface design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKh4j-8KgThDLolR7meLutiRo3lEa6RJycrbLibj34NqJzM3cWrLFLpM8hlw3USA2rXAUQ6sFov2F9W1QF8olclFfdrsOF7ofWUtPiQDto4xbx7YUpyBty6x2FGrk-VwXifxgHAZPQkRScXdPjO87LlgT-93_UIpPN60OBpddmInd7SZWh8nmmvxzhDOtzsoTS35E4x6MUT5yXqwXwbbUawTM9geUSdX5mEJDuu-spp3ogrA77UGKPWj0eMjSkSa9jq5iWyHu9I7xP"/>
+</div>
+</div>
+</header>
+<!-- Info Banner (Expired State) -->
+<div class="bg-surface-container-high px-mobile-margin py-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline" data-icon="event_busy">event_busy</span>
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Review window has closed</p>
+</div>
+<main class="px-mobile-margin py-lg space-y-lg">
+<!-- Status & Locking Message -->
+<section class="space-y-sm">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-outline"></div>
+<h2 class="font-body-md-bold text-body-md-bold">Final Configuration</h2>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Your configuration has been locked as shown. Your salary preview will be available by <span class="font-body-md-bold text-on-surface">Oct 31</span>.
+                </p>
+</div>
+</section>
+<!-- Locked Configuration Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-md">
+<!-- Salary Components Card -->
+<div class="col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-md relative overflow-hidden">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-base">Structure</p>
+<h3 class="font-body-md-bold text-body-md-bold">Fixed vs Variable</h3>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Basic Salary</span>
+<span class="font-body-md-bold text-body-md-bold">₹ 42,500</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">HRA</span>
+<span class="font-body-md-bold text-body-md-bold">₹ 17,000</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+</div>
+<div class="locked-overlay absolute inset-0"></div>
+</div>
+<!-- Tax Declaration Card -->
+<div class="col-span-1 bg-surface-container-lowest border border-outline-variant rounded-xl p-md relative overflow-hidden">
+<div class="flex justify-between items-start mb-md">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Regime</p>
+<span class="material-symbols-outlined text-outline" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="bg-surface-container rounded-lg px-sm py-xs inline-block mb-xs">
+<span class="font-label-sm-bold text-label-sm-bold text-primary">NEW TAX</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Default Regime</p>
+<div class="locked-overlay absolute inset-0"></div>
+</div>
+<!-- Benefits Card -->
+<div class="col-span-1 bg-surface-container-lowest border border-outline-variant rounded-xl p-md relative overflow-hidden">
+<div class="flex justify-between items-start mb-md">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Benefits</p>
+<span class="material-symbols-outlined text-outline" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<p class="font-body-md-bold text-body-md-bold">Insurance Top-up</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Opted-Out</p>
+<div class="locked-overlay absolute inset-0"></div>
+</div>
+<!-- Flexible Perks Card -->
+<div class="col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-md relative overflow-hidden">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-base">Flexi-Pay</p>
+<h3 class="font-body-md-bold text-body-md-bold">Vouchers &amp; Allowances</h3>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="flex flex-wrap gap-xs">
+<div class="flex items-center gap-xs px-sm py-xs bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]" data-icon="restaurant">restaurant</span>
+<span class="font-label-sm text-label-sm">Meal Pass</span>
+</div>
+<div class="flex items-center gap-xs px-sm py-xs bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]" data-icon="directions_car">directions_car</span>
+<span class="font-label-sm text-label-sm">Fuel Reimbursement</span>
+</div>
+</div>
+<div class="locked-overlay absolute inset-0"></div>
+</div>
+</section>
+<!-- Compliance / DPDP Section (ReadOnly) -->
+<section class="space-y-md border-t border-outline-variant pt-lg">
+<h4 class="font-body-md-bold text-body-md-bold">Compliance Summary</h4>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-outline" data-icon="check_box" style="font-variation-settings: 'FILL' 1;">check_box</span>
+<div class="space-y-xs">
+<p class="font-label-sm text-label-sm text-on-surface">Data Processing Consent (DPDP)</p>
+<p class="font-label-sm text-label-sm text-outline">Verified on Oct 12, 14:30 IST. Your consent for personal data processing as per Indian DPDP Act remains active.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-outline" data-icon="check_box" style="font-variation-settings: 'FILL' 1;">check_box</span>
+<div class="space-y-xs">
+<p class="font-label-sm text-label-sm text-on-surface">Investment Declaration</p>
+<p class="font-label-sm text-label-sm text-outline">Self-declaration submitted for Section 80C and 80D. Final proofs to be uploaded in Jan cycle.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar (Universal Anchor) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-base pb-safe h-16 bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 scale-95 transition-transform duration-150 active:scale-90 hover:bg-surface-container" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 scale-95 transition-transform duration-150 active:scale-90 hover:bg-surface-container" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 scale-95 transition-transform duration-150 active:scale-90 hover:bg-surface-container" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 scale-95 transition-transform duration-150 active:scale-90 hover:bg-surface-container" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 scale-95 transition-transform duration-150 active:scale-90" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<!-- AI Concierge Trigger (Subtle persistent layer) -->
+
+<script>
+        // Subtle interaction for locked elements
+        document.querySelectorAll('.locked-overlay').forEach(el => {
+            el.parentElement.addEventListener('click', () => {
+                const icon = el.parentElement.querySelector('[data-icon="lock"]');
+                icon.classList.add('animate-bounce');
+                setTimeout(() => icon.classList.remove('animate-bounce'), 1000);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#ddd9db",
+                    "secondary": "#585f6c",
+                    "inverse-surface": "#313032",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-secondary-container": "#5e6572",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-bright": "#fcf8fa",
+                    "surface-variant": "#e5e1e3",
+                    "on-secondary-fixed": "#151c27",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#231b02",
+                    "on-surface": "#1c1b1d",
+                    "tertiary-container": "#b9aa83",
+                    "primary-fixed-dim": "#c6c4df",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-low": "#f6f2f4",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1a1a2e",
+                    "primary": "#00000b",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#695d3c",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "secondary-fixed": "#dce2f3",
+                    "on-background": "#1c1b1d",
+                    "surface-tint": "#5d5c74",
+                    "outline-variant": "#c8c5cd",
+                    "on-tertiary-container": "#493f20",
+                    "inverse-primary": "#c6c4df",
+                    "tertiary-fixed": "#f2e1b7",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-container": "#83829b",
+                    "outline": "#78767d",
+                    "surface": "#fcf8fa",
+                    "background": "#fcf8fa",
+                    "surface-container": "#f1edef",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#dce2f3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "touch-target-min": "44px",
+                    "huge": "64px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "mobile-margin": "24px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Geist', sans-serif; }
+        .bento-card { border: 1px solid #E5E1E3; }
+        .ambient-glow {
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 11, 0.1);
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #00000b;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-surface-variant flex items-center justify-between px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-sm">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<span class="font-display text-headline-lg-mobile text-primary tracking-tighter">OS_1</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT9B0W74LmEvczGc4obJtskk0qf5EoR1QUriBmvV3PIshTwfMYDIpJXCx3joGXxX2GEJamB0LfLXKht8jnJeyLqJi_UTGNrf8booWGRI0AbKSz-7GUCsxzKu_U4vlyPWq68vO_JmPG295bCVQQkkjlErLrOpplRn5jMpN3Rf_f0xTdEoPXWD-hSWEu5u_LpBhtiV2oVRoVof9QlZ1J-M5VPwK3VlnDVEH75_dQlPInpXXCn9y8Tep8R1U-dCnteXEMmb099ZSNPE5H"/>
+</div>
+</div>
+</header>
+<main class="pt-huge pb-32 px-mobile-margin max-w-md mx-auto min-h-screen">
+<!-- Header Section -->
+<section class="mt-lg mb-xl">
+<div class="flex items-center gap-xs mb-sm">
+<div class="w-3 h-3 rounded-full bg-tertiary-container"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-widest">Employee Benefit</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-md">Flexi Allocation</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Your flexible benefit allocation lets you structure part of your salary as tax-efficient allowances. What you don't allocate is paid as taxable salary.
+            </p>
+</section>
+<!-- Pool Balance Hero Card -->
+<div class="mb-xl p-lg rounded-xl bg-primary-container text-on-primary-container border border-primary relative overflow-hidden ambient-glow">
+<div class="relative z-10">
+<p class="font-label-sm text-label-sm opacity-80 mb-base">Total Pool Balance</p>
+<h2 class="font-display text-headline-lg text-white mb-xs">₹1,50,000</h2>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-sm-bold text-label-sm-bold">available to allocate</span>
+</div>
+</div>
+<!-- Decorative atmospheric element -->
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-on-primary-container/10 rounded-full blur-2xl"></div>
+</div>
+<!-- Allocation List (Master Data Capture Pattern) -->
+<div class="space-y-md">
+<h3 class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-widest px-xs">Allowances</h3>
+<!-- Food Allowance Card -->
+<div class="bento-card bg-surface-container-lowest p-md rounded-xl transition-all duration-200 hover:border-outline">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-body-md-bold text-body-md-bold text-primary">Food Allowance</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Max ₹26,400</p>
+</div>
+<button class="h-touch-target-min px-md rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm-bold flex items-center gap-xs active:scale-95 transition-transform" onclick="window.location.href='../flexi_allocation_active_allocation/code.html'">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                        Add
+                    </button>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary w-0 h-full transition-all duration-500"></div>
+</div>
+<div class="flex justify-between mt-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">₹0 allocated</span>
+<span class="font-label-sm-bold text-label-sm-bold text-primary">0%</span>
+</div>
+</div>
+<!-- Fuel Reimbursement -->
+<div class="bento-card bg-surface-container-lowest p-md rounded-xl transition-all duration-200 hover:border-outline">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-body-md-bold text-body-md-bold text-primary">Fuel Reimbursement</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Max ₹28,800</p>
+</div>
+<button class="h-touch-target-min px-md rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm-bold flex items-center gap-xs active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                        Add
+                    </button>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary w-0 h-full"></div>
+</div>
+</div>
+<!-- Internet/Telecom -->
+<div class="bento-card bg-surface-container-lowest p-md rounded-xl transition-all duration-200 hover:border-outline">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-body-md-bold text-body-md-bold text-primary">Internet/Telecom</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Max ₹12,000</p>
+</div>
+<button class="h-touch-target-min px-md rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm-bold flex items-center gap-xs active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                        Add
+                    </button>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full"></div>
+</div>
+<!-- Books and Periodicals -->
+<div class="bento-card bg-surface-container-lowest p-md rounded-xl transition-all duration-200 hover:border-outline">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-body-md-bold text-body-md-bold text-primary">Books and Periodicals</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Max ₹15,000</p>
+</div>
+<button class="h-touch-target-min px-md rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm-bold flex items-center gap-xs active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                        Add
+                    </button>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full"></div>
+</div>
+<!-- LTA -->
+<div class="bento-card bg-surface-container-lowest p-md rounded-xl transition-all duration-200 hover:border-outline">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-body-md-bold text-body-md-bold text-primary">LTA</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Max ₹50,000</p>
+</div>
+<button class="h-touch-target-min px-md rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm-bold flex items-center gap-xs active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                        Add
+                    </button>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full"></div>
+</div>
+</div>
+<!-- Compliance/Legal Block -->
+<div class="mt-xl p-md bg-surface-container rounded-xl border border-outline-variant">
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-error" data-icon="info">info</span>
+<div>
+<p class="font-label-sm-bold text-label-sm-bold text-primary mb-xs">Important notice</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                        Amounts not allocated here will be paid as taxable salary in March. This follows the company's annual financial reconciliation policy.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Declaration Confirm Bottom Bar -->
+<div class="fixed bottom-[huge] left-0 w-full bg-surface-container-lowest border-t border-surface-variant px-mobile-margin py-md z-40">
+<div class="flex items-start gap-md mb-md">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="declaration" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="declaration">
+                I declare that the information provided above is correct and understand that unallocated amounts are taxable.
+            </label>
+</div>
+<button onclick="window.top.goTo('flexi_allocation_active_allocation')">
+                Confirm Allocation
+            </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-surface-variant h-huge flex justify-around items-center px-xs pb-safe">
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-md py-xs" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm-bold text-label-sm-bold">Journey</span>
+</div>
+<!-- Active Tab: Tasks -->
+<div class="flex flex-col items-center justify-center text-primary bg-secondary-fixed rounded-xl px-md py-xs" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm-bold text-label-sm-bold">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-md py-xs" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-label-sm-bold text-label-sm-bold">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-md py-xs" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm-bold text-label-sm-bold">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-md py-xs" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">You</span>
+</div>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+        // Micro-interaction for add buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const icon = btn.querySelector('.material-symbols-outlined');
+                if (icon && icon.innerText === 'add') {
+                    // Logic for "adding" (visual feedback only for prototype)
+                    btn.classList.toggle('bg-primary');
+                    btn.classList.toggle('text-white');
+                    btn.innerHTML = btn.classList.contains('bg-primary') 
+                        ? `<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span> Added`
+                        : `<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span> Add`;
+                }
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
+

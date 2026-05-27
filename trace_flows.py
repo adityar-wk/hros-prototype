@@ -9,14 +9,15 @@ CTA = {
     "offer_review_already_accepted":                 "journey_map_current_stage_expanded",
     "offer_review_candidate_accepted_confirmation":  "journey_map_current_stage_expanded",
     # Joining date
-    "joining_date_proposed_confirmed_1":   "joining_date_proposed_confirmed_2",
-    "joining_date_proposed_confirmed_2":   "acceptance_confirmation_moment_1",
-    "joining_date_alternate_pending_1":    "joining_date_alternate_pending_2",
-    "joining_date_alternate_pending_2":    "journey_map_current_stage_expanded",
-    "joining_date_alternate_rejected_1":   "joining_date_alternate_rejected_2",
-    "joining_date_alternate_rejected_2":   "journey_map_current_stage_expanded",
+    "joining_date_proposed_confirmed_1":   "joining_date_pending_task_1",
     "joining_date_pending_task_1":         "joining_date_pending_task_2",
-    "joining_date_pending_task_2":         "acceptance_confirmation_moment_1",
+    "joining_date_pending_task_2":         "joining_date_proposed_confirmed_2",
+    "joining_date_proposed_confirmed_2":   "acceptance_confirmation_moment_1",
+    "joining_date_alternate_date_picker":  "joining_date_alternate_pending_2",
+    "joining_date_alternate_pending_1":    "joining_date_alternate_date_picker",
+    "joining_date_alternate_pending_2":    "joining_date_pending_task_1",
+    "joining_date_alternate_rejected_1":   "joining_date_alternate_date_picker",
+    "joining_date_alternate_rejected_2":   "joining_date_alternate_date_picker",
     # Welcome
     "acceptance_confirmation_moment_1":    "acceptance_confirmation_moment_2",
     "acceptance_confirmation_moment_2":    "welcome_moment_first_entry",
@@ -66,14 +67,16 @@ CTA = {
     "payroll_readiness_override_requested_pending": "journey_map_current_stage_expanded",
     "payroll_readiness_red_state_blockers":        "data_capture_master_pattern_template",
     # Salary
-    "salary_preview_review_window_open":  "salary_preview_accepted_confirmed",
+    "salary_preview_review_window_open":  "in_hand_calculator",
+    "in_hand_calculator":                 "salary_preview_accepted_confirmed",
     "salary_preview_accepted_confirmed":  "journey_map_current_stage_expanded",
     "salary_preview_concern_flagged":     "salary_preview_review_window_open",
-    # Vendor consent
+    # Vendor consent (gated by employee type)
     "vendor_consent_all_pending":       "vendor_consent_preferences_saved",
     "vendor_consent_card_expanded":     "vendor_consent_consent_given",
     "vendor_consent_consent_given":     "vendor_consent_preferences_saved",
     "vendor_consent_mandatory_off":     "vendor_consent_all_pending",
+    "vendor_consent_employee_type_selector": "vendor_consent_all_pending",
     "vendor_consent_preferences_saved": "journey_map_current_stage_expanded",
     # Asset custody
     "asset_custody_awaiting_acknowledgement": "asset_custody_verified_locked",
@@ -154,6 +157,8 @@ CTA = {
     "benefits_insurance_expanded_view":       "benefits_policies_reference",
     "medical_insurance_coverage_dependents":  "benefits_policies_reference",
     "benefits_policies_reference":            "journey_map_current_stage_expanded",
+    # ESOP Explainer (accessible from Profile)
+    "esop_explainer":                         "journey_map_current_stage_expanded",
 }
 
 END = "journey_map_current_stage_expanded"

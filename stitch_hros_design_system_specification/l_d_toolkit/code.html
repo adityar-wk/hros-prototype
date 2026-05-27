@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>HROS — L&amp;D Toolkit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e5e1e3",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c6c4df",
+                    "surface-bright": "#fcf8fa",
+                    "on-background": "#1c1b1d",
+                    "surface-container-low": "#f6f2f4",
+                    "error": "#ba1a1a",
+                    "background": "#fcf8fa",
+                    "secondary": "#585f6c",
+                    "on-primary-container": "#83829b",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#404754",
+                    "tertiary-fixed": "#f2e1b7",
+                    "tertiary-container": "#b9aa83",
+                    "surface-dim": "#ddd9db",
+                    "tertiary": "#695d3c",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-container": "#f1edef",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-secondary-fixed": "#151c27",
+                    "primary": "#00000b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#5e6572",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-fixed": "#1a1a2e",
+                    "outline": "#78767d",
+                    "on-tertiary-container": "#493f20",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#47464c",
+                    "inverse-surface": "#313032",
+                    "on-surface": "#1c1b1d",
+                    "surface-tint": "#5d5c74",
+                    "primary-container": "#1a1a2e",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "outline-variant": "#c8c5cd",
+                    "primary-fixed": "#e2e0fc",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "inverse-primary": "#c6c4df",
+                    "secondary-fixed": "#dce2f3",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface": "#fcf8fa",
+                    "on-primary-fixed-variant": "#45455b",
+                    "secondary-container": "#dce2f3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "md": "16px",
+                    "huge": "64px",
+                    "xl": "32px",
+                    "base": "4px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "mobile-margin": "24px"
+            },
+            "fontFamily": {
+                    "display": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .content-canvas {
+            min-height: 100vh;
+            padding-top: 64px;
+            padding-bottom: 100px;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .card-expand {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-expand[data-expanded="true"] {
+            grid-column: span 4 !important;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline h-touch-target-min flex justify-center items-center">
+<div class="flex justify-between items-center px-mobile-margin w-full max-w-md mx-auto">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, professional headshot of a young professional male in a minimalist studio setting. The lighting is soft and high-key, emphasizing a modern light-mode aesthetic with neutral gray and white tones. He wears a dark, tailored shirt that provides a sharp contrast against the bright, uncluttered background, fitting the radical reduction design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCofCB2N085um7K661myo7uxV1m3t3rpjzlzYk99R-miW-msogdppsLAatQFzPUb9FLQxqNUIfxNZsQQzh98zYkqTMArWaa42KVVBp2uGwuqEi21QgrSy3t-mDiWQyM9-dJKyQuOEl1ClU8wgS4szXh5PBVbeVYTcwgLHz9F7dO4--2iooYZbs5grrnrJUZU7vz1L38n3PUfz7g3q-195IZFNa72wdRN4bLy2klxkzot1SJwblC1wKgI887YWJATnEgiDTNNzDGFz8p"/>
+</div>
+<h1 class="font-display text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight">L&amp;D Toolkit</h1>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-base rounded-full active:scale-95 transition-transform" data-icon="notifications">notifications</button>
+</div>
+</header>
+<main class="content-canvas max-w-md mx-auto px-mobile-margin">
+<!-- Progress Bar -->
+<div class="mb-xl">
+<div class="flex justify-between items-end mb-xs">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Your Progress</p>
+<p class="font-label-sm-bold text-label-sm-bold text-primary">64%</p>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-1000" style="width: 64%"></div>
+</div>
+</div>
+<div class="bento-grid">
+<!-- Role learning path -->
+<div class="card-expand col-span-4 bg-surface-container-lowest border border-outline-variant p-md rounded-xl cursor-pointer active:scale-[0.98] transition-all" onclick="toggleExpand(this)">
+<div class="flex justify-between items-start">
+<div class="flex gap-sm items-center">
+<span class="material-symbols-outlined text-primary" data-icon="route">route</span>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold">Role learning path</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">30/60/90 day roadmap</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</div>
+<div class="hidden-content hidden mt-md border-t border-outline-variant pt-md">
+<div class="space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px] font-bold">30</span>
+<p class="font-label-sm text-label-sm">Foundation &amp; Core Systems</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center text-[10px] font-bold">60</span>
+<p class="font-label-sm text-label-sm">Architecture Deep Dive</p>
+</div>
+<div class="flex items-center gap-sm opacity-50">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center text-[10px] font-bold">90</span>
+<p class="font-label-sm text-label-sm">Leadership &amp; Mentorship</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Certifications (AWS) -->
+<div class="card-expand col-span-4 bg-surface-container-lowest border border-outline-variant p-md rounded-xl cursor-pointer active:scale-[0.98] transition-all" onclick="toggleExpand(this)">
+<div class="flex justify-between items-start">
+<div class="flex gap-sm items-center">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<div>
+<div class="flex items-center gap-xs">
+<h3 class="font-body-md-bold text-body-md-bold">Certifications</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-xs py-[2px] rounded-full text-[10px] font-bold uppercase tracking-wider">Required</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">AWS Certified Developer • 8h effort</p>
+</div>
+</div>
+<div class="flex items-center gap-xs bg-primary-container text-on-primary-container px-sm py-base rounded-full">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm-bold text-label-sm-bold">Enrolled</span>
+</div>
+</div>
+<div class="hidden-content hidden mt-md border-t border-outline-variant pt-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Master the fundamentals of developing and deploying cloud-native applications on AWS.</p>
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-lg font-label-sm-bold text-label-sm-bold active:scale-95 transition-transform" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">Continue Learning</button>
+</div>
+</div>
+<!-- Internal LMS -->
+<div class="card-expand col-span-2 bg-surface-container-lowest border border-outline-variant p-md rounded-xl cursor-pointer active:scale-[0.98] transition-all">
+<div class="flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary mb-sm" data-icon="bolt">bolt</span>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold leading-tight">Internal LMS</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Deep-link to PulseLearn</p>
+</div>
+</div>
+</div>
+<!-- Leadership programmes -->
+<div class="card-expand col-span-2 bg-surface-container-lowest border border-outline-variant p-md rounded-xl cursor-pointer active:scale-[0.98] transition-all">
+<div class="flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary mb-sm" data-icon="groups">groups</span>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold leading-tight">Leadership</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Executive track</p>
+</div>
+</div>
+</div>
+<!-- External Training -->
+<div class="card-expand col-span-4 bg-surface-container-lowest border border-outline-variant p-md rounded-xl cursor-pointer active:scale-[0.98] transition-all">
+<div class="flex justify-between items-center">
+<div class="flex gap-sm items-center">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="school">school</span>
+</div>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold">External training</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Request sponsorship for workshops</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="arrow_forward_ios" style="font-size: 16px;">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Visual Asset Card (Atmospheric) -->
+<div class="col-span-4 relative h-32 rounded-xl overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A minimalist, futuristic workspace with high-key lighting and clean lines. In the center, a digital tablet displays an abstract learning roadmap with soft, glowing nodes. The environment is dominated by whites and soft grays, with subtle geometric shadows creating a sense of professional calm and quiet efficiency, consistent with the AI-native operating system aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCAMYviP5LM2WYJSAUwLx_0YWI9Z-nJlRIcOa2KLnKlgw6y4DKIyh2HhQUiN-vczZH127oQtpR9uk3vKzYzMx4RAed9QSTLaxAzPyGa_7xAj1MHE07qmuij1Yg58pzpRfithufGaeZGm0fu_fGLLPI1F7HeIzQ6gNS89XUAo4qD0MQfDfaBTM0cEYNaFCGeHnvGYixjwUwtgClYhs8zR5-9NwSYZZQU14flUEUk5PQ3RaoH5Mwt0Qol80oqJMP2Oqnt7JImLEePdzT"/>
+<div class="absolute inset-0 bg-black/10 flex items-end p-md">
+<p class="font-label-sm-bold text-label-sm-bold text-white drop-shadow-sm">Shape your future career at HROS.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-safe h-huge bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-xs py-base active:scale-90 transition-all duration-200" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" data-icon="route" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-label-sm-bold text-label-sm-bold">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-xs py-base hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="font-label-sm-bold text-label-sm-bold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-xs py-base hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-label-sm-bold text-label-sm-bold">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-xs py-base hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm-bold text-label-sm-bold">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-xs py-base hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">You</span>
+</a>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+        function toggleExpand(element) {
+            const isExpanded = element.getAttribute('data-expanded') === 'true';
+            const hiddenContent = element.querySelector('.hidden-content');
+            const icon = element.querySelector('.material-symbols-outlined[data-icon="expand_more"]');
+
+            if (isExpanded) {
+                element.setAttribute('data-expanded', 'false');
+                hiddenContent.classList.add('hidden');
+                if(icon) icon.style.transform = 'rotate(0deg)';
+            } else {
+                element.setAttribute('data-expanded', 'true');
+                hiddenContent.classList.remove('hidden');
+                if(icon) icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+<script src="../nav.js"></script>
+</body></html>

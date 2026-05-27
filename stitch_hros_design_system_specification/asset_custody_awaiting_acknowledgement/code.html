@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Asset Custody</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ai-concierge-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#ddd9db",
+                        "outline": "#78767d",
+                        "on-secondary-fixed": "#151c27",
+                        "surface-container-high": "#ebe7e9",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "inverse-on-surface": "#f4f0f2",
+                        "background": "#fcf8fa",
+                        "on-secondary-container": "#5e6572",
+                        "secondary-container": "#dce2f3",
+                        "secondary": "#585f6c",
+                        "tertiary-container": "#b9aa83",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-background": "#1c1b1d",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-tertiary-container": "#493f20",
+                        "tertiary": "#695d3c",
+                        "surface": "#fcf8fa",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c6c4df",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e5e1e3",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e2e0fc",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#1a1a2e",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#83829b",
+                        "secondary-fixed": "#dce2f3",
+                        "outline-variant": "#c8c5cd",
+                        "surface-tint": "#5d5c74",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container": "#f1edef",
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-surface-variant": "#47464c",
+                        "primary": "#00000b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "huge": "64px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "touch-target-min": "44px",
+                        "mobile-margin": "24px",
+                        "xxl": "48px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- Top AppBar -->
+<header class="bg-surface dark:bg-surface w-full sticky top-0 z-50 border-b border-outline-variant dark:border-outline">
+<div class="flex items-center h-touch-target-min px-mobile-margin w-full max-w-md mx-auto">
+<button class="mr-md text-primary dark:text-on-surface active:scale-95 transition-transform duration-100 material-symbols-outlined" style="font-variation-settings: 'FILL' 0;" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-on-surface">Tasks</h1>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-md mx-auto px-mobile-margin pt-lg pb-[120px]">
+<!-- Header Section -->
+<section class="mb-xl">
+<div class="flex items-center gap-xs mb-base">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tight">Asset Custody</h2>
+<div class="w-3 h-3 rounded-full bg-amber-500 shrink-0" title="Action Needed"></div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-md">
+                A record of the equipment assigned to you. You confirm receipt and take custody from joining day.
+            </p>
+<div class="w-full bg-surface-container rounded-full h-1 mt-md">
+<div class="bg-primary h-1 rounded-full" style="width: 66%;"></div>
+</div>
+<div class="mt-base flex justify-between">
+<span class="text-label-sm font-label-sm text-outline">Verification Progress</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">2 of 3 steps</span>
+</div>
+</section>
+<!-- Asset List -->
+<div class="space-y-md">
+<!-- Item 1: MacBook -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md overflow-hidden relative group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-body-md-bold text-body-md-bold">MacBook Pro 14 M3</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-base">SN: C02F89...</p>
+</div>
+<span class="bg-green-100 text-green-800 text-[11px] px-xs py-[2px] rounded-full font-label-sm-bold uppercase tracking-wider">New</span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-lg">
+<div class="bg-surface-container-low p-xs rounded-lg">
+<p class="text-[10px] text-outline uppercase font-label-sm-bold">Value</p>
+<p class="font-body-md-bold text-body-md">₹1,80,000</p>
+</div>
+<div class="bg-surface-container-low p-xs rounded-lg">
+<p class="text-[10px] text-outline uppercase font-label-sm-bold">Category</p>
+<p class="font-body-md-bold text-body-md">Computing</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant">
+<label class="flex items-center gap-sm cursor-pointer group">
+<div class="relative flex items-center">
+<input class="asset-checkbox peer h-6 w-6 rounded-md border-outline-variant text-primary focus:ring-0 transition-all" onchange="checkCompletion()" type="checkbox"/>
+</div>
+<span class="text-label-sm-bold font-label-sm-bold text-on-surface">Confirm Receipt</span>
+</label>
+<a class="text-label-sm font-label-sm text-outline hover:text-error transition-colors flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+                        Dispute
+                    </a>
+</div>
+</article>
+<!-- Item 2: Jabra Evolve -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md overflow-hidden relative group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-body-md-bold text-body-md-bold">Jabra Evolve 75</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-base">SN: J45901...</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[11px] px-xs py-[2px] rounded-full font-label-sm-bold uppercase tracking-wider">Good</span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-lg">
+<div class="bg-surface-container-low p-xs rounded-lg">
+<p class="text-[10px] text-outline uppercase font-label-sm-bold">Value</p>
+<p class="font-body-md-bold text-body-md">₹15,000</p>
+</div>
+<div class="bg-surface-container-low p-xs rounded-lg">
+<p class="text-[10px] text-outline uppercase font-label-sm-bold">Category</p>
+<p class="font-body-md-bold text-body-md">Peripherals</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant">
+<label class="flex items-center gap-sm cursor-pointer group">
+<div class="relative flex items-center">
+<input class="asset-checkbox peer h-6 w-6 rounded-md border-outline-variant text-primary focus:ring-0 transition-all" onchange="checkCompletion()" type="checkbox"/>
+</div>
+<span class="text-label-sm-bold font-label-sm-bold text-on-surface">Confirm Receipt</span>
+</label>
+<a class="text-label-sm font-label-sm text-outline hover:text-error transition-colors flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+                        Dispute
+                    </a>
+</div>
+</article>
+<!-- Separation Note -->
+<div class="bg-surface-container-low p-md rounded-xl flex gap-md items-start mt-lg">
+<span class="material-symbols-outlined text-outline">info</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant leading-relaxed">
+                    Asset records carry through to your exit process — kept accurate throughout.
+                </p>
+</div>
+<!-- DPDP Consent Block -->
+<div class="border border-outline-variant rounded-xl p-md mt-lg bg-white/50">
+<div class="flex items-start gap-md">
+<input class="mt-base h-5 w-5 rounded border-outline-variant text-primary focus:ring-0" id="dpdp" type="checkbox"/>
+<label class="text-label-sm font-label-sm text-outline leading-tight" for="dpdp">
+                        I acknowledge that these assets are for professional use and agree to comply with the company's IT and data protection policies (DPDP Act compliant).
+                    </label>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Declaration Bar -->
+<div class="fixed bottom-[64px] left-0 right-0 z-40 bg-surface/80 backdrop-blur-md border-t border-outline-variant px-mobile-margin py-md flex flex-col gap-sm max-w-md mx-auto">
+<button class="w-full h-touch-target-min bg-outline text-surface-container-lowest rounded-full font-body-md-bold text-body-md transition-all duration-300 opacity-50 cursor-not-allowed" disabled="" id="submit-btn">
+            Submit Declaration
+        </button>
+</div>
+<!-- AI Concierge Trigger -->
+
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 h-huge bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center px-md pb-safe z-50 max-w-md mx-auto">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-xs py-base active:scale-90 transition-all duration-200" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<script>
+        function checkCompletion() {
+            const checkboxes = document.querySelectorAll('.asset-checkbox');
+            const dpdp = document.getElementById('dpdp');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            const allAssetsChecked = Array.from(checkboxes).every(cb => cb.checked);
+            
+            if (allAssetsChecked) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('bg-outline', 'opacity-50', 'cursor-not-allowed');
+                submitBtn.classList.add('bg-primary', 'opacity-100', 'cursor-pointer');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('bg-outline', 'opacity-50', 'cursor-not-allowed');
+                submitBtn.classList.remove('bg-primary', 'opacity-100', 'cursor-pointer');
+            }
+        }
+
+        // Add visual feedback on container tap
+        document.querySelectorAll('article').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.classList.add('bg-surface-container');
+            });
+            card.addEventListener('mouseup', () => {
+                card.classList.remove('bg-surface-container');
+            });
+            card.addEventListener('touchstart', () => {
+                card.classList.add('bg-surface-container');
+            });
+            card.addEventListener('touchend', () => {
+                card.classList.remove('bg-surface-container');
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

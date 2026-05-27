@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e1e3;
+            border-radius: 10px;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#dce2f3",
+                      "on-secondary-fixed-variant": "#404754",
+                      "surface-container": "#f1edef",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "primary-fixed": "#e2e0fc",
+                      "primary-container": "#1a1a2e",
+                      "secondary": "#585f6c",
+                      "on-surface": "#1c1b1d",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#1a1a2e",
+                      "on-primary-fixed-variant": "#45455b",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-container": "#5e6572",
+                      "on-tertiary-container": "#493f20",
+                      "on-tertiary-fixed": "#231b02",
+                      "surface-variant": "#e5e1e3",
+                      "background": "#fcf8fa",
+                      "primary-fixed-dim": "#c6c4df",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-surface-variant": "#47464c",
+                      "surface": "#fcf8fa",
+                      "surface-tint": "#5d5c74",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "tertiary-fixed": "#f2e1b7",
+                      "surface-bright": "#fcf8fa",
+                      "tertiary": "#695d3c",
+                      "on-secondary-fixed": "#151c27",
+                      "inverse-surface": "#313032",
+                      "surface-container-high": "#ebe7e9",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "outline-variant": "#c8c5cd",
+                      "outline": "#78767d",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#83829b",
+                      "tertiary-container": "#b9aa83",
+                      "surface-container-highest": "#e5e1e3",
+                      "on-background": "#1c1b1d",
+                      "inverse-on-surface": "#f4f0f2",
+                      "secondary-fixed": "#dce2f3",
+                      "primary": "#00000b",
+                      "surface-dim": "#ddd9db",
+                      "surface-container-low": "#f6f2f4",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#c6c4df"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "huge": "64px",
+                      "mobile-margin": "24px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "touch-target-min": "44px",
+                      "xs": "8px",
+                      "sm": "12px",
+                      "md": "16px",
+                      "xxl": "48px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-sm-bold": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "body-md": ["Geist"],
+                      "body-md-bold": ["Geist"],
+                      "display": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "headline-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top AppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-inverse-primary w-full sticky top-0 z-40 border-b border-outline-variant dark:border-outline flex items-center justify-between px-lg h-[64px]">
+<div class="flex items-center gap-md">
+<button class="active:opacity-70 transition-opacity flex items-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile">Offer Review</h1>
+</div>
+<button class="active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Expiry Indicator (Gentle Amber) -->
+<div class="w-full bg-[#FFF9E6] border-b border-[#F5E6C4] px-lg py-sm flex items-center gap-sm transition-all duration-500 animate-pulse-subtle">
+<span class="material-symbols-outlined text-[#856404] text-[20px]">schedule</span>
+<p class="font-label-sm-bold text-label-sm-bold text-[#856404]">Expires in 36 hours</p>
+</div>
+<main class="px-lg py-lg space-y-lg pb-[120px]">
+<!-- Welcome Hero -->
+<section class="space-y-base">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Congratulations, Arjun</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Principal Product Designer</h2>
+<div class="flex items-center gap-xs mt-xs">
+<span class="font-body-md text-body-md text-secondary">TechScale Global</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bengaluru, IN</span>
+</div>
+</section>
+<!-- Bento Grid Offer Highlights -->
+<section class="grid grid-cols-2 gap-md">
+<!-- Salary Card -->
+<div class="col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between h-[120px]">
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Annual Compensation</span>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">₹64,00,000</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Excluding Performance Bonus</p>
+</div>
+</div>
+<!-- ESOPs -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md space-y-xs">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">show_chart</span>
+<span class="font-label-sm text-label-sm">Stock Options</span>
+</div>
+<p class="font-body-md-bold text-body-md-bold text-primary">2,500 units</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">4-yr vesting</p>
+</div>
+<!-- Joining Date -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md space-y-xs">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">event</span>
+<span class="font-label-sm text-label-sm">Joining Date</span>
+</div>
+<p class="font-body-md-bold text-body-md-bold text-primary">Oct 12, 2023</p>
+<div class="flex items-center gap-[4px]">
+<span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+<span class="font-label-sm text-label-sm text-[#059669]">Confirmed</span>
+</div>
+</div>
+</section>
+<!-- Recruiter Block -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="relative">
+<img alt="Megha, Senior Recruiter" class="w-12 h-12 rounded-full object-cover" data-alt="A professional portrait of a female recruiter with a friendly smile, wearing a modern charcoal blazer, set against a blurred minimalist office background with soft natural lighting. The image has a clean, high-key light-mode aesthetic reflecting professional efficiency and approachability in a modern Indian enterprise setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcfpKxXZzp7Y82CHBtX52r78tA1Sw_VEONXYL1OrhnuLHZDWnt_0j_u1HP85oLVJXNp3cCOmbBMb32HeVAywQO3Xf_eV9FAoCQ1Xh8TazQJh5hFqbXubP_cA8KWdmWIOHfs14bZWokNVEgHR4_QkwoFfCakOxhYbvYw4yQD_SJzgNsFHtlBkeK7nBVlWOzDTp1uVzDH7pxAcmzS4JPgx_Bj56X5ZlV8tRkXC67EIinZuYZzRzIhEpQrZWz6bzui5eMXqLZ0JkKJA8E"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-[#10b981] border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Talk to Megha</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Senior Talent Partner</p>
+</div>
+</div>
+<button class="w-11 h-11 flex items-center justify-center bg-surface-container-highest rounded-full active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+</button>
+</section>
+<!-- Documents Section -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h4 class="font-body-md-bold text-body-md-bold">Offer Documents</h4>
+<div class="flex items-center gap-xs">
+<div class="w-12 h-1 bg-outline-variant rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-primary"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2/4</span>
+</div>
+</div>
+<div class="space-y-sm">
+<!-- Task Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 flex items-center justify-center bg-[#f0f9ff] rounded-lg">
+<span class="material-symbols-outlined text-[#0369a1]">description</span>
+</div>
+<div>
+<p class="font-body-md-bold text-body-md-bold">Offer Letter.pdf</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Signed by CEO • 2.4 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center justify-between opacity-60">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant">lock</span>
+</div>
+<div>
+<p class="font-body-md-bold text-body-md-bold">NDA Agreement</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Unlocked after acceptance</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Consent Block -->
+<section class="p-md bg-surface-container-lowest border border-outline-variant rounded-xl">
+<div class="flex gap-md">
+<div class="pt-base">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary transition-all" id="consent" type="checkbox"/>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed" for="consent">
+                    I have reviewed the offer terms and conditions. I consent to the processing of my digital identity data as per the DPDP Act 2023 for verification and onboarding purposes.
+                </label>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-lg py-md pb-safe bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline z-50">
+<!-- Inactive Action: Talk to Recruiter -->
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-md py-xs hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-xs">Talk to Recruiter</span>
+</button>
+<!-- Active Action: Accept Offer (Contextual Highlight) -->
+<button class="flex flex-col items-center justify-center bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-xl px-xl py-md shadow-lg active:scale-95 transition-transform duration-200" onclick="window.location.href='../joining_date_proposed_confirmed_1/code.html'">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm-bold text-label-sm-bold">Accept Offer</span>
+</div>
+</button>
+</nav>
+<!-- AI Concierge Trigger (Distinctive Layer) -->
+
+<script>
+        // Subtle interaction for the expiry bar
+        document.addEventListener('DOMContentLoaded', () => {
+            const consentCheckbox = document.getElementById('consent');
+            const acceptBtn = document.querySelector('nav button:last-child');
+            
+            // Disable accept button until consent is checked (UI logic only)
+            acceptBtn.style.opacity = '0.5';
+            acceptBtn.style.pointerEvents = 'none';
+
+            consentCheckbox.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    acceptBtn.style.opacity = '1';
+                    acceptBtn.style.pointerEvents = 'auto';
+                } else {
+                    acceptBtn.style.opacity = '0.5';
+                    acceptBtn.style.pointerEvents = 'none';
+                }
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

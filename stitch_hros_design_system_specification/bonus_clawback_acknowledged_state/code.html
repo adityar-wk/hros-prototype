@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .success-animation {
+            animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .hairline-border {
+            border: 1px solid #E5E7EB;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f6f2f4",
+                        "surface": "#fcf8fa",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f4f0f2",
+                        "secondary": "#585f6c",
+                        "primary-container": "#1a1a2e",
+                        "on-primary-container": "#83829b",
+                        "error": "#ba1a1a",
+                        "primary": "#00000b",
+                        "on-secondary-fixed-variant": "#404754",
+                        "outline": "#78767d",
+                        "on-secondary-container": "#5e6572",
+                        "outline-variant": "#c8c5cd",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-container": "#dce2f3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "secondary-fixed": "#dce2f3",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#ebe7e9",
+                        "surface-container-highest": "#e5e1e3",
+                        "surface-tint": "#5d5c74",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "surface-dim": "#ddd9db",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1b1d",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-surface-variant": "#47464c",
+                        "tertiary-fixed": "#f2e1b7",
+                        "tertiary": "#695d3c",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#e2e0fc",
+                        "on-surface": "#1c1b1d",
+                        "surface-container": "#f1edef",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary-container": "#b9aa83",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "inverse-surface": "#313032",
+                        "background": "#fcf8fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "base": "4px",
+                        "md": "16px",
+                        "huge": "64px",
+                        "mobile-margin": "24px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "12px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 bg-surface border-b border-outline-variant z-50 flex items-center px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-md w-full">
+<button class="flex items-center justify-center w-touch-target-min h-touch-target-min rounded-full hover:bg-surface-container-high transition-colors duration-200" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Bonus Clawback</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-mobile-margin py-huge flex flex-col items-center">
+<!-- Success Visual Area -->
+<div class="success-animation flex flex-col items-center text-center mb-huge">
+<div class="w-[72px] h-[72px] rounded-full bg-secondary-container flex items-center justify-center mb-lg">
+<span class="material-symbols-outlined text-[40px] text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs">Terms Acknowledged</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px]">You have successfully reviewed and acknowledged the terms for your joining bonus.</p>
+</div>
+<!-- Summary Card (Bento Style Item) -->
+<div class="w-full bg-surface-container-lowest hairline-border rounded-xl p-lg flex flex-col gap-md mb-xl shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Amount</span>
+<span class="font-body-md-bold text-body-md-bold text-on-surface">₹1,00,000</span>
+</div>
+<div class="w-[1px] h-xl bg-outline-variant opacity-50"></div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Clawback Period</span>
+<span class="font-body-md-bold text-body-md-bold text-on-surface">12 Months</span>
+</div>
+</div>
+<div class="pt-md border-t border-outline-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">event_available</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+                    Acknowledged on Oct 24, 2023 • 10:45 AM
+                </span>
+</div>
+</div>
+<!-- Readiness Signal & Confirmation Note -->
+<div class="w-full flex items-start gap-md mb-huge">
+<div class="w-3 h-3 rounded-full bg-[#10B981] mt-1 shrink-0"></div>
+<div class="flex flex-col">
+<h3 class="font-label-sm-bold text-label-sm-bold text-on-surface">Transaction Complete</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">This record is now stored in your document repository for future reference.</p>
+</div>
+</div>
+<!-- Action Button -->
+<div class="w-full mt-auto">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-lg font-body-md-bold text-body-md-bold active:scale-[0.98] transition-transform duration-100 flex items-center justify-center gap-xs">
+                Return to Tasks
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center px-base py-xs">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Tasks (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-xs py-base active:scale-95 transition-transform duration-100" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<!-- Inbox -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</a>
+<!-- Directory -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-sm text-label-sm">Directory</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Spacer for Bottom Nav -->
+<div class="h-[72px] shrink-0"></div>
+
+</div>
+<script>
+        // Simple feedback for button tap
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.style.opacity = '0.7';
+            });
+            btn.addEventListener('touchend', () => {
+                btn.style.opacity = '1';
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

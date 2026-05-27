@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flexi Allocation - OS_1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#ddd9db",
+                    "secondary": "#585f6c",
+                    "inverse-surface": "#313032",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-secondary-container": "#5e6572",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-bright": "#fcf8fa",
+                    "surface-variant": "#e5e1e3",
+                    "on-secondary-fixed": "#151c27",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#231b02",
+                    "on-surface": "#1c1b1d",
+                    "tertiary-container": "#b9aa83",
+                    "primary-fixed-dim": "#c6c4df",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-low": "#f6f2f4",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1a1a2e",
+                    "primary": "#00000b",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#695d3c",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "secondary-fixed": "#dce2f3",
+                    "on-background": "#1c1b1d",
+                    "surface-tint": "#5d5c74",
+                    "outline-variant": "#c8c5cd",
+                    "on-tertiary-container": "#493f20",
+                    "inverse-primary": "#c6c4df",
+                    "tertiary-fixed": "#f2e1b7",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-container": "#83829b",
+                    "outline": "#78767d",
+                    "surface": "#fcf8fa",
+                    "background": "#fcf8fa",
+                    "surface-container": "#f1edef",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#dce2f3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "touch-target-min": "44px",
+                    "huge": "64px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "mobile-margin": "24px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pool-gradient {
+            background: linear-gradient(135deg, #1a1a2e 0%, #00000b 100%);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface pb-huge">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-surface-variant flex items-center justify-between px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-sm">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-on-surface cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-display text-headline-lg-mobile text-primary tracking-tighter">OS_1</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-[64px] px-mobile-margin">
+<!-- Pool Summary Section (Bento Style) -->
+<section class="mt-lg grid grid-cols-1 gap-md">
+<div class="pool-gradient rounded-xl p-lg text-white relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label-sm text-label-sm text-on-primary-container mb-base uppercase tracking-wider">Remaining Pool</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold">₹1,13,600</h2>
+<div class="mt-md flex items-center gap-xs">
+<span class="bg-[#2E7D3220] text-[#4CAF50] px-sm py-[2px] rounded-full font-label-sm-bold text-label-sm-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                            +₹1,250/month
+                        </span>
+<span class="text-on-primary-container font-label-sm text-label-sm">Tax Impact</span>
+</div>
+</div>
+<div class="absolute right-[-20px] top-[-20px] opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+</div>
+</section>
+<!-- Progress Signal -->
+<div class="mt-xl mb-md flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#FFB300]"></div>
+<h3 class="font-body-md-bold text-body-md-bold">Allocations in Progress</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 of 8 set</span>
+</div>
+<!-- Master Data Capture Cards -->
+<div class="space-y-md">
+<!-- Food Allowance Card (Limit Reached) -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-md">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+</div>
+<div>
+<h4 class="font-body-md-bold text-body-md-bold">Food Allowance</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Tax-free meal vouchers</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-md">
+<div class="relative">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block mb-xs">Monthly Allocation</label>
+<div class="flex items-center border border-primary rounded-lg px-md h-touch-target-min bg-surface-container-low">
+<span class="text-on-surface font-body-md">₹</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md-bold text-on-surface" readonly="" type="text" value="26,400"/>
+</div>
+<p class="mt-xs text-error font-label-sm text-label-sm">You've reached the maximum for Food Allowance</p>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<button class="h-touch-target-min border-2 border-primary bg-primary-container text-on-primary-container rounded-lg font-label-sm-bold text-label-sm-bold flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
+                            Monthly
+                        </button>
+<button class="h-touch-target-min border border-outline-variant bg-transparent text-on-surface-variant rounded-lg font-label-sm-bold text-label-sm-bold flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="event_repeat">event_repeat</span>
+                            Quarterly
+                        </button>
+</div>
+</div>
+</div>
+<!-- Fuel Reimbursement Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-md">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="local_gas_station">local_gas_station</span>
+</div>
+<div>
+<h4 class="font-body-md-bold text-body-md-bold">Fuel Reimbursement</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Vehicle maintenance &amp; fuel</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="circle">circle</span>
+</div>
+<div class="space-y-md">
+<div>
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block mb-xs">Monthly Allocation</label>
+<div class="flex items-center border border-outline-variant rounded-lg px-md h-touch-target-min focus-within:border-primary transition-colors">
+<span class="text-on-surface font-body-md">₹</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md-bold text-on-surface" type="text" value="10,000"/>
+</div>
+<div class="mt-xs flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Limit: ₹15,000</span>
+<span class="font-label-sm-bold text-label-sm-bold text-primary">Edit</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pending Section (Implicit Disclosure) -->
+<div class="bg-surface-container-low rounded-xl p-md flex items-center justify-between border border-dashed border-outline-variant">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="add_circle">add_circle</span>
+<span class="font-body-md text-on-surface-variant">Add more components</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Compliance Block -->
+<div class="mt-xl p-lg bg-surface-container rounded-lg border border-surface-variant">
+<h5 class="font-label-sm-bold text-label-sm-bold mb-sm">Declaration &amp; DPDP Consent</h5>
+<div class="flex gap-sm items-start">
+<input checked="" class="mt-1 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    I hereby declare that the allocations made above are true to my knowledge and I understand that these will be subject to DPDP compliance guidelines and company policy verification.
+                </p>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Sticky) -->
+<div class="fixed bottom-[80px] w-full px-mobile-margin z-40 pointer-events-none">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold flex items-center justify-center pointer-events-auto shadow-lg" onclick="window.location.href='../flexi_allocation_verified_locked/code.html'">
+            Review &amp; Submit Allocations
+        </button>
+</div>
+
+<!-- You -->
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-md py-xs active:scale-95 transition-transform duration-150" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">You</span>
+</div>
+</nav>
+<script>
+        // Simple ripple effect for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

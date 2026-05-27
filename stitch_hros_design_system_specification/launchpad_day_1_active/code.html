@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#b9aa83",
+                        "on-tertiary-container": "#493f20",
+                        "on-secondary-container": "#5e6572",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#231b02",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed": "#dce2f3",
+                        "surface-container-highest": "#e5e1e3",
+                        "outline": "#78767d",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container": "#f1edef",
+                        "surface-dim": "#ddd9db",
+                        "on-secondary-fixed": "#151c27",
+                        "primary-fixed-dim": "#c6c4df",
+                        "outline-variant": "#c8c5cd",
+                        "error-container": "#ffdad6",
+                        "background": "#fcf8fa",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-primary-fixed": "#1a1a2e",
+                        "secondary-container": "#dce2f3",
+                        "secondary": "#585f6c",
+                        "surface-variant": "#e5e1e3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#e2e0fc",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fcf8fa",
+                        "surface-tint": "#5d5c74",
+                        "tertiary": "#695d3c",
+                        "primary-container": "#1a1a2e",
+                        "on-surface-variant": "#47464c",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-container-high": "#ebe7e9",
+                        "on-primary-container": "#83829b",
+                        "on-background": "#1c1b1d",
+                        "primary": "#00000b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "mobile-margin": "24px",
+                        "xl": "32px",
+                        "touch-target-min": "44px",
+                        "huge": "64px",
+                        "base": "4px",
+                        "xxl": "48px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "md": "16px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(93, 92, 116, 0.15);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-lg h-[64px]">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young Indian man with a friendly smile, photographed in a modern office with soft, natural lighting. The aesthetic is clean and minimalist, reflecting a professional yet approachable identity. The background is softly blurred, keeping the focus entirely on his face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADJOP-Gm-2P9T8NMHljFJfiuFFcaO0RLs1Th-h8St0-FqTNm1SDLtCxvIa3Ow1MnV5Ry8SD_kuguKK9jUXdkZiCoUWec9AMMld69zkYhNZVKCuQFZlu2DyBvLk2ZNCd0gJObi4ZJpmRmS8nyRh5AQwsBybQJtPGiC6xWFDzlicOCv7YIRDe7Kti8ao1l589lmr3XJNcAEFlFHbHTbRoDZrIXJRAVEpDyIT8dAC9ryRfJtoYbPTTX_Yb58crUdk4VadZs5Mw8dqDBFP"/>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">HROS</span>
+</div>
+<button class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="flex-1 px-lg pt-lg pb-xxl max-w-md mx-auto w-full space-y-lg">
+<!-- Welcome Header -->
+<section>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Happy Day 1, Arjun!</h1>
+<p class="font-body-md text-on-surface-variant mt-xs">Welcome to the team. We're excited to have you here.</p>
+</section>
+<!-- Elevated Schedule: Happening Now -->
+<section class="relative">
+<div class="flex items-center gap-xs mb-sm">
+<div class="w-2 h-2 rounded-full bg-error animate-pulse"></div>
+<span class="font-label-sm-bold text-error uppercase tracking-wider">Happening Now</span>
+</div>
+<div class="bg-primary text-on-primary rounded-xl p-md border border-primary-container shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h2 class="font-body-md-bold text-white">Welcome Brunch</h2>
+<p class="font-label-sm text-on-primary-container">10:30 AM - 11:30 AM • Cafeteria, Floor 4</p>
+</div>
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-primary" data-alt="A diverse team of professionals in a bright, minimalist office setting, engaged in a collaborative discussion. The lighting is crisp and modern, with a palette of soft whites and deep neutrals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbbDPfLZBWf6iYcXa_pk3kmpQt7S0USqayxQTU2w-Xx4Wkb2TztYW7YOqPyHv9nsWQN9LoieaefmMeW7OL-xb6uT-V0hLB35aloFxAMy5o3PVzRBUyf9af0DmJIBE-JW2uEluNlBzQy4_nzURtDa2v963BWx4mf3jsHBW-21K69ewmv4HOOVcymOuY7m-C-80j_7GDHtruREyy2h8B6F_2m2_7dJSWH4QkSfC0wpV-wP3_Qj2iOJh05IlOXQx-Mwd0gUM0wvXu_YUo"/>
+<img class="w-8 h-8 rounded-full border-2 border-primary" data-alt="A smiling woman with glasses in a professional studio setting, representing modern HR leadership. The visual style is high-key with clean lines and a minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgqNjfuPf0SaQ-joVOoQ0LZzcVzI5iP37qQdFVecwOeLTcNx29JxHyle6NBsN2Lol2bOdSHUUteYwR8o6FCF22zsTlwVpcx48snuy-bkQ-vyCf92DuH4G0OrQCFuQLZEmfNgKF4xHgu7lMAoBT9HZ4Umz6r1owrzlpqJhz-avlkpIdv8O7Db8zmckkjAkAFp19rsqzOfbBfWfjPX3yLiPWHr1QgvrIuTtaxZU7oV2LgvPJldrU97ZbAivOkrsq1jWevqSOzNcDG2-R"/>
+<div class="w-8 h-8 rounded-full border-2 border-primary bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-primary">+8</div>
+</div>
+</div>
+</section>
+<!-- Arrival & Location -->
+<section class="grid grid-cols-1 gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
+<div class="flex items-start gap-md">
+<div class="bg-secondary-container p-sm rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">location_on</span>
+</div>
+<div class="flex-1">
+<h3 class="font-body-md-bold text-on-surface">Bengaluru HQ</h3>
+<p class="font-label-sm text-on-surface-variant mb-md">7th Block, Koramangala, Bengaluru</p>
+<div class="h-32 w-full rounded-lg overflow-hidden border border-outline-variant mb-md">
+<img class="w-full h-full object-cover" data-alt="A minimalist architectural photograph of a modern tech campus in Bengaluru. The building features clean geometric lines, large glass panels, and lush green landscaping. The light is soft morning sun, creating a professional and serene atmosphere." data-location="Bengaluru" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnYiv8jIB-CLACBYIu3qmEs4dYsVVWOwEPv-Uu7eqKL25IZLowFvU60LhV794HwnJ26gM_4CquAkRxqdyIOGfhO2-S7fpLBrzWOZtPypsZSDsJ3MKLjcWDnPA86HG5aUnuBpirlpnohDbW1VXfU1ZFkTwiF1j3j9cHHyuUbRAB7h1egzWmxlaL4yBQACNZHCaxicW4mGW9O5feDuREqX5WQOW_AS1AJvO14DFO83obKNhso6cibf1PvkJxvG1xdrMRS4R3QHi-Z-3O"/>
+</div>
+<button class="w-full h-[44px] bg-secondary-container text-on-secondary-container font-label-sm-bold rounded-lg transition-colors hover:bg-secondary-fixed active:scale-[0.98]">
+                            View Entry Instructions
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- People: Quick Contact -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<div class="flex items-center gap-xs">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<h3 class="font-body-md-bold text-on-surface">Your Onboarding Team</h3>
+</div>
+<button class="text-label-sm-bold text-tertiary">See All</button>
+</div>
+<div class="flex gap-md overflow-x-auto pb-xs scrollbar-hide -mx-xs px-xs">
+<!-- Contact Card 1 -->
+<div class="min-w-[140px] bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full mb-sm relative">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close up portrait of a senior female manager with a warm expression. She is in a light-filled, minimalist corporate environment. The image uses a clean, bright color palette with neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE85g7DZwJ-LT1PNh21goMgXP_3nhCLMc29oj_OTnYSjId5ORsilz9ZGIJ92TVZY2oqjoC8orV34OzmTMr_LyWjWS9NBDlKlW3AaTjtxxZ-MZP-AaJ2W2RzenKulvRK3AZdNwyPnlhqsm8qIpKPvDHI2yqWTU8VKRQu0u73t3FpvSmlPy0EngG0fY0lAVmTlrYtXbQrgP6vlW5V52ORtJ8JCns08AReyW9ZL-8HcijyGMahSvrbWo4bZCRKzAOnTcB5QiMyWKl7y1u"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-tertiary rounded-full border-2 border-surface"></div>
+</div>
+<span class="font-label-sm-bold text-on-surface block truncate w-full">Neha V.</span>
+<span class="font-label-sm text-on-surface-variant block truncate w-full">Manager</span>
+<div class="flex gap-sm mt-md">
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</div>
+<!-- Contact Card 2 -->
+<div class="min-w-[140px] bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full mb-sm relative">
+<img class="w-full h-full rounded-full object-cover" data-alt="A portrait of a male onboarding buddy in a professional but casual attire. He is standing in a modern office lounge area with soft ambient lighting and minimal decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATV9OpRcyLvPSEBzUtHkZln_hoxravaMLBUZ4Ox2l72NFVecHYJjlc48iG0yOzymiJzWAzZBrDjFGgL5MbBUuh2lsMW82Zh2XeUPFnRQ_0Y2zwjcExAl4leLsYQwyf5d6_wbvpq0922inNESyILuPskCsuvybpTbu4UMDoR2lzbHhT1CCG99XNLe37-zggkH4Gr-PH84P9NqBkgpZwsIwQGDhb864o6qi1-Vk9ZS2HxyR8L3EnrUz2yb8wbKGU0upfIB3xqT87lPS1"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-tertiary rounded-full border-2 border-surface"></div>
+</div>
+<span class="font-label-sm-bold text-on-surface block truncate w-full">Rohan S.</span>
+<span class="font-label-sm text-on-surface-variant block truncate w-full">Buddy</span>
+<div class="flex gap-sm mt-md">
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Up Next Section -->
+<section class="space-y-sm">
+<div class="flex items-center gap-xs">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<h3 class="font-body-md-bold text-on-surface">Coming Up</h3>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-label-sm-bold text-on-surface">IT Assets Handover</h4>
+<p class="font-label-sm text-on-surface-variant">01:00 PM • Desk 14, HR Hub</p>
+</div>
+<span class="material-symbols-outlined text-outline">laptop_mac</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md opacity-60">
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-label-sm-bold text-on-surface">HR Induction</h4>
+<p class="font-label-sm text-on-surface-variant">02:30 PM • Meeting Room Alpha</p>
+</div>
+<span class="material-symbols-outlined text-outline">group</span>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 h-[80px] bg-surface border-t border-outline-variant flex justify-around items-center px-md pb-safe">
+<!-- Journey Tab (Active) -->
+<a class="flex flex-col items-center justify-center gap-1 text-primary font-label-sm-bold text-label-sm-bold active:scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">route</span>
+<span>Journey</span>
+</a>
+<!-- Tasks Tab -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span>Tasks</span>
+</a>
+<!-- Feed Tab -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span>Feed</span>
+</a>
+<!-- AI Tab -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span>AI</span>
+</a>
+<!-- You Tab -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span>You</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the Happening Now pulse
+        const pulse = document.querySelector('.animate-pulse');
+        if (pulse) {
+            setInterval(() => {
+                pulse.style.opacity = pulse.style.opacity === '0.5' ? '1' : '0.5';
+            }, 1000);
+        }
+
+        // Horizontal scroll button logic could go here, but native scroll is cleaner for mobile
+    </script>
+<script src="../nav.js"></script>
+</body></html>

@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HRBP Onboarding Session</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#5d5c74",
+                    "inverse-primary": "#c6c4df",
+                    "surface-dim": "#ddd9db",
+                    "primary": "#00000b",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "surface-variant": "#e5e1e3",
+                    "inverse-surface": "#313032",
+                    "surface-container": "#f1edef",
+                    "on-error": "#ffffff",
+                    "outline": "#78767d",
+                    "tertiary-fixed": "#f2e1b7",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c8c5cd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1d",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "primary-fixed-dim": "#c6c4df",
+                    "primary-container": "#1a1a2e",
+                    "tertiary-container": "#b9aa83",
+                    "surface-bright": "#fcf8fa",
+                    "on-primary-fixed-variant": "#45455b",
+                    "on-surface": "#1c1b1d",
+                    "secondary": "#585f6c",
+                    "on-secondary-fixed": "#151c27",
+                    "secondary-container": "#dce2f3",
+                    "on-tertiary-container": "#493f20",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ebe7e9",
+                    "surface": "#fcf8fa",
+                    "background": "#fcf8fa",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-highest": "#e5e1e3",
+                    "secondary-fixed": "#dce2f3",
+                    "tertiary": "#695d3c",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-container-low": "#f6f2f4",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-surface-variant": "#47464c",
+                    "on-primary-container": "#83829b",
+                    "on-secondary-container": "#5e6572",
+                    "inverse-on-surface": "#f4f0f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "md": "16px",
+                    "huge": "64px",
+                    "base": "4px",
+                    "xs": "8px",
+                    "touch-target-min": "44px",
+                    "xl": "32px",
+                    "mobile-margin": "24px",
+                    "lg": "24px",
+                    "xxl": "48px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 0px; height: 0px; }
+        .hairline-border { border: 1px solid #E5E7EB; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-huge">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50 transition-colors duration-200">
+<div class="flex justify-between items-center px-lg py-md w-full">
+<div class="flex items-center gap-md">
+<button class="w-touch-target-min h-touch-target-min flex items-center justify-center hover:bg-surface-container rounded-full transition-colors" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">HRBP Session</h1>
+</div>
+<div class="w-touch-target-min h-touch-target-min flex items-center justify-center overflow-hidden rounded-full border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional studio portrait of a woman of Indian descent in professional corporate attire, photographed against a minimalist grey background with soft cinematic lighting. The image maintains a clean, modern high-end UI aesthetic with deep contrast and a focus on professional approachability, adhering to a minimalist-professional design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaV5N7sx5W5p5I3DQE8o7qUtUl8KkcDxNBHFUnzSnXEZO2DQbUL_v0tHQv8beKPW-TwxpQog877ZGE6ua8N2TixAMYkp_ArVtoiBx85HTbG7vU3k6nRvfN1pAkXb7XR8VoD-z-mQS2C_wwj9VKZbDxBxGeBa8ZEbYMuHvQBvDOj1PrvcAACQRk_0ubKgckQrTpCAA57IcI2EN-4OgSvzAVPILwS3ZRQxkHdL_ooRbEqifH3-uYB1iA11My01WPdhyJ9hxe7vX84eJC"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-mobile-margin py-lg space-y-lg max-w-md mx-auto">
+<!-- Profile Section -->
+<section class="flex flex-col items-center text-center space-y-sm">
+<div class="relative">
+<div class="w-[120px] h-[120px] rounded-full overflow-hidden hairline-border p-xs bg-surface">
+<img class="w-full h-full object-cover rounded-full" data-alt="A detailed close-up portrait of Anjali Das, a senior business professional with a warm and confident expression. She is in a bright, airy office environment with minimalist furniture and neutral tones. The lighting is soft and natural, emphasizing a high-trust professional atmosphere consistent with a premium enterprise operating system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLqzdNxHF6KBOKfVEAUWKgiZo3IqQGtHsCMWL-5y7-fvtPGRyicqQBOLuLiFPcO4mOJAEAJCdm1BVZG_at1o7LQJb0ZGJ9etseDKf4L5Fu7TcwjmJGp75OH6kjWkeuJ_1zqGdqgTu1piekYIqrX8sUhffWazOmBT2yVfy9JmuBgt0M5rdCJOoETs7GJqPlOzCSifvU5otanGp-DqFgrP_oDpsSKqeOKExySpzHITrbnYI7KLCSBf0rbgLwgtzu2FZI7N9mVtWVX2iq"/>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white p-base rounded-full border-2 border-surface">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+<div>
+<h2 class="font-body-md-bold text-headline-lg-mobile text-on-surface">Anjali Das</h2>
+<p class="font-label-sm text-on-surface-variant">Senior HR Business Partner</p>
+</div>
+</section>
+<!-- Logistics Card -->
+<section class="bg-surface-container-lowest hairline-border rounded-xl p-md space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Date</p>
+<p class="font-body-md-bold">Thursday, Oct 26</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Time</p>
+<p class="font-body-md-bold">11:00 AM - 12:00 PM</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-between p-md bg-secondary-container/30 rounded-lg border border-secondary-container hover:bg-secondary-container/50 transition-colors">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary">videocam</span>
+<span class="font-body-md-bold text-on-secondary-container">Video Call</span>
+</div>
+<span class="material-symbols-outlined text-secondary">open_in_new</span>
+</button>
+</section>
+<!-- Topics Section -->
+<section class="space-y-md">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<h3 class="font-body-md-bold text-on-surface">Topics we'll cover</h3>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-sm text-on-surface-variant hairline-border">Employee Handbook</span>
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-sm text-on-surface-variant hairline-border">Benefits Overview</span>
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-sm text-on-surface-variant hairline-border">Working Norms</span>
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-sm text-on-surface-variant hairline-border">Escalation Paths</span>
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-sm text-on-surface-variant hairline-border">EAP Support</span>
+</div>
+<p class="font-label-sm text-on-surface-variant italic px-base">Bring any questions you have. There is time for them.</p>
+</section>
+<!-- AI Preparation Card -->
+<section class="bg-primary-container text-on-primary-container p-lg rounded-xl space-y-md relative overflow-hidden">
+<!-- Decorative AI Pattern -->
+<div class="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none" style="background: radial-gradient(circle, #ffffff 0%, transparent 70%);"></div>
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-on-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-inverse-primary" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md-bold text-surface">Want to prepare questions for this session?</h4>
+<p class="font-label-sm text-on-primary-container mt-xs">Get insights on what to ask based on your role and recent updates.</p>
+</div>
+</div>
+<button class="w-full h-touch-target-min bg-surface text-primary font-body-md-bold rounded-lg flex items-center justify-center gap-sm active:scale-95 transition-transform">
+<span>Prepare with AI</span>
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center px-mobile-margin py-xs">
+<!-- Journey: Active -->
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-xs transition-transform duration-150 scale-95 active:scale-90" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-label-sm text-label-sm mt-1">Journey</span>
+</div>
+<!-- Tasks -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary transition-transform duration-150 active:scale-90" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm mt-1">Tasks</span>
+</div>
+<!-- Feed -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary transition-transform duration-150 active:scale-90" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm mt-1">Feed</span>
+</div>
+<!-- AI -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary transition-transform duration-150 active:scale-90" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-1">AI</span>
+</div>
+<!-- You -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary transition-transform duration-150 active:scale-90" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">You</span>
+</div>
+</nav>
+<!-- AI Concierge FAB (Contextual for Prep) -->
+<button class="fixed right-lg bottom-[90px] w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform z-40 border-2 border-surface" style="box-shadow: 0 4px 20px -4px rgba(0,0,0,0.2);">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+<script src="../nav.js"></script>
+</body></html>

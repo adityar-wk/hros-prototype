@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#1a1a2e",
+                        "on-surface-variant": "#47464c",
+                        "tertiary-container": "#b9aa83",
+                        "on-primary-container": "#83829b",
+                        "tertiary-fixed": "#f2e1b7",
+                        "background": "#fcf8fa",
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface-dim": "#ddd9db",
+                        "inverse-surface": "#313032",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1c1b1d",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-fixed": "#dce2f3",
+                        "outline-variant": "#c8c5cd",
+                        "inverse-primary": "#c6c4df",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-primary-fixed-variant": "#45455b",
+                        "primary-fixed-dim": "#c6c4df",
+                        "outline": "#78767d",
+                        "surface-variant": "#e5e1e3",
+                        "on-secondary-container": "#5e6572",
+                        "on-primary-fixed": "#1a1a2e",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-secondary-fixed": "#151c27",
+                        "surface-container": "#f1edef",
+                        "secondary-container": "#dce2f3",
+                        "secondary": "#585f6c",
+                        "on-tertiary-container": "#493f20",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "error": "#ba1a1a",
+                        "surface": "#fcf8fa",
+                        "surface-tint": "#5d5c74",
+                        "primary-fixed": "#e2e0fc",
+                        "on-error": "#ffffff",
+                        "primary": "#00000b",
+                        "surface-container-low": "#f6f2f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "touch-target-min": "44px",
+                        "sm": "12px",
+                        "huge": "64px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "mobile-margin": "24px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .ai-concierge-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .hairline-border {
+            border: 1px solid #E5E7EB;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-background min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant px-mobile-margin h-touch-target-min flex items-center justify-between">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">HROS</h1>
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Live Offer</span>
+</div>
+</header>
+<main class="flex-grow pt-[64px] pb-[120px] px-mobile-margin max-w-[375px] mx-auto w-full">
+<!-- Hero Personalised Greeting -->
+<section class="mt-lg mb-xl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Your offer, Arjun</h2>
+<p class="font-body-md text-secondary mt-base">We're thrilled to have you join our mission.</p>
+</section>
+<!-- Summary Card -->
+<section class="bg-surface-container-lowest hairline-border rounded-xl p-md mb-lg">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-body-md-bold text-primary">Senior Product Designer</h3>
+<p class="font-label-sm text-secondary">Engineering · Remote</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-xs py-[2px] rounded-full">
+<span class="font-label-sm-bold text-[11px] uppercase tracking-wider">New Offer</span>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-on-surface">Joining Oct 14, 2024</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="account_tree">account_tree</span>
+<span class="font-label-sm text-on-surface">Reporting to Siddharth V.</span>
+</div>
+</div>
+</section>
+<!-- Compensation Details -->
+<section class="mb-lg">
+<div class="flex flex-col mb-md">
+<span class="font-label-sm text-secondary">Cost to Company (CTC)</span>
+<span class="font-display text-display text-primary leading-none">₹42,00,000</span>
+</div>
+<div class="space-y-xs">
+<!-- Compensation Item -->
+<div class="hairline-border rounded-lg p-md bg-surface-container-lowest flex justify-between items-center">
+<div>
+<p class="font-body-md-bold text-primary">Fixed Pay</p>
+<p class="font-label-sm text-secondary">Paid monthly</p>
+</div>
+<span class="font-body-md-bold text-primary">₹32,00,000</span>
+</div>
+<!-- Compensation Item -->
+<div class="hairline-border rounded-lg p-md bg-surface-container-lowest flex justify-between items-center">
+<div>
+<p class="font-body-md-bold text-primary">Variable Pay</p>
+<p class="font-label-sm text-secondary">Performance linked</p>
+</div>
+<span class="font-body-md-bold text-primary">₹6,00,000</span>
+</div>
+<!-- Compensation Item -->
+<div class="hairline-border rounded-lg p-md bg-surface-container-lowest flex justify-between items-center">
+<div>
+<p class="font-body-md-bold text-primary">ESOPs</p>
+<p class="font-label-sm text-secondary">4-year vesting</p>
+</div>
+<span class="font-body-md-bold text-primary">₹4,00,000</span>
+</div>
+</div>
+</section>
+<!-- Benefits & Links -->
+<section class="mb-xl space-y-md">
+<div class="hairline-border rounded-lg p-md bg-surface-container-low">
+<h4 class="font-label-sm-bold text-primary mb-xs">Standard Benefits</h4>
+<p class="font-label-sm text-on-surface-variant">Health insurance · PF · 25 days leave</p>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-xs py-sm hairline-border rounded-lg hover:bg-surface-container-high transition-colors" onclick="window.location.href='../in_hand_calculator/code.html'">
+<span class="material-symbols-outlined text-[18px]" data-icon="calculate">calculate</span>
+<span class="font-label-sm-bold">In-hand calc</span>
+</button>
+<button class="flex items-center justify-center gap-xs py-sm hairline-border rounded-lg hover:bg-surface-container-high transition-colors" onclick="window.location.href='../esop_explainer/code.html'">
+<span class="material-symbols-outlined text-[18px]" data-icon="lightbulb">lightbulb</span>
+<span class="font-label-sm-bold">ESOP Explainer</span>
+</button>
+</div>
+</section>
+<!-- Validity & Legal -->
+<section class="mb-huge text-center">
+<div class="inline-flex items-center gap-xs px-md py-xs bg-error-container/10 text-error rounded-full mb-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="timer">timer</span>
+<span class="font-label-sm-bold">Valid until Sept 30, 2024</span>
+</div>
+<div class="flex flex-wrap justify-center gap-md border-t border-outline-variant pt-lg mt-lg">
+<a class="font-label-sm text-secondary underline decoration-outline-variant" href="#">Privacy Policy</a>
+<a class="font-label-sm text-secondary underline decoration-outline-variant" href="#">Terms of Service</a>
+<a class="font-label-sm text-secondary underline decoration-outline-variant" href="#">Compliance</a>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Actions -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant p-lg flex flex-col gap-md">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold rounded-lg active:scale-[0.98] transition-transform" onclick="window.location.href='../joining_date_proposed_confirmed_1/code.html'">
+            Accept this offer
+        </button>
+<button class="w-full h-touch-target-min border border-outline text-primary font-body-md-bold rounded-lg flex items-center justify-center gap-xs hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+            Talk to Megha (Recruiter)
+        </button>
+</div>
+<!-- AI Concierge Trigger -->
+
+<script>
+        // Micro-interaction for AI Concierge
+        const concierge = document.getElementById('ai-concierge');
+        concierge.addEventListener('click', () => {
+            alert('Opening your AI Career Assistant...');
+        });
+
+        // Simple scroll shadow logic
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

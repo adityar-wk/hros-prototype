@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tax Regime Comparison | HROS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-background": "#1c1b1d",
+                      "surface-variant": "#e5e1e3",
+                      "surface-container-highest": "#e5e1e3",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "surface-container-low": "#f6f2f4",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#404754",
+                      "inverse-surface": "#313032",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#ebe7e9",
+                      "surface": "#fcf8fa",
+                      "secondary": "#585f6c",
+                      "primary-container": "#1a1a2e",
+                      "surface-dim": "#ddd9db",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#dce2f3",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#151c27",
+                      "tertiary": "#695d3c",
+                      "on-surface": "#1c1b1d",
+                      "inverse-primary": "#c6c4df",
+                      "on-primary-container": "#83829b",
+                      "surface-tint": "#5d5c74",
+                      "surface-bright": "#fcf8fa",
+                      "on-primary-fixed": "#1a1a2e",
+                      "outline-variant": "#c8c5cd",
+                      "on-tertiary-container": "#493f20",
+                      "on-tertiary-fixed": "#231b02",
+                      "background": "#fcf8fa",
+                      "primary": "#00000b",
+                      "on-surface-variant": "#47464c",
+                      "tertiary-fixed": "#f2e1b7",
+                      "primary-fixed": "#e2e0fc",
+                      "secondary-container": "#dce2f3",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#c6c4df",
+                      "on-primary-fixed-variant": "#45455b",
+                      "outline": "#78767d",
+                      "on-secondary-container": "#5e6572",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#f4f0f2",
+                      "tertiary-container": "#b9aa83",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#f1edef"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xxl": "48px",
+                      "sm": "12px",
+                      "touch-target-min": "44px",
+                      "xl": "32px",
+                      "mobile-margin": "24px",
+                      "xs": "8px",
+                      "huge": "64px",
+                      "base": "4px",
+                      "md": "16px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Geist"],
+                      "display": ["Geist"],
+                      "label-sm-bold": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "body-md": ["Geist"],
+                      "body-md-bold": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-ring { ring: 2px solid #00000b; border-color: #00000b; }
+        .gradient-mesh {
+            background-color: #fcf8fa;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(226, 224, 252, 0.5) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(242, 225, 183, 0.3) 0px, transparent 50%);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col max-w-[375px] mx-auto overflow-x-hidden pb-[160px]">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-lg h-[64px]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface cursor-pointer">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">HROS</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional studio portrait of a high-level Indian enterprise executive. The individual is wearing a modern, minimalist charcoal grey blazer over a crisp white shirt. The background is a clean, softly lit office environment with muted tones, reflecting a calm and efficient workspace. The lighting is balanced and soft, creating a trust-inspiring and competent aesthetic consistent with a premium AI-native OS." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRrBJOHS07FzrGwZNULPkRLwTcaL6mw6OLgbkgBMBkzgBGnX8gy7p9QpksVPXyOD6isjkNJN4IOR9ZTvPqXzhTP05RcFMoSy-aEG1a9-WROLSw3gge1iU29B5CXcQLcz_OO6147dzdfzetIVp273Ft0JFP9Shy_O6KYGqwOSO9SvcJqE4xVkIbcqyIeq0V1zly-b1lIoePeneafozIpubJCwB7aOYZfsNTyoh-hEAnNMMyJjreYgMCY_FUmCvkn_CiWh_nLQv5v634"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 px-mobile-margin pt-lg space-y-lg gradient-mesh">
+<!-- Header & Progress Section -->
+<section class="space-y-sm">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Choose Tax Regime</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Step 2 of 5</p>
+</div>
+<div class="px-sm py-1 bg-[#10B9811A] text-[#059669] rounded-full font-label-sm-bold text-label-sm-bold">
+                    In Progress
+                </div>
+</div>
+<!-- Progress Bar -->
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[20%] transition-all duration-500"></div>
+</div>
+</section>
+<!-- Comparison Cards Area -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Highlight Banner -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-[#059669]" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface">You save <span class="text-[#059669]">₹3,200/month</span> under New Regime</p>
+</div>
+<!-- REGIME OPTIONS -->
+<div class="space-y-md">
+<!-- Old Regime Card -->
+<button class="w-full text-left bg-surface-container-lowest border border-outline-variant p-lg rounded-xl transition-all active:scale-[0.98] relative group" id="card-old" onclick="selectRegime('old')" onclick="window.location.href='../tax_setup_investment_declarations/code.html'">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant tracking-wider">REGIME</span>
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface">OLD REGIME</h3>
+</div>
+<div class="w-6 h-6 rounded-full border border-outline flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" id="check-old">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="space-y-base">
+<p class="font-label-sm text-label-sm text-outline">Monthly TDS</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">₹12,400</p>
+</div>
+<div class="space-y-base">
+<p class="font-label-sm text-label-sm text-outline">Annual Tax</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">₹1,48,800</p>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-outline-variant flex justify-between items-center">
+<p class="font-label-sm text-label-sm text-outline">Monthly In-hand</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">₹87,600</p>
+</div>
+</button>
+<!-- New Regime Card -->
+<button class="w-full text-left bg-surface-container-lowest border border-outline-variant p-lg rounded-xl transition-all active:scale-[0.98] relative group" id="card-new" onclick="selectRegime('new')">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant tracking-wider">RECOMMENDED</span>
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface">NEW REGIME</h3>
+</div>
+<div class="w-6 h-6 rounded-full border border-outline flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" id="check-new">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="space-y-base">
+<p class="font-label-sm text-label-sm text-outline">Monthly TDS</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">₹9,200</p>
+</div>
+<div class="space-y-base">
+<p class="font-label-sm text-label-sm text-outline">Annual Tax</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">₹1,10,400</p>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-outline-variant flex justify-between items-center">
+<p class="font-label-sm text-label-sm text-outline">Monthly In-hand</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">₹90,800</p>
+</div>
+</button>
+</div>
+</div>
+
+</button>
+</div>
+</main>
+<!-- Declaration Bottom Bar (Hidden until selection) -->
+<div class="fixed bottom-[80px] w-full max-w-[375px] bg-surface p-lg border-t border-outline-variant translate-y-full transition-transform duration-300 z-50" id="declaration-bar">
+<div class="flex items-start gap-md mb-md">
+<input class="mt-1 rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" id="consent" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface" for="consent">
+                I choose the <span class="font-bold" id="selected-regime-text"></span> regime for FY 2024-25
+            </label>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-lg font-body-md-bold text-body-md-bold disabled:opacity-30 transition-all" disabled="" id="confirm-btn">
+            Confirm &amp; Proceed
+        </button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full max-w-[375px] z-50 h-[80px] bg-surface border-t border-outline-variant flex justify-around items-center px-md pb-safe">
+<div class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span>Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 text-primary font-label-sm-bold text-label-sm-bold hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span>Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span>Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span>AI</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>You</span>
+</div>
+</nav>
+<script>
+        let selected = null;
+
+        function selectRegime(type) {
+            selected = type;
+            
+            // Reset styles
+            document.getElementById('card-old').classList.remove('active-ring', 'bg-primary-container', 'text-on-primary-container');
+            document.getElementById('card-new').classList.remove('active-ring', 'bg-primary-container', 'text-on-primary-container');
+            document.getElementById('check-old').classList.add('opacity-0');
+            document.getElementById('check-new').classList.add('opacity-0');
+
+            // Set active
+            const activeCard = document.getElementById('card-' + type);
+            activeCard.classList.add('active-ring');
+            document.getElementById('check-' + type).classList.remove('opacity-0');
+            document.getElementById('check-' + type).classList.add('opacity-100');
+
+            // Show declaration bar
+            const bar = document.getElementById('declaration-bar');
+            const text = document.getElementById('selected-regime-text');
+            text.textContent = type.toUpperCase();
+            bar.classList.remove('translate-y-full');
+        }
+
+        document.getElementById('consent').addEventListener('change', (e) => {
+            const btn = document.getElementById('confirm-btn');
+            btn.disabled = !e.target.checked;
+        });
+
+        document.getElementById('confirm-btn').addEventListener('click', () => {
+            alert('Selection Confirmed: ' + (selected === 'new' ? 'New Regime' : 'Old Regime'));
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
+

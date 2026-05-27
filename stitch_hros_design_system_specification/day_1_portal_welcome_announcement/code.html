@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-fixed": "#f2e1b7",
+                  "primary": "#00000b",
+                  "on-surface-variant": "#47464c",
+                  "on-tertiary-container": "#493f20",
+                  "on-tertiary-fixed": "#231b02",
+                  "background": "#fcf8fa",
+                  "outline-variant": "#c8c5cd",
+                  "tertiary-container": "#b9aa83",
+                  "on-secondary": "#ffffff",
+                  "surface-container": "#f1edef",
+                  "inverse-on-surface": "#f4f0f2",
+                  "surface-container-lowest": "#ffffff",
+                  "outline": "#78767d",
+                  "on-secondary-container": "#5e6572",
+                  "on-primary-fixed-variant": "#45455b",
+                  "primary-fixed-dim": "#c6c4df",
+                  "secondary-container": "#dce2f3",
+                  "on-error-container": "#93000a",
+                  "primary-fixed": "#e2e0fc",
+                  "surface-container-high": "#ebe7e9",
+                  "surface": "#fcf8fa",
+                  "secondary": "#585f6c",
+                  "inverse-surface": "#313032",
+                  "error": "#ba1a1a",
+                  "on-secondary-fixed-variant": "#404754",
+                  "surface-container-low": "#f6f2f4",
+                  "on-tertiary": "#ffffff",
+                  "surface-variant": "#e5e1e3",
+                  "surface-container-highest": "#e5e1e3",
+                  "tertiary-fixed-dim": "#d5c59d",
+                  "on-tertiary-fixed-variant": "#514627",
+                  "on-background": "#1c1b1d",
+                  "on-error": "#ffffff",
+                  "surface-bright": "#fcf8fa",
+                  "on-primary-fixed": "#1a1a2e",
+                  "on-primary-container": "#83829b",
+                  "surface-tint": "#5d5c74",
+                  "tertiary": "#695d3c",
+                  "on-surface": "#1c1b1d",
+                  "inverse-primary": "#c6c4df",
+                  "secondary-fixed": "#dce2f3",
+                  "error-container": "#ffdad6",
+                  "on-secondary-fixed": "#151c27",
+                  "on-primary": "#ffffff",
+                  "surface-dim": "#ddd9db",
+                  "secondary-fixed-dim": "#c0c7d6",
+                  "primary-container": "#1a1a2e"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "sm": "12px",
+                  "xxl": "48px",
+                  "touch-target-min": "44px",
+                  "xl": "32px",
+                  "xs": "8px",
+                  "mobile-margin": "24px",
+                  "base": "4px",
+                  "huge": "64px",
+                  "md": "16px",
+                  "lg": "24px"
+          },
+          "fontFamily": {
+                  "label-sm-bold": ["Geist"],
+                  "headline-lg-mobile": ["Geist"],
+                  "display": ["Geist"],
+                  "body-md-bold": ["Geist"],
+                  "body-md": ["Geist"],
+                  "label-sm": ["Geist"],
+                  "headline-lg": ["Geist"]
+          },
+          "fontSize": {
+                  "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                  "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-huge">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 z-50 w-full bg-surface/95 backdrop-blur-md flex justify-between items-center px-mobile-margin h-touch-target-min border-b border-outline-variant">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young person with a friendly expression, set against a soft-focus minimalist architectural background. The lighting is warm and natural, following a clean, light-mode corporate aesthetic with high-key whites and gentle neutrals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX9vRhvAEO1dxGGGHnwRkQq_2VVjwTuAvlu6kOyQENb4SOYQE7kRuxpTJWIPSljE1i1dLV2QYoLxQKXnwnI-eqJ63ouvwx8akYwv2eyjiy00AMDUDw4Vna0StPaga0SuEgygGb9ppx6OWYEjBh2wYBGerNpykRdSdRKjCdspqeNEHLsdOM0BnRxPAaZsqVugrYiE_hoDxqdHb3Jyrs-64ay7YvtznwZgbkqzWs3ERlotVGXTXJckj0Z0KFJZsaO02OEKPOR5BUn4Ku"/>
+</div>
+<h1 class="font-display text-headline-lg-mobile font-bold text-primary">HROS</h1>
+</div>
+<button class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="mt-[64px] px-mobile-margin py-lg space-y-lg">
+<!-- Welcome Announcement Card -->
+<div class="bg-secondary-container/40 border border-outline-variant p-md rounded-xl flex items-start gap-md animate-fade-in" id="announcement">
+<div class="mt-1 w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm-bold text-label-sm-bold text-on-secondary-container">Welcome to HROS</p>
+<p class="font-label-sm text-label-sm text-on-secondary-container/80 leading-relaxed">
+          A welcome announcement has been sent to the Engineering Operations team.
+        </p>
+</div>
+<button class="ml-auto text-on-secondary-container/40" onclick="window.location.href='../day_1_portal_welcome_dismissed/code.html'">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Hero Header -->
+<section class="space-y-xs">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 bg-[#10b981] rounded-full ring-4 ring-[#10b981]/10"></span>
+<span class="font-label-sm-bold text-label-sm-bold text-primary uppercase tracking-wider">Live</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Today is your Day 1</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">We're excited to have you join the Engineering Operations team, Arjun.</p>
+</section>
+<!-- Bento Journey Map -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-body-md-bold text-body-md-bold">Your Journey</h3>
+<span class="font-label-sm text-label-sm text-outline">Stage 1 of 4</span>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<!-- Main Journey Card -->
+<div class="col-span-2 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col gap-lg">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-outline">Current Phase</p>
+<h4 class="font-body-md-bold text-body-md-bold">Onboarding &amp; Setup</h4>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-primary-container flex items-center justify-center">
+<span class="font-label-sm-bold text-label-sm-bold">25%</span>
+</div>
+</div>
+<!-- Progress Line -->
+<div class="relative h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-1/4 bg-primary transition-all duration-1000"></div>
+</div>
+</div>
+<!-- Task Mini Cards -->
+<div class="bg-white border border-outline-variant p-md rounded-xl space-y-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+<p class="font-label-sm-bold text-label-sm-bold">3 Tasks</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Pending for today</p>
+</div>
+<div class="bg-white border border-outline-variant p-md rounded-xl space-y-sm">
+<span class="material-symbols-outlined text-primary">groups</span>
+<p class="font-label-sm-bold text-label-sm-bold">Meet Team</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Scheduled for 2 PM</p>
+</div>
+</div>
+</section>
+<!-- Schedule Section -->
+<section class="space-y-md">
+<h3 class="font-body-md-bold text-body-md-bold">Today's Schedule</h3>
+<div class="space-y-sm">
+<!-- Schedule Item 1 (Active/Soon) -->
+<div class="flex gap-md group">
+<div class="flex flex-col items-center gap-base">
+<span class="font-label-sm-bold text-label-sm-bold text-primary">09:30</span>
+<div class="w-px h-full bg-outline-variant"></div>
+</div>
+<div class="flex-1 pb-lg">
+<div class="bg-surface-container-low border border-outline-variant p-md rounded-xl space-y-xs transition-all active:scale-[0.98]">
+<div class="flex justify-between items-center">
+<span class="font-label-sm-bold text-label-sm-bold px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed rounded">Coming Up</span>
+<span class="material-symbols-outlined text-outline text-[18px]">more_vert</span>
+</div>
+<h5 class="font-body-md-bold text-body-md-bold">IT Asset Handover</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Level 4, IT Hub</p>
+</div>
+</div>
+</div>
+<!-- Schedule Item 2 -->
+<div class="flex gap-md group">
+<div class="flex flex-col items-center gap-base">
+<span class="font-label-sm-bold text-label-sm-bold text-outline">11:00</span>
+<div class="w-px h-full bg-outline-variant"></div>
+</div>
+<div class="flex-1 pb-lg">
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-xs opacity-80">
+<h5 class="font-body-md-bold text-body-md-bold">Manager Sync-up</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Virtual • Meet Link</p>
+</div>
+</div>
+</div>
+<!-- Schedule Item 3 -->
+<div class="flex gap-md group">
+<div class="flex flex-col items-center gap-base">
+<span class="font-label-sm-bold text-label-sm-bold text-outline">14:00</span>
+</div>
+<div class="flex-1">
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-xs opacity-80">
+<h5 class="font-body-md-bold text-body-md-bold">Team Lunch</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Cafeteria Annex</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DPDP Compliance / AI Hint -->
+<section class="bg-surface-container-high/30 border border-dashed border-outline rounded-xl p-lg space-y-md">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary">security</span>
+<div class="space-y-xs">
+<p class="font-body-md-bold text-body-md-bold">Your Privacy Matters</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">We are committed to Indian DPDP Act compliance. Your personal data is encrypted and only used to personalize your onboarding experience.</p>
+</div>
+</div>
+<button class="w-full h-touch-target-min border border-primary text-primary font-body-md-bold rounded-lg hover:bg-primary hover:text-white transition-colors">
+        Review Consents
+      </button>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 z-50 w-full flex justify-around items-center h-huge bg-surface/95 backdrop-blur-md border-t border-outline-variant px-xs">
+<!-- Journey (Active) -->
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/50 rounded-lg px-3 py-1 scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm semibold">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm semibold">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm semibold">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm semibold">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</a>
+</nav>
+<script>
+    // Micro-interaction: fade out announcement
+    const announcement = document.getElementById('announcement');
+    if (announcement) {
+      setTimeout(() => {
+        announcement.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        // We don't auto-remove for Day 1 awareness, but user can close it.
+      }, 5000);
+    }
+  </script>
+<script src="../nav.js"></script>
+</body></html>

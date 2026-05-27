@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Geist', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .task-card {
+      transition: all 0.2s ease;
+    }
+    .task-card.completed {
+      opacity: 0.6;
+    }
+    .task-card:not(.completed):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col" style="background:#fcf8fa; color:#1c1b1d;">
+
+<!-- Top App Bar -->
+<header style="background:#fcf8fa; border-bottom:1px solid #c8c5cd;" class="w-full top-0 sticky z-40 flex justify-between items-center px-6 h-14">
+  <div class="flex items-center gap-2">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+    <span class="material-symbols-outlined" style="color:#00000b;">route</span>
+    <h1 style="color:#00000b; font-weight:600; font-size:20px;">Your Onboarding</h1>
+  </div>
+  <div class="flex items-center gap-2" style="background:#f1edef; padding:6px 12px; border-radius:20px; border:1px solid #c8c5cd;">
+    <div style="width:12px; height:12px; background:#10b981; border-radius:50%;"></div>
+    <span style="font-size:12px; font-weight:600; color:#1c1b1d;">In Progress</span>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-grow px-6 pt-6 pb-24 hide-scrollbar overflow-y-auto">
+
+  <!-- Progress Summary -->
+  <section style="margin-bottom:24px; padding:16px; background:#e2e0fc; border-radius:12px; border:1px solid #c6c4df;">
+    <div style="font-size:13px; color:#45455b; margin-bottom:8px;">ONBOARDING PROGRESS</div>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+      <div style="font-size:24px; font-weight:700; color:#1a1a2e;" id="progress-count">0/23</div>
+      <div style="flex:1; height:8px; background:#c6c4df; border-radius:4px; overflow:hidden;">
+        <div id="progress-bar" style="height:100%; background:#00000b; width:0%; transition:width 0.3s;"></div>
+      </div>
+    </div>
+    <div style="font-size:12px; color:#45455b;">Complete all steps to finalize your onboarding</div>
+  </section>
+
+  <!-- All Tasks -->
+  <div class="space-y-3">
+
+    <!-- 1. Personal Data -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('data_capture_personal_records_category_a')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Personal Information</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Name, DOB, address</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 2. Educational Details -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('data_capture_educational_details_category_b')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Educational Details</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Degrees and institutions</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 3. Previous Employment -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('data_capture_previous_employment_category_c')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Work History</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Previous employers and roles</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 4. Identity Verification -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('data_capture_identity_verification_category_f')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Identity Verification</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Aadhaar, PAN, Passport</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 5. Bank Account -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('data_capture_bank_account_details_category_g')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Bank Account</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Salary account setup</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 6. BGV Consent -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('bgv_consent_state')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Background Verification</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Give BGV consent</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 7. Document Signing -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('document_signing_queue_state')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Document Signing</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Sign required documents</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 8. Appointment Letter -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('appointment_letter_preview_consent')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Appointment Letter</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Review and sign</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 9. Tax Setup -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('tax_setup_timing_preference')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Tax Setup</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Configure tax regime and investments</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 10. Family Nominees -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('family_nominees_empty_state')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Family Nominees</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Add beneficiary information</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 11. Flexi Allocation -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('flexi_allocation_default_state')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Flexi Allocation</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Allocate flexible benefits</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 12. PF & NPS -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('pf_nps_retirement_elections')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">PF & NPS Elections</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Configure retirement savings</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 13. Benefits & Insurance -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('benefits_insurance_expanded_view')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Benefits & Insurance</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Enroll in health coverage</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 14. Medical Insurance Dependents -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('medical_insurance_coverage_dependents')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Medical Insurance Dependents</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Add family members to coverage</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 15. Asset Custody -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('asset_custody_awaiting_acknowledgement')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Asset Custody</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Acknowledge assigned assets</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 16. Vendor Consent -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('vendor_consent_all_pending')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Vendor Consent</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Grant vendor data sharing permissions</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 17. Salary Preview -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('salary_preview_review_window_open')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Salary Preview</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Review and confirm salary</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 18. Payroll Readiness -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('payroll_readiness_green_state_confirmed')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Payroll Readiness</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Confirm all payroll details</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 19. Policies & POSH -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('policy_queue_pending_state')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Policies & POSH</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Read and acknowledge policies</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 20. Conflict of Interest -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('conflict_of_interest_declaration')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Conflict of Interest</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Declare any conflicts</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 21. Legal Declaration -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('legal_case_declaration')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Legal Declaration</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Disclose any legal cases</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 22. Bonus Clawback -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('bonus_clawback_terms_presentation')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Bonus Clawback</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Acknowledge clawback terms</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+    <!-- 23. Post-Joining Confirmation -->
+    <div class="task-card" style="padding:16px; background:#fff; border:1px solid #c8c5cd; border-radius:12px; cursor:pointer;" onclick="navigateTo('post_joining_confirmation_review_window_open')">
+      <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div style="display:flex; gap:12px; flex:1;">
+          <div class="task-check" style="width:24px; height:24px; background:#fcf8fa; border:2px solid #c8c5cd; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:14px;">check</span>
+          </div>
+          <div style="flex:1;">
+            <div style="font-weight:600; color:#1c1b1d; font-size:14px;">Post-Joining Confirmation</div>
+            <div style="font-size:12px; color:#47464c; margin-top:4px;">Finalize onboarding declaration</div>
+          </div>
+        </div>
+        <span class="material-symbols-outlined" style="color:#78767d; font-size:20px;">arrow_forward_ios</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="height:24px;"></div>
+
+</main>
+
+<!-- Bottom Nav Bar -->
+<nav style="position:fixed; bottom:0; left:0; width:100%; z-index:50; display:flex; justify-content:space-around; align-items:center; padding:12px 4px 12px; background:#fff; border-top:1px solid #c8c5cd; height:64px;">
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; background:#e2e0fc; color:#1a1a2e; border-radius:8px; padding:8px 12px; text-decoration:none; flex:1; margin:0 2px;" href="../journey_map_current_stage_expanded/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px; font-variation-settings:'FILL' 1;">route</span>
+    <span style="font-size:12px; font-weight:600; margin-top:2px;">Journey</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../tasks_active_state/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">assignment</span>
+    <span style="font-size:12px; margin-top:2px;">Tasks</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../feed_active_content_mix/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">dynamic_feed</span>
+    <span style="font-size:12px; margin-top:2px;">Feed</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../ai_concierge_active_chat/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">auto_awesome</span>
+    <span style="font-size:12px; margin-top:2px;">AI</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../data_rights_pane/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">person</span>
+    <span style="font-size:12px; margin-top:2px;">You</span>
+  </a>
+</nav>
+
+<script>
+  // Task completion tracking via localStorage
+  const COMPLETED_TASKS = 'completed_tasks';
+  const ALL_TASKS = [
+    'data_capture_personal_records_category_a',
+    'data_capture_educational_details_category_b',
+    'data_capture_previous_employment_category_c',
+    'data_capture_identity_verification_category_f',
+    'data_capture_bank_account_details_category_g',
+    'bgv_consent_state',
+    'document_signing_queue_state',
+    'appointment_letter_preview_consent',
+    'tax_setup_timing_preference',
+    'family_nominees_empty_state',
+    'flexi_allocation_default_state',
+    'pf_nps_retirement_elections',
+    'benefits_insurance_expanded_view',
+    'medical_insurance_coverage_dependents',
+    'asset_custody_awaiting_acknowledgement',
+    'vendor_consent_all_pending',
+    'salary_preview_review_window_open',
+    'payroll_readiness_green_state_confirmed',
+    'policy_queue_pending_state',
+    'conflict_of_interest_declaration',
+    'legal_case_declaration',
+    'bonus_clawback_terms_presentation',
+    'post_joining_confirmation_review_window_open'
+  ];
+
+  function getCompletedTasks() {
+    const stored = localStorage.getItem(COMPLETED_TASKS);
+    return stored ? JSON.parse(stored) : [];
+  }
+
+  function markTaskComplete(taskId) {
+    const completed = getCompletedTasks();
+    if (!completed.includes(taskId)) {
+      completed.push(taskId);
+      localStorage.setItem(COMPLETED_TASKS, JSON.stringify(completed));
+    }
+    updateUI();
+  }
+
+  function updateUI() {
+    const completed = getCompletedTasks();
+    const count = completed.length;
+
+    // Update progress
+    document.getElementById('progress-count').textContent = count + '/' + ALL_TASKS.length;
+    const percentage = (count / ALL_TASKS.length) * 100;
+    document.getElementById('progress-bar').style.width = percentage + '%';
+
+    // Update task cards
+    document.querySelectorAll('.task-card').forEach(card => {
+      const screenId = card.getAttribute('onclick').match(/'([^']+)'/)[1];
+      const isCompleted = completed.includes(screenId);
+
+      if (isCompleted) {
+        card.classList.add('completed');
+        const checkbox = card.querySelector('.task-check');
+        checkbox.style.background = '#00000b';
+        checkbox.style.color = '#fff';
+        checkbox.style.borderColor = '#00000b';
+      } else {
+        card.classList.remove('completed');
+        const checkbox = card.querySelector('.task-check');
+        checkbox.style.background = '#fcf8fa';
+        checkbox.style.color = '#00000b';
+        checkbox.style.borderColor = '#c8c5cd';
+      }
+    });
+  }
+
+  function navigateTo(screenId) {
+    // Mark as completed when navigating to it
+    markTaskComplete(screenId);
+    // Navigate using the master page's goTo function
+    if (window.top.goTo) {
+      window.top.goTo(screenId);
+    } else {
+      // Fallback for standalone viewing
+      window.location.href = '../' + screenId + '/code.html';
+    }
+  }
+
+  // Initialize UI
+  updateUI();
+
+  // Also mark complete when returning to this page
+  window.addEventListener('pageshow', updateUI);
+</script>
+</body>
+</html>

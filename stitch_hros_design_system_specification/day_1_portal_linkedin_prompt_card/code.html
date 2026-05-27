@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fcf8fa",
+                    "tertiary": "#695d3c",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c8c5cd",
+                    "secondary": "#585f6c",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-primary-fixed": "#1a1a2e",
+                    "tertiary-container": "#b9aa83",
+                    "on-background": "#1c1b1d",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-low": "#f6f2f4",
+                    "on-surface-variant": "#47464c",
+                    "inverse-primary": "#c6c4df",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-tint": "#5d5c74",
+                    "surface-dim": "#ddd9db",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-container-high": "#ebe7e9",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf8fa",
+                    "secondary-fixed": "#dce2f3",
+                    "on-secondary-fixed": "#151c27",
+                    "on-error-container": "#93000a",
+                    "primary": "#00000b",
+                    "on-secondary-container": "#5e6572",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a1a2e",
+                    "on-primary-container": "#83829b",
+                    "outline": "#78767d",
+                    "on-surface": "#1c1b1d",
+                    "on-primary": "#ffffff",
+                    "background": "#fcf8fa",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-container": "#f1edef",
+                    "secondary-container": "#dce2f3",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-tertiary-container": "#493f20",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e5e1e3",
+                    "inverse-surface": "#313032"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "huge": "64px",
+                    "touch-target-min": "44px",
+                    "xs": "8px",
+                    "md": "16px",
+                    "base": "4px",
+                    "mobile-margin": "24px",
+                    "xxl": "48px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ambient-glow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-40 border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min w-full">
+<div class="flex items-center gap-2">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional close-up studio portrait of a young Indian software engineer with a friendly expression. The lighting is soft and cinematic, with a clean minimalist background in shades of off-white and soft grey. The overall aesthetic is professional, modern, and high-end, matching an enterprise software environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7pnx1pIpIi90kIAXBW7GgrnfBvUx8UFyGUVKouuLYmTEkBKKpMpYgGW62HhSVtlpASa9PdanCxWyq2duxGlVb98MdwrLCDYVyoRmb8aVedxuNue4rfdvaFVCWTOhwi0Zi2oAdhKyYAt9vt6oUMF0yYn1_oElQYpkz_NiAPa2xDZy-ljAeGul2nwpm_SiY7_MfpvrsgWR0RpBVLjScMY24raWCfvRX5T5DQgiC-GGRJrv7NN1FfMdYVfVM8hqHCBlBIciarM_eIU2g"/>
+</div>
+</div>
+<h1 class="font-display text-headline-lg-mobile font-bold text-primary tracking-tight">HROS</h1>
+<button class="w-touch-target-min h-touch-target-min flex items-center justify-center hover:bg-surface-container-low transition-colors rounded-full">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 pb-huge overflow-y-auto">
+<!-- Section: Morning Schedule (Contextual Background) -->
+<section class="px-mobile-margin pt-lg opacity-40 grayscale-[0.5]">
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#10B981]"></div>
+<h2 class="font-body-md-bold text-body-md-bold">Morning Schedule</h2>
+</div>
+</div>
+<div class="space-y-md">
+<div class="p-md bg-surface-container-lowest border border-outline-variant rounded-lg flex items-center gap-md">
+<span class="material-symbols-outlined text-outline">calendar_today</span>
+<div>
+<p class="font-body-md-bold text-body-md-bold">IT Asset Handover</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">09:30 AM • Meeting Room 4</p>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN TASK: LinkedIn Announcement Prompt -->
+<section class="px-mobile-margin py-xl">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg ambient-glow relative overflow-hidden">
+<!-- Decorative AI Subtlety -->
+<div class="absolute top-0 right-0 p-lg opacity-10">
+<span class="material-symbols-outlined text-huge">auto_awesome</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-xs mb-base">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">celebration</span>
+<h2 class="font-body-md-bold text-body-md-bold">Share the big news!</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">
+                        Want to share your new role on LinkedIn?
+                    </p>
+<!-- Editable Template Box -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-md mb-xl">
+<textarea class="w-full bg-transparent border-none focus:ring-0 font-body-md text-on-surface resize-none h-24 p-0" spellcheck="false">I’m happy to share that I’m starting a new position as Software Engineer at HROS!</textarea>
+<div class="flex justify-end mt-xs">
+<span class="font-label-sm text-label-sm text-outline">Editable template</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-md">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold rounded-lg flex items-center justify-center gap-xs hover:opacity-90 active:scale-[0.98] transition-all" onclick="window.location.href='../day_1_portal_linkedin_shared_confirmation/code.html'">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                            Share on LinkedIn
+                        </button>
+<div class="flex items-center gap-md">
+<button class="flex-1 h-touch-target-min border border-outline-variant bg-surface text-on-surface font-body-md-bold rounded-lg flex items-center justify-center gap-xs hover:bg-surface-container-low active:scale-[0.98] transition-all" onclick="copyText()">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+                                Copy to clipboard
+                            </button>
+<button class="flex-1 h-touch-target-min text-outline font-body-md-bold rounded-lg hover:text-on-surface transition-colors">
+                                Skip
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Journey Map (Contextual Background) -->
+<section class="px-mobile-margin opacity-30 grayscale">
+<div class="flex items-center gap-xs mb-md">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<h2 class="font-body-md-bold text-body-md-bold text-outline">Your Journey</h2>
+</div>
+<div class="relative pl-lg border-l border-outline-variant ml-xs space-y-huge py-md">
+<div class="relative">
+<div class="absolute -left-[29px] top-0 w-4 h-4 rounded-full bg-outline"></div>
+<p class="font-label-sm-bold text-label-sm-bold">Onboarding Complete</p>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t border-outline-variant bg-surface/95 backdrop-blur-md flex justify-around items-center px-xs h-huge">
+<!-- Journey Tab (Active) -->
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/50 rounded-lg px-3 py-1 scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm semibold">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm semibold">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm semibold">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm semibold">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</a>
+</nav>
+<script>
+        function copyText() {
+            const textarea = document.querySelector('textarea');
+            textarea.select();
+            document.execCommand('copy');
+            
+            const btn = event.currentTarget;
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check</span> Copied!`;
+            btn.classList.add('bg-secondary-container');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalHtml;
+                btn.classList.remove('bg-secondary-container');
+            }, 2000);
+        }
+
+        // Simple entrance animation for the main card
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.querySelector('.ambient-glow');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

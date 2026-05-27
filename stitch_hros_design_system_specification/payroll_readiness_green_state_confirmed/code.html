@@ -1,0 +1,272 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e5e1e3",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "secondary-fixed": "#dce2f3",
+                    "secondary-container": "#dce2f3",
+                    "surface-container-highest": "#e5e1e3",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-container": "#83829b",
+                    "secondary": "#585f6c",
+                    "primary-container": "#1a1a2e",
+                    "surface-container-low": "#f6f2f4",
+                    "surface": "#fcf8fa",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f4f0f2",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#c6c4df",
+                    "outline-variant": "#c8c5cd",
+                    "on-secondary-container": "#5e6572",
+                    "outline": "#78767d",
+                    "primary": "#00000b",
+                    "on-secondary-fixed-variant": "#404754",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-container": "#f1edef",
+                    "on-surface": "#1c1b1d",
+                    "primary-fixed": "#e2e0fc",
+                    "on-tertiary-container": "#493f20",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#313032",
+                    "background": "#fcf8fa",
+                    "tertiary-container": "#b9aa83",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-background": "#1c1b1d",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-dim": "#ddd9db",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "surface-tint": "#5d5c74",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#695d3c",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-surface-variant": "#47464c",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-bright": "#fcf8fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "mobile-margin": "24px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "huge": "64px",
+                    "xs": "8px",
+                    "xl": "32px",
+                    "sm": "12px",
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #fcf8fa; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-nav-icon { font-variation-settings: 'FILL' 1; }
+        .success-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant docked full-width top-0 z-40 fixed">
+<div class="flex items-center justify-between px-mobile-margin h-touch-target-min w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="transition-colors duration-200 active:opacity-70 hover:bg-surface-container dark:hover:bg-surface-container-highest p-2 rounded-full" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed">Payroll Readiness</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</div>
+</div>
+</header>
+<main class="pt-20 px-mobile-margin max-w-lg mx-auto">
+<!-- Readiness Signal Banner (Success State) -->
+<section class="mt-md mb-xl">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-[#D1FAE5] flex items-center justify-center rounded-full mb-md success-pulse">
+<span class="material-symbols-outlined text-[#059669] scale-150" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-xs">You are payroll-ready.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Your data is confirmed and secured.</p>
+</div>
+</section>
+<!-- Summary Grid (Bento Style) -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-body-md-bold text-body-md-bold">Verified Categories</h3>
+<span class="flex items-center gap-1 font-label-sm-bold text-label-sm-bold text-[#059669]">
+<span class="w-2 h-2 rounded-full bg-[#059669]"></span> Ready
+                </span>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<!-- Personal -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+<span class="material-symbols-outlined text-[#059669] text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold">Personal</span>
+</div>
+<!-- Education -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant">school</span>
+<span class="material-symbols-outlined text-[#059669] text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold">Education</span>
+</div>
+<!-- Employment (Asymmetric wide) -->
+<div class="col-span-2 bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="p-2 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant">work</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold">Employment History</span>
+</div>
+<span class="material-symbols-outlined text-[#059669]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<!-- Identity -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant">badge</span>
+<span class="material-symbols-outlined text-[#059669] text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold">Identity (**** 1234F)</span>
+</div>
+<!-- Bank -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+<span class="material-symbols-outlined text-[#059669] text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold">Bank Account (**** 5692)</span>
+</div>
+</div>
+</section>
+<!-- Compliance & Security Message -->
+<section class="mt-huge mb-lg">
+<div class="border border-outline-variant rounded-xl p-md bg-surface-container-low">
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-on-surface-variant flex-shrink-0">shield</span>
+<div class="space-y-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                            All your documents are encrypted and managed as per DPDP compliance standards. Your data is only shared for payroll processing.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-[72px] left-0 w-full px-mobile-margin pb-md pointer-events-none">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold text-body-md-bold transition-transform active:scale-95 pointer-events-auto" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+            Done
+        </button>
+</div>
+
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-surface-dim border-t border-outline-variant">
+<!-- Journey (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container dark:bg-primary-fixed-dim dark:text-on-primary-fixed-variant rounded-xl px-3 py-1 transition-transform duration-150 scale-95 active:scale-90" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined active-nav-icon">map</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary transition-transform duration-150 scale-95 active:scale-90" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary transition-transform duration-150 scale-95 active:scale-90" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary transition-transform duration-150 scale-95 active:scale-90" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:text-primary transition-transform duration-150 scale-95 active:scale-90" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for feedback
+        document.querySelector('button.bg-primary').addEventListener('click', () => {
+            const btn = document.querySelector('button.bg-primary');
+            btn.innerHTML = 'Saving...';
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check</span> Confirmed';
+                setTimeout(() => {
+                    btn.innerHTML = 'Done';
+                }, 2000);
+            }, 800);
+        });
+    </script>
+
+
+<script src="../nav.js"></script>
+</body></html>

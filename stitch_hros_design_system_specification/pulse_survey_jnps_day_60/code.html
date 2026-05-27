@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f4f0f2",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#e2e0fc",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-dim": "#ddd9db",
+                    "on-background": "#1c1b1d",
+                    "surface-variant": "#e5e1e3",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "background": "#fcf8fa",
+                    "on-primary-fixed-variant": "#45455b",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c6c4df",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-primary-container": "#83829b",
+                    "surface-container-low": "#f6f2f4",
+                    "surface": "#fcf8fa",
+                    "primary": "#00000b",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f1edef",
+                    "secondary": "#585f6c",
+                    "on-secondary-fixed-variant": "#404754",
+                    "inverse-primary": "#c6c4df",
+                    "outline": "#78767d",
+                    "on-surface": "#1c1b1d",
+                    "inverse-surface": "#313032",
+                    "tertiary": "#695d3c",
+                    "secondary-container": "#dce2f3",
+                    "tertiary-fixed": "#f2e1b7",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#dce2f3",
+                    "on-secondary-container": "#5e6572",
+                    "outline-variant": "#c8c5cd",
+                    "on-tertiary-container": "#493f20",
+                    "on-secondary-fixed": "#151c27",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "tertiary-container": "#b9aa83",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#fcf8fa",
+                    "surface-container-highest": "#e5e1e3",
+                    "surface-container-high": "#ebe7e9",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "primary-container": "#1a1a2e",
+                    "surface-tint": "#5d5c74",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "mobile-margin": "24px",
+                    "sm": "12px",
+                    "xs": "8px",
+                    "huge": "64px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "touch-target-min": "44px",
+                    "md": "16px",
+                    "xxl": "48px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nps-tile-active {
+            @apply bg-primary text-on-primary border-primary;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for multi-line text */
+        textarea::-webkit-scrollbar {
+            width: 4px;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: #c8c5cd;
+            border-radius: 4px;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant flex items-center justify-between px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container transition-colors duration-200 rounded-full p-2 -ml-2" data-icon="arrow_back">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Pulse Survey</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="help_outline">help_outline</span>
+</div>
+</header>
+<main class="flex-grow px-mobile-margin py-xl max-w-md mx-auto w-full flex flex-col">
+<!-- Progress Header -->
+<div class="mb-xl">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-base">One last question.</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">
+                How likely are you to recommend Radical Reduction HR's joining experience to a friend considering a similar role?
+            </h2>
+</div>
+<!-- jNPS Scale -->
+<section class="mb-xl">
+<div class="flex flex-wrap gap-xs justify-between mb-sm">
+<!-- Tiles generated via JS or rendered directly -->
+<div class="grid grid-cols-6 sm:grid-cols-11 gap-2 w-full" id="nps-container">
+<!-- Tile Item -->
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="0" onclick="selectNps(0)">0</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="1" onclick="selectNps(1)">1</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="2" onclick="selectNps(2)">2</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="3" onclick="selectNps(3)">3</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="4" onclick="selectNps(4)">4</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="5" onclick="selectNps(5)">5</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="6" onclick="selectNps(6)">6</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="7" onclick="selectNps(7)">7</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="8" onclick="selectNps(8)">8</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="9" onclick="selectNps(9)">9</button>
+<button class="nps-tile h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-body-md-bold transition-all duration-200 hover:bg-surface-container-low" data-value="10" onclick="selectNps(10)">10</button>
+</div>
+</div>
+<div class="flex justify-between items-center px-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Would not</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Definitely would</span>
+</div>
+</section>
+<!-- Feedback Field -->
+<section class="mb-xl">
+<label class="block font-label-sm-bold text-label-sm-bold text-on-surface-variant mb-xs" for="comments">Additional comments (optional)</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl p-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none" id="comments" placeholder="What could have been better?" rows="4"></textarea>
+</section>
+<!-- CTAs -->
+<div class="mt-auto flex flex-col gap-md pb-xxl">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold rounded-full transition-transform active:scale-95 duration-150 shadow-sm" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+                Submit
+            </button>
+<button class="w-full py-base text-center font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">
+                Skip
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center h-huge px-sm">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-low transition-transform duration-150 scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Journey (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 transition-transform duration-150 scale-95 active:scale-90" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="insights" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</a>
+<!-- Inbox -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-low transition-transform duration-150 scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="mail">mail</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-low transition-transform duration-150 scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        function selectNps(value) {
+            const tiles = document.querySelectorAll('.nps-tile');
+            tiles.forEach(tile => {
+                if (parseInt(tile.getAttribute('data-value')) === value) {
+                    tile.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+                    tile.classList.remove('border-outline-variant', 'hover:bg-surface-container-low');
+                } else {
+                    tile.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+                    tile.classList.add('border-outline-variant', 'hover:bg-surface-container-low');
+                }
+            });
+        }
+    </script>
+<script src="../nav.js"></script>
+</body></html>

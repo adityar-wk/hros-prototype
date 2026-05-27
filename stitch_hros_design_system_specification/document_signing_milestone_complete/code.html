@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .success-glow {
+            background: radial-gradient(circle at center, rgba(186, 26, 26, 0.05) 0%, transparent 70%);
+        }
+        .floating-doc {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#5d5c74",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "surface": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-surface-variant": "#47464c",
+                        "tertiary": "#695d3c",
+                        "on-secondary-fixed": "#151c27",
+                        "inverse-surface": "#313032",
+                        "surface-bright": "#fcf8fa",
+                        "tertiary-fixed": "#f2e1b7",
+                        "outline-variant": "#c8c5cd",
+                        "outline": "#78767d",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#dce2f3",
+                        "primary": "#00000b",
+                        "surface-dim": "#ddd9db",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c6c4df",
+                        "on-background": "#1c1b1d",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-primary-container": "#83829b",
+                        "tertiary-container": "#b9aa83",
+                        "surface-container-highest": "#e5e1e3",
+                        "surface-container": "#f1edef",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#dce2f3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-primary": "#ffffff",
+                        "secondary": "#585f6c",
+                        "on-surface": "#1c1b1d",
+                        "primary-fixed": "#e2e0fc",
+                        "primary-container": "#1a1a2e",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-error": "#ffffff",
+                        "background": "#fcf8fa",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-variant": "#e5e1e3",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-tertiary-container": "#493f20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "huge": "64px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant flex items-center h-touch-target-min px-mobile-margin max-w-md mx-auto">
+<div class="flex items-center gap-md w-full">
+<span class="material-symbols-outlined text-primary active:scale-95 transition-transform duration-100 cursor-pointer" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Tasks</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 max-w-md mx-auto w-full px-mobile-margin pt-xl pb-huge relative overflow-hidden">
+<!-- Progress Ring (Minimalist) -->
+<div class="flex justify-center mb-lg">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-highest" cx="32" cy="32" fill="transparent" r="30" stroke="currentColor" stroke-width="2"></circle>
+<circle class="text-primary transition-all duration-1000 ease-out" cx="32" cy="32" fill="transparent" r="30" stroke="currentColor" stroke-dasharray="188.4" stroke-dashoffset="0" stroke-width="2"></circle>
+</svg>
+<span class="absolute font-label-sm-bold text-label-sm-bold text-primary">100%</span>
+</div>
+</div>
+<!-- Hero Section -->
+<div class="text-center mb-xxl relative z-10">
+<div class="relative inline-block mb-lg">
+<div class="floating-doc bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-sm">
+<span class="material-symbols-outlined text-primary text-huge" data-icon="description">description</span>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-on-tertiary-container text-tertiary-fixed rounded-full p-xs flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined !text-[20px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-md">All set, Arjun!</h2>
+<p class="text-on-surface-variant font-body-md px-base">
+                All your employment and statutory documents are signed and verified. Your onboarding paperwork is 100% complete.
+            </p>
+</div>
+<!-- Summary Bento Grid -->
+<div class="grid grid-cols-2 gap-md mb-xl">
+<!-- Signed Count Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-xs">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Signed</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">12</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Documents</span>
+</div>
+</div>
+<!-- Status Signal Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-xs">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Verification</span>
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#10b981]"></div>
+<span class="font-body-md-bold text-body-md-bold text-primary">Success</span>
+</div>
+</div>
+</div>
+<!-- Document List (Progressive Disclosure Pattern) -->
+<div class="space-y-md">
+<h3 class="font-label-sm-bold text-label-sm-bold text-on-surface-variant flex items-center gap-xs px-base">
+                RECENTLY VERIFIED
+                <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+</h3>
+<!-- List Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer active:scale-[0.98] duration-100">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="contract">contract</span>
+<div>
+<p class="font-body-md-bold text-body-md-bold text-primary">Offer Letter</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Digitally Signed • Today</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer active:scale-[0.98] duration-100">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_balance">account_balance</span>
+<div>
+<p class="font-body-md-bold text-body-md-bold text-primary">Tax Declaration</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Verified by HR • 2h ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Visual Anchor (Professional Abstract Image) -->
+<div class="mt-xxl rounded-xl overflow-hidden border border-outline-variant aspect-video relative group">
+<img alt="Professional Milestone" class="w-full h-full object-cover" data-alt="A clean, minimalist high-key photography of a modern professional office environment. The image features architectural lines, soft natural light streaming through large windows, and a sophisticated monochromatic palette with subtle warm wood accents. The atmosphere is calm, successful, and organized, reflecting a premium enterprise aesthetic for a completed milestone journey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB5xJ84hlnRxIMvjejZAlh8JBXruGGLQzCHf0u9C5QfiqI06PhgHy4cir0zv4PLs1PLCu0_zMk2QVQOXGxHzbOvVQ4H6RsYzV8Iclhx_6-Fi6_k3xwZFuFST5ApVmIWJVrouoWnnIzrxemmWU8xZ2HqLc78AcwcW9LQTFqoV5YV4_adcRdR_6DduQ4AQ7rJ6wMEVt1gcyURSzA2P9AAxsPMWZ-Zto9gnX8KfV6B35pHnHLpzjkGcqTZH1BQaq1X_qGbYQ_eyaP1Ics"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<!-- Primary Actions -->
+<div class="mt-xxl flex flex-col gap-md">
+<button class="bg-primary text-on-primary h-touch-target-min rounded-lg font-body-md-bold text-body-md-bold w-full active:scale-95 transition-all duration-200 shadow-sm">
+                Go to Journey Map
+            </button>
+<button class="bg-surface text-primary border border-outline h-touch-target-min rounded-lg font-body-md-bold text-body-md-bold w-full active:scale-95 transition-all duration-200">
+                View Signed Documents
+            </button>
+</div>
+<!-- injected Continue CTA -->
+<div style="position:fixed;bottom:72px;left:0;right:0;padding:0 24px;z-index:100;">
+  <button onclick="window.location.href='../journey_map_current_stage_expanded/code.html'" style="width:100%;height:44px;background:#00000b;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+    Continue <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">arrow_forward</span>
+  </button>
+</div></main>
+<!-- AI Concierge Trigger (Persistent interaction plane) -->
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center h-huge px-md pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-xs py-base transition-all duration-200" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm font-bold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the success badge pulse
+        document.addEventListener('DOMContentLoaded', () => {
+            const badge = document.querySelector('.verified-badge');
+            if(badge) {
+                badge.classList.add('animate-pulse');
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

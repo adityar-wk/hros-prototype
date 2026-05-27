@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Flexi Allocation - OS_1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#ddd9db",
+                    "secondary": "#585f6c",
+                    "inverse-surface": "#313032",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-secondary-container": "#5e6572",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-bright": "#fcf8fa",
+                    "surface-variant": "#e5e1e3",
+                    "on-secondary-fixed": "#151c27",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#231b02",
+                    "on-surface": "#1c1b1d",
+                    "tertiary-container": "#b9aa83",
+                    "primary-fixed-dim": "#c6c4df",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-low": "#f6f2f4",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1a1a2e",
+                    "primary": "#00000b",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#695d3c",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "secondary-fixed": "#dce2f3",
+                    "on-background": "#1c1b1d",
+                    "surface-tint": "#5d5c74",
+                    "outline-variant": "#c8c5cd",
+                    "on-tertiary-container": "#493f20",
+                    "inverse-primary": "#c6c4df",
+                    "tertiary-fixed": "#f2e1b7",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-container": "#83829b",
+                    "outline": "#78767d",
+                    "surface": "#fcf8fa",
+                    "background": "#fcf8fa",
+                    "surface-container": "#f1edef",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#dce2f3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "touch-target-min": "44px",
+                    "huge": "64px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "mobile-margin": "24px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .locked-gradient {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(248,249,2FA,1) 100%);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-mobile-margin h-touch-target-min border-b border-surface-variant">
+<div class="flex items-center gap-sm">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-on-surface">menu</span>
+<h1 class="font-display text-headline-lg-mobile text-primary tracking-tighter">OS_1</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-huge pb-32 px-mobile-margin">
+<!-- Header Section -->
+<section class="mt-lg mb-xl">
+<div class="flex items-center justify-between mb-xs">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Flexi Allocation</h2>
+<div class="flex items-center gap-xs bg-green-100 text-green-800 px-sm py-base rounded-full">
+<span class="w-2 h-2 rounded-full bg-green-600"></span>
+<span class="font-label-sm-bold text-label-sm-bold">Verified</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your tax-saving components for the current financial cycle.</p>
+</section>
+<!-- Status Card (Locked) -->
+<section class="bg-surface-container-lowest border border-surface-variant rounded-xl p-md mb-lg relative overflow-hidden">
+<div class="flex items-start gap-md">
+<div class="bg-primary-container p-sm rounded-lg">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface">Setup Locked</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-base">Your flexi allocation is certified for the current payroll cycle.</p>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-surface-variant">
+<p class="font-label-sm text-label-sm text-outline">Next window opens in 14 days</p>
+</div>
+</section>
+<!-- Summary Selections (Bento Grid Style) -->
+<section class="space-y-md">
+<h4 class="font-label-sm-bold text-label-sm-bold text-outline uppercase tracking-wider">Allocation Summary</h4>
+<div class="grid grid-cols-2 gap-md">
+<!-- HRA Card -->
+<div class="bg-white border border-surface-variant rounded-lg p-md">
+<span class="material-symbols-outlined text-secondary mb-xs">home</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">HRA</p>
+<p class="font-body-md-bold text-body-md-bold text-primary">₹ 45,000</p>
+</div>
+<!-- Fuel Card -->
+<div class="bg-white border border-surface-variant rounded-lg p-md">
+<span class="material-symbols-outlined text-secondary mb-xs">local_gas_station</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Fuel &amp; Travel</p>
+<p class="font-body-md-bold text-body-md-bold text-primary">₹ 3,800</p>
+</div>
+<!-- LTA Card -->
+<div class="bg-white border border-surface-variant rounded-lg p-md col-span-2">
+<div class="flex justify-between items-end">
+<div>
+<span class="material-symbols-outlined text-secondary mb-xs">flight</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Leave Travel Allowance</p>
+<p class="font-body-md-bold text-body-md-bold text-primary">₹ 1,20,000</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Period</p>
+<p class="font-label-sm-bold text-label-sm-bold text-secondary">2024-26</p>
+</div>
+</div>
+</div>
+<!-- Meal Card -->
+<div class="bg-white border border-surface-variant rounded-lg p-md">
+<span class="material-symbols-outlined text-secondary mb-xs">restaurant</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Meal Card</p>
+<p class="font-body-md-bold text-body-md-bold text-primary">₹ 2,200</p>
+</div>
+<!-- Books Card -->
+<div class="bg-white border border-surface-variant rounded-lg p-md">
+<span class="material-symbols-outlined text-secondary mb-xs">menu_book</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Books &amp; Periodicals</p>
+<p class="font-body-md-bold text-body-md-bold text-primary">₹ 1,500</p>
+</div>
+</div>
+</section>
+<!-- Master Data Capture Visual -->
+<section class="mt-xl p-lg bg-surface-container-low rounded-xl border border-dashed border-outline-variant text-center">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto mb-md">
+<span class="material-symbols-outlined text-secondary text-3xl">verified_user</span>
+</div>
+<h5 class="font-body-md-bold text-body-md-bold text-on-surface">Compliance Verified</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs px-md">All documents and declarations for this period have been cryptographically signed and stored in the enterprise vault.</p>
+</section>
+<!-- Secondary Action -->
+<div class="mt-xl flex flex-col gap-sm">
+<button class="w-full h-touch-target-min border border-outline text-on-surface font-label-sm-bold text-label-sm-bold rounded-lg flex items-center justify-center gap-xs active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">edit_square</span>
+                Request Change
+            </button>
+<p class="text-center font-label-sm text-label-sm text-outline px-lg">Changes requested now will be reviewed and applied to the next payroll cycle (May 2024).</p>
+</div>
+<!-- injected Continue CTA -->
+<div style="position:fixed;bottom:72px;left:0;right:0;padding:0 24px;z-index:100;">
+  <button onclick="window.location.href='../journey_map_current_stage_expanded/code.html'" style="width:100%;height:44px;background:#00000b;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+    Continue <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">arrow_forward</span>
+  </button>
+</div></main>
+
+<div class="flex flex-col items-center justify-center text-on-secondary-container px-md py-xs" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">You</span>
+</div>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Subtle entrance animation for cards
+            const cards = document.querySelectorAll('.grid > div, .bg-surface-container-lowest');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(10px)';
+                card.style.transition = `all 0.4s ease-out ${index * 0.05}s`;
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

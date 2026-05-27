@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .hairline-border {
+            border: 1px solid #E5E7EB;
+        }
+        .ai-concierge-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#dce2f3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "surface-container": "#f1edef",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "primary-fixed": "#e2e0fc",
+                        "primary-container": "#1a1a2e",
+                        "secondary": "#585f6c",
+                        "on-surface": "#1c1b1d",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface-variant": "#e5e1e3",
+                        "background": "#fcf8fa",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-surface-variant": "#47464c",
+                        "surface": "#fcf8fa",
+                        "surface-tint": "#5d5c74",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "tertiary-fixed": "#f2e1b7",
+                        "surface-bright": "#fcf8fa",
+                        "tertiary": "#695d3c",
+                        "on-secondary-fixed": "#151c27",
+                        "inverse-surface": "#313032",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c8c5cd",
+                        "outline": "#78767d",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#83829b",
+                        "tertiary-container": "#b9aa83",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-background": "#1c1b1d",
+                        "inverse-on-surface": "#f4f0f2",
+                        "secondary-fixed": "#dce2f3",
+                        "primary": "#00000b",
+                        "surface-dim": "#ddd9db",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c6c4df"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "huge": "64px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "touch-target-min": "44px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "display": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-huge">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-40 bg-background border-b border-outline-variant flex items-center justify-between px-lg h-[64px]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Offer Review</h1>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</header>
+<main class="px-mobile-margin py-lg max-w-md mx-auto">
+<!-- Greeting Header -->
+<div class="mb-xxl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Your offer, Arjun</h2>
+<div class="flex items-center gap-xs mt-base">
+<div class="w-[12px] h-[12px] bg-[#10B981] rounded-full"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Valid until Sept 30, 2024</span>
+</div>
+</div>
+<!-- Primary Role Card -->
+<div class="bg-surface-container-lowest hairline-border rounded-xl p-md mb-lg">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">Senior Product Designer</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Engineering · Remote</p>
+</div>
+<span class="px-sm py-[2px] bg-secondary-container text-on-secondary-container font-label-sm-bold text-label-sm-bold rounded-full">Full-time</span>
+</div>
+<div class="grid grid-cols-2 gap-md border-t border-outline-variant pt-md">
+<div>
+<p class="font-label-sm text-on-surface-variant">Joining date</p>
+<p class="font-body-md-bold text-body-md-bold">Oct 14, 2024</p>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Reporting to</p>
+<p class="font-body-md-bold text-body-md-bold">Siddharth V.</p>
+</div>
+</div>
+</div>
+<!-- CTC Focus Card -->
+<div class="bg-primary text-on-primary rounded-xl p-lg mb-lg">
+<p class="font-label-sm text-primary-fixed-dim uppercase tracking-wider">Annual Total Compensation</p>
+<h3 class="text-[32px] font-bold leading-tight mt-xs">₹42,00,000</h3>
+<div class="mt-lg space-y-md">
+<div class="flex justify-between items-center py-sm border-b border-on-primary-fixed-variant">
+<span class="font-label-sm">Fixed Pay</span>
+<span class="font-body-md-bold">₹32,00,000</span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-on-primary-fixed-variant">
+<span class="font-label-sm">Variable Pay</span>
+<span class="font-body-md-bold">₹6,00,000</span>
+</div>
+<div class="flex justify-between items-center py-sm">
+<span class="font-label-sm">ESOPs</span>
+<span class="font-body-md-bold">₹4,00,000</span>
+</div>
+</div>
+</div>
+<!-- Secondary Actions / Explainer Cards -->
+<div class="grid grid-cols-2 gap-md mb-lg">
+<button class="hairline-border bg-surface-container-lowest p-md rounded-xl text-left active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-secondary mb-xs" data-icon="calculate">calculate</span>
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface">In-hand calc</p>
+</button>
+<button class="hairline-border bg-surface-container-lowest p-md rounded-xl text-left active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-secondary mb-xs" data-icon="account_balance_wallet">account_balance_wallet</span>
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface">ESOP Explainer</p>
+</button>
+</div>
+<!-- Benefits & Policies -->
+<div class="hairline-border rounded-xl p-md mb-huge bg-surface-container-low">
+<h4 class="font-label-sm-bold text-label-sm-bold text-on-surface-variant mb-md uppercase tracking-widest">Standard Benefits</h4>
+<div class="space-y-sm">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="health_and_safety">health_and_safety</span>
+<span class="font-body-md text-on-surface">Health Insurance (₹5L Cover)</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="savings">savings</span>
+<span class="font-body-md text-on-surface">Provident Fund (Employer Contrib.)</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="event_available">event_available</span>
+<span class="font-body-md text-on-surface">25 days paid leave per annum</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Actions Container -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant px-lg py-md pb-safe flex flex-col gap-sm z-50">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-label-sm-bold text-label-sm-bold flex items-center justify-center gap-sm active:scale-[0.98] transition-transform" onclick="window.location.href='../joining_date_proposed_confirmed_1/code.html'">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+            Accept this offer
+        </button>
+<button class="w-full h-touch-target-min bg-transparent text-primary rounded-xl font-label-sm-bold text-label-sm-bold flex items-center justify-center gap-sm active:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+            Talk to Megha (Recruiter)
+        </button>
+</div>
+<!-- AI Concierge Trigger (System Aesthetic Requirement) -->
+
+<!-- Hidden Interactive Layer -->
+<div class="fixed inset-0 pointer-events-none z-[100]" id="confetti-container"></div>
+<script>
+        // Micro-interaction for acceptance
+        document.querySelector('button.bg-primary').addEventListener('click', function() {
+            this.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Processing...';
+            setTimeout(() => {
+                this.classList.remove('bg-primary');
+                this.classList.add('bg-green-600');
+                this.innerHTML = '<span class="material-symbols-outlined" data-icon="done_all">done_all</span> Offer Accepted';
+                // Trigger simple visual feedback
+                document.body.style.backgroundColor = '#f0fdf4';
+            }, 1200);
+        });
+
+        // Toggle hover effect for explainer cards
+        const cards = document.querySelectorAll('.hairline-border.bg-surface-container-lowest');
+        cards.forEach(card => {
+            card.addEventListener('touchstart', () => card.classList.add('bg-surface-container-high'));
+            card.addEventListener('touchend', () => card.classList.remove('bg-surface-container-high'));
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

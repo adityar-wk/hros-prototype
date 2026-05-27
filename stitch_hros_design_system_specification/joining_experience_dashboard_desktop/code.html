@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS Joining Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .ai-concierge-shadow {
+            box-shadow: 0 10px 40px -10px rgba(93, 92, 116, 0.2);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#b9aa83",
+                      "surface-container": "#f1edef",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "on-primary-fixed": "#1a1a2e",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#e2e0fc",
+                      "secondary": "#585f6c",
+                      "on-surface": "#1c1b1d",
+                      "background": "#fcf8fa",
+                      "surface-container-low": "#f6f2f4",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "secondary-container": "#dce2f3",
+                      "surface-container-highest": "#e5e1e3",
+                      "inverse-primary": "#c6c4df",
+                      "surface-variant": "#e5e1e3",
+                      "on-secondary-container": "#5e6572",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#695d3c",
+                      "primary-container": "#1a1a2e",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#f4f0f2",
+                      "surface-bright": "#fcf8fa",
+                      "outline-variant": "#c8c5cd",
+                      "surface-tint": "#5d5c74",
+                      "on-primary-fixed-variant": "#45455b",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#ebe7e9",
+                      "secondary-fixed": "#dce2f3",
+                      "on-surface-variant": "#47464c",
+                      "on-secondary-fixed-variant": "#404754",
+                      "on-primary-container": "#83829b",
+                      "error": "#ba1a1a",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#fcf8fa",
+                      "primary": "#00000b",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#313032",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-secondary-fixed": "#151c27",
+                      "primary-fixed-dim": "#c6c4df",
+                      "outline": "#78767d",
+                      "on-tertiary-container": "#493f20",
+                      "surface-dim": "#ddd9db",
+                      "tertiary-fixed": "#f2e1b7",
+                      "on-tertiary-fixed": "#231b02",
+                      "on-background": "#1c1b1d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "xl": "32px",
+                      "base": "4px",
+                      "xxl": "48px",
+                      "xs": "8px",
+                      "touch-target-min": "44px",
+                      "mobile-margin": "24px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "huge": "64px"
+              },
+              "fontFamily": {
+                      "label-sm-bold": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "body-md-bold": ["Geist"],
+                      "label-sm": ["Geist"]
+              },
+              "fontSize": {
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Top Navigation Bar (Shared Component Adaptation) -->
+<header class="bg-background border-b border-outline-variant fixed top-0 w-full z-50">
+<nav class="hidden md:flex justify-between items-center px-lg h-huge w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-xl" onclick="window.location.href='../feed_active_content_mix/code.html'">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="font-display text-headline-lg text-primary-container tracking-tighter">HROS</span>
+<div class="flex items-center gap-lg ml-xl">
+<!-- Journey (Active) -->
+<a class="text-primary-container border-b-2 border-primary-container h-huge flex items-center font-body-md-bold" href="../journey_map_current_stage_expanded/code.html">
+                        Journey
+                    </a>
+<!-- Tasks -->
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-md h-huge flex items-center font-body-md" href="../tasks_active_state/code.html">
+                        Tasks
+                    </a>
+<!-- Feed -->
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-md h-huge flex items-center font-body-md" href="../feed_active_content_mix/code.html">
+                        Feed
+                    </a>
+<!-- AI (Locked) -->
+<div class="flex items-center gap-xs opacity-40 cursor-not-allowed px-md h-huge">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-body-md">AI</span>
+</div>
+<!-- You (Locked) -->
+<div class="flex items-center gap-xs opacity-40 cursor-not-allowed px-md h-huge" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-body-md">You</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-touch-target-min h-touch-target-min flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<div class="w-touch-target-min h-touch-target-min rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-sm-bold">
+                    AA
+                </div>
+</div>
+</nav>
+</header>
+<main class="pt-[100px] pb-xxl px-lg max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-xxl">
+<h1 class="font-display text-display text-primary-container mb-xs">Welcome to HROS, Aravind.</h1>
+<p class="font-body-md text-on-surface-variant max-w-2xl">Your journey as a Lead UI Engineer begins here. We've streamlined your first 30 days into a series of intentional milestones.</p>
+</section>
+<!-- Main Content Area: Bento Layout -->
+<div class="bento-grid">
+<!-- Journey Status Card (Large) -->
+<div class="col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between min-h-[400px]">
+<div>
+<div class="flex justify-between items-start mb-lg">
+<div>
+<span class="font-label-sm-bold text-tertiary uppercase tracking-wider">Current Stage</span>
+<h2 class="font-headline-lg text-primary-container">Pre-boarding Clarity</h2>
+</div>
+<div class="flex items-center gap-sm bg-secondary-container px-md py-xs rounded-full">
+<div class="w-3 h-3 rounded-full bg-tertiary-container animate-pulse"></div>
+<span class="font-label-sm-bold text-on-secondary-container">Action Needed</span>
+</div>
+</div>
+<div class="space-y-md">
+<div class="flex items-center gap-md p-md bg-surface-container-low border border-outline-variant rounded-lg group cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary-container" data-icon="description">description</span>
+<div class="flex-1">
+<p class="font-body-md-bold text-on-surface">Digital Signature: Employment Contract</p>
+<p class="font-label-sm text-on-surface-variant">Required for hardware allocation</p>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-lg opacity-60">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div class="flex-1">
+<p class="font-body-md-bold text-on-surface">Identity Verification (DPDP)</p>
+<p class="font-label-sm text-on-surface-variant">Completed on Oct 12</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-xl pt-lg border-t border-outline-variant">
+<div class="flex justify-between items-end">
+<div class="flex-1 mr-lg">
+<div class="flex justify-between mb-xs">
+<span class="font-label-sm-bold text-on-surface-variant">Overall Progress</span>
+<span class="font-label-sm-bold text-primary-container">32%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[32%] h-full bg-primary-container transition-all duration-1000"></div>
+</div>
+</div>
+<button class="h-touch-target-min px-xl bg-primary-container text-on-primary rounded-lg font-body-md-bold hover:opacity-90 transition-opacity" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+                            Continue Journey
+                        </button>
+</div>
+</div>
+</div>
+<!-- Profile / Contact Card (Medium) -->
+<div class="col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="h-40 relative">
+<img alt="Office environment" class="w-full h-full object-cover" data-alt="A high-end, minimalist corporate office interior in Bangalore featuring floor-to-ceiling windows and sleek ergonomic furniture. The space is flooded with bright, natural daylight, reflecting a clean and professional atmosphere. The design is characterized by a soft color palette of whites and greys with sharp architectural lines, conveying an image of a modern, efficient technology hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHZrgfkLXRKV1QPIHkiIyEtdSJbyXkJ2SFPBVeeNVcaIjGxkVVaspNoioBQDcaHGxyP6g1Z4Y_yLozR8T-FRKvhPMvMDvdOefYW8P7OqeaAPq3E13UtPUKZZua2HByJ_G-FwobaxPSPzJVQ34chCchN2v6eDdjwDzh7n9UoKjsKV077T0N5ILHFad-kxbDvg7lhJ_23AqWxAMxSWQvgnC12kDZ8NeuAGDjDPu6pSS39YNt_2n82Yn2-bwGOkss_pF2vZ7VSXCnIpfj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+<div class="p-lg -mt-12 relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-4 border-surface-container-lowest overflow-hidden mb-md shadow-sm">
+<img alt="Manager" class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male manager in a minimalist white studio. He is wearing a crisp black shirt, smiling warmly at the camera. The lighting is soft and directional, creating a friendly and approachable mood suitable for a premium corporate HR platform. The background is a clean, neutral grey-white tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGp2RH6OiaOd4pgjsjvijSyckx4FOnpwVPdJkzG2rZDHOQQteyTB1bbEdA7xZBC7s2SMJ0xhcd1xapeMY86YvAZUwkLHY0Ln05WkjVoP94ZTeqsvPPykXQCgpcH0EhttTCIizNy46T77w2OUhUQKryjsVZ-615oIWoGwLXfM3AopjynyrzkxI5ESqStO1UKKsFgy6vmO02f9EhQMj54r4yn-jwxzx6Ry_ZXSZt7WUKl9fEZDMj3DqPE3nWvvk3KdOHieOqqu4vCZAy"/>
+</div>
+<span class="font-label-sm-bold text-tertiary uppercase mb-base">Your Onboarding Buddy</span>
+<h3 class="font-headline-lg-mobile text-primary-container">Siddharth V.</h3>
+<p class="font-body-md text-on-surface-variant mb-lg">Engineering Director</p>
+<div class="w-full space-y-sm">
+<button class="w-full h-touch-target-min border border-outline text-on-surface rounded-lg font-body-md-bold flex items-center justify-center gap-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                            Say Hello
+                        </button>
+</div>
+</div>
+</div>
+<!-- Team / Feed Snippet (Wide) -->
+<div class="col-span-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-headline-lg-mobile text-primary-container">Team Feed</h3>
+<button class="text-on-surface-variant font-label-sm-bold hover:underline">View All</button>
+</div>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex-shrink-0"></div>
+<div>
+<p class="font-body-md text-on-surface"><span class="font-body-md-bold">Meera K.</span> shared a new update in <span class="font-body-md-bold text-tertiary">#Design-Systems</span></p>
+<p class="font-label-sm text-on-surface-variant mb-sm">2 hours ago</p>
+<div class="rounded-lg border border-outline-variant p-md bg-background">
+<p class="font-body-md italic text-on-surface-variant">"Excited to welcome Aravind to the engineering fold! Looking forward to the collaboration."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Deadlines / Calendar (Wide) -->
+<div class="col-span-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-headline-lg-mobile text-primary-container">Upcoming</h3>
+<button class="text-on-surface-variant font-label-sm-bold hover:underline">Full Schedule</button>
+</div>
+<div class="space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center">
+<span class="font-label-sm-bold text-primary-container">OCT</span>
+<span class="font-headline-lg-mobile text-primary-container -mt-1">15</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Hardware Selection Deadline</p>
+<p class="font-label-sm text-on-surface-variant">Choose your workstation profile</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center">
+<span class="font-label-sm-bold text-primary-container">OCT</span>
+<span class="font-headline-lg-mobile text-primary-container -mt-1">18</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Welcome Mixer (Virtual)</p>
+<p class="font-label-sm text-on-surface-variant">Meet the wider product team</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- AI Concierge Trigger (Floating) -->
+
+<script>
+        // Micro-interaction for AI Button
+        const aiTrigger = document.getElementById('ai-trigger');
+        aiTrigger.addEventListener('mouseenter', () => {
+            aiTrigger.style.transform = 'translateY(-4px) scale(1.05)';
+        });
+        aiTrigger.addEventListener('mouseleave', () => {
+            aiTrigger.style.transform = 'translateY(0) scale(1)';
+        });
+
+        // Simple progress bar animation simulation
+        window.addEventListener('load', () => {
+            const progressBar = document.querySelector('.w-\\[32\\%\\]');
+            if(progressBar) {
+                progressBar.style.width = '0%';
+                setTimeout(() => {
+                    progressBar.style.width = '32%';
+                }, 300);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

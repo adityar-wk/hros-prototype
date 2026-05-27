@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PF &amp; NPS Elections - OS_1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for clean UI */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1c1b1d",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#ebe7e9",
+                      "on-secondary-fixed": "#151c27",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#ddd9db",
+                      "on-primary-container": "#83829b",
+                      "surface-container-highest": "#e5e1e3",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#47464c",
+                      "surface-container": "#f1edef",
+                      "error": "#ba1a1a",
+                      "primary-container": "#1a1a2e",
+                      "background": "#fcf8fa",
+                      "on-primary-fixed": "#1a1a2e",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#dce2f3",
+                      "on-tertiary-fixed": "#231b02",
+                      "tertiary": "#695d3c",
+                      "on-secondary-container": "#5e6572",
+                      "primary-fixed": "#e2e0fc",
+                      "tertiary-container": "#b9aa83",
+                      "on-secondary-fixed-variant": "#404754",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "secondary-container": "#dce2f3",
+                      "outline": "#78767d",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#fcf8fa",
+                      "surface-variant": "#e5e1e3",
+                      "on-tertiary-container": "#493f20",
+                      "surface-tint": "#5d5c74",
+                      "primary": "#00000b",
+                      "outline-variant": "#c8c5cd",
+                      "tertiary-fixed": "#f2e1b7",
+                      "on-primary-fixed-variant": "#45455b",
+                      "primary-fixed-dim": "#c6c4df",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "surface-container-low": "#f6f2f4",
+                      "secondary": "#585f6c",
+                      "inverse-surface": "#313032",
+                      "inverse-primary": "#c6c4df",
+                      "inverse-on-surface": "#f4f0f2",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "on-background": "#1c1b1d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "mobile-margin": "24px",
+                      "xxl": "48px",
+                      "xs": "8px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "touch-target-min": "44px",
+                      "huge": "64px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Geist"],
+                      "body-md-bold": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "label-sm-bold": ["Geist"],
+                      "display": ["Geist"],
+                      "headline-lg-mobile": ["Geist"]
+              },
+              "fontSize": {
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-[120px]">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50 flex justify-between items-center px-mobile-margin h-[64px]">
+<div class="flex items-center gap-sm">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional studio portrait of a young Indian corporate employee with a warm, confident smile. The background is a soft, out-of-focus modern office interior with clean lines and neutral tones. The lighting is bright and even, reflecting a professional and high-end aesthetic. The image uses a palette of soft whites and subtle greys to maintain a minimalist feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATXV_dmCLlDjEAdda06CNCEKd2F9uk5GnRDBAOh4P3Lp5MppMDrDBga8RSk7S6uxptJrPM-Ew9oeLcerE1Z_uVX4Q6fRlCdbhFbNA2TwyEmeBWvMcNmOzoKtWSBblcXhyc7Y2HqiCz6_hxeU54wIFWuYbymwBkwzP31y4mKdUGgLiiEqpdds4_z_lA7gcAPosLiiZ_PoeZDH_ZZvSI4lEeZxL2kdz8bZSqUIwoFepbe6LULuMSui_yxIICfMfVO0fUvZigaPjD5PjK"/>
+</div>
+<span class="font-body-md-bold text-body-md-bold tracking-tight text-primary dark:text-primary-fixed">OS_1</span>
+</div>
+<div class="flex items-center">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-[80px] px-mobile-margin space-y-lg">
+<!-- Section Header -->
+<section class="space-y-base">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#FFB000]"></div> <!-- Readiness Signal: Action Needed -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Category K: PF and NPS</h1>
+</div>
+<p class="font-body-md text-on-surface-variant">Your Provident Fund and optional National Pension Scheme elections.</p>
+</section>
+<!-- UAN Entry Field -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-sm">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block">Universal Account Number (UAN)</label>
+<div class="relative">
+<input class="w-full h-touch-target-min border border-outline rounded-lg px-md font-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-all" id="uanInput" maxlength="12" oninput="validateUAN(this)" placeholder="1234 5678 9012" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-tertiary-container hidden" id="uanCheck">check_circle</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant" id="uanHint">Enter your 12-digit UAN as per EPFO records.</p>
+</div>
+<!-- PF Election -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-md">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-body-md-bold text-body-md-bold">Provident Fund (PF)</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Select your monthly contribution tier.</p>
+</div>
+<div class="px-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm-bold">Required</div>
+</div>
+<div class="space-y-sm">
+<!-- Radio Option 1 -->
+<label class="flex items-center justify-between p-md border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-container-low transition-colors" onclick="selectPF('min')">
+<div class="flex items-center gap-md">
+<input checked="" class="w-5 h-5 text-primary border-outline focus:ring-primary" name="pf_type" type="radio" value="min"/>
+<div>
+<span class="font-body-md-bold">Statutory Minimum</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Fixed at 12% of Basic</p>
+</div>
+</div>
+</label>
+<!-- Radio Option 2 -->
+<label class="flex items-center justify-between p-md border border-primary rounded-lg cursor-pointer bg-primary-container/5 transition-colors" onclick="selectPF('vpf')">
+<div class="flex items-center gap-md">
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary" name="pf_type" type="radio" value="vpf"/>
+<div>
+<span class="font-body-md-bold">Voluntary Higher (VPF)</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Contribute beyond the mandate</p>
+</div>
+</div>
+<div class="flex items-center gap-xs">
+<select class="bg-transparent border-none font-body-md-bold text-primary focus:ring-0 appearance-none">
+<option value="15">15%</option>
+<option value="18">18%</option>
+<option value="20">20%</option>
+</select>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</label>
+</div>
+<!-- Impact Card -->
+<div class="bg-tertiary-fixed p-md rounded-lg flex gap-md items-start" id="pfImpact">
+<span class="material-symbols-outlined text-on-tertiary-fixed">insights</span>
+<p class="font-label-sm text-label-sm text-on-tertiary-fixed">
+                    At VPF <span class="font-bold">15%</span>, your monthly take-home reduces by <span class="font-bold">₹2,400</span> but you build <span class="font-bold">₹45,000</span> more annually.
+                </p>
+</div>
+</div>
+<!-- NPS Option -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-md">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<h3 class="font-body-md-bold text-body-md-bold">National Pension Scheme</h3>
+</div>
+<div class="relative inline-block w-12 h-6">
+<input class="sr-only peer" id="npsToggle" onchange="toggleNPS()" type="checkbox"/>
+<div class="w-full h-full bg-outline-variant rounded-full peer peer-checked:bg-primary transition-colors cursor-pointer"></div>
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-6 cursor-pointer"></div>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Tier-I contribution for long-term retirement and tax savings.</p>
+<div class="bg-secondary-container/30 p-md rounded-lg flex gap-md items-start" id="npsBenefit">
+<span class="material-symbols-outlined text-on-secondary-container">shield_moon</span>
+<p class="font-label-sm text-label-sm text-on-secondary-container">
+<span class="font-bold text-primary">80CCD Benefit:</span> An additional ₹50,000 tax deduction beyond 80C.
+                </p>
+</div>
+</div>
+<!-- DPDP Consent Block -->
+<div class="border border-outline-variant rounded-xl p-md space-y-sm bg-surface-container-low">
+<h4 class="font-label-sm-bold text-label-sm-bold text-on-surface">Data Privacy &amp; Protection</h4>
+<div class="h-[80px] overflow-y-scroll pr-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    In compliance with the Digital Personal Data Protection (DPDP) Act, we require your consent to share your UAN and contribution details with EPFO and NSDL for processing your social security benefits. Your data is encrypted and stored in sovereign Indian servers. You may withdraw this consent at any time via the Profile settings.
+                </p>
+</div>
+<label class="flex items-start gap-md pt-sm">
+<input class="mt-1 w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface">I hereby provide my explicit consent for processing my social security data.</span>
+</label>
+</div>
+</main>
+
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-low transition-colors" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<script>
+        function validateUAN(input) {
+            const val = input.value;
+            const check = document.getElementById('uanCheck');
+            const hint = document.getElementById('uanHint');
+            
+            if (val.length === 12 && /^\d+$/.test(val)) {
+                check.classList.remove('hidden');
+                hint.innerText = "UAN verified successfully";
+                hint.classList.add('text-on-tertiary-container');
+                input.classList.add('border-on-tertiary-container');
+            } else {
+                check.classList.add('hidden');
+                hint.innerText = "Enter your 12-digit UAN as per EPFO records.";
+                hint.classList.remove('text-on-tertiary-container');
+                input.classList.remove('border-on-tertiary-container');
+            }
+        }
+
+        function selectPF(type) {
+            const impact = document.getElementById('pfImpact');
+            if (type === 'min') {
+                impact.style.opacity = '0.5';
+            } else {
+                impact.style.opacity = '1';
+            }
+        }
+
+        function toggleNPS() {
+            const benefit = document.getElementById('npsBenefit');
+            const isChecked = document.getElementById('npsToggle').checked;
+            if (isChecked) {
+                benefit.classList.add('bg-on-primary-fixed');
+                benefit.querySelector('p').classList.add('text-primary-fixed');
+            } else {
+                benefit.classList.remove('bg-on-primary-fixed');
+                benefit.querySelector('p').classList.remove('text-primary-fixed');
+            }
+        }
+    </script>
+<script src="../nav.js"></script>
+</body></html>

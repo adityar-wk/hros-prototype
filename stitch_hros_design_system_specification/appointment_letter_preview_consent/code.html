@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#5d5c74",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "surface": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-surface-variant": "#47464c",
+                        "tertiary": "#695d3c",
+                        "on-secondary-fixed": "#151c27",
+                        "inverse-surface": "#313032",
+                        "surface-bright": "#fcf8fa",
+                        "tertiary-fixed": "#f2e1b7",
+                        "outline-variant": "#c8c5cd",
+                        "outline": "#78767d",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#dce2f3",
+                        "primary": "#00000b",
+                        "surface-dim": "#ddd9db",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c6c4df",
+                        "on-background": "#1c1b1d",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-primary-container": "#83829b",
+                        "tertiary-container": "#b9aa83",
+                        "surface-container-highest": "#e5e1e3",
+                        "surface-container": "#f1edef",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#dce2f3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-primary": "#ffffff",
+                        "secondary": "#585f6c",
+                        "on-surface": "#1c1b1d",
+                        "primary-fixed": "#e2e0fc",
+                        "primary-container": "#1a1a2e",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-error": "#ffffff",
+                        "background": "#fcf8fa",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-variant": "#e5e1e3",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-tertiary-container": "#493f20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "huge": "64px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        .pdf-page-shadow {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e1e3;
+            border-radius: 10px;
+        }
+        .ai-concierge-glow {
+            box-shadow: 0 0 20px rgba(93, 92, 116, 0.15);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col items-center">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline flex items-center h-touch-target-min px-mobile-margin max-w-md mx-auto">
+<button aria-label="Back" class="mr-md active:scale-95 transition-transform duration-100 flex items-center justify-center w-10 h-10 -ml-2 rounded-full hover:bg-surface-container-low" onclick="window.location.href='../document_signing_queue_state/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Review Appointment Letter</h1>
+</header>
+<main class="flex-1 w-full max-w-md mx-auto px-mobile-margin py-lg overflow-y-auto pb-[180px]">
+<!-- Section Progress -->
+<div class="w-full bg-surface-container-highest h-1 rounded-full mb-xl">
+<div class="bg-primary h-full rounded-full w-3/4"></div>
+</div>
+<!-- PDF Style Container -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg pdf-page-shadow min-h-[600px] relative overflow-hidden">
+<!-- Mock Header -->
+<div class="flex justify-between items-start mb-xxl">
+<div class="w-12 h-12 bg-primary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-on-primary">corporate_fare</span>
+</div>
+<div class="text-right">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">PRIVATE &amp; CONFIDENTIAL</p>
+<p class="font-label-sm text-label-sm text-outline">Date: October 24, 2023</p>
+</div>
+</div>
+<!-- Content Area -->
+<div class="space-y-md">
+<h2 class="font-body-md-bold text-body-md-bold">Dear Aravind Sharma,</h2>
+<p class="font-label-sm text-label-sm leading-relaxed">
+                    We are pleased to offer you the position of <span class="font-label-sm-bold">Software Engineer</span> at our organization. This letter outlines the terms and conditions of your employment.
+                </p>
+<div class="py-md space-y-sm">
+<h3 class="font-label-sm-bold text-label-sm-bold border-b border-outline-variant pb-base">1. COMPENSATION</h3>
+<p class="font-label-sm text-label-sm leading-relaxed">
+                        Your Total Fixed Pay will be as per the Annexure A attached. This includes basic salary, HRA, and other standard allowances.
+                    </p>
+</div>
+<div class="py-md space-y-sm">
+<h3 class="font-label-sm-bold text-label-sm-bold border-b border-outline-variant pb-base">2. PROBATION &amp; NOTICE</h3>
+<p class="font-label-sm text-label-sm leading-relaxed">
+                        You will be on probation for a period of six (6) months. During probation, the notice period shall be 30 days from either side.
+                    </p>
+</div>
+<div class="py-md space-y-sm">
+<h3 class="font-label-sm-bold text-label-sm-bold border-b border-outline-variant pb-base">3. DATA PRIVACY (DPDP)</h3>
+<p class="font-label-sm text-label-sm leading-relaxed">
+                        By signing this letter, you consent to the processing of your personal data for HR management purposes as per the Digital Personal Data Protection Act, 2023.
+                    </p>
+</div>
+<!-- Visual Filler for "Document" feel -->
+<div class="h-24 w-full bg-surface-container border border-dashed border-outline-variant rounded-lg flex items-center justify-center mt-xl">
+<p class="text-outline font-label-sm italic">Digital signature placeholder</p>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-outline">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- DPDP Compliance Block -->
+<section class="mt-lg border border-outline-variant bg-surface-container-low p-md rounded-lg">
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    Your signature is processed securely via Aadhaar e-Sign services. This process complies with the IT Act, 2000 and the DPDP Act guidelines for secure digital onboarding.
+                </p>
+</div>
+</section>
+</main>
+<!-- Declaration Confirm & Action Bar (Fixed Bottom) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest border-t border-outline-variant w-full max-w-md mx-auto px-mobile-margin pt-md pb-safe">
+<!-- Checkbox Block -->
+<div class="flex items-start gap-md mb-lg">
+<div class="pt-base">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary transition-all cursor-pointer" id="confirm-declaration" type="checkbox"/>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface leading-tight cursor-pointer" for="confirm-declaration">
+                I have read and understood the terms of my appointment and agree to be bound by them.
+            </label>
+</div>
+<!-- Primary CTA -->
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold active:scale-95 transition-all duration-200 flex items-center justify-center gap-md opacity-50 cursor-not-allowed" disabled="" id="sign-button">
+<span class="material-symbols-outlined">fingerprint</span>
+            Sign via Aadhaar e-Sign
+        </button>
+</div>
+
+<script>
+        // Checkbox interaction logic
+        const checkbox = document.getElementById('confirm-declaration');
+        const signButton = document.getElementById('sign-button');
+
+        checkbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                signButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                signButton.classList.add('hover:bg-primary-container');
+                signButton.disabled = false;
+            } else {
+                signButton.classList.add('opacity-50', 'cursor-not-allowed');
+                signButton.classList.remove('hover:bg-primary-container');
+                signButton.disabled = true;
+            }
+        });
+
+        // Simple feedback on button click
+        signButton.addEventListener('click', () => {
+            if (!signButton.disabled) {
+                signButton.innerHTML = `<span class="animate-spin material-symbols-outlined">progress_activity</span> Processing...`;
+                setTimeout(() => {
+                    alert('Redirecting to Aadhaar e-Sign Gateway...');
+                    signButton.innerHTML = `<span class="material-symbols-outlined">fingerprint</span> Sign via Aadhaar e-Sign`;
+                }, 1500);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

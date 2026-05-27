@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e5e1e3",
+                    "surface-dim": "#ddd9db",
+                    "on-primary-container": "#83829b",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-container-high": "#ebe7e9",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#231b02",
+                    "background": "#fcf8fa",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#695d3c",
+                    "outline-variant": "#c8c5cd",
+                    "primary-container": "#1a1a2e",
+                    "inverse-primary": "#c6c4df",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-secondary-container": "#5e6572",
+                    "secondary": "#585f6c",
+                    "primary": "#00000b",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#313032",
+                    "on-surface-variant": "#47464c",
+                    "tertiary-container": "#b9aa83",
+                    "on-primary-fixed-variant": "#45455b",
+                    "tertiary-fixed": "#f2e1b7",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1c1b1d",
+                    "surface-container-low": "#f6f2f4",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#f1edef",
+                    "on-tertiary-container": "#493f20",
+                    "surface-container-highest": "#e5e1e3",
+                    "surface": "#fcf8fa",
+                    "on-background": "#1c1b1d",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed": "#dce2f3",
+                    "primary-fixed-dim": "#c6c4df",
+                    "outline": "#78767d",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-secondary-fixed": "#151c27",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "primary-fixed": "#e2e0fc",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#dce2f3",
+                    "surface-tint": "#5d5c74"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "touch-target-min": "44px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "mobile-margin": "24px",
+                    "xxl": "48px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "huge": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md-bold": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 bg-background border-b border-outline-variant z-50">
+<div class="flex items-center px-mobile-margin h-touch-target-min w-full max-w-7xl mx-auto">
+<button class="mr-md transition-colors duration-200 active:opacity-80">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Tasks</h1>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-grow w-full max-w-md mx-auto px-mobile-margin py-xl flex flex-col">
+<!-- Success Animation/State Header -->
+<div class="flex flex-col items-center text-center mb-huge">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-lg">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px; font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs">Success</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Your consent preferences have been saved.</p>
+</div>
+<!-- Summary Section -->
+<div class="space-y-md">
+<div class="flex items-center justify-between mb-sm px-base">
+<h3 class="font-body-md-bold text-body-md-bold">Summary</h3>
+<div class="flex items-center gap-base">
+<span class="w-3 h-3 rounded-full bg-green-500"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Preferences Locked</span>
+</div>
+</div>
+<!-- Vendor 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">corporate_fare</span>
+</div>
+<div>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">CloudScale Systems</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Infrastructure Provider</p>
+</div>
+</div>
+<span class="bg-green-100 text-green-800 font-label-sm-bold text-label-sm-bold px-sm py-base rounded">Consented</span>
+</div>
+<!-- Vendor 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">analytics</span>
+</div>
+<div>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">DataPoint Analytics</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Usage Monitoring</p>
+</div>
+</div>
+<span class="bg-surface-container text-on-surface-variant font-label-sm-bold text-label-sm-bold px-sm py-base rounded">Withdrawn</span>
+</div>
+<!-- Vendor 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">campaign</span>
+</div>
+<div>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">ReachOut Marketing</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">External Outreach</p>
+</div>
+</div>
+<span class="bg-surface-container text-on-surface-variant font-label-sm-bold text-label-sm-bold px-sm py-base rounded">Withdrawn</span>
+</div>
+</div>
+<!-- Compliance Note -->
+<div class="mt-xl p-md border border-outline-variant border-dashed bg-surface-container-low">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                Your choices are recorded in accordance with the Digital Personal Data Protection (DPDP) Act. You may update these preferences at any time from your privacy settings.
+            </p>
+</div>
+<!-- Footer Spacer for Fixed Bottom -->
+<div class="h-huge"></div>
+</main>
+<!-- Fixed Bottom Action -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant px-mobile-margin py-md z-50">
+<div class="max-w-md mx-auto">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold text-body-md-bold rounded transition-all duration-200 active:scale-[0.98] hover:opacity-90" onclick="window.location.href='../tasks_active_state/code.html'">
+                Return to Tasks
+            </button>
+</div>
+</div>
+<!-- Bottom Nav Bar (Suppressed on Task Detail/Confirmation screens per mandate, but included here as a ghost skeleton if needed for context, but typically suppressed in focused states) -->
+<!-- Navigation is suppressed for Task-Focused "Confirmation" splash screen as per "Shell Visibility & Relevance" rule -->
+<script>
+        // Micro-interaction for feedback
+        document.querySelector('button').addEventListener('click', function() {
+            this.style.opacity = '0.7';
+            setTimeout(() => {
+                this.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

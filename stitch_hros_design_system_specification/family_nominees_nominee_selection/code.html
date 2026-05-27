@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nominee Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.sans.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-tint": "#5d5c74",
+                    "primary-container": "#1a1a2e",
+                    "on-tertiary-fixed": "#231b02",
+                    "on-tertiary-container": "#493f20",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e5e1e3",
+                    "surface-container-low": "#f6f2f4",
+                    "on-primary-container": "#83829b",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#78767d",
+                    "on-secondary-container": "#5e6572",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#e2e0fc",
+                    "on-background": "#1c1b1d",
+                    "surface": "#fcf8fa",
+                    "on-surface-variant": "#47464c",
+                    "surface-dim": "#ddd9db",
+                    "surface-container": "#f1edef",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "inverse-primary": "#c6c4df",
+                    "secondary-container": "#dce2f3",
+                    "inverse-surface": "#313032",
+                    "background": "#fcf8fa",
+                    "tertiary-container": "#b9aa83",
+                    "surface-bright": "#fcf8fa",
+                    "secondary": "#585f6c",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#695d3c",
+                    "primary-fixed-dim": "#c6c4df",
+                    "inverse-on-surface": "#f4f0f2",
+                    "outline-variant": "#c8c5cd",
+                    "on-secondary-fixed-variant": "#404754",
+                    "secondary-fixed": "#dce2f3",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-container-high": "#ebe7e9",
+                    "on-surface": "#1c1b1d",
+                    "primary": "#00000b",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "huge": "64px",
+                    "lg": "24px",
+                    "mobile-margin": "24px",
+                    "xs": "8px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md": ["Geist"],
+                    "display": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Geist', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-huge">
+<!-- Top App Bar -->
+<header class="bg-surface border-b border-surface-variant flex items-center justify-between px-mobile-margin h-touch-target-min w-full max-w-md mx-auto sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary" data-icon="arrow_back" onclick="window.location.href='../family_nominees_empty_state/code.html'">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Family &amp; Nominees</h1>
+</div>
+</header>
+<main class="max-w-md mx-auto px-mobile-margin py-lg space-y-lg">
+<!-- Introduction -->
+<section class="space-y-xs">
+<p class="font-body-md text-on-surface-variant">Based on your family details, here are your suggested nominees. You can customize the percentage splits below.</p>
+</section>
+<!-- Nominee Sections (Bento-like Cards) -->
+<div class="space-y-md">
+<!-- Provident Fund (PF) Section -->
+<div class="bg-surface-container-lowest border border-surface-variant p-md rounded-xl space-y-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<h2 class="font-body-md-bold text-on-surface">Provident Fund (PF)</h2>
+</div>
+<span class="font-label-sm-bold text-primary px-sm py-1 bg-primary-fixed rounded-full">Total: 100%</span>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center justify-between p-sm border border-surface-variant rounded-lg bg-surface">
+<div class="flex items-center gap-sm">
+<div class="w-touch-target-min h-touch-target-min rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Priya Sharma</p>
+<p class="font-label-sm text-on-surface-variant">Spouse</p>
+</div>
+</div>
+<div class="flex items-center gap-xs">
+<input class="w-16 h-touch-target-min text-center border-b border-surface-variant bg-transparent font-body-md-bold focus:border-primary focus:ring-0" onchange="validateTotal(this, 'pf-error')" type="number" value="100"/>
+<span class="font-body-md text-on-surface-variant">%</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-xs py-sm border-2 border-dashed border-outline-variant rounded-lg text-outline font-label-sm-bold hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                        Add Nominee
+                    </button>
+<p class="hidden text-error font-label-sm" id="pf-error">Total must equal 100%</p>
+</div>
+</div>
+<!-- Gratuity Section -->
+<div class="bg-surface-container-lowest border border-surface-variant p-md rounded-xl space-y-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<h2 class="font-body-md-bold text-on-surface">Gratuity</h2>
+</div>
+<span class="font-label-sm-bold text-primary px-sm py-1 bg-primary-fixed rounded-full">Total: 100%</span>
+</div>
+<div class="space-y-sm">
+<!-- Multiple Nominees Example -->
+<div class="flex items-center justify-between p-sm border border-surface-variant rounded-lg bg-surface">
+<div class="flex items-center gap-sm">
+<div class="w-touch-target-min h-touch-target-min rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Priya Sharma</p>
+<p class="font-label-sm text-on-surface-variant">Spouse</p>
+</div>
+</div>
+<div class="flex items-center gap-xs">
+<input class="w-16 h-touch-target-min text-center border-b border-surface-variant bg-transparent font-body-md-bold focus:border-primary focus:ring-0" type="number" value="50"/>
+<span class="font-body-md text-on-surface-variant">%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-sm border border-surface-variant rounded-lg bg-surface">
+<div class="flex items-center gap-sm">
+<div class="w-touch-target-min h-touch-target-min rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed" data-icon="child_care">child_care</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Aarav Sharma</p>
+<p class="font-label-sm text-on-surface-variant">Child</p>
+</div>
+</div>
+<div class="flex items-center gap-xs">
+<input class="w-16 h-touch-target-min text-center border-b border-surface-variant bg-transparent font-body-md-bold focus:border-primary focus:ring-0" type="number" value="50"/>
+<span class="font-body-md text-on-surface-variant">%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Insurance Section -->
+<div class="bg-surface-container-lowest border border-surface-variant p-md rounded-xl space-y-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<h2 class="font-body-md-bold text-on-surface">Insurance</h2>
+</div>
+<span class="font-label-sm-bold text-error px-sm py-1 bg-error-container rounded-full">Total: 0%</span>
+</div>
+<div class="space-y-sm">
+<div class="text-center py-xl border-2 border-dashed border-outline-variant rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-outline-variant text-4xl mb-sm" data-icon="person_add">person_add</span>
+<p class="font-label-sm text-on-surface-variant px-lg">No nominee assigned yet for Insurance coverage.</p>
+<button class="mt-md px-lg h-touch-target-min bg-primary text-on-primary rounded-full font-label-sm-bold hover:opacity-90 transition-all">
+                            Assign Nominee
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Compliance Block -->
+<div class="border border-surface-variant p-md rounded-lg bg-surface-container-low space-y-sm">
+<h3 class="font-label-sm-bold text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" data-icon="gavel">gavel</span>
+                DPDP Compliance Declaration
+            </h3>
+<div class="flex gap-sm">
+<input class="mt-1 w-5 h-5 rounded border-outline focus:ring-primary text-primary" id="compliance" type="checkbox"/>
+<label class="font-label-sm text-on-surface-variant leading-relaxed" for="compliance">
+                    I hereby declare that the nominations provided above are correct to the best of my knowledge and comply with Indian DPDP rules for family nominee data processing.
+                </label>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-surface-variant z-50 px-mobile-margin py-sm">
+<div class="max-w-md mx-auto">
+<button class="w-full h-huge bg-primary text-on-primary rounded-xl font-body-md-bold shadow-lg hover:scale-[0.99] active:scale-95 transition-all flex items-center justify-center gap-sm" onclick="window.location.reload()">
+                Review Nominations
+                <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- AI Concierge FAB -->
+<button class="fixed right-lg bottom-[100px] w-touch-target-min h-touch-target-min bg-primary-container text-on-primary-container rounded-full shadow-xl flex items-center justify-center z-50 hover:bg-primary transition-all">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+<script>
+        function validateTotal(input, errorId) {
+            const val = parseInt(input.value);
+            const errorEl = document.getElementById(errorId);
+            if (val !== 100) {
+                errorEl.classList.remove('hidden');
+                input.classList.add('text-error');
+            } else {
+                errorEl.classList.add('hidden');
+                input.classList.remove('text-error');
+            }
+        }
+
+        // Simple animation for the FAB to grab attention
+        const fab = document.querySelector('[data-icon="auto_awesome"]').parentElement;
+        setInterval(() => {
+            fab.classList.add('scale-110');
+            setTimeout(() => fab.classList.remove('scale-110'), 200);
+        }, 10000);
+    </script>
+<script src="../nav.js"></script>
+</body></html>

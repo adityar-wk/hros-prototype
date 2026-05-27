@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PoSH Policy &amp; Quiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f2e1b7",
+                        "surface-tint": "#5d5c74",
+                        "on-tertiary-container": "#493f20",
+                        "surface-container-high": "#ebe7e9",
+                        "error": "#ba1a1a",
+                        "surface": "#fcf8fa",
+                        "on-primary-fixed-variant": "#45455b",
+                        "outline": "#78767d",
+                        "tertiary-container": "#b9aa83",
+                        "surface-container-low": "#f6f2f4",
+                        "on-secondary-fixed": "#151c27",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#1a1a2e",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e5e1e3",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#dce2f3",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-surface-variant": "#47464c",
+                        "primary": "#00000b",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container": "#f1edef",
+                        "surface-container-highest": "#e5e1e3",
+                        "primary-fixed": "#e2e0fc",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-tertiary-fixed": "#231b02",
+                        "secondary": "#585f6c",
+                        "primary-container": "#1a1a2e",
+                        "on-secondary-container": "#5e6572",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-container": "#dce2f3",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#313032",
+                        "inverse-primary": "#c6c4df",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-background": "#1c1b1d",
+                        "outline-variant": "#c8c5cd",
+                        "on-primary-container": "#83829b",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "background": "#fcf8fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "mobile-margin": "24px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "huge": "64px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-[120px]">
+<!-- Top App Bar -->
+<header class="bg-surface sticky top-0 z-50 flex items-center justify-between px-mobile-margin w-full h-[64px] border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform duration-200" onclick="window.location.href='../policies_milestone_complete/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-on-surface">Policies</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">In Progress</span>
+</div>
+</header>
+<main class="max-w-[375px] mx-auto px-mobile-margin pt-lg space-y-xl">
+<!-- Section: Hero Content -->
+<section class="space-y-md">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error" title="Action Needed"></span>
+<span class="font-label-sm-bold text-label-sm-bold text-error uppercase tracking-wider">Mandatory Reading</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Prevention of Sexual Harassment (PoSH) Policy</h2>
+<p class="font-body-md text-on-surface-variant">This policy outlines our commitment to providing a safe and respectful work environment for everyone.</p>
+</section>
+<!-- Section 1: Policy Overview -->
+<section class="space-y-md">
+<div class="flex items-center gap-2">
+<h3 class="font-body-md-bold text-body-md-bold text-primary">1. Policy Overview</h3>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md space-y-sm">
+<p class="font-body-md text-on-surface-variant">The organization is committed to a zero-tolerance policy towards sexual harassment. This applies to all employees, contractors, and visitors within our premises or during work-related events.</p>
+<ul class="space-y-base">
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+<span class="font-label-sm text-on-surface">Safe working environment</span>
+</li>
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+<span class="font-label-sm text-on-surface">Confidentiality of complaints</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Section 2: Internal Committee (ICC) -->
+<section class="space-y-md">
+<div class="flex items-center gap-2">
+<h3 class="font-body-md-bold text-body-md-bold text-primary">2. Internal Committee (ICC)</h3>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 gap-sm">
+<div class="flex items-center justify-between p-md bg-surface border border-outline-variant rounded-xl">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">person</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Ananya Sharma</p>
+<p class="font-label-sm text-on-surface-variant">Presiding Officer</p>
+</div>
+</div>
+<button class="p-2 hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-primary">mail</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-md bg-surface border border-outline-variant rounded-xl">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">person</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Vikram Singh</p>
+<p class="font-label-sm text-on-surface-variant">Member</p>
+</div>
+</div>
+<button class="p-2 hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-primary">mail</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 3: Reporting Guide -->
+<section class="space-y-md">
+<div class="flex items-center gap-2">
+<h3 class="font-body-md-bold text-body-md-bold text-primary">3. Reporting Guide</h3>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+<div class="relative space-y-lg pl-6">
+<!-- Vertical Line -->
+<div class="absolute left-2.5 top-2 bottom-2 w-[1px] bg-outline-variant"></div>
+<div class="relative flex gap-md">
+<div class="absolute -left-[22px] w-4 h-4 rounded-full bg-primary ring-4 ring-background flex items-center justify-center">
+<span class="text-[10px] text-white font-bold">1</span>
+</div>
+<div>
+<p class="font-label-sm-bold text-primary">Identify Incident</p>
+<p class="font-label-sm text-on-surface-variant leading-tight">Identify any behavior that violates the PoSH policy guidelines.</p>
+</div>
+</div>
+<div class="relative flex gap-md">
+<div class="absolute -left-[22px] w-4 h-4 rounded-full bg-primary ring-4 ring-background flex items-center justify-center">
+<span class="text-[10px] text-white font-bold">2</span>
+</div>
+<div>
+<p class="font-label-sm-bold text-primary">Document Evidence</p>
+<p class="font-label-sm text-on-surface-variant leading-tight">Maintain a record of dates, times, and witnesses if any.</p>
+</div>
+</div>
+<div class="relative flex gap-md">
+<div class="absolute -left-[22px] w-4 h-4 rounded-full bg-primary ring-4 ring-background flex items-center justify-center">
+<span class="text-[10px] text-white font-bold">3</span>
+</div>
+<div>
+<p class="font-label-sm-bold text-primary">Submit Complaint</p>
+<p class="font-label-sm text-on-surface-variant leading-tight">Write to any ICC member within 3 months of the incident.</p>
+</div>
+</div>
+<div class="relative flex gap-md">
+<div class="absolute -left-[22px] w-4 h-4 rounded-full bg-primary ring-4 ring-background flex items-center justify-center">
+<span class="text-[10px] text-white font-bold">4</span>
+</div>
+<div>
+<p class="font-label-sm-bold text-primary">ICC Inquiry</p>
+<p class="font-label-sm text-on-surface-variant leading-tight">The committee will initiate a confidential inquiry process.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quiz Section -->
+<section class="bg-surface-container-low rounded-2xl p-lg border border-outline-variant space-y-lg">
+<div class="space-y-xs">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Quick Knowledge Check</h3>
+<p class="font-label-sm text-on-surface-variant">3 Questions • Must pass to sign policy</p>
+</div>
+<!-- Question 1 -->
+<div class="space-y-md" id="quiz-form">
+<p class="font-body-md-bold text-on-surface">Question 1: Who can you report an incident to?</p>
+<div class="space-y-sm">
+<label class="flex items-center p-md bg-white border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors group">
+<input class="w-5 h-5 text-primary focus:ring-primary border-outline" name="q1" type="radio" value="A"/>
+<span class="ml-3 font-label-sm text-on-surface group-hover:text-primary transition-colors">(A) Only your manager</span>
+</label>
+<label class="flex items-center p-md bg-white border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors group">
+<input class="w-5 h-5 text-primary focus:ring-primary border-outline" id="correct-option" name="q1" type="radio" value="B"/>
+<span class="ml-3 font-label-sm text-on-surface group-hover:text-primary transition-colors">(B) Any ICC member</span>
+</label>
+<label class="flex items-center p-md bg-white border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors group">
+<input class="w-5 h-5 text-primary focus:ring-primary border-outline" name="q1" type="radio" value="C"/>
+<span class="ml-3 font-label-sm text-on-surface group-hover:text-primary transition-colors">(C) Only the CEO</span>
+</label>
+</div>
+</div>
+</section>
+<!-- DPDP Consent Block -->
+<section class="border border-outline-variant p-md rounded-xl bg-surface-container-lowest">
+<div class="flex gap-md">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="dpdp-consent" type="checkbox"/>
+<label class="font-label-sm text-on-surface-variant" for="dpdp-consent">
+                    I acknowledge that I have read and understood the PoSH Policy. My data will be handled as per India DPDP Act guidelines for compliance purposes.
+                </label>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Bar for Signing -->
+<div class="fixed bottom-[80px] left-0 w-full px-mobile-margin py-md bg-surface border-t border-outline-variant z-40">
+<button class="w-full h-touch-target-min bg-primary text-white font-body-md-bold rounded-full opacity-30 cursor-not-allowed transition-all active:scale-95" disabled="" id="sign-btn">
+            Sign Policy
+        </button>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 h-[80px] bg-surface border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150 cursor-pointer" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">description</span>
+<span class="font-label-sm text-label-sm">Documents</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">contact_support</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+        const correctOption = document.getElementById('correct-option');
+        const consentCheckbox = document.getElementById('dpdp-consent');
+        const signBtn = document.getElementById('sign-btn');
+        const quizRadios = document.querySelectorAll('input[name="q1"]');
+
+        function updateButtonState() {
+            const isQuizPassed = correctOption.checked;
+            const isConsentGiven = consentCheckbox.checked;
+
+            if (isQuizPassed && isConsentGiven) {
+                signBtn.disabled = false;
+                signBtn.classList.remove('opacity-30', 'cursor-not-allowed');
+                signBtn.classList.add('opacity-100', 'cursor-pointer');
+            } else {
+                signBtn.disabled = true;
+                signBtn.classList.add('opacity-30', 'cursor-not-allowed');
+                signBtn.classList.remove('opacity-100', 'cursor-pointer');
+            }
+        }
+
+        quizRadios.forEach(radio => {
+            radio.addEventListener('change', updateButtonState);
+        });
+
+        consentCheckbox.addEventListener('change', updateButtonState);
+
+        signBtn.addEventListener('click', () => {
+            if (!signBtn.disabled) {
+                signBtn.innerHTML = '<span class="flex items-center justify-center gap-2">Signing... <span class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span></span>';
+                setTimeout(() => {
+                    signBtn.innerHTML = 'Policy Signed ✓';
+                    signBtn.classList.replace('bg-primary', 'bg-tertiary-container');
+                    signBtn.classList.replace('text-white', 'text-on-tertiary-container');
+                }, 1500);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
+

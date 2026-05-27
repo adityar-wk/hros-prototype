@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS | BGV Status Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1c1b1d",
+                        "outline": "#78767d",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-surface-variant": "#47464c",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "secondary": "#585f6c",
+                        "surface-dim": "#ddd9db",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary-container": "#b9aa83",
+                        "background": "#fcf8fa",
+                        "on-secondary-fixed-variant": "#404754",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#83829b",
+                        "secondary-container": "#dce2f3",
+                        "on-tertiary-container": "#493f20",
+                        "on-background": "#1c1b1d",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c8c5cd",
+                        "inverse-surface": "#313032",
+                        "primary": "#00000b",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf8fa",
+                        "surface-container-high": "#ebe7e9",
+                        "inverse-primary": "#c6c4df",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container": "#f1edef",
+                        "primary-container": "#1a1a2e",
+                        "on-error": "#ffffff",
+                        "tertiary": "#695d3c",
+                        "surface-container-low": "#f6f2f4",
+                        "error-container": "#ffdad6",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "44px",
+                        "xs": "8px",
+                        "xxl": "48px",
+                        "sm": "12px",
+                        "lg": "24px",
+                        "huge": "64px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "mobile-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-md-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Geist', sans-serif; }
+        .hairline { border: 1px solid #E5E7EB; }
+        .ambient-shadow { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04); }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-mobile-margin h-touch-target-min bg-background border-b border-outline-variant">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-display text-primary font-bold text-[20px]">HROS</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a diverse corporate employee against a clean, neutral background. The lighting is soft and high-key, reflecting a minimalist and professional light-mode aesthetic. The individual is smiling warmly, conveying confidence and reliability in an enterprise software context. The overall color palette is dominated by soft greys and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1dGHIpGuB2c4MUFSNd4zG0bLtLlu7uxJuiRZr5hTtSSTiwIXvOm8ROGxtPlk6eLKaSllSfnoQB0wMUMbO5wPPDhFMVvYepalKOEnV-VLIWstMaDDYhgdgnPFLlc7o50QpvJcZqUKYyhcNbxCtZwCgfFAmkXkw45rcdq5DJVpVbUCnmyYEhuiuWIXHFVzd7Y5WDGFEOUGickrbZqfMxa67MXR0IJfLN4CjCJ3Ckq6hQ0024ApneBfAwzRTTkYeYFjbeHPfzydekcj5"/>
+</div>
+</header>
+<main class="pt-[64px] pb-[100px] px-mobile-margin">
+<!-- Page Header & Readiness Signal -->
+<section class="mt-lg mb-xl flex items-center gap-xs">
+<div class="w-3 h-3 bg-tertiary rounded-full animate-pulse"></div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Verification Status</h2>
+</section>
+<!-- Stepper Component -->
+<section class="mb-xl bg-surface-container-lowest p-md rounded-xl hairline">
+<div class="flex justify-between items-start relative">
+<!-- Connector Lines -->
+<div class="absolute top-4 left-[10%] right-[10%] h-[2px] bg-outline-variant z-0"></div>
+<div class="absolute top-4 left-[10%] w-[45%] h-[2px] bg-primary z-0"></div>
+<!-- Step 1: Initiated (Done) -->
+<div class="flex flex-col items-center z-10 gap-xs">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface">Initiated</span>
+</div>
+<!-- Step 2: In Progress (Active) -->
+<div class="flex flex-col items-center z-10 gap-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-primary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold text-primary">In Progress</span>
+</div>
+<!-- Step 3: Complete (Pending) -->
+<div class="flex flex-col items-center z-10 gap-xs opacity-40">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Complete</span>
+</div>
+</div>
+</section>
+<!-- Review Alert Section -->
+<section class="mb-xl bg-secondary-container/30 border border-secondary-container p-md rounded-lg flex gap-md items-start">
+<span class="material-symbols-outlined text-on-secondary-container mt-0.5">info</span>
+<div class="flex flex-col">
+<p class="font-body-md-bold text-body-md-bold text-on-secondary-container">Under Review</p>
+<p class="font-body-md text-body-md text-on-secondary-container/80">Your verification is under review. Your HRBP will be in touch if any further action is required from your side.</p>
+</div>
+</section>
+<!-- Timeline / Detailed Checks -->
+<section class="space-y-md">
+<h3 class="font-label-sm-bold text-label-sm-bold text-outline uppercase tracking-wider">Verification Timeline</h3>
+<!-- Check 1: Education -->
+<div class="bg-surface-container-lowest p-md rounded-xl hairline flex items-start gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="school">school</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-base">
+<h4 class="font-body-md-bold text-body-md-bold text-on-surface">Education Check</h4>
+<span class="text-[11px] font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">VERIFIED</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Started on Oct 24, 2023</p>
+</div>
+</div>
+<!-- Check 2: Employment -->
+<div class="bg-surface-container-lowest p-md rounded-xl hairline flex items-start gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="work">work</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-base">
+<h4 class="font-body-md-bold text-body-md-bold text-on-surface">Employment History</h4>
+<span class="text-[11px] font-semibold bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">IN REVIEW</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Started on Oct 26, 2023</p>
+</div>
+</div>
+<!-- Check 3: Criminal Record -->
+<div class="bg-surface-container-lowest p-md rounded-xl hairline flex items-start gap-md opacity-60">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="gavel">gavel</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-base">
+<h4 class="font-body-md-bold text-body-md-bold text-on-surface">Criminal Record</h4>
+<span class="text-[11px] font-semibold bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded-full">QUEUED</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Estimated start: Oct 30, 2023</p>
+</div>
+</div>
+</section>
+<!-- injected Continue CTA -->
+<div style="position:fixed;bottom:72px;left:0;right:0;padding:0 24px;z-index:100;">
+  <button onclick="window.location.href='../journey_map_current_stage_expanded/code.html'" style="width:100%;height:44px;background:#00000b;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+    Continue <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">arrow_forward</span>
+  </button>
+</div></main>
+<!-- AI Concierge FAB -->
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs pb-safe bg-surface-container-lowest border-t border-outline-variant h-[80px]">
+<!-- Journey -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</a>
+<!-- Tasks (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-md py-xs active:scale-95 transition-transform duration-150" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm-bold text-label-sm-bold">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 duration-150" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="rss_feed">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 duration-150" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 duration-150" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</a>
+</nav>
+<script>
+        // Simple ripple effect for cards
+        document.querySelectorAll('.hairline').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.backgroundColor = 'var(--surface-container-low)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.backgroundColor = 'white';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.backgroundColor = 'white';
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

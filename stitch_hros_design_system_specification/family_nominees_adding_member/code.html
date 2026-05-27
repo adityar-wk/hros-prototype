@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-tint": "#5d5c74",
+                        "primary-container": "#1a1a2e",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-tertiary-container": "#493f20",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-low": "#f6f2f4",
+                        "on-primary-container": "#83829b",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#78767d",
+                        "on-secondary-container": "#5e6572",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#e2e0fc",
+                        "on-background": "#1c1b1d",
+                        "surface": "#fcf8fa",
+                        "on-surface-variant": "#47464c",
+                        "surface-dim": "#ddd9db",
+                        "surface-container": "#f1edef",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-container": "#dce2f3",
+                        "inverse-surface": "#313032",
+                        "background": "#fcf8fa",
+                        "tertiary-container": "#b9aa83",
+                        "surface-bright": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary": "#695d3c",
+                        "primary-fixed-dim": "#c6c4df",
+                        "inverse-on-surface": "#f4f0f2",
+                        "outline-variant": "#c8c5cd",
+                        "on-secondary-fixed-variant": "#404754",
+                        "secondary-fixed": "#dce2f3",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-secondary-fixed": "#151c27",
+                        "surface-container-high": "#ebe7e9",
+                        "on-surface": "#1c1b1d",
+                        "primary": "#00000b",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "huge": "64px",
+                        "lg": "24px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #fcf8fa;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface">
+<header class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-surface-variant h-touch-target-min flex items-center justify-between px-mobile-margin max-w-md mx-auto left-1/2 -translate-x-1/2">
+<div class="flex items-center gap-md">
+<button class="flex items-center justify-center w-touch-target-min h-touch-target-min text-primary active:opacity-80 transition-opacity" onclick="window.location.href='../family_nominees_nominee_selection/code.html'">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Family &amp; Nominees</h1>
+</div>
+</header>
+<main class="pt-huge pb-xxl px-mobile-margin max-w-md mx-auto min-h-screen">
+<div class="mt-lg mb-xl">
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface mb-xs flex items-center gap-xs">
+                Member Information
+                <span class="w-3 h-3 rounded-full bg-tertiary-container animate-pulse"></span>
+</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Complete the details below to add your nominee to the enterprise benefits system.</p>
+</div>
+<form class="space-y-lg" id="addMemberForm">
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block ml-1">Full Name</label>
+<div class="relative group">
+<input class="w-full h-touch-target-min px-md rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant outline-none" placeholder="Legal name as per Aadhaar" type="text"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block ml-1">Date of Birth</label>
+<div class="relative">
+<input class="w-full h-touch-target-min px-md rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" id="dobInput" type="date"/>
+</div>
+<div class="hidden animate-in fade-in slide-in-from-top-2 duration-300" id="minorNotice">
+<div class="mt-sm p-sm bg-secondary-container bg-opacity-30 border border-secondary-container rounded-lg flex gap-sm items-start">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<p class="font-label-sm text-label-sm text-on-secondary-container">Adding a minor requires parental/guardian consent verification.</p>
+</div>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block ml-1">Relationship</label>
+<div class="relative">
+<select class="w-full h-touch-target-min px-md rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md appearance-none focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" id="relationshipSelect">
+<option disabled="" selected="" value="">Select relationship</option>
+<option value="spouse">Spouse</option>
+<option value="child">Child</option>
+<option value="parent">Parent</option>
+<option value="sibling">Sibling</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="hidden space-y-xs animate-in fade-in slide-in-from-top-2 duration-300" id="employmentSection">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block ml-1">Employment Status</label>
+<div class="grid grid-cols-2 gap-sm">
+<button class="employment-btn h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-label-sm-bold text-label-sm-bold hover:bg-surface-container transition-colors active:scale-95" data-status="salaried" type="button">Salaried</button>
+<button class="employment-btn h-touch-target-min flex items-center justify-center border border-outline-variant rounded-lg font-label-sm-bold text-label-sm-bold hover:bg-surface-container transition-colors active:scale-95" data-status="others" type="button">Self/Others</button>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant block ml-1">Aadhaar (Optional)</label>
+<div class="relative group">
+<input class="w-full h-touch-target-min px-md rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant outline-none" maxlength="12" placeholder="12-digit UID number" type="text"/>
+</div>
+</div>
+<div class="p-lg bg-surface-container-low border border-outline-variant rounded-xl mt-xxl">
+<div class="flex gap-md">
+<div class="pt-1">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" id="consent" type="checkbox"/>
+</div>
+<div class="space-y-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant block leading-relaxed" for="consent">
+                            We use your family details to set up insurance, PF, and gratuity nominations. This data is not shared beyond these statutory purposes.
+                        </label>
+<p class="font-label-sm-bold text-label-sm-bold text-primary underline">DPDP Policy &amp; Terms</p>
+</div>
+</div>
+</div>
+</form>
+</main>
+<div class="fixed bottom-0 left-0 w-full p-lg bg-surface border-t border-surface-variant max-w-md mx-auto left-1/2 -translate-x-1/2 z-50">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold text-body-md-bold rounded-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-sm" onclick="window.location.href='../family_nominees_nomination_summary/code.html'">
+            Add Member
+            <span class="material-symbols-outlined text-[18px]">person_add</span>
+</button>
+</div>
+<script>
+        document.getElementById('dobInput').addEventListener('change', function(e) {
+            const birthDate = new Date(e.target.value);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            const minorNotice = document.getElementById('minorNotice');
+            if (age < 18) {
+                minorNotice.classList.remove('hidden');
+            } else {
+                minorNotice.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('relationshipSelect').addEventListener('change', function(e) {
+            const employmentSection = document.getElementById('employmentSection');
+            if (e.target.value === 'spouse') {
+                employmentSection.classList.remove('hidden');
+            } else {
+                employmentSection.classList.add('hidden');
+            }
+        });
+
+        const empButtons = document.querySelectorAll('.employment-btn');
+        empButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                empButtons.forEach(b => b.classList.remove('bg-primary-container', 'text-on-primary-container', 'border-primary'));
+                btn.classList.add('bg-primary-container', 'text-on-primary-container', 'border-primary');
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1c1b1d",
+                        "surface-container-high": "#ebe7e9",
+                        "on-primary-container": "#83829b",
+                        "primary": "#00000b",
+                        "tertiary": "#695d3c",
+                        "primary-container": "#1a1a2e",
+                        "on-surface-variant": "#47464c",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-primary-fixed-variant": "#45455b",
+                        "primary-fixed": "#e2e0fc",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e1e3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#5d5c74",
+                        "surface": "#fcf8fa",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-primary-fixed": "#1a1a2e",
+                        "secondary": "#585f6c",
+                        "secondary-container": "#dce2f3",
+                        "surface-dim": "#ddd9db",
+                        "on-secondary-fixed": "#151c27",
+                        "surface-container": "#f1edef",
+                        "background": "#fcf8fa",
+                        "primary-fixed-dim": "#c6c4df",
+                        "outline-variant": "#c8c5cd",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#231b02",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed": "#dce2f3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-highest": "#e5e1e3",
+                        "outline": "#78767d",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-low": "#f6f2f4",
+                        "tertiary-container": "#b9aa83",
+                        "on-tertiary-container": "#493f20",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5e6572"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "44px",
+                        "huge": "64px",
+                        "xl": "32px",
+                        "mobile-margin": "24px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .blur-locked { filter: blur(8px); pointer-events: none; user-select: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant flex items-center justify-between px-mobile-margin w-full h-touch-target-min fixed top-0 z-40">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Accept Offer</span>
+</div>
+<div class="w-11 h-11 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</div>
+</header>
+<!-- Background Content (Locked/Blurred State) -->
+<main class="flex-grow pt-huge px-mobile-margin space-y-lg blur-locked">
+<div class="space-y-md">
+<div class="h-4 w-24 bg-surface-container-high rounded"></div>
+<div class="h-8 w-full bg-surface-container-high rounded"></div>
+</div>
+<!-- Task Card Mockup -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-sm shadow-sm">
+<div class="flex justify-between items-start">
+<div class="h-6 w-3/4 bg-surface-container-high rounded"></div>
+<div class="h-4 w-12 bg-surface-container-high rounded-full"></div>
+</div>
+<div class="h-4 w-1/2 bg-surface-container-high rounded"></div>
+<div class="flex gap-xs">
+<div class="h-8 w-8 bg-surface-container-high rounded-full"></div>
+<div class="h-8 w-8 bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-sm shadow-sm opacity-50">
+<div class="h-6 w-1/2 bg-surface-container-high rounded"></div>
+<div class="h-4 w-full bg-surface-container-high rounded"></div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl space-y-sm shadow-sm opacity-50">
+<div class="h-6 w-2/3 bg-surface-container-high rounded"></div>
+<div class="h-4 w-full bg-surface-container-high rounded"></div>
+</div>
+</main>
+<!-- Overlay Bottom Sheet (Actionable State) -->
+<div class="fixed inset-0 bg-primary/20 backdrop-blur-[2px] z-50 flex flex-col justify-end">
+<div class="bg-surface-container-lowest rounded-t-[32px] px-mobile-margin pt-xl pb-huge shadow-2xl border-t border-outline-variant animate-in slide-in-from-bottom duration-500">
+<!-- Decorative Handle -->
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mx-auto mb-xl"></div>
+<div class="flex flex-col items-center text-center space-y-lg">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="calendar_today">calendar_today</span>
+</div>
+<div class="space-y-xs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-background">Welcome!</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px]">To start your journey, let's confirm your joining date.</p>
+</div>
+<!-- Date Confirmation Visual -->
+<div class="w-full bg-surface-container-low border border-outline-variant rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="event_repeat">event_repeat</span>
+<div class="text-left">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface">Joining Date</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Not specified yet</p>
+</div>
+</div>
+<div class="w-3 h-3 bg-tertiary rounded-full animate-pulse"></div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary text-on-primary font-body-md-bold text-body-md py-md rounded-full active:scale-95 transition-transform flex items-center justify-center gap-sm" onclick="window.location.href='../joining_date_proposed_confirmed_2/code.html'">
+                    Set my joining date
+                    <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- DPDP Minimal Hint -->
+<p class="font-label-sm text-label-sm text-outline px-sm">
+                    Confirming your date allows us to prepare your workstation and induction schedule.
+                </p>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Inactive/Locked Style) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-sm py-xs bg-surface border-t border-outline-variant z-[60]">
+<div class="flex flex-col items-center justify-center text-outline px-4 py-1">
+<span class="material-symbols-outlined text-xl" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline px-4 py-1" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined text-xl" data-icon="checklist">checklist</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline px-4 py-1">
+<span class="material-symbols-outlined text-xl" data-icon="description">description</span>
+<span class="font-label-sm text-label-sm">Docs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline px-4 py-1">
+<span class="material-symbols-outlined text-xl" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm">Concierge</span>
+</div>
+</nav>
+<!-- Persistent AI Concierge Trigger (Distinctive Layer) -->
+<div class="fixed bottom-[84px] right-lg z-[70] transition-all duration-300 transform hover:scale-105">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-[0_8px_24px_-10px_rgba(0,0,0,0.5)] border border-white/10">
+<span class="material-symbols-outlined text-2xl" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</button>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden opacity-10">
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[40%] bg-primary-fixed rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[40%] bg-tertiary-fixed rounded-full blur-[100px]"></div>
+</div>
+<script src="../nav.js"></script>
+</body></html>
+

@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conflict of Interest Declaration | HROS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100;300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .active-ring {
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #00000b;
+        }
+
+        /* Ambient Shadow for AI Layer as per Style Guidance */
+        .ai-shadow {
+            box-shadow: 0 12px 48px -12px rgba(0, 0, 0, 0.12);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#47464c",
+                      "primary-container": "#1a1a2e",
+                      "tertiary-fixed": "#f2e1b7",
+                      "tertiary-container": "#b9aa83",
+                      "on-primary-container": "#83829b",
+                      "surface-dim": "#ddd9db",
+                      "inverse-surface": "#313032",
+                      "inverse-on-surface": "#f4f0f2",
+                      "background": "#fcf8fa",
+                      "on-tertiary": "#ffffff",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#dce2f3",
+                      "outline-variant": "#c8c5cd",
+                      "inverse-primary": "#c6c4df",
+                      "on-tertiary-fixed": "#231b02",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1c1b1d",
+                      "primary-fixed-dim": "#c6c4df",
+                      "outline": "#78767d",
+                      "surface-container-highest": "#e5e1e3",
+                      "on-primary-fixed-variant": "#45455b",
+                      "surface-variant": "#e5e1e3",
+                      "on-secondary-container": "#5e6572",
+                      "on-primary-fixed": "#1a1a2e",
+                      "tertiary": "#695d3c",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "on-surface": "#1c1b1d",
+                      "on-secondary-fixed-variant": "#404754",
+                      "surface-container-high": "#ebe7e9",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#dce2f3",
+                      "surface-container": "#f1edef",
+                      "on-secondary-fixed": "#151c27",
+                      "secondary": "#585f6c",
+                      "on-tertiary-container": "#493f20",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "surface": "#fcf8fa",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#5d5c74",
+                      "primary-fixed": "#e2e0fc",
+                      "surface-container-low": "#f6f2f4",
+                      "primary": "#00000b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "md": "16px",
+                      "base": "4px",
+                      "touch-target-min": "44px",
+                      "xxl": "48px",
+                      "mobile-margin": "24px",
+                      "sm": "12px",
+                      "huge": "64px",
+                      "xl": "32px",
+                      "xs": "8px"
+              },
+              "fontFamily": {
+                      "label-sm-bold": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "body-md-bold": ["Geist"],
+                      "display": ["Geist"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-huge">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant flex items-center justify-between px-lg h-huge">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-80 transition-opacity" data-icon="menu">menu</span>
+<h1 class="font-display text-headline-lg-mobile tracking-tighter text-primary">HROS</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a person with a neutral, friendly expression in a modern office environment. The lighting is soft and natural, reflecting a minimalist-professional brand identity. High-key tones and crisp clarity define the image, aligning with an AI-native operating system aesthetic that prioritizes high-end enterprise software quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmmPS2n3XSY_CdbIP1Zn4HsH9Kx7Zm3B6vBd2IODrvirMTEgwYe1hfCP34td5fEAtokHpKJZ4et_4puF20K30pHwYCyAeZfVERkJOIqF2TfdoOS-qb5bYSisxFPrS5hDrdVyFSjlBqYcsIB3YRYdcgOQvmzhK502y-8uaIbjWL_LKwfGOkYzXr8k0FLg6bN4L6XpVKD5e6mxvGC1WPBadR58HaNgOFDcWmGW1iV5fDL4W8pNz-fAG_009mX2hXIygKDrWpNsgZJt0J"/>
+</div>
+</header>
+<!-- Progress Indicator -->
+<div class="fixed top-huge left-0 w-full z-40 bg-background">
+<div class="h-1 bg-surface-container">
+<div class="h-full bg-primary transition-all duration-500" style="width: 40%"></div>
+</div>
+</div>
+<!-- Main Canvas -->
+<main class="mt-[72px] px-mobile-margin py-lg space-y-xl">
+<!-- Section Header -->
+<div class="space-y-base">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-tertiary-container"></div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">Conflict of Interest</h2>
+</div>
+<p class="font-body-md text-on-surface-variant">A declaration of any commercial interests or roles that may intersect with your work here.</p>
+</div>
+<!-- Choice Path Interaction -->
+<div class="grid grid-cols-1 gap-md">
+<button class="group flex flex-col p-md border border-outline-variant rounded-xl bg-surface-container-lowest transition-all duration-200 active:scale-[0.98] text-left" id="path-none" onclick="selectPath('none')">
+<span class="material-symbols-outlined text-primary mb-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md-bold text-on-surface">I have no conflicts to declare</span>
+<span class="font-label-sm text-on-surface-variant">I confirm I have no external commercial interests.</span>
+</button>
+<button class="group flex flex-col p-md border border-outline-variant rounded-xl bg-surface-container-lowest transition-all duration-200 active:scale-[0.98] text-left" id="path-declare" onclick="selectPath('declare')">
+<span class="material-symbols-outlined text-primary mb-sm" data-icon="add_circle">add_circle</span>
+<span class="font-body-md-bold text-on-surface">I have something to declare</span>
+<span class="font-label-sm text-on-surface-variant">I have a role, stake, or interest to disclose.</span>
+</button>
+</div>
+<!-- Declaration Form (Hidden by Default) -->
+<div class="hidden space-y-md fade-in border-t border-outline-variant pt-xl" id="declaration-form">
+<h3 class="font-body-md-bold text-on-surface">Disclosure Details</h3>
+<div class="space-y-sm">
+<label class="block font-label-sm-bold text-on-surface-variant">Type of Interest</label>
+<select class="w-full h-touch-target-min px-md border border-outline-variant rounded-lg bg-surface-container-lowest focus:ring-1 focus:ring-primary outline-none font-body-md">
+<option>Board Membership / Directorship</option>
+<option>Equity Stake / Shareholding (&gt;1%)</option>
+<option>Consultancy / External Employment</option>
+<option>Family Relation in Industry</option>
+<option>Intellectual Property License</option>
+</select>
+</div>
+<div class="space-y-sm">
+<label class="block font-label-sm-bold text-on-surface-variant">Organisation Name</label>
+<input class="w-full h-touch-target-min px-md border border-outline-variant rounded-lg bg-surface-container-lowest focus:ring-1 focus:ring-primary outline-none font-body-md" placeholder="e.g. Acme Corp India" type="text"/>
+</div>
+<div class="space-y-sm">
+<label class="block font-label-sm-bold text-on-surface-variant">Nature of Relationship</label>
+<textarea class="w-full p-md border border-outline-variant rounded-lg bg-surface-container-lowest focus:ring-1 focus:ring-primary outline-none font-body-md" placeholder="Briefly describe your role or the nature of interest..." rows="3"></textarea>
+</div>
+<div class="space-y-sm">
+<label class="block font-label-sm-bold text-on-surface-variant">Estimated Value/Stake</label>
+<input class="w-full h-touch-target-min px-md border border-outline-variant rounded-lg bg-surface-container-lowest focus:ring-1 focus:ring-primary outline-none font-body-md" placeholder="Approximate annual value or % stake" type="text"/>
+</div>
+<!-- Preliminary Analysis Section -->
+<div class="p-md bg-surface-container-low border border-outline-variant rounded-xl space-y-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="analytics">analytics</span>
+<h4 class="font-label-sm-bold text-on-surface">Preliminary Analysis</h4>
+</div>
+<p class="font-label-sm text-on-surface-variant">Based on your declaration, here is what your HR and Legal teams will review:</p>
+<ul class="space-y-xs">
+<li class="flex items-start gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-outline mt-1.5"></span>
+<span class="font-label-sm text-on-surface">Conflict with current vendor list at Acme Corp.</span>
+</li>
+<li class="flex items-start gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-outline mt-1.5"></span>
+<span class="font-label-sm text-on-surface">Compliance with secondary employment clause 4.2.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- DPDP Consent Block -->
+<div class="p-md border border-outline-variant rounded-xl bg-surface-container-lowest space-y-sm">
+<h4 class="font-label-sm-bold text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="gavel">gavel</span>
+                DPDP Compliance &amp; Consent
+            </h4>
+<div class="max-h-24 overflow-y-auto no-scrollbar font-label-sm text-on-surface-variant bg-surface-container-low p-sm rounded border border-outline-variant">
+                I hereby provide explicit consent under the Digital Personal Data Protection Act (DPDP) to process my disclosure data. This information will only be accessed by the HR Compliance and Legal Ethics committee for the purpose of mitigating organizational risk. Data will be encrypted at rest and retained only for the duration of employment plus the statutory period of 5 years.
+            </div>
+<label class="flex items-start gap-md cursor-pointer pt-xs">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-on-surface">I authorize the secure processing of this declaration as per Company Privacy Policy.</span>
+</label>
+</div>
+</main>
+<!-- Declaration Confirm & Bottom Navigation Shell -->
+<div class="fixed bottom-0 left-0 w-full z-50">
+<!-- Submission Action -->
+<div class="bg-background border-t border-outline-variant p-md space-y-md">
+<label class="flex items-start gap-md cursor-pointer">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" id="final-confirm" type="checkbox"/>
+<span class="font-label-sm text-on-surface">I confirm that the information provided is accurate and complete to the best of my knowledge.</span>
+</label>
+<button class="w-full h-huge bg-primary text-on-primary font-body-md-bold rounded-xl active:scale-95 transition-transform" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+                Submit Declaration
+            </button>
+</div>
+<!-- BottomNavBar (Shared Component) -->
+<nav class="flex justify-around items-center h-huge px-md pb-safe bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors p-2 rounded-lg cursor-pointer" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary font-label-sm-bold cursor-pointer" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors p-2 rounded-lg cursor-pointer" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors p-2 rounded-lg cursor-pointer" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors p-2 rounded-lg cursor-pointer" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+</div>
+<!-- AI Concierge Trigger (The Persistent Interaction Layer) -->
+
+<script>
+        function selectPath(path) {
+            const noneBtn = document.getElementById('path-none');
+            const declareBtn = document.getElementById('path-declare');
+            const form = document.getElementById('declaration-form');
+            const progressBar = document.querySelector('.bg-primary.transition-all');
+
+            if (path === 'none') {
+                noneBtn.classList.add('border-primary', 'bg-surface-container-high');
+                declareBtn.classList.remove('border-primary', 'bg-surface-container-high');
+                form.classList.add('hidden');
+                progressBar.style.width = '100%';
+            } else {
+                declareBtn.classList.add('border-primary', 'bg-surface-container-high');
+                noneBtn.classList.remove('border-primary', 'bg-surface-container-high');
+                form.classList.remove('hidden');
+                progressBar.style.width = '60%';
+                
+                // Smooth scroll to form
+                form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Simple touch interaction for items
+        document.querySelectorAll('button, [onclick]').forEach(el => {
+            el.addEventListener('touchstart', () => el.classList.add('opacity-80'));
+            el.addEventListener('touchend', () => el.classList.remove('opacity-80'));
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

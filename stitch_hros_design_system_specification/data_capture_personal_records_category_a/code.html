@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS | Personal Records</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b9aa83",
+                        "error": "#ba1a1a",
+                        "surface-container": "#f1edef",
+                        "outline-variant": "#c8c5cd",
+                        "inverse-primary": "#c6c4df",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#1a1a2e",
+                        "surface": "#fcf8fa",
+                        "inverse-surface": "#313032",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-primary-container": "#83829b",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#ddd9db",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e5e1e3",
+                        "primary": "#00000b",
+                        "on-tertiary-container": "#493f20",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-primary": "#ffffff",
+                        "outline": "#78767d",
+                        "surface-tint": "#5d5c74",
+                        "secondary-fixed": "#dce2f3",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "surface-container-low": "#f6f2f4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-surface": "#1c1b1d",
+                        "secondary": "#585f6c",
+                        "tertiary-fixed": "#f2e1b7",
+                        "secondary-container": "#dce2f3",
+                        "primary-fixed": "#e2e0fc",
+                        "on-background": "#1c1b1d",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-high": "#ebe7e9",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary": "#695d3c",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-surface-variant": "#47464c",
+                        "primary-container": "#1a1a2e",
+                        "background": "#fcf8fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "huge": "64px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        ::-webkit-scrollbar { display: none; }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .hairline-border { border: 1px solid #E5E7EB; }
+        .progress-bar-fill { transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-huge">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-mobile-margin h-touch-target-min border-b border-outline-variant">
+<button class="w-touch-target-min h-touch-target-min flex items-center justify-start hover:opacity-80 transition-all" onclick="window.location.href='../data_capture_master_pattern_template/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<span class="font-display text-headline-lg-mobile font-bold text-primary">HROS</span>
+<div class="w-touch-target-min h-touch-target-min flex items-center justify-end">
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATEp-hrWXoVOL2A2I-Gb0QtOGZtWx4zN4zc1Ze0UszaRBYm4bMxFDqO1dXaogo9FiF5vHtq0bfFrriKtIaMqyvSLSzsDqjZKuGkHAIow3c7W1T_bF4OX5WLR3kIU0HD8MnZ0CgixKrTDOjzptfs7p5MifdH7XAWWxtQhxsJ65-MTjiZA7QG32xTCOuPTmEsKTsQppQFphd6UpeZ-smW5Qp3_nN-mUiJfIXVcceZzpobslbAE7wEM7dsIoY7N_rhLH8JtWGmGW6FiO6"/>
+</div>
+</header>
+<main class="pt-huge px-mobile-margin pb-xxl">
+<!-- Section Progress Indicator -->
+<div class="mt-md mb-xl">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label-sm-bold text-on-surface-variant">Setup Progress</span>
+<span class="font-label-sm-bold text-primary">40%</span>
+</div>
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="progress-bar-fill h-full bg-primary" style="width: 40%"></div>
+</div>
+</div>
+<!-- Header -->
+<section class="mb-xl">
+<div class="flex items-center gap-xs mb-xs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Personal Records</h1>
+<div class="px-xs py-0.5 bg-tertiary-container/10 border border-tertiary-container/20 rounded-full">
+<span class="text-[11px] font-bold text-tertiary uppercase tracking-wider">In Progress</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant">Your contact details and emergency information — the foundation of your employee record.</p>
+</section>
+<!-- DPDP Consent Block -->
+<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant mb-xl">
+<div class="flex items-start gap-md">
+<div class="flex items-center h-5">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="consent" type="checkbox"/>
+</div>
+<div class="flex-1">
+<label class="font-label-sm text-on-surface-variant block leading-tight" for="consent">
+                        I agree to the processing of my personal data for employment records, payroll, statutory filings, and emergency contact access as per India's Digital Personal Data Protection (DPDP) norms.
+                    </label>
+</div>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="space-y-lg">
+<!-- Full Name -->
+<div class="group">
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Full Name (as per ID)</label>
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors" placeholder="e.g. Arjun S. Nair" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<!-- DOB -->
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Date of Birth</label>
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors" type="date"/>
+</div>
+<!-- Gender -->
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Gender</label>
+<select class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors appearance-none">
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+<option>Prefer not to say</option>
+</select>
+</div>
+</div>
+<!-- Contact Information -->
+<div class="grid grid-cols-1 gap-lg">
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Personal Email</label>
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors" placeholder="name@email.com" type="email"/>
+</div>
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Personal Mobile</label>
+<div class="flex gap-xs">
+<div class="w-16 h-touch-target-min flex items-center justify-center bg-surface-container-low hairline-border rounded-lg font-body-md">+91</div>
+<input class="flex-1 h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors" placeholder="98765 43210" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Current Address -->
+<div class="pt-base">
+<div class="flex items-center gap-xs mb-md">
+<h3 class="font-body-md-bold text-on-surface">Current Address</h3>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+<div class="space-y-md">
+<div class="relative">
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">PIN Code</label>
+<div class="relative">
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors" placeholder="600001" type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 px-xs py-1 text-primary font-label-sm-bold">Lookup</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<input class="w-full h-touch-target-min px-md bg-surface-container-low hairline-border rounded-lg font-body-md text-on-surface-variant cursor-not-allowed" placeholder="City" readonly="" type="text"/>
+<input class="w-full h-touch-target-min px-md bg-surface-container-low hairline-border rounded-lg font-body-md text-on-surface-variant cursor-not-allowed" placeholder="State" readonly="" type="text"/>
+</div>
+<textarea class="w-full px-md py-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors resize-none" placeholder="House No, Building, Street Name" rows="2"></textarea>
+</div>
+<div class="mt-xs p-sm bg-surface-container-lowest hairline-border rounded-lg border-dashed">
+<p class="font-label-sm text-on-surface-variant">
+<span class="font-bold text-primary">Note:</span> We collect both addresses because your HRA tax exemption depends on where you live versus where you work.
+                    </p>
+</div>
+</div>
+<!-- Permanent Address Toggle -->
+<div class="flex items-center justify-between p-md hairline-border rounded-lg">
+<span class="font-body-md text-on-surface">Permanent Same as Current</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Nationality</label>
+<select class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors appearance-none">
+<option>Indian</option>
+<option>Other</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Marital Status</label>
+<select class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary transition-colors appearance-none">
+<option>Single</option>
+<option>Married</option>
+<option>Divorced</option>
+<option>Widowed</option>
+</select>
+</div>
+</div>
+<!-- Emergency Contact -->
+<div class="pt-lg border-t border-outline-variant">
+<h3 class="font-body-md-bold text-on-surface mb-lg">Emergency Contact</h3>
+<div class="space-y-lg">
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Contact Name</label>
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary" placeholder="Name" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Relationship</label>
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary" placeholder="e.g. Spouse" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm-bold text-on-surface-variant mb-xs">Mobile Number</label>
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg font-body-md focus:border-primary" placeholder="Mobile" type="tel"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action Area -->
+<div class="mt-huge">
+<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant mb-md">
+<div class="flex items-start gap-md">
+<div class="flex items-center h-5">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="declaration" type="checkbox"/>
+</div>
+<div class="flex-1">
+<label class="font-body-md text-on-surface-variant block leading-tight" for="declaration">
+                            I confirm the above information is true and accurate to the best of my knowledge.
+                        </label>
+</div>
+</div>
+</div>
+<button class="w-full h-huge bg-primary text-on-primary rounded-xl font-body-md-bold active:scale-[0.98] transition-transform flex items-center justify-center gap-xs" onclick="window.top.goTo('journey_map_current_stage_expanded')">
+                Save &amp; Continue
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors cursor-pointer" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for PIN lookup simulation
+        const pinInput = document.querySelector('input[placeholder="600001"]');
+        const lookupBtn = pinInput.nextElementSibling;
+        const readOnlyInputs = pinInput.parentElement.parentElement.querySelectorAll('input[readonly]');
+
+        lookupBtn.addEventListener('click', () => {
+            if (pinInput.value.length === 6) {
+                lookupBtn.textContent = 'Searching...';
+                setTimeout(() => {
+                    readOnlyInputs[0].value = 'Chennai';
+                    readOnlyInputs[1].value = 'Tamil Nadu';
+                    lookupBtn.textContent = 'Found';
+                    lookupBtn.classList.add('text-green-600');
+                }, 800);
+            }
+        });
+
+        // Toggle interaction for form fields appearance
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', (e) => {
+                const parent = e.target.closest('div.hairline-border');
+                if (parent && e.target.id !== 'declaration') {
+                    parent.classList.toggle('bg-secondary-container/10', e.target.checked);
+                }
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

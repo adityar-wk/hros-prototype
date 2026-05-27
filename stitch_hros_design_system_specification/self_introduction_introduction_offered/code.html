@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ambient-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#dce2f3",
+                      "primary": "#00000b",
+                      "surface-tint": "#5d5c74",
+                      "inverse-on-surface": "#f4f0f2",
+                      "tertiary-fixed": "#f2e1b7",
+                      "surface-container-highest": "#e5e1e3",
+                      "surface-dim": "#ddd9db",
+                      "on-background": "#1c1b1d",
+                      "inverse-primary": "#c6c4df",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-primary-container": "#83829b",
+                      "background": "#fcf8fa",
+                      "surface-container-low": "#f6f2f4",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "tertiary": "#695d3c",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#313032",
+                      "surface-variant": "#e5e1e3",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "on-secondary-fixed": "#151c27",
+                      "surface-container-high": "#ebe7e9",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#45455b",
+                      "on-secondary-container": "#5e6572",
+                      "outline": "#78767d",
+                      "on-primary-fixed": "#1a1a2e",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#dce2f3",
+                      "error": "#ba1a1a",
+                      "surface-container": "#f1edef",
+                      "secondary": "#585f6c",
+                      "on-tertiary-fixed": "#231b02",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#1a1a2e",
+                      "on-secondary-fixed-variant": "#404754",
+                      "surface": "#fcf8fa",
+                      "primary-fixed-dim": "#c6c4df",
+                      "on-surface-variant": "#47464c",
+                      "on-surface": "#1c1b1d",
+                      "tertiary-container": "#b9aa83",
+                      "primary-fixed": "#e2e0fc",
+                      "outline-variant": "#c8c5cd",
+                      "on-tertiary-container": "#493f20"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "md": "16px",
+                      "xs": "8px",
+                      "xl": "32px",
+                      "mobile-margin": "24px",
+                      "base": "4px",
+                      "xxl": "48px",
+                      "sm": "12px",
+                      "huge": "64px",
+                      "touch-target-min": "44px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Geist"],
+                      "label-sm-bold": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "display": ["Geist"],
+                      "body-md-bold": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- Top AppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center h-touch-target-min px-mobile-margin w-full max-w-md mx-auto">
+<button class="material-symbols-outlined text-primary dark:text-on-surface mr-md active:scale-95 transition-transform duration-100" onclick="window.location.href='../know_your_team_relationship_view/code.html'">
+                arrow_back
+            </button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-on-surface">Tasks</h1>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 w-full max-w-md px-mobile-margin py-xl flex flex-col items-center justify-center space-y-xl">
+<!-- Illustrative Graphic -->
+<div class="relative w-full aspect-square max-w-[280px] rounded-xl overflow-hidden border border-outline-variant bg-surface-container-low flex items-center justify-center">
+<img alt="Team introduction" class="w-full h-full object-cover" data-alt="A warm and welcoming group of diverse professionals smiling in a minimalist, sun-drenched office space. The visual style is exceptionally clean with high-key lighting, featuring soft neutral tones and subtle black accents that align with a modern enterprise operating system. The atmosphere is optimistic and collaborative, emphasizing a quiet efficiency and human connection in a professional Indian workplace setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvjVckI0TEnHZLI70mVQ-XNE68Es2N8aYv0ORDtGV-USV8_cops-xzoLns8SDsAyGNJIed8wukiBK_zo6GytnP1w2hgbCpniP5SqHuHSbyonMKoMI2Nia1QNfvXow0JO5Y7uduLXDbWroxTyjg5LtiPTM0m18rooh35CFchcJZAchA1JehtLNv76HgFZTHa41A1CnRNBd6yl3oOKYK4kR3fJXQljv24n6ME4NwnXj7ZTuf5-DJmVhZN3Dcse9ZpAz6Mhbmrh3txowM"/>
+<!-- Overlay for text legibility or styling if needed -->
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+<!-- Content Section -->
+<div class="w-full space-y-md text-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">
+                Say hello to your new team.
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant px-xs">
+                Introduce yourself before you join. It's a great way to start conversations before Day 1.
+            </p>
+</div>
+<!-- Actions -->
+<div class="w-full space-y-md pt-lg">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-lg font-body-md-bold text-body-md-bold flex items-center justify-center active:scale-95 transition-transform duration-100" onclick="console.log('Primary Action')">
+                Write my introduction
+            </button>
+<button class="w-full h-touch-target-min bg-transparent text-on-surface-variant border border-outline-variant rounded-lg font-body-md-bold text-body-md-bold flex items-center justify-center active:scale-95 transition-transform duration-100" onclick="console.log('Secondary Action')">
+                I'd prefer not to introduce myself
+            </button>
+</div>
+<!-- Radical Reduction: Subtle hint of what's next -->
+<div class="w-full pt-xl flex flex-col items-center">
+<div class="w-8 h-1 bg-outline-variant rounded-full mb-xs"></div>
+<span class="font-label-sm text-label-sm text-outline">Self Introduction</span>
+</div>
+</main>
+
+<!-- You Tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-xs py-base hover:bg-surface-container-high dark:hover:bg-surface-variant active:scale-90 transition-all duration-200" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</button>
+</div>
+</nav>
+<!-- Background Spacing for Navigation Shell -->
+<div class="h-huge w-full"></div>
+<script src="../nav.js"></script>
+</body></html>
+

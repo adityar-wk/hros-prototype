@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b9aa83",
+                        "error": "#ba1a1a",
+                        "surface-container": "#f1edef",
+                        "outline-variant": "#c8c5cd",
+                        "inverse-primary": "#c6c4df",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#1a1a2e",
+                        "surface": "#fcf8fa",
+                        "inverse-surface": "#313032",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-primary-container": "#83829b",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#ddd9db",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e5e1e3",
+                        "primary": "#00000b",
+                        "on-tertiary-container": "#493f20",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-primary": "#ffffff",
+                        "outline": "#78767d",
+                        "surface-tint": "#5d5c74",
+                        "secondary-fixed": "#dce2f3",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "surface-container-low": "#f6f2f4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-surface": "#1c1b1d",
+                        "secondary": "#585f6c",
+                        "tertiary-fixed": "#f2e1b7",
+                        "secondary-container": "#dce2f3",
+                        "primary-fixed": "#e2e0fc",
+                        "on-background": "#1c1b1d",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-high": "#ebe7e9",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary": "#695d3c",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-surface-variant": "#47464c",
+                        "primary-container": "#1a1a2e",
+                        "background": "#fcf8fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "huge": "64px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        input:focus, textarea:focus { outline: none; border-color: #00000b !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-mobile-margin h-touch-target-min w-full max-w-[375px] mx-auto">
+<button class="w-10 h-10 flex items-center justify-start text-on-surface hover:bg-surface-container-low transition-colors rounded-full" onclick="window.location.href='../data_capture_master_pattern_template/code.html'">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-display text-headline-lg-mobile font-bold text-primary">HROS</span>
+<div class="w-10 h-10 flex items-center justify-end">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-[10px] font-bold">
+                JD
+            </div>
+</div>
+</header>
+<main class="w-full max-w-[375px] px-mobile-margin pt-[72px] pb-[120px] flex-grow">
+<!-- Header Section -->
+<section class="mb-lg">
+<div class="flex items-center justify-between mb-xs">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm-bold text-label-sm">Not Started</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">0% Complete</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full mb-md overflow-hidden">
+<div class="h-full bg-primary w-0 transition-all duration-500"></div>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-xs">Previous Employment</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Your employment history — needed for background verification and this year's tax calculation.</p>
+</section>
+<!-- DPDP Consent Block -->
+<section class="mb-xl p-md bg-surface border border-outline-variant rounded-xl">
+<div class="flex gap-sm">
+<input class="mt-1 w-5 h-5 rounded border-outline text-primary focus:ring-primary" id="dpdp_consent" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed" for="dpdp_consent">
+                    I acknowledge that HROS will process my employment history and financial data for background verification and Indian tax compliance purposes in accordance with the Digital Personal Data Protection (DPDP) Act.
+                </label>
+</div>
+</section>
+<!-- Main Form -->
+<form class="space-y-xl">
+<!-- Experience Toggle -->
+<div>
+<label class="font-body-md-bold text-body-md-bold text-primary mb-md block">Do you have previous work experience?</label>
+<div class="grid grid-cols-2 gap-base p-1 bg-surface-container rounded-lg">
+<button class="py-2 rounded-md font-label-sm-bold text-label-sm transition-all bg-surface shadow-sm text-primary" id="btn-yes" onclick="toggleExp(true)" type="button">Yes</button>
+<button class="py-2 rounded-md font-label-sm-bold text-label-sm transition-all text-on-surface-variant" id="btn-no" onclick="toggleExp(false)" type="button">No</button>
+</div>
+</div>
+<!-- Conditional Fields Container -->
+<div class="space-y-lg transition-all duration-300" id="experience-fields">
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm text-on-surface-variant">Employer Name</label>
+<input class="w-full px-md py-3 rounded-lg border border-outline-variant bg-surface text-body-md focus:border-primary transition-all" placeholder="e.g. Acme Corporation" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm text-on-surface-variant">Last Role Held</label>
+<input class="w-full px-md py-3 rounded-lg border border-outline-variant bg-surface text-body-md focus:border-primary transition-all" placeholder="e.g. Senior Product Designer" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm text-on-surface-variant">Start Date</label>
+<input class="w-full px-md py-3 rounded-lg border border-outline-variant bg-surface text-body-md focus:border-primary transition-all" type="date"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm text-on-surface-variant">End Date</label>
+<input class="w-full px-md py-3 rounded-lg border border-outline-variant bg-surface text-body-md focus:border-primary transition-all" type="date"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm-bold text-label-sm text-on-surface-variant">Reason for Leaving</label>
+<textarea class="w-full px-md py-3 rounded-lg border border-outline-variant bg-surface text-body-md focus:border-primary transition-all resize-none" placeholder="Briefly explain..." rows="3"></textarea>
+</div>
+<!-- Document Uploads -->
+<div class="space-y-md">
+<div class="p-lg border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center text-center group active:scale-[0.98] transition-all bg-surface-container-lowest">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary">upload_file</span>
+</div>
+<h4 class="font-body-md-bold text-body-md-bold text-primary">Relieving Letter</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Required • PDF, JPG or PNG</p>
+<div class="flex gap-md w-full">
+<button class="flex-1 py-2 rounded-lg border border-outline text-primary font-label-sm-bold flex items-center justify-center gap-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">camera_alt</span> Camera
+                            </button>
+<button class="flex-1 py-2 rounded-lg border border-outline text-primary font-label-sm-bold flex items-center justify-center gap-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_open</span> Files
+                            </button>
+</div>
+</div>
+<div class="p-lg border border-outline-variant rounded-xl flex items-center justify-between bg-surface">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">verified_user</span>
+</div>
+<div>
+<h4 class="font-label-sm-bold text-label-sm text-primary">Experience Certificate</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Optional</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-surface-container-low rounded-full transition-all" type="button">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+<!-- Mid-year Income Section -->
+<div class="pt-md border-t border-outline-variant/30">
+<h3 class="font-body-md-bold text-body-md-bold text-primary mb-xs">Mid-year Income</h3>
+<div class="bg-secondary-container/20 p-md rounded-lg border-l-4 border-secondary mb-md">
+<p class="font-label-sm text-label-sm text-on-secondary-container">
+<strong>Note:</strong> Without income details from this financial year, you may overpay tax in the months before March.
+                        </p>
+</div>
+<div class="p-md border border-outline-variant rounded-xl flex items-center justify-between bg-white shadow-sm">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-tertiary">receipt_long</span>
+<span class="font-label-sm text-label-sm text-primary">Form 16 or Payslips</span>
+</div>
+<button class="text-primary font-label-sm-bold px-3 py-1.5 bg-surface-container-high rounded-lg" type="button">Upload</button>
+</div>
+</div>
+</div>
+</form>
+</main>
+<!-- Fixed Bottom Action & Declaration -->
+<footer class="fixed bottom-[64px] left-0 right-0 z-40 w-full max-w-[375px] mx-auto p-mobile-margin bg-surface/95 backdrop-blur-sm border-t border-outline-variant/20">
+<div class="flex gap-sm mb-md items-start">
+<input class="mt-1 w-5 h-5 rounded border-outline text-primary focus:ring-primary" id="final_declaration" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface" for="final_declaration">I confirm the above information is true and accurate</label>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold hover:opacity-90 active:scale-95 transition-all" onclick="window.top.goTo('journey_map_current_stage_expanded')">
+            Submit Experience Details
+        </button>
+</footer>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center w-full max-w-[375px] mx-auto h-huge bg-surface/95 backdrop-blur-md border-t border-outline-variant/30 px-xs">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors px-3 py-1" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm semibold">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/50 rounded-lg px-3 py-1" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm semibold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors px-3 py-1" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm semibold">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors px-3 py-1" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm semibold">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors px-3 py-1" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</a>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+        function toggleExp(hasExp) {
+            const container = document.getElementById('experience-fields');
+            const btnYes = document.getElementById('btn-yes');
+            const btnNo = document.getElementById('btn-no');
+
+            if (hasExp) {
+                container.style.opacity = '1';
+                container.style.pointerEvents = 'auto';
+                container.style.transform = 'translateY(0)';
+                btnYes.classList.add('bg-surface', 'shadow-sm', 'text-primary');
+                btnYes.classList.remove('text-on-surface-variant');
+                btnNo.classList.remove('bg-surface', 'shadow-sm', 'text-primary');
+                btnNo.classList.add('text-on-surface-variant');
+            } else {
+                container.style.opacity = '0.3';
+                container.style.pointerEvents = 'none';
+                container.style.transform = 'translateY(10px)';
+                btnNo.classList.add('bg-surface', 'shadow-sm', 'text-primary');
+                btnNo.classList.remove('text-on-surface-variant');
+                btnYes.classList.remove('bg-surface', 'shadow-sm', 'text-primary');
+                btnYes.classList.add('text-on-surface-variant');
+            }
+        }
+
+        // Initialize smooth transitions
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBar = document.querySelector('.bg-primary.w-0');
+            setTimeout(() => {
+                progressBar.style.width = '12%'; // Start progress showing it's not totally 0 if they start interacting
+            }, 800);
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

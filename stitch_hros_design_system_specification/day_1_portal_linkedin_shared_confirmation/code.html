@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fcf8fa",
+                    "tertiary": "#695d3c",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c8c5cd",
+                    "secondary": "#585f6c",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-primary-fixed": "#1a1a2e",
+                    "tertiary-container": "#b9aa83",
+                    "on-background": "#1c1b1d",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-low": "#f6f2f4",
+                    "on-surface-variant": "#47464c",
+                    "inverse-primary": "#c6c4df",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-tint": "#5d5c74",
+                    "surface-dim": "#ddd9db",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-container-high": "#ebe7e9",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf8fa",
+                    "secondary-fixed": "#dce2f3",
+                    "on-secondary-fixed": "#151c27",
+                    "on-error-container": "#93000a",
+                    "primary": "#00000b",
+                    "on-secondary-container": "#5e6572",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a1a2e",
+                    "on-primary-container": "#83829b",
+                    "outline": "#78767d",
+                    "on-surface": "#1c1b1d",
+                    "on-primary": "#ffffff",
+                    "background": "#fcf8fa",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-container": "#f1edef",
+                    "secondary-container": "#dce2f3",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-tertiary-container": "#493f20",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e5e1e3",
+                    "inverse-surface": "#313032"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "huge": "64px",
+                    "touch-target-min": "44px",
+                    "xs": "8px",
+                    "md": "16px",
+                    "base": "4px",
+                    "mobile-margin": "24px",
+                    "xxl": "48px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-success {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface-bright text-on-surface min-h-screen pb-huge">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-surface border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-sm">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling man in a business casual outfit, captured with soft, natural lighting against a minimalist, light-grey background. The image has a clean, high-end corporate feel that perfectly aligns with a modern HR operating system's professional and welcoming aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5rKGJqpHzXqjEB0rysgy4elWN-YAHUY3gTEBoZosjE-2Q77aupACP0UAJ1Vhhy4iLzm86EQucO4WCyPYaPc31QJnAJWJVqm2vQZkBMHkW095nL6OeukHzRMG3T6PCkNkbY35Numl-d66Iq925edTnbQtJ9KB4SvYFBtOwiFxMW6wlTLd-UZ-aSManhqHm-qxwdCHsnbnElDvdjjd5ICoQ0bqWKji0eKJ8GKV_4TDBMju6TgNAjV89UiSjnTQ4OW4cVjlqoEAxLdmo"/>
+</div>
+</div>
+<h1 class="font-display text-headline-lg-mobile font-bold text-primary">HROS</h1>
+<button class="w- touch-target-min flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="mt-touch-target-min p-mobile-margin space-y-lg">
+<!-- Success State: LinkedIn Shared -->
+<section class="animate-in fade-in slide-in-from-top-4 duration-700">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg space-y-md relative overflow-hidden">
+<!-- Subtle Success Accent -->
+<div class="absolute top-0 left-0 w-1 h-full bg-green-500"></div>
+<div class="flex items-start gap-md">
+<div class="bg-green-100 text-green-700 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-xs">
+<h2 class="font-body-md-bold text-on-surface">Success! Your announcement has been shared. Welcome aboard.</h2>
+<button class="inline-flex items-center text-primary font-label-sm-bold hover:underline gap-xs mt-xs">
+                            View Post
+                            <span class="material-symbols-outlined text-[16px]" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Welcome Banner -->
+<section class="space-y-xs">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 bg-green-500 rounded-full"></div>
+<span class="font-label-sm-bold text-on-surface-variant">READY FOR DAY 1</span>
+</div>
+<h3 class="font-headline-lg-mobile text-on-surface">Good Morning, Rohan</h3>
+<p class="font-body-md text-on-surface-variant">Your journey at HROS begins today. Here is your schedule.</p>
+</section>
+<!-- Schedule Section -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h4 class="font-label-sm-bold text-outline uppercase tracking-wider">Today's Schedule</h4>
+<span class="font-label-sm text-on-surface-variant">Oct 24, 2023</span>
+</div>
+<!-- Bento-style Task Cards -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Task 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex gap-md items-center group active:scale-95 transition-all">
+<div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-surface-container rounded-lg group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container" data-icon="handshake">handshake</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-body-md-bold text-on-surface">Welcome Induction</span>
+<span class="bg-blue-50 text-blue-700 font-label-sm px-xs py-0.5 rounded border border-blue-100">Live</span>
+</div>
+<div class="flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-on-surface-variant">09:30 AM — Conference Room A</span>
+</div>
+</div>
+</div>
+<!-- Task 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex gap-md items-center group active:scale-95 transition-all">
+<div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-surface-container rounded-lg group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container" data-icon="badge">badge</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-body-md-bold text-on-surface">ID Card Collection</span>
+<span class="bg-amber-50 text-amber-700 font-label-sm px-xs py-0.5 rounded border border-amber-100">Pending</span>
+</div>
+<div class="flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-on-surface-variant">Ground Floor, Helpdesk</span>
+</div>
+</div>
+</div>
+<!-- Task 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex gap-md items-center group active:scale-95 transition-all opacity-70">
+<div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-body-md-bold text-on-surface">Team Lunch</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm px-xs py-0.5 rounded border border-outline-variant">Upcoming</span>
+</div>
+<div class="flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-on-surface-variant">01:00 PM — Cafeteria</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Compliance Block -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="gavel">gavel</span>
+<div class="space-y-xs">
+<p class="font-label-sm text-on-surface-variant">
+                        By proceeding, you acknowledge our Indian DPDP compliance protocols and agree to the digital processing of your onboarding documentation.
+                    </p>
+<a class="text-primary font-label-sm-bold underline" href="#">Read Consent Policy</a>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Concierge FAB -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-xs h-huge bg-surface/95 backdrop-blur-md border-t border-outline-variant">
+<!-- Journey: ACTIVE -->
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/50 rounded-lg px-3 py-1 scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm semibold">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm semibold">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-label-sm text-label-sm semibold">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm semibold">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for tasks
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('.font-body-md-bold').innerText;
+                console.log('Navigating to task: ' + title);
+            });
+        });
+
+        // Floating button logic
+        const fab = document.querySelector('button[data-icon="auto_awesome"]');
+        if (fab) {
+            fab.addEventListener('click', () => {
+                alert('Concierge: How can I help you with your Day 1 schedule?');
+            });
+        }
+    </script>
+<script src="../nav.js"></script>
+</body></html>

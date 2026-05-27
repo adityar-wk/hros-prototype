@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="refresh" content="0;url=../welcome_moment_first_entry/code.html"/>
+<title>Acceptance Confirmation - HROS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1c1b1d",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-container": "#83829b",
+                    "primary": "#00000b",
+                    "tertiary": "#695d3c",
+                    "primary-container": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#313032",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-primary-fixed-variant": "#45455b",
+                    "primary-fixed": "#e2e0fc",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#5d5c74",
+                    "surface": "#fcf8fa",
+                    "inverse-on-surface": "#f4f0f2",
+                    "on-primary-fixed": "#1a1a2e",
+                    "secondary": "#585f6c",
+                    "secondary-container": "#dce2f3",
+                    "surface-dim": "#ddd9db",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-container": "#f1edef",
+                    "background": "#fcf8fa",
+                    "primary-fixed-dim": "#c6c4df",
+                    "outline-variant": "#c8c5cd",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#231b02",
+                    "inverse-primary": "#c6c4df",
+                    "secondary-fixed": "#dce2f3",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "surface-container-highest": "#e5e1e3",
+                    "outline": "#78767d",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1c1b1d",
+                    "surface-container-low": "#f6f2f4",
+                    "tertiary-container": "#b9aa83",
+                    "on-tertiary-container": "#493f20",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#5e6572"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "touch-target-min": "44px",
+                    "huge": "64px",
+                    "xl": "32px",
+                    "mobile-margin": "24px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "xxl": "48px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "xs": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "body-md-bold": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf8fa;
+            font-family: 'Geist', sans-serif;
+            overflow-x: hidden;
+        }
+        .confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .check-glow {
+            filter: drop-shadow(0 0 20px rgba(0, 0, 11, 0.05));
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col justify-center overflow-hidden">
+<!-- Subtle Particle Effect Layer -->
+<canvas class="confetti-canvas" id="canvas"></canvas>
+<main class="relative z-10 w-full max-w-[375px] mx-auto px-mobile-margin py-huge flex flex-col items-center text-center">
+<!-- Large Elegant Checkmark / Visual Anchor -->
+<div class="mb-xxl fade-in-up" style="animation-delay: 0.1s;">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest border border-outline-variant flex items-center justify-center check-glow">
+<span class="material-symbols-outlined text-primary" style="font-size: 48px; font-variation-settings: 'wght' 300;">
+                    check
+                </span>
+</div>
+</div>
+<!-- Headline Content -->
+<header class="mb-lg fade-in-up" style="animation-delay: 0.2s;">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">
+                You're joining HROS on Oct 15, 2024.
+            </h1>
+</header>
+<!-- Message Content -->
+<div class="mb-xxl fade-in-up" style="animation-delay: 0.3s;">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<p class="font-body-md text-on-surface-variant leading-relaxed px-sm">
+                We've been preparing for you. Your journey opens now.
+            </p>
+</div>
+<!-- Visual Divider (Subtle) -->
+<div class="w-12 h-px bg-outline-variant mb-huge fade-in-up" style="animation-delay: 0.4s;"></div>
+<!-- High-Impact Image Area (Asymmetric Layout Feel) -->
+<div class="w-full h-48 rounded-xl overflow-hidden mb-huge fade-in-up" style="animation-delay: 0.5s;">
+<img alt="Modern Workspace" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-1000 hover:grayscale-0" data-alt="A hyper-minimalist, high-end corporate office lobby with expansive glass windows and pristine white marble surfaces. Soft morning light floods the space, creating a serene and professional atmosphere. The color palette is dominated by pure whites and deep charcoals, mirroring a clean digital interface. This sophisticated setting represents a high-impact, welcoming start to a new career journey in an AI-native enterprise environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT0ZX-4hGVj_z1XFHhjn8o0uNcTnCVgbj2pP9EmPQV44D9hD0kv6IV4gHHyqvtek_J_kmHA1IUJdfyacoCv0UQpTk9Er6SsIIhlRZGZmc9aS23pFOkaTYozK-jPErsXrdURjbj2H9LWWfG0WFQPbKzkUi7N6u-sSNIaPCP95-6Sm1usrjhk_lSmRsKDbYxiQZaGFhBqa8l4sMWW8cE3_Dj4FpnESuLT0HHUYPp7pmJS9_uLX5zpljw1NJJGeMb5JkdHa-UBH0P7Qgw"/>
+</div>
+</main>
+<!-- Fixed Bottom Action Bar (Transactional Flow Rule: No Nav, Just Focus) -->
+<div class="fixed bottom-0 left-0 w-full p-lg bg-surface/80 backdrop-blur-md z-20 flex flex-col items-center">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-lg font-body-md-bold active:scale-95 transition-all duration-200 fade-in-up" style="animation-delay: 0.6s;" onclick="window.location.href='../welcome_moment_first_entry/code.html'">
+            Open your journey
+        </button>
+<div class="mt-md text-center fade-in-up" style="animation-delay: 0.7s;">
+<span class="font-label-sm text-on-surface-variant opacity-60">Step 2 of 2 Complete</span>
+</div>
+</div>
+<script>
+        // Auto-redirect to next page immediately
+        window.location.href = '../welcome_moment_first_entry/code.html';
+    </script>
+<script src="../nav.js"></script>
+</body></html>

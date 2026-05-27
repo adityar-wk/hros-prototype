@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Offer | HROS</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#b9aa83",
+                    "surface-container": "#f1edef",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-primary-fixed": "#1a1a2e",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e2e0fc",
+                    "secondary": "#585f6c",
+                    "on-surface": "#1c1b1d",
+                    "background": "#fcf8fa",
+                    "surface-container-low": "#f6f2f4",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "secondary-container": "#dce2f3",
+                    "surface-container-highest": "#e5e1e3",
+                    "inverse-primary": "#c6c4df",
+                    "surface-variant": "#e5e1e3",
+                    "on-secondary-container": "#5e6572",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#695d3c",
+                    "primary-container": "#1a1a2e",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-bright": "#fcf8fa",
+                    "outline-variant": "#c8c5cd",
+                    "surface-tint": "#5d5c74",
+                    "on-primary-fixed-variant": "#45455b",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ebe7e9",
+                    "secondary-fixed": "#dce2f3",
+                    "on-surface-variant": "#47464c",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-primary-container": "#83829b",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "primary": "#00000b",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#313032",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-secondary-fixed": "#151c27",
+                    "primary-fixed-dim": "#c6c4df",
+                    "outline": "#78767d",
+                    "on-tertiary-container": "#493f20",
+                    "surface-dim": "#ddd9db",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-tertiary-fixed": "#231b02",
+                    "on-background": "#1c1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "xl": "32px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "xs": "8px",
+                    "touch-target-min": "44px",
+                    "mobile-margin": "24px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "huge": "64px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist", "sans-serif"],
+                    "body-md": ["Geist", "sans-serif"],
+                    "headline-lg": ["Geist", "sans-serif"],
+                    "display": ["Geist", "sans-serif"],
+                    "headline-lg-mobile": ["Geist", "sans-serif"],
+                    "body-md-bold": ["Geist", "sans-serif"],
+                    "label-sm": ["Geist", "sans-serif"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf8fa;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .offer-card {
+            border: 1px solid #e5e1e3;
+        }
+        .scrolling-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="font-body-md text-on-background min-h-screen flex flex-col items-center">
+<!-- Brand Header (Minimalist Anchor) -->
+<header class="w-full max-w-7xl px-mobile-margin md:px-lg py-lg flex justify-between items-center">
+<span class="font-display text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter">HROS</span>
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="w-3 h-3 rounded-full bg-[#10B981]"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ready to join</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-lg px-mobile-margin py-xl flex-grow animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="mb-xxl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-sm">
+                Review your offer from HROS
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                We’re excited to welcome you to the engineering team. Please review the details below.
+            </p>
+</div>
+<!-- Role & Overview Section -->
+<section class="mb-xl">
+<div class="offer-card bg-surface-container-lowest rounded-xl p-lg flex items-center gap-lg">
+<div class="w-huge h-huge bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[32px]">engineering</span>
+</div>
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">Software Engineer</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Engineering · Remote (India)</p>
+</div>
+</div>
+</section>
+<!-- Bento Breakdown -->
+<section class="grid grid-cols-1 gap-md mb-xl">
+<!-- Start Date -->
+<div class="offer-card bg-surface-container-lowest rounded-xl p-md flex flex-col justify-between min-h-[100px]">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                    Start Date
+                </span>
+<span class="font-body-md-bold text-body-md-bold text-on-surface">October 14, 2024</span>
+</div>
+<!-- Compensation Package -->
+<div class="offer-card bg-surface-container-lowest rounded-xl p-md">
+<div class="flex justify-between items-center mb-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+                        Compensation
+                    </span>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm-bold text-label-sm-bold px-sm py-base rounded-full">
+                        Standard Package
+                    </span>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between py-xs border-b border-outline-variant border-opacity-50">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Base Salary</span>
+<span class="font-body-md-bold text-body-md-bold text-on-surface">₹32,00,000 /yr</span>
+</div>
+<div class="flex justify-between py-xs border-b border-outline-variant border-opacity-50">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Equity (ESOPs)</span>
+<span class="font-body-md-bold text-body-md-bold text-on-surface">1,200 Units / 4yrs</span>
+</div>
+<div class="flex justify-between py-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Joining Bonus</span>
+<span class="font-body-md-bold text-body-md-bold text-on-surface">₹2,50,000</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Compliance / DPDP (Radical Reduction style) -->
+<section class="mb-huge px-xs">
+<div class="flex gap-sm">
+<div class="pt-1">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" id="dpdp" type="checkbox"/>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="dpdp">
+                    I acknowledge that I have read the terms and agree to the processing of my personal data as per the HROS Privacy Policy and Indian DPDP Act 2023.
+                </label>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Actions -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant px-mobile-margin py-lg z-50">
+<div class="max-w-lg mx-auto flex flex-col items-center gap-md">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-full font-body-md-bold text-body-md-bold hover:opacity-90 transition-all active:scale-[0.98]" onclick="window.location.href='../joining_date_proposed_confirmed_1/code.html'">
+                Accept Offer
+            </button>
+<a class="font-label-sm-bold text-label-sm-bold text-on-surface-variant hover:text-primary transition-colors flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                View Full Contract
+            </a>
+</div>
+</footer>
+<!-- Atmosphere / Micro-interactions -->
+<div class="fixed top-0 left-0 w-full h-1 bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-1000 ease-out" id="progress" style="width: 30%;"></div>
+</div>
+<script>
+        // Subtle progress bar logic for "Reading the offer"
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement, 
+                  b = document.body,
+                  st = 'scrollTop',
+                  sh = 'scrollHeight';
+            const percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+            document.getElementById('progress').style.width = Math.max(30, percent) + '%';
+        });
+
+        // Simple button active state visual confirmation
+        const acceptBtn = document.querySelector('button');
+        acceptBtn.addEventListener('click', () => {
+            const checkbox = document.getElementById('dpdp');
+            if(!checkbox.checked) {
+                checkbox.parentElement.parentElement.classList.add('animate-bounce');
+                setTimeout(() => checkbox.parentElement.parentElement.classList.remove('animate-bounce'), 1000);
+            } else {
+                acceptBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processing...';
+                setTimeout(() => {
+                    acceptBtn.innerHTML = 'Welcome to HROS';
+                    acceptBtn.classList.remove('bg-primary');
+                    acceptBtn.classList.add('bg-[#10B981]');
+                }, 1500);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

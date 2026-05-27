@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS Design System Spec v1.0</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hairline-border {
+            border: 1px solid #e5e1e3;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#c8c5cd 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c8c5cd",
+                        "secondary": "#585f6c",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#695d3c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#5d5c74",
+                        "surface-dim": "#ddd9db",
+                        "inverse-primary": "#c6c4df",
+                        "inverse-on-surface": "#f4f0f2",
+                        "primary-fixed": "#e2e0fc",
+                        "on-secondary-fixed-variant": "#404754",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-background": "#1c1b1d",
+                        "tertiary-container": "#b9aa83",
+                        "on-surface-variant": "#47464c",
+                        "surface-container-low": "#f6f2f4",
+                        "tertiary-fixed": "#f2e1b7",
+                        "on-primary-fixed-variant": "#45455b",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "primary": "#00000b",
+                        "on-primary-container": "#83829b",
+                        "primary-container": "#1a1a2e",
+                        "outline": "#78767d",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-high": "#ebe7e9",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "surface": "#fcf8fa",
+                        "secondary-fixed": "#dce2f3",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#151c27",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#493f20",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#313032",
+                        "surface-variant": "#e5e1e3",
+                        "on-tertiary-fixed": "#231b02",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf8fa",
+                        "secondary-container": "#dce2f3",
+                        "surface-container": "#f1edef",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "base": "4px",
+                        "touch-target-min": "44px",
+                        "xs": "8px",
+                        "xxl": "48px",
+                        "mobile-margin": "24px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "huge": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Top Navigation Anchor -->
+<header class="bg-surface fixed top-0 w-full z-50 border-b border-outline-variant flex items-center justify-between px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">HROS</span>
+<span class="text-secondary font-label-sm px-xs py-[2px] border border-outline-variant rounded">v1.0</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary hover:bg-surface-container-low transition-colors p-xs rounded cursor-pointer">search</span>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden">
+<img alt="User" data-alt="A professional headshot of a middle-aged Indian executive with a warm, confident expression. The background is a soft-focus corporate office with minimalist architecture and neutral tones. The lighting is diffused and professional, matching a clean light-mode aesthetic with high-key whites and subtle greys." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ZTAP6aECO5_58_9LEQTlnycnucNTuZIY1Zsksy6ZxoJLwSFTNqEkaGm_RTcjswEuU-kkjaG3IvKgl6GYIOSoch9yReDZPbPeneOsdK-0O8v9okXf9oSjnvwinfKylDSRrUlJYIC-pqqF7gC_SNL2l6qdVy8jadpBvH2UDp5Lax6uRQ7ERTPpbnBjBV_1OjQvApFBaIFrnrY5LxMZ03elSeUVH7JtZ1vYc8Shql_R8IfHM7Zq_JPNh0m-rvhb2mgNsRRLnlLtghVq"/>
+</div>
+</div>
+</header>
+<main class="pt-huge pb-huge max-w-[1200px] mx-auto px-mobile-margin space-y-huge">
+<!-- Header Section -->
+<section class="space-y-md">
+<h1 class="font-display text-display text-primary">Design System Spec</h1>
+<p class="font-body-md text-body-md text-secondary max-w-2xl">Radical Reduction: A calm, AI-native operating system for modern Indian enterprises. This document outlines the visual tokens and structural units that define HROS.</p>
+</section>
+<!-- 1. Typography -->
+<section class="space-y-lg" id="typography">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary">01. Typography</h2>
+</div>
+<div class="space-y-xl p-lg bg-surface hairline-border rounded-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg border-b border-outline-variant pb-lg">
+<div>
+<p class="text-secondary font-label-sm mb-base">Display / 48px</p>
+<p class="font-display text-display text-primary">Modernity</p>
+</div>
+<div>
+<p class="text-secondary font-label-sm mb-base">Heading / 32px</p>
+<p class="font-headline-lg text-headline-lg text-primary">Efficient Interface</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg border-b border-outline-variant pb-lg">
+<div>
+<p class="text-secondary font-label-sm mb-base">Body Bold / 16px</p>
+<p class="font-body-md-bold text-body-md-bold text-primary">Streamlined workflows for the next billion users.</p>
+</div>
+<div>
+<p class="text-secondary font-label-sm mb-base">Body Regular / 16px</p>
+<p class="font-body-md text-body-md text-on-surface">Streamlined workflows for the next billion users.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div>
+<p class="text-secondary font-label-sm mb-base">Caption Bold / 13px</p>
+<p class="font-label-sm-bold text-label-sm-bold text-secondary">DOCUMENT VERIFIED • AUG 2024</p>
+</div>
+<div>
+<p class="text-secondary font-label-sm mb-base">Caption Regular / 13px</p>
+<p class="font-label-sm text-label-sm text-outline">Last updated 2 minutes ago</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Color Palette -->
+<section class="space-y-lg" id="colors">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary">02. Color Palette</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="space-y-xs">
+<div class="h-24 bg-background hairline-border rounded-lg flex items-end p-xs">
+<span class="font-label-sm-bold text-primary">#F8F9FA</span>
+</div>
+<p class="font-label-sm-bold text-primary">Background</p>
+</div>
+<div class="space-y-xs">
+<div class="h-24 bg-surface hairline-border rounded-lg flex items-end p-xs shadow-sm">
+<span class="font-label-sm-bold text-primary">#FFFFFF</span>
+</div>
+<p class="font-label-sm-bold text-primary">Surface</p>
+</div>
+<div class="space-y-xs">
+<div class="h-24 bg-primary rounded-lg flex items-end p-xs">
+<span class="font-label-sm-bold text-white">#1A1A2E</span>
+</div>
+<p class="font-label-sm-bold text-primary">Primary</p>
+</div>
+<div class="space-y-xs">
+<div class="h-24 bg-secondary rounded-lg flex items-end p-xs">
+<span class="font-label-sm-bold text-white">#585F6C</span>
+</div>
+<p class="font-label-sm-bold text-primary">Secondary</p>
+</div>
+</div>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-md pt-md">
+<div class="space-y-xs">
+<div class="h-12 bg-[#E6F4EA] rounded-lg border border-[#34A853]/20"></div>
+<p class="font-label-sm text-secondary">Success</p>
+</div>
+<div class="space-y-xs">
+<div class="h-12 bg-[#FFF4E5] rounded-lg border border-[#FBBC05]/20"></div>
+<p class="font-label-sm text-secondary">Warning</p>
+</div>
+<div class="space-y-xs">
+<div class="h-12 bg-[#FCE8E6] rounded-lg border border-[#EA4335]/20"></div>
+<p class="font-label-sm text-secondary">Critical</p>
+</div>
+</div>
+</section>
+<!-- 3. Components Gallery -->
+<section class="space-y-lg" id="components">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary">03. Components</h2>
+</div>
+<!-- Bento Grid Layout for Components -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Task Card & Status Pills -->
+<div class="md:col-span-8 space-y-lg">
+<div class="bg-surface hairline-border rounded-xl p-lg space-y-lg">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-xs mb-base">
+<div class="w-3 h-3 rounded-full bg-[#FBBC05]"></div>
+<span class="font-label-sm-bold text-secondary uppercase tracking-wider">Action Required</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Verify Identity</h3>
+<p class="font-body-md text-secondary mt-base">We need this to generate your offer letter.</p>
+</div>
+<div class="px-sm py-base rounded-full bg-[#FFF4E5] border border-[#FBBC05]/20 text-[#FBBC05] font-label-sm-bold uppercase">Pending</div>
+</div>
+<div class="flex items-center gap-xl">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+<span class="font-label-sm text-secondary">Tomorrow</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<span class="font-label-sm text-secondary">2 mins</span>
+</div>
+</div>
+</div>
+<!-- Pills Row -->
+<div class="flex flex-wrap gap-md p-lg bg-surface hairline-border rounded-xl">
+<span class="px-sm py-base rounded-full bg-[#E6F4EA] text-[#137333] font-label-sm-bold uppercase border border-[#137333]/10">Verified</span>
+<span class="px-sm py-base rounded-full bg-[#FFF4E5] text-[#B05B00] font-label-sm-bold uppercase border border-[#B05B00]/10">Pending</span>
+<span class="px-sm py-base rounded-full bg-[#FCE8E6] text-[#C5221F] font-label-sm-bold uppercase border border-[#C5221F]/10">Correction Required</span>
+<span class="px-sm py-base rounded-full bg-surface-container-highest text-secondary font-label-sm-bold uppercase border border-outline-variant">Rejected</span>
+<span class="px-sm py-base rounded-full bg-primary text-white font-label-sm-bold uppercase">Complete</span>
+</div>
+</div>
+<!-- Progress & Readiness -->
+<div class="md:col-span-4 space-y-lg">
+<div class="bg-surface hairline-border rounded-xl p-lg flex flex-col items-center justify-center gap-lg text-center h-full">
+<div class="relative w-24 h-24">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-low" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="150.72" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline-lg-mobile text-primary">40%</div>
+</div>
+<div>
+<p class="font-label-sm-bold text-primary mb-xs">Profile Completion</p>
+<div class="w-full h-1 bg-surface-container-low rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[40%]"></div>
+</div>
+</div>
+<div class="flex gap-md pt-md border-t border-outline-variant w-full justify-around">
+<div class="flex flex-col items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#34A853]"></div>
+<span class="font-label-sm text-secondary">Ready</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#FBBC05]"></div>
+<span class="font-label-sm text-secondary">Action</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#EA4335]"></div>
+<span class="font-label-sm text-secondary">Blocked</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Upload Zone -->
+<div class="md:col-span-12">
+<div class="bg-surface border-2 border-dashed border-outline-variant rounded-xl p-xl flex flex-col items-center gap-md text-center hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex gap-xl">
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">photo_camera</span>
+</div>
+<span class="font-label-sm-bold text-primary">Camera</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">upload_file</span>
+</div>
+<span class="font-label-sm-bold text-primary">Files</span>
+</div>
+</div>
+<div>
+<p class="font-body-md-bold text-primary">Tap to upload your Aadhaar Card</p>
+<p class="font-label-sm text-secondary">Supports JPG, PNG or PDF (Max 5MB)</p>
+</div>
+</div>
+</div>
+<!-- DPDP & Consent -->
+<div class="md:col-span-7 bg-surface hairline-border rounded-xl p-lg space-y-md">
+<h4 class="font-label-sm-bold text-primary uppercase">DPDP Compliance Block</h4>
+<div class="space-y-sm">
+<label class="flex gap-md items-start group cursor-pointer">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" type="checkbox"/>
+<div class="space-y-base">
+<span class="font-body-md text-on-surface">Background Verification Consent</span>
+<p class="font-label-sm text-secondary">I allow HROS and its partners to verify my academic and professional history using the documents provided.</p>
+</div>
+</label>
+<label class="flex gap-md items-start group cursor-pointer">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" type="checkbox"/>
+<div class="space-y-base">
+<span class="font-body-md text-on-surface">Data Retention Policy</span>
+<p class="font-label-sm text-secondary">I understand my data will be stored for a period of 5 years as per statutory norms unless explicitly requested otherwise.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Confirm CTA -->
+<div class="md:col-span-5 bg-surface hairline-border rounded-xl p-lg flex flex-col justify-between">
+<div class="space-y-md">
+<h4 class="font-label-sm-bold text-primary uppercase">Declaration</h4>
+<label class="flex gap-md items-center cursor-pointer">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-0" type="checkbox"/>
+<span class="font-label-sm text-on-surface">I declare all information is true to my knowledge.</span>
+</label>
+</div>
+<button class="w-full bg-primary text-white h-touch-target-min rounded-lg font-body-md-bold mt-xl active:scale-95 transition-transform">
+                        Confirm Information
+                    </button>
+</div>
+</div>
+</section>
+<!-- 4. Spacing System -->
+<section class="space-y-lg" id="spacing">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary">04. Spacing System</h2>
+</div>
+<div class="bg-surface hairline-border rounded-xl p-lg dot-grid">
+<div class="space-y-md">
+<div class="flex items-center gap-lg">
+<div class="w-2 h-10 bg-primary-container"></div>
+<span class="font-label-sm-bold text-secondary">8px (XS)</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="w-4 h-10 bg-primary-container"></div>
+<span class="font-label-sm-bold text-secondary">16px (MD)</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="w-6 h-10 bg-primary-container"></div>
+<span class="font-label-sm-bold text-secondary">24px (LG)</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="w-8 h-10 bg-primary-container"></div>
+<span class="font-label-sm-bold text-secondary">32px (XL)</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="w-12 h-10 bg-primary-container"></div>
+<span class="font-label-sm-bold text-secondary">48px (XXL)</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+</div>
+<!-- Tooltip -->
+<div class="absolute bottom-full right-0 mb-md w-32 bg-primary text-white p-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<p class="font-label-sm-bold text-center">AI Concierge</p>
+</div>
+</div>
+<!-- Bottom Nav for Mobile Context -->
+<nav class="fixed bottom-0 w-full bg-surface border-t border-outline-variant flex justify-around items-center px-lg pb-safe h-xxl z-40 md:hidden">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full w-12 h-8">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+</nav>
+<script>
+        // Simple Interaction logic for demo purposes
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('absolute', 'bg-white/20', 'rounded-full', 'animate-ping');
+                ripple.style.width = '20px';
+                ripple.style.height = '20px';
+                ripple.style.left = e.offsetX + 'px';
+                ripple.style.top = e.offsetY + 'px';
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+
+        // Sticky header transparency effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('bg-surface/80', 'backdrop-blur-md');
+            } else {
+                header.classList.remove('bg-surface/80', 'backdrop-blur-md');
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

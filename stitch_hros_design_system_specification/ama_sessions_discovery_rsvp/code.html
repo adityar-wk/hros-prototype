@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS AMA Sessions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#5d5c74",
+                    "inverse-primary": "#c6c4df",
+                    "surface-dim": "#ddd9db",
+                    "primary": "#00000b",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "surface-variant": "#e5e1e3",
+                    "inverse-surface": "#313032",
+                    "surface-container": "#f1edef",
+                    "on-error": "#ffffff",
+                    "outline": "#78767d",
+                    "tertiary-fixed": "#f2e1b7",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c8c5cd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1d",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "primary-fixed-dim": "#c6c4df",
+                    "primary-container": "#1a1a2e",
+                    "tertiary-container": "#b9aa83",
+                    "surface-bright": "#fcf8fa",
+                    "on-primary-fixed-variant": "#45455b",
+                    "on-surface": "#1c1b1d",
+                    "secondary": "#585f6c",
+                    "on-secondary-fixed": "#151c27",
+                    "secondary-container": "#dce2f3",
+                    "on-tertiary-container": "#493f20",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ebe7e9",
+                    "surface": "#fcf8fa",
+                    "background": "#fcf8fa",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-highest": "#e5e1e3",
+                    "secondary-fixed": "#dce2f3",
+                    "tertiary": "#695d3c",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-container-low": "#f6f2f4",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-surface-variant": "#47464c",
+                    "on-primary-container": "#83829b",
+                    "on-secondary-container": "#5e6572",
+                    "inverse-on-surface": "#f4f0f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "md": "16px",
+                    "huge": "64px",
+                    "base": "4px",
+                    "xs": "8px",
+                    "touch-target-min": "44px",
+                    "xl": "32px",
+                    "mobile-margin": "24px",
+                    "lg": "24px",
+                    "xxl": "48px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="bg-surface sticky top-0 z-50 w-full border-b border-outline-variant flex justify-between items-center px-mobile-margin py-md">
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">AMA Sessions</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a young professional with a warm smile, set against a clean, minimalist studio background. The lighting is soft and directional, emphasizing clarity and approachability. The image follows a high-key light mode aesthetic with neutral tones to match a clean enterprise UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7nlyZ3Lb_a_34X_SOiOxNPtsZaI4HI0IrF0sQiuIZkIbJlCFp8TJ967WzeC7ANxakf0JQt1GvwhWPldWIJz7583SeA15Ts1Tw97KJWgr3wx6HAyzSbi8gh6qSMnY1mCGBbknik7koki32pGr7IJO9KMGaM6SWiDL9uG2mKM-GSHcbd-l6VLkgSKUGT1HVrOBxIUyd5Uz7ooEQBRLyeNouT9UaQ1BilYeTeavSM08qq6UqPu3ZLRpfWKIChNGQaVJMxCdESdkA2zLg"/>
+</div>
+</header>
+<main class="px-mobile-margin py-lg max-w-md mx-auto">
+<!-- Section 1: Upcoming Sessions -->
+<section class="mb-xxl">
+<div class="flex items-center gap-xs mb-md">
+<div class="w-3 h-3 rounded-full bg-[#4CAF50]"></div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">Upcoming Sessions</h2>
+</div>
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md mb-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<span class="inline-block px-xs py-1 bg-primary-fixed text-on-primary-fixed font-label-sm-bold text-label-sm rounded-full mb-xs">Townhall</span>
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Product Vision 2024</h3>
+</div>
+</div>
+<div class="flex items-center gap-sm mb-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Arjun Mehta" class="w-full h-full object-cover" data-alt="Close-up portrait of an experienced Indian executive, Arjun Mehta, with a confident and visionary expression. He is wearing a minimalist navy blazer over a light grey shirt. The background is a blurred high-end office interior with glass walls and natural light, maintaining a professional and clean minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaHsfGFIUMQymbK2cHC2R2M9YA68Azmon5kv8EG4qR_24PwRXQzOxrzyx9E8Qjr_F2Pt9n0Zfsnqzds5Jt-Pdp2OsNydEk9qUrpjUBTvXS6HSHQiPbfT3RO9pGYeAuoiW6n6oy8mX6YXW-ZHhV_hVSYHhIThoWfjRV9SNiYvftympEvLsR_CO-vvLc9y6mGR5YEzRbFsjGvexpErrF0QtDM64gPoeeMl2FI7bHjMrD2xlF4WSksFVDTND48h3yZYWYgxYO9mbNTstG"/>
+</div>
+<div>
+<p class="font-label-sm-bold text-label-sm text-on-surface">Arjun Mehta</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">VP Product</p>
+</div>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant mb-lg">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-label-sm text-label-sm">Friday, Oct 27, 4 PM</span>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary font-body-md-bold text-body-md rounded-lg active:scale-[0.98] transition-transform" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+                    RSVP Now
+                </button>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<span class="inline-block px-xs py-1 bg-[#E8F5E9] text-[#2E7D32] font-label-sm-bold text-label-sm rounded-full mb-xs">Registered ✓</span>
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Engineering Culture</h3>
+</div>
+</div>
+<div class="flex items-center gap-sm mb-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Rahul Verma" class="w-full h-full object-cover" data-alt="A portrait of a senior software engineer, Rahul Verma, wearing a modern dark grey hoodie. He has a thoughtful and focused expression. The lighting is crisp and modern, with a slight cool tone. The background is a minimalist tech workspace with subtle, clean horizontal lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbvNQkNA-3mAi_rVjiRmS6ozNiG2x3v1eSB82gmlGiDxruSEJnLWRb0w72ie3JFfJAk-SdA-heh3HbMde07uGVpmp9LBy5dg-DLFq-nlemlvLXx2LLAPFo8ed-LAKK_W1EDYu16TPoBR8C32LksNmPDuBURU-AVJkB2YLJhqIJw7tbcm6TECVj6UVkqQxJN7x5X-dsciDrGw4xTfMD9kh5d_kCwIya0_HNwDtYZKQ6FguVe0HQaegGr8cTZ4Ii4duF1pDI-XyreN9l"/>
+</div>
+<div>
+<p class="font-label-sm-bold text-label-sm text-on-surface">Rahul Verma</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Engineering Lead</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<a class="flex items-center gap-xs text-primary font-label-sm-bold text-label-sm underline decoration-outline-variant underline-offset-4" href="#">
+<span class="material-symbols-outlined text-[18px]">event</span>
+                        Add to Calendar
+                    </a>
+</div>
+<!-- Pre-Session Question (Expandable/Contextual) -->
+<div class="mt-lg pt-md border-t border-outline-variant">
+<label class="block font-label-sm-bold text-label-sm text-on-surface-variant mb-xs">Submit a question in advance</label>
+<div class="relative group">
+<div class="w-full p-md bg-surface-container rounded-lg border border-outline-variant text-on-surface-variant font-body-md text-body-md italic flex justify-between items-center">
+                            "What is the tech stack for Project Sahayak?"
+                            <span class="material-symbols-outlined text-[#4CAF50]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="mt-xs text-[#2E7D32] font-label-sm-bold text-label-sm flex items-center gap-xs">
+                            Question sent ✓
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Past Sessions -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">Past Sessions</h2>
+</div>
+<!-- Consent Notice -->
+<div class="p-sm bg-surface-container rounded-lg border border-outline-variant mb-md flex gap-sm items-start">
+<span class="material-symbols-outlined text-outline text-[20px]">info</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    Sessions are recorded with participant consent for internal training purposes.
+                </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden mb-md group transition-all hover:bg-surface-container-lowest">
+<div class="h-32 bg-primary-container relative">
+<img alt="Design Philosophy Session" class="w-full h-full object-cover opacity-60" data-alt="A clean, minimalist overhead shot of a designer's desk with a sketching pad, a sleek mechanical pencil, and a glass of water. The color palette is composed of soft whites, greys, and a single accent of deep blue. The lighting is diffused morning light, creating a calm and intellectual atmosphere suitable for a design philosophy discussion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCalZweI1GmdgvXA21zOP26_Xa3RkAyq-CrVDbVpCat2vDwJy4r9mXjGxAsHf3UwJyz-ZOWL8Z2K111bJtI55z7og8Xuxl_D_SxCNTVfonuZXYRKcNaZ3tTicHyRkMqKon2GlMfbEm6KiatJmvf4PuxgzjBvd_07afzl-NTRo07luylT2BU2JNWJXWmgmeWFdP5Z8P-nZ5W4oznt3CBj_yZczOq85aOu-jdKoIgQK4lJL9kTw4yCc3WSnjUlpGtVszkcF52w0Ubf7ge"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-md">
+<h3 class="font-body-md-bold text-body-md-bold text-primary mb-xs">Design Philosophy</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Host: Sana Khan</p>
+<button class="flex items-center gap-xs text-primary font-label-sm-bold text-label-sm">
+                        Watch recording
+                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center px-mobile-margin py-xs">
+<!-- Journey: Active -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-xs px-md transition-transform duration-150 scale-95" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-label-sm text-label-sm mt-1">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary transition-all active:scale-90" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm mt-1">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary transition-all active:scale-90" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm mt-1">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary transition-all active:scale-90" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-1">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:text-primary transition-all active:scale-90" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">You</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                this.style.opacity = '0.8';
+            });
+            btn.addEventListener('touchend', function() {
+                this.style.opacity = '1';
+            });
+        });
+
+        // Simple scroll behavior for header
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background: rgba(252, 248, 250, 0.8);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "on-secondary-fixed": "#151c27",
+                      "surface-container-high": "#ebe7e9",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#45455b",
+                      "inverse-surface": "#313032",
+                      "surface-variant": "#e5e1e3",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1c1b1d",
+                      "inverse-primary": "#c6c4df",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-primary-container": "#83829b",
+                      "background": "#fcf8fa",
+                      "surface-container-low": "#f6f2f4",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "tertiary": "#695d3c",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#dce2f3",
+                      "primary": "#00000b",
+                      "surface-tint": "#5d5c74",
+                      "inverse-on-surface": "#f4f0f2",
+                      "tertiary-fixed": "#f2e1b7",
+                      "surface-container-highest": "#e5e1e3",
+                      "surface-dim": "#ddd9db",
+                      "surface": "#fcf8fa",
+                      "primary-fixed-dim": "#c6c4df",
+                      "on-surface-variant": "#47464c",
+                      "on-surface": "#1c1b1d",
+                      "tertiary-container": "#b9aa83",
+                      "primary-fixed": "#e2e0fc",
+                      "outline-variant": "#c8c5cd",
+                      "on-tertiary-container": "#493f20",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#1a1a2e",
+                      "on-secondary-fixed-variant": "#404754",
+                      "on-primary-fixed": "#1a1a2e",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#dce2f3",
+                      "error": "#ba1a1a",
+                      "surface-container": "#f1edef",
+                      "secondary": "#585f6c",
+                      "on-tertiary-fixed": "#231b02",
+                      "on-secondary-container": "#5e6572",
+                      "outline": "#78767d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "mobile-margin": "24px",
+                      "base": "4px",
+                      "xxl": "48px",
+                      "sm": "12px",
+                      "huge": "64px",
+                      "touch-target-min": "44px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "xs": "8px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Geist"],
+                      "label-sm-bold": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "body-md": ["Geist"],
+                      "display": ["Geist"],
+                      "body-md-bold": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex items-center justify-between px-lg h-[64px] max-w-md mx-auto left-0 right-0">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Probation Status</h1>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 mt-[64px] mb-[72px] px-mobile-margin py-lg w-full max-w-md mx-auto overflow-y-auto custom-scrollbar">
+<!-- Status Header Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md mb-lg shadow-sm">
+<div class="flex justify-between items-start mb-xs">
+<div>
+<p class="font-label-sm text-on-surface-variant mb-1">Status</p>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="font-body-md-bold text-on-surface">Active</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-on-surface-variant mb-1">Ends on</p>
+<p class="font-body-md-bold text-on-surface">Dec 12, 2023</p>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-outline-variant/30">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-on-surface-variant">Completion</span>
+<span class="font-label-sm-bold text-primary">75%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full mt-xs overflow-hidden">
+<div class="h-full bg-primary w-3/4 rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="mb-xl">
+<div class="flex items-center gap-xs mb-md">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<h2 class="font-body-md-bold text-on-surface">Probation Journey</h2>
+</div>
+<div class="relative pl-xs">
+<!-- Vertical Line -->
+<div class="absolute left-[11px] top-0 bottom-0 w-[2px] bg-outline-variant/50"></div>
+<!-- Timeline Points -->
+<div class="space-y-xl relative">
+<!-- Point 1: Started -->
+<div class="flex items-start gap-md">
+<div class="relative z-10 w-6 h-6 rounded-full bg-primary flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[12px] text-on-primary" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Started: Jun 12</p>
+<p class="font-label-sm text-on-surface-variant">Onboarding and initial setup completed.</p>
+</div>
+</div>
+<!-- Point 2: Mid-point -->
+<div class="flex items-start gap-md">
+<div class="relative z-10 w-6 h-6 rounded-full bg-primary flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[12px] text-on-primary" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Mid-point: Sep 12</p>
+<p class="font-label-sm text-on-surface-variant">Quarterly performance review successfully cleared.</p>
+</div>
+</div>
+<!-- Current Position Marker -->
+<div class="absolute left-[-1px] top-[140px] z-20 flex items-center gap-xs bg-surface border border-primary px-sm py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-wider">Current Position</span>
+</div>
+<!-- Point 3: End -->
+<div class="flex items-start gap-md pt-xs">
+<div class="relative z-10 w-6 h-6 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface-variant">End: Dec 12</p>
+<p class="font-label-sm text-on-surface-variant">Final review and role confirmation.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Notice Period Info Block -->
+<section class="bg-secondary-container/30 border border-outline-variant/30 rounded-xl p-md">
+<div class="flex gap-md">
+<div class="bg-secondary-container p-xs rounded-lg h-fit">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="info">info</span>
+</div>
+<div class="flex-1">
+<h3 class="font-body-md-bold text-on-surface mb-xs">Notice Period Policy</h3>
+<p class="font-label-sm text-on-surface-variant leading-relaxed">
+                        Your current notice period is <span class="font-bold text-on-surface">2 weeks</span>. 
+                        This changes to <span class="font-bold text-on-surface">2 months</span> when probation is confirmed.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Support Card -->
+<section class="mt-lg border border-outline-variant rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<p class="font-body-md-bold text-on-surface">Need help?</p>
+<p class="font-label-sm text-on-surface-variant">Talk to your mentor</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</section>
+</main>
+
+<!-- You (ACTIVE) -->
+<div class="flex flex-col items-center justify-center text-primary bg-secondary-container/50 rounded-xl px-xs py-1 transition-transform duration-150 scale-95 active:scale-90" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">You</span>
+</div>
+</nav>
+<script>
+        // Simple logic for interactive states
+        document.querySelectorAll('nav > div').forEach(item => {
+            item.addEventListener('click', function() {
+                // In a real app, this would navigate. 
+                // Here we just show a subtle feedback
+                this.classList.add('bg-secondary-container/30');
+                setTimeout(() => this.classList.remove('bg-secondary-container/30'), 200);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

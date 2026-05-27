@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Launchpad - Day 3 to Joining</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Scrollbar for radical reduction look */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e5e1e3; border-radius: 10px; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#b9aa83",
+                      "on-tertiary-container": "#493f20",
+                      "on-secondary-container": "#5e6572",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "on-surface": "#1c1b1d",
+                      "surface-container-low": "#f6f2f4",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#231b02",
+                      "inverse-primary": "#c6c4df",
+                      "secondary-fixed": "#dce2f3",
+                      "surface-container-highest": "#e5e1e3",
+                      "outline": "#78767d",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "surface-container": "#f1edef",
+                      "surface-dim": "#ddd9db",
+                      "on-secondary-fixed": "#151c27",
+                      "primary-fixed-dim": "#c6c4df",
+                      "outline-variant": "#c8c5cd",
+                      "error-container": "#ffdad6",
+                      "background": "#fcf8fa",
+                      "inverse-on-surface": "#f4f0f2",
+                      "on-primary-fixed": "#1a1a2e",
+                      "secondary-container": "#dce2f3",
+                      "secondary": "#585f6c",
+                      "surface-variant": "#e5e1e3",
+                      "on-secondary-fixed-variant": "#404754",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#e2e0fc",
+                      "on-secondary": "#ffffff",
+                      "surface": "#fcf8fa",
+                      "surface-tint": "#5d5c74",
+                      "tertiary": "#695d3c",
+                      "primary-container": "#1a1a2e",
+                      "on-surface-variant": "#47464c",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#313032",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#f2e1b7",
+                      "on-primary-fixed-variant": "#45455b",
+                      "surface-container-high": "#ebe7e9",
+                      "on-primary-container": "#83829b",
+                      "on-background": "#1c1b1d",
+                      "primary": "#00000b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "mobile-margin": "24px",
+                      "xl": "32px",
+                      "touch-target-min": "44px",
+                      "huge": "64px",
+                      "base": "4px",
+                      "xxl": "48px",
+                      "lg": "24px",
+                      "xs": "8px",
+                      "md": "16px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "body-md-bold": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "label-sm-bold": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display": ["Geist"]
+              },
+              "fontSize": {
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-huge overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline flex justify-between items-center px-lg h-[64px]">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<img alt="Profile" class="w-8 h-8 rounded-full bg-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZziYbEsWRZLFld_2rkPfSRx2c7fCrrOMJIp3icXWh2Mery2wAq-h8mit4ULWSNvwJUhMmH1QCM0UIclf8_50zA2203etZBi9M8EnQmv6rEgXXdxRGvhO_BAlZ8uFr8N8PCEXCC1Fwm9t2csFFXZOE2qe-OsfAMIM0dEH9rh1XTKDhl-T6-ZfAngpa4TN9IZirf_I7bHR8ERbGEnvwlv3Ufo6SRFo8MiHz3cGA2Q3N_XG-UX4i_Oq60KkJlWgRI2nWIDiNr8b71d51"/>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Launchpad</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-container-low transition-colors p-2 rounded-full">notifications</button>
+</div>
+</header>
+<main class="px-mobile-margin pt-lg space-y-lg max-w-md mx-auto">
+<!-- Welcome Hero Section -->
+<section class="space-y-sm">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-[#10B981]"></span> <!-- Readiness Signal: Green -->
+<span class="font-label-sm-bold text-on-surface-variant uppercase tracking-wider">3 Days to Day 1</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Everything is set for your arrival at Nexus Labs. Here is your roadmap for Monday.</p>
+</section>
+<!-- Day 1 Schedule (Bento-ish Timeline) -->
+<section class="space-y-md">
+<div class="flex justify-between items-end">
+<h2 class="font-body-md-bold text-on-surface">Day 1 Schedule</h2>
+<span class="font-label-sm text-outline">Oct 24, 2023</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="divide-y divide-outline-variant">
+<div class="flex p-md gap-md items-start active:bg-surface-container-low transition-colors">
+<span class="font-label-sm-bold text-primary shrink-0 w-16">09:00 AM</span>
+<div class="space-y-base">
+<p class="font-body-md-bold">Arrival &amp; Welcome</p>
+<p class="font-label-sm text-on-surface-variant">Main Lobby, Nexus HQ</p>
+</div>
+</div>
+<div class="flex p-md gap-md items-start active:bg-surface-container-low transition-colors">
+<span class="font-label-sm-bold text-primary shrink-0 w-16">10:30 AM</span>
+<div class="space-y-base">
+<p class="font-body-md-bold">IT Asset Handover</p>
+<p class="font-label-sm text-on-surface-variant">Tech Bar, Floor 2</p>
+</div>
+</div>
+<div class="flex p-md gap-md items-start active:bg-surface-container-low transition-colors">
+<span class="font-label-sm-bold text-primary shrink-0 w-16">12:30 PM</span>
+<div class="space-y-base">
+<p class="font-body-md-bold">Team Lunch</p>
+<p class="font-label-sm text-on-surface-variant">The Terrace Cafe</p>
+</div>
+</div>
+<div class="flex p-md gap-md items-start active:bg-surface-container-low transition-colors">
+<span class="font-label-sm-bold text-primary shrink-0 w-16">02:00 PM</span>
+<div class="space-y-base">
+<p class="font-body-md-bold">HR Orientation</p>
+<p class="font-label-sm text-on-surface-variant">Meeting Room: Rosetta</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- People I'll Meet (Horizontal Cards) -->
+<section class="space-y-md">
+<h2 class="font-body-md-bold text-on-surface">People I'll Meet</h2>
+<div class="flex gap-md overflow-x-auto pb-sm snap-x no-scrollbar -mx-mobile-margin px-mobile-margin">
+<!-- Arjun -->
+<div class="min-w-[200px] snap-center bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col items-center text-center space-y-sm">
+<img alt="Arjun Sharma" class="w-20 h-20 rounded-full object-cover border-2 border-surface-variant" data-alt="A professional headshot of an Indian man in his late 30s wearing a clean white shirt against a neutral grey background. The lighting is soft and studio-quality, emphasizing a warm and welcoming managerial personality. The aesthetic is clean, modern, and perfectly aligned with a professional minimalist UI design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVuyFcQ45YUTs5UcCUtEykE-tZigTzG2kg2oYqcJPKHJaXNUEp9JZ3lFS_Tgv7-6NNk_FA5F3Hzdujt8vPmhKdbuZhSRhXu7RGx36eryBXq2nideTy5wcWjOv0EpX0Qm4qZrnV7DQv_A1UDvyndF8R4IAvOSLEAK6iCD7qna3ff63cPQWJlNlB9O6LNq8tM5i28zKy1QU6qQJRIMgWOcPxOUU_VFRCk8aTSFL1-OEoMYB8atdHE-pITjMb6tG3voMYBtynKAcPT2vi"/>
+<div>
+<p class="font-body-md-bold">Arjun Sharma</p>
+<p class="font-label-sm text-on-surface-variant">Manager</p>
+</div>
+<button class="w-full py-xs border border-outline-variant rounded-full font-label-sm-bold hover:bg-surface-container-low transition-colors">Profile</button>
+</div>
+<!-- Priya -->
+<div class="min-w-[200px] snap-center bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col items-center text-center space-y-sm">
+<div class="relative">
+<img alt="Priya Das" class="w-20 h-20 rounded-full object-cover border-2 border-surface-variant" data-alt="A portrait of a confident Indian woman smiling warmly at the camera, dressed in a contemporary professional blouse. The background is a blurred office interior with soft natural light, maintaining a bright light-mode aesthetic. The image conveys a supportive and friendly buddy relationship within a high-end enterprise environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMWpqxqDhHu9qsN15N9DdmpED_jj5fFm6GGWLiLPBNkj7iraZQoTeU4JcL_3qIgF0lDaxqRmelSsT9Sj1na9ozHeH8FFIMsWR-bP9ePrGu-Guamf0dm_iXj1RzquNd4Q-MySxH_wotdmQQnYJ0KBSQLk9h1ZKyIjgMSsaaYQSz3uibFcQWbjfwOIzYVuBzWvAjCZOBECk0Ucfdn7ln7wbOlL3AVoBnvUuh2qbKHvjv6ilI31uoxDdbrSlPfIUa1gRr5AZDxTqIltLR"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></span>
+</div>
+<div>
+<p class="font-body-md-bold">Priya Das</p>
+<p class="font-label-sm text-on-surface-variant">Buddy</p>
+</div>
+<button class="w-full py-xs bg-primary text-on-primary rounded-full font-label-sm-bold active:scale-95 transition-transform">Say Hi</button>
+</div>
+<!-- Megha -->
+<div class="min-w-[200px] snap-center bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col items-center text-center space-y-sm">
+<img alt="Megha Rao" class="w-20 h-20 rounded-full object-cover border-2 border-surface-variant" data-alt="A sharp professional photo of an Indian female HR executive with a pleasant and efficient demeanor. She is photographed in a bright, modern corporate setting with clean lines and a minimalist feel. The color palette is dominated by whites and soft neutrals, reflecting a calm and organized enterprise operating system style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXmR83TOzdll-PMMieP_3YeSoab9ZxUnqzQ8mJV-4uuCrKbk60Eb7zh0FGkJDMeRi2-Bx4KzTivvxHy6SvQQmqk-ne9duIlDv_IR6aiRdQNq0NDbjZJTao2vH_5Bmw6v_HXDg72lAaV0eBnwQpXximb54AhlIg4iSWJ7i85vApaJHiPwRR9eM3-SD7BQP4zOjY3ffxkhg-14GQ57hr1pDOO4eU1x5CYJATUigfLzGh0ln0VY-s6WOxoWB1CvnRyjDAjBwF9yB-2wE9"/>
+<div>
+<p class="font-body-md-bold">Megha Rao</p>
+<p class="font-label-sm text-on-surface-variant">HRBP</p>
+</div>
+<button class="w-full py-xs border border-outline-variant rounded-full font-label-sm-bold hover:bg-surface-container-low transition-colors">Profile</button>
+</div>
+</div>
+</section>
+<!-- Location (Interactive Map Style) -->
+<section class="space-y-md">
+<h2 class="font-body-md-bold text-on-surface">Location</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="h-32 bg-surface-container-highest relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center">
+<img alt="Nexus Labs Location" class="w-full h-full object-cover grayscale opacity-60" data-location="Noida" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4jSZ_pARq2OUoPjUGRGEGuFaVnQ49av2vfvj7r0XxIPXsj5D7sjoTbb8_z7ihfbX9NCP59I2zW0n1z7rQvJhrrNTLAjhzNLkKWi7lIVEOxiiaB_6Pfubc7a-oXgg6JmOuBf0A46qm2PfAiriVxPYNj4osm-_vp2AGep8YIc8Qx4x6F_jbw_Fsde6DaP4Jjg8DNrD2xhlB0Cl6n7b9BcIypOlgvH-lsLkMpM2KyKAisZ_lwQfEEgkyBDe3r7kCmFcRP4sP2u7nwuOF"/>
+<div class="absolute flex flex-col items-center">
+<span class="material-symbols-outlined text-primary scale-150" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<div class="p-md space-y-sm">
+<p class="font-body-md-bold text-primary">Nexus Labs HQ</p>
+<p class="font-label-sm text-on-surface-variant">Floor 4, Sector 126, Noida. Desk: B-104.</p>
+<div class="bg-surface-container-low p-sm rounded-lg flex gap-sm items-start">
+<span class="material-symbols-outlined text-primary shrink-0 text-[20px]">info</span>
+<p class="font-label-sm text-on-surface-variant leading-relaxed">Use the visitor gate; Megha will meet you at reception.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- What to Bring Checklist -->
+<section class="space-y-md">
+<h2 class="font-body-md-bold text-on-surface">What to Bring</h2>
+<div class="space-y-sm">
+<label class="flex items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl active:bg-surface-container-low transition-colors">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="font-body-md">Original Aadhaar Card</span>
+</label>
+<label class="flex items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl active:bg-surface-container-low transition-colors">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="font-body-md">Laptop (if provided earlier)</span>
+</label>
+<label class="flex items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl active:bg-surface-container-low transition-colors">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="font-body-md">Educational Certificates</span>
+</label>
+</div>
+</section>
+<!-- Pre-reading (Task Card Style) -->
+<section class="space-y-md">
+<h2 class="font-body-md-bold text-on-surface">Pre-reading</h2>
+<div class="grid grid-cols-1 gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex justify-between items-center group cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">menu_book</span>
+</div>
+<div>
+<p class="font-body-md-bold">Employee Handbook</p>
+<p class="font-label-sm text-on-surface-variant">12 min read</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex justify-between items-center group cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">rule</span>
+</div>
+<div>
+<p class="font-body-md-bold">Operating Norms summary</p>
+<p class="font-label-sm text-on-surface-variant">5 min read</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Action: Download PDF -->
+<section class="pt-md pb-xl">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold flex items-center justify-center gap-sm active:scale-95 transition-all shadow-lg shadow-primary/10" id="downloadBtn" onclick="simulateDownload()">
+<span class="material-symbols-outlined" id="btnIcon">download</span>
+<span id="btnText">Download as PDF</span>
+</button>
+</section>
+</main>
+
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 h-[80px] bg-surface dark:bg-background border-t border-outline-variant dark:border-outline flex justify-around items-center px-md pb-safe">
+<a class="flex flex-col items-center justify-center gap-1 text-primary dark:text-primary-fixed font-label-sm-bold text-label-sm-bold active:scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">route</span>
+<span>Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-150" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span>Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-150" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span>Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-150" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span>AI</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-150" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span>You</span>
+</a>
+</nav>
+<script>
+        function simulateDownload() {
+            const btn = document.getElementById('downloadBtn');
+            const icon = document.getElementById('btnIcon');
+            const text = document.getElementById('btnText');
+            
+            // Animation state
+            btn.classList.add('opacity-80', 'cursor-wait');
+            text.innerText = 'Generating PDF...';
+            icon.innerText = 'sync';
+            icon.classList.add('animate-spin');
+            
+            setTimeout(() => {
+                icon.classList.remove('animate-spin');
+                icon.innerText = 'check_circle';
+                text.innerText = 'Downloaded';
+                btn.classList.remove('bg-primary', 'cursor-wait');
+                btn.classList.add('bg-[#10B981]');
+                
+                setTimeout(() => {
+                    icon.innerText = 'download';
+                    text.innerText = 'Download as PDF';
+                    btn.classList.add('bg-primary');
+                    btn.classList.remove('bg-[#10B981]', 'opacity-80');
+                }, 2000);
+            }, 1800);
+        }
+
+        // Horizontal scroll micro-interaction
+        const peopleList = document.querySelector('.no-scrollbar');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        peopleList.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - peopleList.offsetLeft;
+            scrollLeft = peopleList.scrollLeft;
+        });
+        peopleList.addEventListener('mouseleave', () => isDown = false);
+        peopleList.addEventListener('mouseup', () => isDown = false);
+        peopleList.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - peopleList.offsetLeft;
+            const walk = (x - startX) * 2;
+            peopleList.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

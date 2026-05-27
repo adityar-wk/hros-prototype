@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-background": "#1c1b1d",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#404754",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#ebe7e9",
+                        "surface": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "primary-container": "#1a1a2e",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dce2f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "inverse-primary": "#c6c4df",
+                        "on-primary-container": "#83829b",
+                        "surface-tint": "#5d5c74",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary-fixed": "#1a1a2e",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary-fixed": "#231b02",
+                        "background": "#fcf8fa",
+                        "primary": "#00000b",
+                        "on-surface-variant": "#47464c",
+                        "tertiary-fixed": "#f2e1b7",
+                        "primary-fixed": "#e2e0fc",
+                        "secondary-container": "#dce2f3",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-primary-fixed-variant": "#45455b",
+                        "outline": "#78767d",
+                        "on-secondary-container": "#5e6572",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary-container": "#b9aa83",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1edef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "sm": "12px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "huge": "64px",
+                        "base": "4px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-md-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background-color: #fcf8fa;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-transition {
+            transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), opacity 0.4s ease;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant flex justify-between items-center px-lg h-[64px]">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional, high-quality headshot of a diverse woman in a corporate setting. She is wearing a modern blazer and has a friendly, confident expression. The background is a blurred minimalist office with clean white walls and soft lighting, maintaining a premium light-mode aesthetic that fits a sophisticated enterprise application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcgofkGDPE4wUzHEg6qdy580F3c8F4GVMWI5tis3uo5LAb4vEc-F_PxcX25wSIWCeL60BcnBAx3-N9X4eAD8lmvXLTUHUsn8covUNNZE_wQCIkVF-f22pMuY4i0zUg5tH5vLKlf7Ib3vBG4hCi8KhTKG2oMPPd2ViSrS57B8Wrcp1YcA996gV642CrBrsC7rOE8lr__99TqkpYVYXbq8ekbmX9dJmUtYbTqOKLyP3nwhtHBnMFubpLq-FKu5IqUgF_Hhx0SFVS8cFs"/>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">HROS</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="flex-grow px-mobile-margin py-lg pb-[100px] max-w-[500px] mx-auto w-full">
+<!-- Progress & Status -->
+<div class="flex flex-col gap-xs mb-xl">
+<div class="flex justify-between items-center">
+<span class="font-label-sm-bold text-label-sm-bold text-primary tracking-widest">STEP 1 OF 4</span>
+<div class="px-3 py-1 rounded-full bg-error-container/20 text-error font-label-sm-bold text-label-sm-bold flex items-center gap-1 border border-error/10">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    Action Required
+                </div>
+</div>
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[5%] h-full bg-primary transition-all duration-700"></div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="mb-xxl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-md">Tax Planning</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Your tax setup determines how much is deducted from your salary each month. This takes about 5 minutes and can save you money.
+            </p>
+</section>
+<!-- Question -->
+<section class="mb-xl">
+<h2 class="font-body-md-bold text-body-md-bold text-primary mb-lg">When would you like to set up your tax planning?</h2>
+<!-- Options Cluster -->
+<div class="flex flex-col gap-md">
+<!-- Option 1: Recommended -->
+<button class="group w-full text-left p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:border-primary transition-all active:scale-[0.98] relative overflow-hidden">
+<div class="flex items-start gap-md">
+<div class="mt-1 w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-xs">
+<span class="font-body-md-bold text-body-md-bold text-primary">Set up now (Recommended)</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold uppercase tracking-tighter">Best Value</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Most tax-efficient. We'll help you pick the best regime.</p>
+</div>
+<div class="mt-3">
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+</button>
+<!-- Option 2: Guide -->
+<button class="group w-full text-left p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:border-primary transition-all active:scale-[0.98]">
+<div class="flex items-start gap-md">
+<div class="mt-1 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">explore</span>
+</div>
+<div class="flex-grow">
+<span class="font-body-md-bold text-body-md-bold text-primary">Guide me through it</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Step-by-step walkthrough of regimes and deductions.</p>
+</div>
+<div class="mt-3">
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+</button>
+<!-- Option 3: Later -->
+<button class="group w-full text-left p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:border-primary transition-all active:scale-[0.98]">
+<div class="flex items-start gap-md">
+<div class="mt-1 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex-grow">
+<span class="font-body-md-bold text-body-md-bold text-primary">I'll do it later</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Your tax will be calculated at the default rate until setup.</p>
+</div>
+<div class="mt-3">
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+</button>
+</div>
+</section>
+<!-- Compliance Mini-Block -->
+<div class="p-md bg-surface-container rounded-lg border border-outline-variant/30 flex items-start gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">info</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                According to Indian IT Act regulations, selecting a regime now ensures correct TDS calculation for the current financial year.
+            </p>
+</div>
+</main>
+<!-- AI Concierge Trigger (Distinctive UI Layer) -->
+
+<!-- BottomNavBar (Semantic Shell) -->
+<nav class="fixed bottom-0 w-full z-50 h-[80px] bg-surface border-t border-outline-variant flex justify-around items-center px-md pb-safe">
+<!-- Journey -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined">route</span>
+<span>Journey</span>
+</a>
+<!-- Tasks (ACTIVE) -->
+<a class="flex flex-col items-center justify-center gap-1 text-primary font-label-sm-bold text-label-sm-bold hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span>Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span>Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span>AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span>You</span>
+</a>
+</nav>
+<script>
+        // Simple interaction script for button feedback
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Potential for step navigation logic here
+                console.log('Action selected:', this.innerText.split('\n')[0]);
+            });
+        });
+        
+        // AI Concierge pulse effect
+        const concierge = document.querySelector('.fixed.bottom-24');
+        if(concierge) {
+            setInterval(() => {
+                concierge.classList.add('animate-pulse');
+                setTimeout(() => concierge.classList.remove('animate-pulse'), 1000);
+            }, 5000);
+        }
+    </script>
+<script src="../nav.js"></script>
+</body></html>

@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS - Day 1 Immersion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fcf8fa",
+                    "tertiary": "#695d3c",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c8c5cd",
+                    "secondary": "#585f6c",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-primary-fixed": "#1a1a2e",
+                    "tertiary-container": "#b9aa83",
+                    "on-background": "#1c1b1d",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-low": "#f6f2f4",
+                    "on-surface-variant": "#47464c",
+                    "inverse-primary": "#c6c4df",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-tint": "#5d5c74",
+                    "surface-dim": "#ddd9db",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-container-high": "#ebe7e9",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf8fa",
+                    "secondary-fixed": "#dce2f3",
+                    "on-secondary-fixed": "#151c27",
+                    "on-error-container": "#93000a",
+                    "primary": "#00000b",
+                    "on-secondary-container": "#5e6572",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a1a2e",
+                    "on-primary-container": "#83829b",
+                    "outline": "#78767d",
+                    "on-surface": "#1c1b1d",
+                    "on-primary": "#ffffff",
+                    "background": "#fcf8fa",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-container": "#f1edef",
+                    "secondary-container": "#dce2f3",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-tertiary-container": "#493f20",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e5e1e3",
+                    "inverse-surface": "#313032"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "huge": "64px",
+                    "touch-target-min": "44px",
+                    "xs": "8px",
+                    "md": "16px",
+                    "base": "4px",
+                    "mobile-margin": "24px",
+                    "xxl": "48px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .journey-line {
+            background: repeating-linear-gradient(to bottom, #c8c5cd 0, #c8c5cd 4px, transparent 4px, transparent 8px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 z-40 border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min w-full">
+<div class="flex items-center gap-sm">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Profile" data-alt="A professional headshot of a young professional with a friendly smile, styled in a minimalist and modern digital illustration. The background is a soft, neutral grey-white gradient that aligns with a high-end corporate operating system aesthetic. The lighting is soft and even, highlighting clean lines and a professional demeanor suitable for an enterprise portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYqezzI6m0Zf38IOEV_riNm-lMTwRks4DLFUPVSY2gaTsBjtEMW2zxRihKlmV_b6nz6fJUWj4dpluFrB9o1r8VErIkM6Pg5tuHQpcDF0bpDXmmvIhPpFhTEYEVDBCFZj1yjEvBDEq697fTpQQXKSe0XCLKqRTCyrY6AeK9S7i9deZV--jdBKr8rtKQI8Fe2XQvdRHBb1MQzKhMmTe7LRud7gIMQ_Qwm0ksEp8OPN4GEOnb9DWBxxEKHvf0pnv7pfk67ycOx3bfLRd9"/>
+</div>
+</div>
+<h1 class="font-display text-headline-lg-mobile font-bold text-primary">HROS</h1>
+<button class="hover:bg-surface-container-low transition-colors p-xs rounded-full">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="flex-1 overflow-y-auto no-scrollbar pb-huge px-mobile-margin pt-lg">
+<!-- Header Section -->
+<section class="mb-xl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs">Today is your Day 1</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Welcome to the team. Let's get you settled in.</p>
+</section>
+<!-- Journey Map Widget (Asymmetric Bento Style) -->
+<section class="mb-xl bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-primary uppercase tracking-wider">Milestone</span>
+<h3 class="font-body-md-bold text-body-md-bold mt-base">Day 1: Immersion</h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm-bold text-label-sm-bold text-primary">25%</span>
+<div class="w-16 h-1 bg-surface-container-highest rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full w-1/4"></div>
+</div>
+</div>
+</div>
+<div class="relative pl-6 space-y-lg">
+<div class="absolute left-[3px] top-2 bottom-2 w-[1px] journey-line"></div>
+<!-- Completed -->
+<div class="relative">
+<div class="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-primary border-4 border-surface-container-lowest"></div>
+<p class="font-label-sm-bold text-label-sm-bold text-primary">09:00 AM</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Arrival &amp; Access Pickup</p>
+</div>
+<!-- Current -->
+<div class="relative">
+<div class="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-surface-container-lowest border-2 border-primary"></div>
+<div class="flex items-center gap-xs">
+<p class="font-label-sm-bold text-label-sm-bold text-primary">10:30 AM</p>
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span> <!-- Readiness Signal: Green -->
+</div>
+<p class="font-body-md-bold text-body-md-bold">Team Welcome Sync</p>
+</div>
+<!-- Upcoming -->
+<div class="relative opacity-40">
+<div class="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-outline-variant border-4 border-surface-container-lowest"></div>
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">12:30 PM</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Lunch with Buddy</p>
+</div>
+</div>
+</section>
+<!-- Tasks / Schedule Items Grid -->
+<section class="grid grid-cols-1 gap-md mb-xl">
+<h3 class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-widest flex items-center gap-xs">
+                Next Actions <span class="w-2 h-2 rounded-full bg-[#F59E0B]"></span>
+</h3>
+<!-- Task Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col gap-xs hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<span class="font-label-sm-bold text-label-sm-bold text-tertiary bg-tertiary/10 px-xs py-0.5 rounded">Logistics</span>
+<span class="material-symbols-outlined text-outline text-[20px] group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+<h4 class="font-body-md-bold text-body-md-bold">Collect Hardware Bundle</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-sm text-label-sm">IT Desk, 4th Floor</span>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col gap-xs hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<span class="font-label-sm-bold text-label-sm-bold text-secondary bg-secondary/10 px-xs py-0.5 rounded">Policy</span>
+<span class="material-symbols-outlined text-outline text-[20px] group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+<h4 class="font-body-md-bold text-body-md-bold">Indian DPDP Consent</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span class="font-label-sm text-label-sm">Mandatory Compliance</span>
+</div>
+</div>
+</section>
+
+<!-- You -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for task cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

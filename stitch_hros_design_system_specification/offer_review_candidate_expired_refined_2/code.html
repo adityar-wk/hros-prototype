@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#dce2f3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "surface-container": "#f1edef",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "primary-fixed": "#e2e0fc",
+                        "primary-container": "#1a1a2e",
+                        "secondary": "#585f6c",
+                        "on-surface": "#1c1b1d",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface-variant": "#e5e1e3",
+                        "background": "#fcf8fa",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-surface-variant": "#47464c",
+                        "surface": "#fcf8fa",
+                        "surface-tint": "#5d5c74",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "tertiary-fixed": "#f2e1b7",
+                        "surface-bright": "#fcf8fa",
+                        "tertiary": "#695d3c",
+                        "on-secondary-fixed": "#151c27",
+                        "inverse-surface": "#313032",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c8c5cd",
+                        "outline": "#78767d",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#83829b",
+                        "tertiary-container": "#b9aa83",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-background": "#1c1b1d",
+                        "inverse-on-surface": "#f4f0f2",
+                        "secondary-fixed": "#dce2f3",
+                        "primary": "#00000b",
+                        "surface-dim": "#ddd9db",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c6c4df"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "huge": "64px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "touch-target-min": "44px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "display": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .read-only-fade {
+            opacity: 0.5;
+            pointer-events: none;
+            filter: grayscale(0.4);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-huge">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 bg-background border-b border-outline-variant z-50 flex items-center justify-between px-lg h-[64px]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70 transition-opacity">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Offer Review</h1>
+</div>
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70 transition-opacity">more_vert</span>
+</header>
+<main class="px-mobile-margin py-lg space-y-lg">
+<!-- Header Section -->
+<section class="space-y-base">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Your offer, Arjun</h2>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<p class="font-label-sm-bold text-label-sm-bold text-error uppercase tracking-wider">Offer Status: Expired</p>
+</div>
+</section>
+<!-- Expired Notice Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md space-y-md">
+<p class="font-body-md text-on-surface-variant">
+                This offer has expired. We'd still love to have you. Please reach out to your recruiter to discuss next steps.
+            </p>
+<!-- Recruiter Card -->
+<div class="bg-surface border border-outline-variant rounded-lg p-md flex items-center gap-md hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 duration-200">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover grayscale-[0.2]" data-alt="A professional headshot of a friendly female recruiter named Megha, set against a clean, minimalist studio background. She is wearing professional attire with a warm, approachable expression. The lighting is soft and even, matching the high-end minimalist professional UI aesthetic with a clean, bright atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY50gpCw4nRGtNYysU_cCDNLFj3nx076BjnVec3cFMDAIMt-UBOtMi3snMKqRxfaugscCpLtYsKXHbQaB7R88VOyJjlcvM5cMojLGVE6CBhBMSwHzfW8zQjXPbDKdh6no853QmGY3tZogomdA4XIyMLIbUj6C3_jmJsywDK4cHa6cO2FATv2huI3jgszVEzw_LK_tiuCUE9Ybd8NhJm15koa2bDwzxzB_MPhAaAqYXEonoJHztP1kDf3ce5YEAp_FCzBisB5A6YWcU"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<h3 class="font-body-md-bold text-on-surface">Talk to Megha</h3>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-on-surface-variant">Active 5m ago</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+</div>
+</section>
+<!-- Read-only Details (Faded State) -->
+<section class="read-only-fade space-y-md">
+<div class="flex items-center gap-sm">
+<h4 class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">OFFER DETAILS</h4>
+<div class="flex-1 h-[1px] bg-outline-variant"></div>
+</div>
+<!-- Bento-style Grid for Details -->
+<div class="grid grid-cols-1 gap-md">
+<div class="p-md border border-outline-variant rounded-xl bg-surface-container-low">
+<p class="font-label-sm text-on-surface-variant">Role</p>
+<p class="font-body-md-bold text-on-surface">Senior Product Manager</p>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="p-md border border-outline-variant rounded-xl bg-surface-container-low">
+<p class="font-label-sm text-on-surface-variant">Annual CTC</p>
+<p class="font-body-md-bold text-on-surface">₹48,00,000</p>
+</div>
+<div class="p-md border border-outline-variant rounded-xl bg-surface-container-low">
+<p class="font-label-sm text-on-surface-variant">Joining Date</p>
+<p class="font-body-md-bold text-on-surface">Oct 12, 2023</p>
+</div>
+</div>
+<div class="p-md border border-outline-variant rounded-xl bg-surface-container-low flex justify-between items-center">
+<div>
+<p class="font-label-sm text-on-surface-variant">Stock Options</p>
+<p class="font-body-md-bold text-on-surface">2,500 ESOP Units</p>
+</div>
+<span class="material-symbols-outlined text-outline">description</span>
+</div>
+</div>
+</section>
+<!-- Compliance Check (Disabled/Faded) -->
+<section class="read-only-fade p-md border border-outline-variant rounded-xl">
+<div class="flex gap-md">
+<div class="w-6 h-6 border-2 border-outline rounded flex-shrink-0"></div>
+<p class="font-label-sm text-on-surface-variant">
+                    I acknowledge that I have read the DPDP compliance notice and agree to the terms of employment as stated in the offer letter.
+                </p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Customized for Expired State) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-lg py-md pb-safe bg-surface border-t border-outline-variant z-50">
+<!-- Disabled Accept Option -->
+<div class="flex flex-col items-center justify-center text-secondary opacity-40 px-md py-xs pointer-events-none">
+<span class="material-symbols-outlined mb-1">block</span>
+<span class="font-label-sm-bold text-label-sm-bold">Offer Expired</span>
+</div>
+<!-- Primary Active Action: Talk to Recruiter -->
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl px-md py-xs hover:bg-surface-container-high transition-colors active:scale-95 duration-200" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-sm-bold text-label-sm-bold">Talk to Recruiter</span>
+</button>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+        // Micro-interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            const recruiterCard = document.querySelector('.bg-surface.border.rounded-lg');
+            recruiterCard.addEventListener('click', () => {
+                console.log('Initiating chat with Megha...');
+                // Animation feedback
+                recruiterCard.style.backgroundColor = 'var(--surface-container-high)';
+                setTimeout(() => {
+                    recruiterCard.style.backgroundColor = '';
+                }, 200);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

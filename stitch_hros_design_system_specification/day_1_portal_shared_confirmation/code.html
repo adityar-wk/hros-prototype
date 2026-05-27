@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS | Day 1 Success</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#f2e1b7",
+                    "primary": "#00000b",
+                    "on-surface-variant": "#47464c",
+                    "on-tertiary-container": "#493f20",
+                    "on-tertiary-fixed": "#231b02",
+                    "background": "#fcf8fa",
+                    "outline-variant": "#c8c5cd",
+                    "tertiary-container": "#b9aa83",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#f1edef",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#78767d",
+                    "on-secondary-container": "#5e6572",
+                    "on-primary-fixed-variant": "#45455b",
+                    "primary-fixed-dim": "#c6c4df",
+                    "secondary-container": "#dce2f3",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-high": "#ebe7e9",
+                    "surface": "#fcf8fa",
+                    "secondary": "#585f6c",
+                    "inverse-surface": "#313032",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-container-low": "#f6f2f4",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-background": "#1c1b1d",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fcf8fa",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-primary-container": "#83829b",
+                    "surface-tint": "#5d5c74",
+                    "tertiary": "#695d3c",
+                    "on-surface": "#1c1b1d",
+                    "inverse-primary": "#c6c4df",
+                    "secondary-fixed": "#dce2f3",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#151c27",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#ddd9db",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "primary-container": "#1a1a2e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "xl": "32px",
+                    "xs": "8px",
+                    "mobile-margin": "24px",
+                    "base": "4px",
+                    "huge": "64px",
+                    "md": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .success-checkmark {
+            animation: scale-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+        @keyframes scale-in {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .success-bg-pulse {
+            animation: pulse-bg 2s infinite;
+        }
+        @keyframes pulse-bg {
+            0% { background-color: rgba(34, 197, 94, 0.05); }
+            50% { background-color: rgba(34, 197, 94, 0.1); }
+            100% { background-color: rgba(34, 197, 94, 0.05); }
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 z-50 border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min w-full max-w-[375px]">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional high-key portrait of a young executive woman in a minimalist white office setting. The lighting is soft and flattering, creating a modern, high-contrast look that aligns with a minimalist professional aesthetic. The subject has a confident expression, and the background is blurred and neutral." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfHTCLDQOwMS5VHjsW59sTdKUG77XKkmzDawHzjkyuOkbaggrvPQ25RBIkR3RAYDzmaOh-Hsi-sl5h7i75GIXA61KOvQIlZ7B3uUux_0kJ9kQVqtJ3GOwPHR9IksDzwOGAj6Ypn-eakapjd7D5xVLicKBp54wIrlv0tiUQ6mzbTQ8iO6k4BlinJ9NM0gpcRkCVPbs7wpXq338zhLfddgEz-vZymQhCayTDrq-cscY709ZZDahAoRUF_lL-S8H0UOYastXa3ijDJTu1"/>
+</div>
+</div>
+<h1 class="font-display text-headline-lg-mobile font-bold text-primary">HROS</h1>
+<button class="text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="w-full max-w-[375px] flex-1 px-mobile-margin py-lg pb-huge">
+<!-- Progress Indicator -->
+<div class="mb-xl">
+<div class="flex justify-between items-end mb-xs">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Day 1 Journey</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">40% Complete</span>
+</div>
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[40%] transition-all duration-1000 ease-out"></div>
+</div>
+</div>
+<!-- Success Message Card (Replaces LinkedIn Card) -->
+<section class="mb-lg animate-in fade-in slide-in-from-bottom-4 duration-500">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md success-bg-pulse flex flex-col items-center text-center gap-md">
+<div class="success-checkmark text-green-600">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold text-primary mb-base">Success!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your announcement has been shared. Welcome aboard.</p>
+</div>
+<button class="w-full h-touch-target-min border border-outline-variant font-label-sm-bold text-label-sm-bold rounded-lg hover:bg-surface-container-low transition-all">
+                    View Post
+                </button>
+</div>
+</section>
+<!-- Ongoing Tasks Section -->
+<section class="space-y-md">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-amber-500"></div>
+<h4 class="font-label-sm-bold text-label-sm-bold text-primary uppercase tracking-wider">Action Required</h4>
+</div>
+<!-- Task Card: Workspace -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h5 class="font-body-md-bold text-body-md-bold text-primary">Setup Workspace</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Order your peripheral kit</p>
+</div>
+<span class="bg-amber-100 text-amber-800 text-[11px] font-semibold px-2 py-0.5 rounded-full uppercase">Pending</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant mb-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm">Due by 5:00 PM</span>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-label-sm-bold text-label-sm-bold rounded-lg active:scale-95 transition-all">
+                    Choose Equipment
+                </button>
+</div>
+<!-- Task Card: DPDP Consent -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h5 class="font-body-md-bold text-body-md-bold text-primary">DPDP Compliance</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Personal Data Protection Consent</p>
+</div>
+<span class="bg-red-100 text-red-800 text-[11px] font-semibold px-2 py-0.5 rounded-full uppercase">Critical</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded border border-outline-variant/30 mb-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant italic">
+                        "I hereby consent to the processing of my digital personal data for employment purposes as per the Digital Personal Data Protection Act (DPDP), 2023."
+                    </p>
+</div>
+<div class="flex items-center gap-md mb-md">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="dpdp" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface" for="dpdp">I accept the terms</label>
+</div>
+<button class="w-full h-touch-target-min border border-primary text-primary font-label-sm-bold text-label-sm-bold rounded-lg active:scale-95 transition-all">
+                    Sign Declaration
+                </button>
+</div>
+</section>
+<!-- Quick Links Grid -->
+<section class="mt-xl">
+<h4 class="font-label-sm-bold text-label-sm-bold text-primary mb-md flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+                Ready Resources
+            </h4>
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-surface-container-low p-md rounded-lg flex flex-col gap-xs hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">menu_book</span>
+<span class="font-label-sm-bold text-label-sm-bold">Employee Handbook</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-lg flex flex-col gap-xs hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">groups</span>
+<span class="font-label-sm-bold text-label-sm-bold">Meet the Team</span>
+</div>
+</div>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full max-w-[375px] z-50 border-t border-outline-variant bg-surface/95 backdrop-blur-md flex justify-around items-center px-xs h-huge">
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/50 rounded-lg px-3 py-1 scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm semibold">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm semibold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm semibold">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm semibold">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the progress bar
+        window.addEventListener('DOMContentLoaded', () => {
+            const progress = document.querySelector('.bg-primary.w-\\[40\\%\\]');
+            if (progress) {
+                progress.style.width = '0%';
+                setTimeout(() => {
+                    progress.style.width = '40%';
+                }, 300);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

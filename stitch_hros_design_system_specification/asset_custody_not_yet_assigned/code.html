@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom scrollbar for minimalist look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e1e3;
+            border-radius: 10px;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "surface-dim": "#ddd9db",
+                "outline": "#78767d",
+                "on-secondary-fixed": "#151c27",
+                "surface-container-high": "#ebe7e9",
+                "tertiary-fixed-dim": "#d5c59d",
+                "inverse-on-surface": "#f4f0f2",
+                "background": "#fcf8fa",
+                "on-secondary-container": "#5e6572",
+                "secondary-fixed-dim": "#c0c7d6",
+                "on-surface": "#1c1b1d",
+                "inverse-surface": "#313032",
+                "secondary-container": "#dce2f3",
+                "secondary": "#585f6c",
+                "tertiary-container": "#b9aa83",
+                "on-primary-fixed": "#1a1a2e",
+                "on-tertiary-fixed": "#231b02",
+                "on-primary-fixed-variant": "#45455b",
+                "on-background": "#1c1b1d",
+                "on-secondary": "#ffffff",
+                "surface-bright": "#fcf8fa",
+                "primary-fixed-dim": "#c6c4df",
+                "surface-container-low": "#f6f2f4",
+                "on-tertiary-fixed-variant": "#514627",
+                "on-tertiary-container": "#493f20",
+                "tertiary": "#695d3c",
+                "surface": "#fcf8fa",
+                "on-primary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "inverse-primary": "#c6c4df",
+                "error": "#ba1a1a",
+                "surface-container-highest": "#e5e1e3",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed": "#e2e0fc",
+                "on-error-container": "#93000a",
+                "primary-container": "#1a1a2e",
+                "on-secondary-fixed-variant": "#404754",
+                "on-error": "#ffffff",
+                "on-primary-container": "#83829b",
+                "secondary-fixed": "#dce2f3",
+                "outline-variant": "#c8c5cd",
+                "surface-tint": "#5d5c74",
+                "error-container": "#ffdad6",
+                "surface-variant": "#e5e1e3",
+                "surface-container": "#f1edef",
+                "tertiary-fixed": "#f2e1b7",
+                "on-surface-variant": "#47464c",
+                "primary": "#00000b"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "huge": "64px",
+                "xl": "32px",
+                "md": "16px",
+                "lg": "24px",
+                "touch-target-min": "44px",
+                "mobile-margin": "24px",
+                "xxl": "48px",
+                "sm": "12px",
+                "base": "4px",
+                "xs": "8px"
+              },
+              "fontFamily": {
+                "label-sm": ["Geist"],
+                "body-md": ["Geist"],
+                "label-sm-bold": ["Geist"],
+                "headline-lg": ["Geist"],
+                "headline-lg-mobile": ["Geist"],
+                "display": ["Geist"],
+                "body-md-bold": ["Geist"]
+              },
+              "fontSize": {
+                "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b border-outline-variant flex items-center h-touch-target-min px-mobile-margin max-w-md mx-auto">
+<button class="mr-md text-primary active:scale-95 transition-transform duration-100" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Tasks</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col px-mobile-margin max-w-md mx-auto w-full pt-lg pb-huge">
+<!-- Header Section -->
+<section class="mb-xxl">
+<div class="flex items-center gap-xs mb-base">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Asset Custody</h2>
+<!-- Readiness Signal -->
+<div class="w-[12px] h-[12px] rounded-full bg-amber-500 shadow-sm" title="Action Needed"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                A record of the equipment assigned to you. You confirm receipt and take custody from joining day.
+            </p>
+</section>
+<!-- Empty State Container -->
+<section class="flex-1 flex flex-col items-center justify-center py-xl">
+<div class="relative w-full aspect-square max-w-[280px] mb-lg flex items-center justify-center">
+<!-- Abstract Empty State Illustration using CSS Shapes & Imagery -->
+<div class="absolute inset-0 bg-surface-container rounded-full opacity-40 blur-3xl"></div>
+<div class="relative z-10 w-full h-full rounded-xl border border-outline-variant bg-surface-container-lowest overflow-hidden flex flex-col items-center justify-center">
+<img alt="IT Hardware Management" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale" data-alt="A minimalist and high-end digital photograph of a pristine, empty workspace with a soft-focus background of an advanced IT laboratory. The lighting is high-key and bright, evoking a professional and modern office atmosphere. The color palette is composed of clean whites, light grays, and subtle deep navy blue accents. The image conveys a sense of anticipation and readiness for a new team member." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm20m_tRry3x0DROVOPn8fFQpokrvE-P6-BRCSd6AQxBA8V_Fr0FOkD1n1Bp8I2d55Bv3oYWmOqLOm-sz4kUjSzWw07-kUMhGati1zezRTgx72GgRCtFv9LfvGniEVuEXZX3lEPbTYwUSLe152YAhYkd26ER4FjiKwJkyrF2AMB56-4mwRLataj3Cr8tNklbQ7JQrwAErnubjvt0wfeGLxcZsYDmXnXJ4n0j9q-LG9OvADaL6BBpQe8-MAto3j-xE1bRyAa90gTQlt"/>
+<div class="bg-white/80 p-lg rounded-full backdrop-blur-sm border border-outline-variant shadow-sm mb-md">
+<span class="material-symbols-outlined text-[48px] text-primary" style="font-variation-settings: 'wght' 200;">inventory_2</span>
+</div>
+</div>
+</div>
+<div class="text-center px-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Your equipment list will appear here once your IT team prepares it, usually by <span class="font-body-md-bold text-on-surface">[T-3]</span>
+</p>
+</div>
+</section>
+<!-- Contextual Support Block (Progressive Disclosure) -->
+<div class="mt-auto border border-outline-variant bg-surface-container-low rounded-xl p-md">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-outline">info</span>
+<div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface block mb-base">Why is this empty?</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                        Our IT operations team initiates hardware procurement 72 hours prior to your joining date to ensure latest security patches are applied.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- AI Concierge Trigger (Distinctive Layer) -->
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center h-huge px-md pb-safe max-w-md mx-auto left-0 right-0">
+<!-- Journey -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm text-label-sm mt-base">Journey</span>
+</a>
+<!-- Tasks (Active State) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-xs py-base active:scale-90 transition-all duration-200" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm mt-base">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm mt-base">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-base">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-xs py-base hover:bg-surface-container-high transition-colors active:scale-90 duration-200" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-base">You</span>
+</a>
+</nav>
+<!-- Subtle Animation Micro-interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const emptyStateIcon = document.querySelector('.material-symbols-outlined.text-\\[48px\\]');
+            if (emptyStateIcon) {
+                // Gentle breathing effect for the empty state icon
+                let scale = 1;
+                let direction = 1;
+                setInterval(() => {
+                    scale += 0.005 * direction;
+                    if (scale > 1.05 || scale < 0.95) direction *= -1;
+                    emptyStateIcon.style.transform = `scale(${scale})`;
+                }, 50);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

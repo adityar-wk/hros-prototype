@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS — First Week Schedule</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e5e1e3",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-bright": "#fcf8fa",
+                        "on-background": "#1c1b1d",
+                        "surface-container-low": "#f6f2f4",
+                        "error": "#ba1a1a",
+                        "background": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "on-primary-container": "#83829b",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#404754",
+                        "tertiary-fixed": "#f2e1b7",
+                        "tertiary-container": "#b9aa83",
+                        "surface-dim": "#ddd9db",
+                        "tertiary": "#695d3c",
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface-container": "#f1edef",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-secondary-fixed": "#151c27",
+                        "primary": "#00000b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ebe7e9",
+                        "on-primary-fixed": "#1a1a2e",
+                        "outline": "#78767d",
+                        "on-tertiary-container": "#493f20",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#47464c",
+                        "inverse-surface": "#313032",
+                        "on-surface": "#1c1b1d",
+                        "surface-tint": "#5d5c74",
+                        "primary-container": "#1a1a2e",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "outline-variant": "#c8c5cd",
+                        "primary-fixed": "#e2e0fc",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed": "#dce2f3",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface": "#fcf8fa",
+                        "on-primary-fixed-variant": "#45455b",
+                        "secondary-container": "#dce2f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "16px",
+                        "huge": "64px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "mobile-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed min-h-screen pb-huge">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center px-mobile-margin h-touch-target-min w-full max-w-md mx-auto">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">First Week</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<div class="w-xs h-xs bg-error rounded-full absolute top-3 right-5 border-2 border-surface"></div>
+<div class="w-touch-target-min h-touch-target-min rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional studio portrait of a young Indian software engineer in a modern office setting. The lighting is soft and natural, emphasizing a clean and high-end aesthetic. The background is a slightly blurred, minimalist workspace with light-toned wooden furniture and neutral-colored walls, consistent with a radical reduction design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR3yzT7vNTxVTc6v0vaaESc5m_FlWGvcJ7I9S7T2h1Gef-P18waaFjdJp-nbF3znyVBALCTHaotF_fkO69qqZF6G71YXUJhvMCsYQdxsyPNS-M8okIifx52CeU_wU4pc0g2FvYu6ArejyjuWDuw1W8IS1mFkDmKj-fGhPvgFKLteIhPPh5i5433bnEWojNoL4Op8YcFsbV-IK89mt3fUPcyhH6qVJuN6lMsm09qKMTkQLjJ19rjEd18vWc3V6UG3ZmlYYtCZocRBYV"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-huge px-mobile-margin max-w-md mx-auto">
+<!-- Week Progress Header -->
+<section class="py-lg">
+<div class="flex justify-between items-end mb-xs">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">YOUR ONBOARDING JOURNEY</p>
+<p class="font-label-sm-bold text-label-sm-bold text-primary">40% Complete</p>
+</div>
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[40%] h-full bg-primary transition-all duration-700"></div>
+</div>
+</section>
+<!-- Timeline -->
+<div class="space-y-md">
+<!-- Monday (Past) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex items-center justify-between opacity-60">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<h2 class="font-body-md-bold text-body-md-bold">Monday</h2>
+</div>
+<p class="font-label-sm text-label-sm">4 sessions completed</p>
+</div>
+</section>
+<!-- Tuesday (Active Day) -->
+<section class="space-y-sm">
+<div class="flex items-center gap-xs pb-xs">
+<div class="w-3 h-3 bg-primary rounded-full ring-4 ring-primary-fixed"></div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile">Tuesday</h2>
+<span class="font-label-sm-bold text-label-sm-bold px-xs py-0.5 bg-primary-container text-on-primary-container rounded-full uppercase tracking-wider ml-auto">Today</span>
+</div>
+<!-- Session: Culture Induction -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md relative">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">09:00 AM — 10:00 AM</p>
+<h3 class="font-body-md-bold text-body-md-bold">Culture Induction</h3>
+</div>
+<span class="material-symbols-outlined text-outline">history</span>
+</div>
+<div class="flex items-center gap-md mb-md">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">meeting_room</span>
+<span class="font-label-sm text-label-sm">Townhall</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-label-sm text-label-sm">Karan Singh</span>
+</div>
+</div>
+<button class="w-full h-touch-target-min border border-primary text-primary font-label-sm-bold text-label-sm-bold rounded-lg hover:bg-surface-container-low active:scale-[0.98] transition-all" onclick="window.top.goTo(\'day_1_portal_default_state\')">
+                        Mark attended
+                    </button>
+</div>
+<!-- Session: Engineering Deep Dive -->
+<div class="bg-surface-container-lowest border border-primary rounded-lg p-md shadow-sm">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-sm text-label-sm text-primary mb-1">10:00 AM — 12:00 PM</p>
+<h3 class="font-body-md-bold text-body-md-bold">Engineering Deep Dive</h3>
+</div>
+<div class="flex h-6 items-center px-xs bg-surface-container-high rounded text-primary text-[10px] font-bold">NEXT UP</div>
+</div>
+<div class="flex flex-wrap gap-md mb-md">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">meeting_room</span>
+<span class="font-label-sm text-label-sm">Room 402</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-label-sm text-label-sm">Rahul Verma</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex items-center justify-between">
+<p class="font-label-sm text-label-sm text-on-surface-variant italic">Don't forget your laptop charger.</p>
+<span class="material-symbols-outlined text-outline">lightbulb</span>
+</div>
+</div>
+<!-- Session: Product Roadmap -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">02:00 PM — 03:30 PM</p>
+<h3 class="font-body-md-bold text-body-md-bold">Product Roadmap</h3>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+<span class="font-label-sm text-label-sm font-semibold underline">Video Link</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-label-sm text-label-sm">Anjali Das</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Wednesday (Collapsed) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex items-center justify-between group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">calendar_today</span>
+<h2 class="font-body-md text-body-md">Wednesday</h2>
+</div>
+<div class="flex items-center gap-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">3 sessions</p>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</section>
+<!-- Thursday (Collapsed) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex items-center justify-between group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">calendar_today</span>
+<h2 class="font-body-md text-body-md">Thursday</h2>
+</div>
+<div class="flex items-center gap-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">2 sessions</p>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</section>
+<!-- Friday (Collapsed) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex items-center justify-between group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">calendar_today</span>
+<h2 class="font-body-md text-body-md">Friday</h2>
+</div>
+<div class="flex items-center gap-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">1 session</p>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</section>
+</div>
+<!-- AI Concierge Trigger -->
+
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-safe h-huge bg-surface border-t border-outline-variant">
+<!-- Journey Tab (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-xs py-base transition-all duration-200 active:scale-90" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-1">Journey</span>
+</a>
+<!-- Tasks Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">checklist</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-1">Tasks</span>
+</a>
+<!-- Feed Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-1">Feed</span>
+</a>
+<!-- AI Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-1">AI</span>
+</a>
+<!-- You Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-1">You</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for session marking
+        document.querySelectorAll('button').forEach(btn => {
+            if (btn.textContent.trim() === 'Mark attended') {
+                btn.addEventListener('click', function() {
+                    const card = this.closest('div.bg-surface-container-lowest');
+                    this.innerHTML = '<span class="material-symbols-outlined text-[18px] mr-1">check</span> Done';
+                    this.classList.remove('border-primary', 'text-primary');
+                    this.classList.add('bg-primary', 'text-on-primary');
+                    card.classList.add('opacity-60', 'transition-opacity', 'duration-500');
+                    
+                    // Trigger a small haptic-like visual effect
+                    card.style.transform = 'scale(0.98)';
+                    setTimeout(() => card.style.transform = 'scale(1)', 150);
+                });
+            }
+        });
+
+        // Simple collapse toggle logic
+        document.querySelectorAll('.group.cursor-pointer').forEach(row => {
+            row.addEventListener('click', function() {
+                const day = this.querySelector('h2').textContent;
+                console.log('Navigating to ' + day + ' details');
+                // Potential expansion logic or navigation here
+                this.classList.toggle('bg-primary-fixed');
+                setTimeout(() => this.classList.remove('bg-primary-fixed'), 300);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

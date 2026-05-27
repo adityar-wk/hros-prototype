@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#f2e1b7",
+                    "surface-tint": "#5d5c74",
+                    "on-tertiary-container": "#493f20",
+                    "surface-container-high": "#ebe7e9",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf8fa",
+                    "on-primary-fixed-variant": "#45455b",
+                    "outline": "#78767d",
+                    "tertiary-container": "#b9aa83",
+                    "surface-container-low": "#f6f2f4",
+                    "on-secondary-fixed": "#151c27",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#1a1a2e",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e5e1e3",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#dce2f3",
+                    "inverse-on-surface": "#f4f0f2",
+                    "on-surface-variant": "#47464c",
+                    "primary": "#00000b",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "surface-container": "#f1edef",
+                    "surface-container-highest": "#e5e1e3",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-dim": "#ddd9db",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-tertiary-fixed": "#231b02",
+                    "secondary": "#585f6c",
+                    "primary-container": "#1a1a2e",
+                    "on-secondary-container": "#5e6572",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-container": "#dce2f3",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#313032",
+                    "inverse-primary": "#c6c4df",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-background": "#1c1b1d",
+                    "outline-variant": "#c8c5cd",
+                    "on-primary-container": "#83829b",
+                    "tertiary": "#695d3c",
+                    "on-surface": "#1c1b1d",
+                    "background": "#fcf8fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "mobile-margin": "24px",
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "huge": "64px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-primary min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background border-b border-outline-variant dark:border-on-surface-variant flex items-center justify-between px-mobile-margin w-full h-[64px] fixed top-0 z-50">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:scale-95 transition-transform duration-200" data-icon="arrow_back">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-on-surface dark:text-on-primary-fixed">Policies</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</div>
+</header>
+<main class="flex-grow pt-[64px] pb-[100px] px-mobile-margin">
+<!-- Hero/Header Section -->
+<section class="mt-lg mb-xl">
+<div class="flex items-center gap-xs mb-base">
+<span class="w-3 h-3 rounded-full bg-[#FFB300]" title="Action Needed"></span>
+<span class="font-label-sm-bold text-label-sm-bold text-secondary uppercase tracking-wider">Onboarding Queue</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Review and sign the organization's policies to finalize your onboarding.</p>
+</section>
+<!-- Progress Overview (Radical Reduction style) -->
+<div class="mb-lg p-md bg-surface-container-low border border-outline-variant rounded-xl flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface">Overall Completion</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1 of 6 steps completed</span>
+</div>
+<div class="relative flex items-center justify-center w-12 h-12">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-variant" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="104.7" stroke-width="4"></circle>
+</svg>
+<span class="absolute font-label-sm-bold text-label-sm-bold">17%</span>
+</div>
+</div>
+<!-- Policy List -->
+<div class="space-y-md">
+<!-- 1. Code of Conduct (Signed) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md-bold text-body-md-bold">Code of Conduct</h3>
+<div class="px-3 py-1 bg-green-100 text-green-800 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm-bold text-label-sm-bold">Signed</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-2">The guiding principles that define our professional behavior and ethical standards within the workplace.</p>
+</div>
+<!-- 2. Confidentiality Agreement (Pending) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md-bold text-body-md-bold">Confidentiality Agreement (NDA)</h3>
+<div class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full flex items-center gap-1">
+<span class="font-label-sm-bold text-label-sm-bold">Pending</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-2">Legally binding agreement to protect sensitive company information and trade secrets from disclosure.</p>
+<button class="mt-xs h-[44px] w-full bg-primary text-on-primary rounded-lg font-label-sm-bold text-label-sm-bold active:scale-95 transition-all">Review &amp; Sign</button>
+</div>
+<!-- 3. IT Acceptable Use Policy (Pending) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md-bold text-body-md-bold">IT Acceptable Use Policy</h3>
+<div class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full flex items-center gap-1">
+<span class="font-label-sm-bold text-label-sm-bold">Pending</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-2">Guidelines for the appropriate and safe use of company technology resources and networks.</p>
+<button class="mt-xs h-[44px] w-full border border-primary text-primary rounded-lg font-label-sm-bold text-label-sm-bold active:scale-95 transition-all">Review</button>
+</div>
+<!-- 4. Conflict of Interest Policy (Pending) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md-bold text-body-md-bold">Conflict of Interest Policy</h3>
+<div class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full flex items-center gap-1">
+<span class="font-label-sm-bold text-label-sm-bold">Pending</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-2">Instructions on identifying and disclosing situations where personal interests may overlap with corporate ones.</p>
+<button class="mt-xs h-[44px] w-full border border-primary text-primary rounded-lg font-label-sm-bold text-label-sm-bold active:scale-95 transition-all">Review</button>
+</div>
+<!-- 5. PoSH Policy (Mandatory + Quiz) -->
+<div class="bg-surface-container-lowest border border-error/20 border-2 rounded-xl p-md flex flex-col gap-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-1">
+<div class="bg-error text-white text-[10px] px-2 py-0.5 rounded-bl-lg font-bold uppercase tracking-tighter">Mandatory</div>
+</div>
+<div class="flex justify-between items-start pr-12">
+<h3 class="font-body-md-bold text-body-md-bold">PoSH Policy</h3>
+<div class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full flex items-center gap-1">
+<span class="font-label-sm-bold text-label-sm-bold">Action Needed</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-2">Prevention of Sexual Harassment policy guidelines. Completion of a mandatory quiz is required for certification.</p>
+<div class="bg-error-container p-sm rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-error-container" data-icon="quiz">quiz</span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-error-container">Certification Quiz Required</span>
+</div>
+<button class="mt-xs h-[44px] w-full bg-error text-on-error rounded-lg font-label-sm-bold text-label-sm-bold active:scale-95 transition-all" onclick="window.location.href='../posh_policy_content_quiz/code.html'">Start Quiz &amp; Sign</button>
+</div>
+<!-- 6. Anti-Bribery Policy (Pending) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md-bold text-body-md-bold">Anti-Bribery Policy</h3>
+<div class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full flex items-center gap-1">
+<span class="font-label-sm-bold text-label-sm-bold">Pending</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-2">Our zero-tolerance commitment against bribery and corruption in all business dealings and geographies.</p>
+<button class="mt-xs h-[44px] w-full border border-primary text-primary rounded-lg font-label-sm-bold text-label-sm-bold active:scale-95 transition-all">Review</button>
+</div>
+</div>
+<!-- AI Concierge Trigger -->
+
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 h-[80px] bg-surface dark:bg-on-background border-t border-outline-variant dark:border-on-surface-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-transform duration-150" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-sm text-label-sm">Documents</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+<script>
+        // Simple haptic-like interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('touchstart', () => {
+                // Potential vibration logic if available on mobile
+            });
+        });
+
+        // Toggle Active States visually for demo
+        const navItems = document.querySelectorAll('nav > div');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navItems.forEach(i => {
+                    i.classList.remove('bg-primary-container', 'text-on-primary-container', 'rounded-xl');
+                    i.classList.add('text-on-surface-variant');
+                });
+                item.classList.add('bg-primary-container', 'text-on-primary-container', 'rounded-xl');
+                item.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

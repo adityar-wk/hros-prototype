@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#e2e0fc",
+            "outline-variant": "#c8c5cd",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#ebe7e9",
+            "on-primary-fixed": "#1a1a2e",
+            "on-secondary-fixed-variant": "#404754",
+            "surface-container": "#f1edef",
+            "primary-container": "#1a1a2e",
+            "inverse-on-surface": "#f4f0f2",
+            "surface-dim": "#ddd9db",
+            "secondary-fixed-dim": "#c0c7d6",
+            "on-primary-container": "#83829b",
+            "error": "#ba1a1a",
+            "surface-variant": "#e5e1e3",
+            "surface": "#fcf8fa",
+            "inverse-primary": "#c6c4df",
+            "surface-container-highest": "#e5e1e3",
+            "on-error": "#ffffff",
+            "secondary-container": "#dce2f3",
+            "tertiary": "#695d3c",
+            "secondary-fixed": "#dce2f3",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#493f20",
+            "on-primary-fixed-variant": "#45455b",
+            "surface-container-low": "#f6f2f4",
+            "secondary": "#585f6c",
+            "on-secondary-container": "#5e6572",
+            "on-surface": "#1c1b1d",
+            "on-tertiary-fixed": "#231b02",
+            "tertiary-fixed": "#f2e1b7",
+            "inverse-surface": "#313032",
+            "surface-tint": "#5d5c74",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#47464c",
+            "tertiary-fixed-dim": "#d5c59d",
+            "on-tertiary-fixed-variant": "#514627",
+            "on-secondary": "#ffffff",
+            "background": "#fcf8fa",
+            "tertiary-container": "#b9aa83",
+            "on-secondary-fixed": "#151c27",
+            "on-background": "#1c1b1d",
+            "error-container": "#ffdad6",
+            "primary": "#00000b",
+            "surface-bright": "#fcf8fa",
+            "primary-fixed-dim": "#c6c4df",
+            "outline": "#78767d",
+            "on-primary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "xxl": "48px",
+            "touch-target-min": "44px",
+            "xl": "32px",
+            "xs": "8px",
+            "sm": "12px",
+            "base": "4px",
+            "lg": "24px",
+            "md": "16px",
+            "huge": "64px",
+            "mobile-margin": "24px"
+          },
+          "fontFamily": {
+            "display": ["Geist"],
+            "body-md": ["Geist"],
+            "headline-lg": ["Geist"],
+            "label-sm-bold": ["Geist"],
+            "body-md-bold": ["Geist"],
+            "label-sm": ["Geist"],
+            "headline-lg-mobile": ["Geist"]
+          },
+          "fontSize": {
+            "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+            "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+            "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scroll::-webkit-scrollbar { width: 4px; }
+    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #c8c5cd; border-radius: 10px; }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-huge">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-surface z-50 border-b border-outline-variant flex items-center justify-between px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-md">
+<button class="active:opacity-70 transition-opacity" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Resignation Tracker</h1>
+</div>
+<button class="active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-primary">help_outline</span>
+</button>
+</header>
+<main class="pt-[60px] px-mobile-margin max-w-md mx-auto">
+<!-- Status Bar: Pending Review (Replaces Red/Amber signals) -->
+<section class="mt-lg mb-lg">
+<div class="bg-tertiary-container/20 border border-tertiary-container rounded-xl p-md flex items-start gap-sm">
+<span class="material-symbols-outlined text-tertiary mt-base" style="font-variation-settings: 'FILL' 1;">pending</span>
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-tertiary-container">Pending Review</h2>
+<p class="font-label-sm text-label-sm text-on-tertiary-fixed-variant mt-base">Your requested joining date change is currently being reviewed by HR. We will notify you once approved.</p>
+</div>
+</div>
+</section>
+<!-- Date Change Status Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md mb-lg">
+<div class="flex justify-between items-center mb-md">
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-wider">Joining Details</span>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm-bold text-label-sm-bold px-sm py-base rounded-full">
+          HR approval pending
+        </div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Original Date</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">Oct 24, 2023</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Requested Date</p>
+<p class="font-body-md-bold text-body-md-bold text-tertiary">Nov 15, 2023</p>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Reason for change</p>
+<p class="font-body-md text-body-md text-on-surface mt-xs">Need to complete knowledge transfer for my current critical project and serve the full notice period requested by my previous employer.</p>
+</div>
+</div>
+<!-- Next Tasks Section -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 bg-tertiary rounded-full"></div>
+<h3 class="font-body-md-bold text-body-md-bold">Onboarding Tasks</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">40% Complete</span>
+</div>
+<div class="space-y-md">
+<!-- Task Card 1 (Locked) -->
+<div class="bg-surface-container border border-outline-variant opacity-60 rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">lock</span>
+<div>
+<p class="font-body-md-bold text-body-md-bold">Sign Employment Agreement</p>
+<p class="font-label-sm text-label-sm">Awaiting date confirmation</p>
+</div>
+</div>
+</div>
+<!-- Task Card 2 (In Progress) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
+<div class="flex items-center justify-between mb-xs">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">upload_file</span>
+<p class="font-body-md-bold text-body-md-bold">Previous Employer Relieving Letter</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container font-label-sm-bold text-label-sm-bold px-xs py-base rounded">
+              Action Needed
+            </div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md ml-xl">Required for background verification.</p>
+<button class="ml-xl bg-primary text-on-primary font-label-sm-bold text-label-sm-bold h-touch-target-min px-lg rounded-lg active:scale-95 transition-transform">
+            Upload Document
+          </button>
+</div>
+</div>
+</section>
+<!-- Visual Anchor / Branding -->
+<div class="mt-huge mb-xl text-center">
+<div class="w-16 h-1 bg-outline-variant mx-auto mb-lg rounded-full"></div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Journey tracked via Resignation Tracker OS</p>
+</div>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center px-sm py-xs pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-md py-base">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-base">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary bg-secondary-container rounded-full px-md py-base active:scale-95 transition-transform duration-200" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-base">Journey</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-md py-base" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-base">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-md py-base">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-base">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-md py-base">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm-bold text-label-sm-bold mt-base">Profile</span>
+</button>
+</nav>
+<script>
+    // Micro-interactions for feedback
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('touchstart', function() {
+        this.style.opacity = '0.7';
+      });
+      button.addEventListener('touchend', function() {
+        this.style.opacity = '1';
+      });
+    });
+  </script>
+<script src="../nav.js"></script>
+</body></html>

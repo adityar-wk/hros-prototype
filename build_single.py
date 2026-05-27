@@ -44,6 +44,48 @@ def patch_navigation(html):
 
     return html
 
+def inject_global_css(html):
+    """Inject unified typography CSS and Geist font into every screen."""
+
+    # First, ensure Geist font is loaded if not already present
+    if 'Geist:wght' not in html:
+        geist_link = '<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>'
+        if '</head>' in html:
+            html = html.replace('</head>', geist_link + '</head>')
+        elif '<head>' in html:
+            html = html.replace('<head>', '<head>' + geist_link)
+
+    global_css = """
+    <style>
+    /* ─── Global Font Family Unification (Geist only) ─── */
+    * { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif !important; }
+    body { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif !important; }
+
+    /* Ensure Material Symbols still work */
+    .material-symbols-outlined { font-family: 'Material Symbols Outlined' !important; }
+
+    /* Fix button text visibility - only for dark buttons */
+    button.bg-primary { color: #ffffff !important; }
+    button[class*="bg-primary"] { color: #ffffff !important; }
+    button[style*="background:#00000b"] { color: #ffffff !important; }
+    button[style*="background: #00000b"] { color: #ffffff !important; }
+
+    /* Light/white buttons should have dark text */
+    button.bg-white,
+    button.bg-surface,
+    button.border { color: #1c1b1d !important; }
+    </style>
+    """
+
+    # Insert into <head> section, before closing </head>
+    if '</head>' in html:
+        html = html.replace('</head>', global_css + '</head>')
+    elif '<head>' in html:
+        # If no closing tag, add before first body element
+        html = html.replace('<body', global_css + '<body')
+
+    return html
+
 # ── scenario flows — full coverage ───────────────────────────────────────────
 FLOWS = [
     # ── Offer Review ─────────────────────────────────────────────────────────
@@ -342,6 +384,7 @@ for folder in sorted(os.listdir(BASE)):
         continue
 
     html = patch_navigation(html)
+    html = inject_global_css(html)
     screens[folder] = html
 
 print(f'Loaded {len(screens)} screens')
@@ -740,6 +783,10 @@ master = f"""<!DOCTYPE html>
 
     <!-- AI Chat Popup — lives inside the phone frame, above the iframe -->
     <div id="ai-popup">
+      <!-- AI Screen Content (actual screen design) -->
+      <iframe id="ai-screen-frame" style="position:absolute; inset:0; width:100%; height:100%; border:none; border-radius:48px; display:none;"></iframe>
+
+      <!-- Chat Fallback (shown if no screen content) -->
       <div id="ai-sheet">
         <div id="ai-header">
           <div id="ai-title">
@@ -787,9 +834,9 @@ let _history = [];
 let _current = null;
 
 function goTo(id) {{
-  // AI screens → popup, not navigation
+  // AI screens → show in popup overlay, not full navigation
   if (AI_SCREENS.has(id)) {{
-    openAIChat();
+    openAIChat(id);
     return;
   }}
   if (!SCREENS[id]) {{
@@ -845,9 +892,24 @@ const AI_RESPONSES = [
 ];
 let _aiIdx = 0;
 
-function openAIChat() {{
-  document.getElementById('ai-popup').classList.add('open');
-  document.getElementById('ai-input').focus();
+function openAIChat(screenId) {{
+  const popup = document.getElementById('ai-popup');
+  const screenFrame = document.getElementById('ai-screen-frame');
+  const chatSheet = document.getElementById('ai-sheet');
+
+  popup.classList.add('open');
+
+  // If screenId provided, show actual AI screen content
+  if (screenId && SCREENS[screenId]) {{
+    screenFrame.srcdoc = SCREENS[screenId];
+    screenFrame.style.display = 'block';
+    chatSheet.style.display = 'none';
+  }} else {{
+    // Fallback to chat UI
+    screenFrame.style.display = 'none';
+    chatSheet.style.display = 'flex';
+    document.getElementById('ai-input').focus();
+  }}
 }}
 window.openAIChat = openAIChat;
 

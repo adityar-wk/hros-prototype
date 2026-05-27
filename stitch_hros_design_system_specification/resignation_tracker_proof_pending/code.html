@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e2e0fc",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe7e9",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-secondary-fixed-variant": "#404754",
+                        "surface-container": "#f1edef",
+                        "primary-container": "#1a1a2e",
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-primary-container": "#83829b",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e1e3",
+                        "surface": "#fcf8fa",
+                        "inverse-primary": "#c6c4df",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#dce2f3",
+                        "tertiary": "#695d3c",
+                        "secondary-fixed": "#dce2f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#493f20",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-container-low": "#f6f2f4",
+                        "secondary": "#585f6c",
+                        "on-secondary-container": "#5e6572",
+                        "on-surface": "#1c1b1d",
+                        "on-tertiary-fixed": "#231b02",
+                        "tertiary-fixed": "#f2e1b7",
+                        "inverse-surface": "#313032",
+                        "surface-tint": "#5d5c74",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#47464c",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf8fa",
+                        "tertiary-container": "#b9aa83",
+                        "on-secondary-fixed": "#151c27",
+                        "on-background": "#1c1b1d",
+                        "error-container": "#ffdad6",
+                        "primary": "#00000b",
+                        "surface-bright": "#fcf8fa",
+                        "primary-fixed-dim": "#c6c4df",
+                        "outline": "#78767d",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "huge": "64px",
+                        "mobile-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .upload-zone-pulse:active {
+            background-color: #f1edef;
+            transform: scale(0.98);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-surface z-50 flex items-center justify-between px-mobile-margin h-touch-target-min border-b border-outline-variant">
+<button class="flex items-center justify-center w-10 h-10 hover:bg-surface-container-low transition-colors rounded-full active:opacity-70" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Resignation Tracker</h1>
+<button class="flex items-center justify-center w-10 h-10 hover:bg-surface-container-low transition-colors rounded-full active:opacity-70">
+<span class="material-symbols-outlined text-primary">help_outline</span>
+</button>
+</header>
+<main class="mt-[44px] mb-[80px] px-mobile-margin pt-lg flex-col flex gap-lg">
+<!-- Header Section -->
+<section class="flex flex-col gap-base">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-amber-500"></span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-wider">Joining Protection</span>
+</div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">Please upload proof that you have submitted your resignation.</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                This helps us confirm your joining date is achievable and ensures a smooth transition into your new role.
+            </p>
+</section>
+<!-- Form Section -->
+<div class="flex flex-col gap-md">
+<!-- Employer Field -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant px-base">Employer Name</label>
+<input class="h-touch-target-min px-md border border-outline-variant bg-surface rounded-lg focus:outline-none focus:border-primary font-body-md text-body-md" placeholder="Current Company Ltd." type="text"/>
+</div>
+<!-- Date Field -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant px-base">Date Submitted</label>
+<div class="relative">
+<input class="w-full h-touch-target-min px-md border border-outline-variant bg-surface rounded-lg focus:outline-none focus:border-primary font-body-md text-body-md" type="date"/>
+</div>
+</div>
+<!-- Doc Type Field -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant px-base">Document Type</label>
+<select class="h-touch-target-min px-md border border-outline-variant bg-surface rounded-lg focus:outline-none focus:border-primary font-body-md text-body-md appearance-none">
+<option>Acknowledgement Email</option>
+<option>Acceptance Letter</option>
+<option>Relieving Request</option>
+</select>
+</div>
+</div>
+<!-- HROS Upload Zone -->
+<section class="flex flex-col gap-xs">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant px-base">Document Upload</label>
+<div class="upload-zone-pulse border-2 border-dashed border-outline-variant rounded-xl p-xl flex flex-col items-center justify-center gap-md bg-surface-container-lowest transition-all cursor-pointer">
+<div class="flex gap-lg">
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white">camera_alt</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold">Camera</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">upload_file</span>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold">Files</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-outline text-center">Supported: PDF, PNG, JPG (Max 5MB)</p>
+</div>
+</section>
+<!-- Compliance & CTA -->
+<section class="mt-md flex flex-col gap-md">
+<div class="p-md border border-outline-variant rounded-lg bg-surface-container-low flex gap-md">
+<input class="w-5 h-5 mt-1 rounded border-outline-variant text-primary focus:ring-primary" id="consent" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant leading-snug" for="consent">
+                    I declare that the information provided is accurate and the uploaded document is a true copy of my resignation submission as per DPDP compliance guidelines.
+                </label>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-white font-body-md-bold text-body-md-bold rounded-full active:scale-[0.98] transition-transform flex items-center justify-center" onclick="window.location.href='../resignation_tracker_acceptance_pending/code.html'">
+                Submit Resignation Proof
+            </button>
+</section>
+</main>
+<!-- AI Concierge Trigger -->
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm py-xs pb-safe bg-surface border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all py-xs rounded-lg px-md" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm-bold text-label-sm-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all py-xs rounded-lg px-md" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm-bold text-label-sm-bold">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container rounded-full px-md py-base transition-all" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+<span class="font-label-sm-bold text-label-sm-bold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all py-xs rounded-lg px-md" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-sm-bold text-label-sm-bold">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all py-xs rounded-lg px-md" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">Profile</span>
+</a>
+</nav>
+<script src="../nav.js"></script>
+</body></html>

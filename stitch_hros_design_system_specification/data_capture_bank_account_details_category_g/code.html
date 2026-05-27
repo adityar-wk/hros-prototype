@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Radical Reduction Input Styling */
+        .input-field {
+            @apply w-full h-[44px] px-md border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all text-body-md outline-none rounded-none;
+        }
+        .input-label {
+            @apply block text-label-sm-bold text-on-surface-variant mb-base;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#5d5c74",
+                      "primary-fixed": "#e2e0fc",
+                      "secondary-container": "#dce2f3",
+                      "on-tertiary-container": "#493f20",
+                      "on-secondary-container": "#5e6572",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "surface-variant": "#e5e1e3",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#83829b",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "surface": "#fcf8fa",
+                      "surface-container-high": "#ebe7e9",
+                      "inverse-primary": "#c6c4df",
+                      "surface-bright": "#fcf8fa",
+                      "primary": "#00000b",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#1a1a2e",
+                      "inverse-on-surface": "#f4f0f2",
+                      "secondary-fixed": "#dce2f3",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#c6c4df",
+                      "on-surface-variant": "#47464c",
+                      "surface-container-highest": "#e5e1e3",
+                      "tertiary-fixed": "#f2e1b7",
+                      "on-error-container": "#93000a",
+                      "on-surface": "#1c1b1d",
+                      "outline": "#78767d",
+                      "on-primary-fixed-variant": "#45455b",
+                      "on-secondary-fixed-variant": "#404754",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#ddd9db",
+                      "on-secondary-fixed": "#151c27",
+                      "tertiary-container": "#b9aa83",
+                      "background": "#fcf8fa",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "secondary": "#585f6c",
+                      "inverse-surface": "#313032",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#c8c5cd",
+                      "on-tertiary-fixed": "#231b02",
+                      "on-background": "#1c1b1d",
+                      "surface-container": "#f1edef",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f6f2f4",
+                      "tertiary": "#695d3c",
+                      "primary-container": "#1a1a2e",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "mobile-margin": "24px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "huge": "64px",
+                      "sm": "12px",
+                      "lg": "24px",
+                      "xxl": "48px",
+                      "xs": "8px",
+                      "touch-target-min": "44px"
+              },
+              "fontFamily": {
+                      "label-sm-bold": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "display": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "body-md-bold": ["Geist"],
+                      "body-md": ["Geist"]
+              },
+              "fontSize": {
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen pb-huge">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant flex items-center justify-between px-lg h-huge w-full">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<button class="active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+<span class="font-display text-headline-lg-mobile tracking-tighter text-primary">HROS</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a candidate in a minimalist light grey studio. The lighting is soft and corporate, fitting an enterprise software context. The subject has a calm, confident expression, looking directly at the camera. High-resolution photography with a shallow depth of field, emphasizing clarity and modern professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJb4g1E1Zsno-3woG6MHIdopEyHBfTYaxJulPiAtbWFncdiKmjC7gEV_SG5XyhNuUfKeHoNR2Z2ospl1SvDmyPTDmHvv36zL6f_j8FmBNZEZcZomsUIvmT7-2W2Ev3-gv93iGVc8DcpGFSqmAR1lJLJ9AbPeAQ7eltnJg0qsQCFPgSbpxObBAHqDchK7iI6920WgVEKYtgiBQY08-RY1nUm4_eMp5f2vVAGfs7RD-3fXbxq-kUyOkrT-5fAKRKCLEgEtAfYheC8eT_"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-huge px-mobile-margin max-w-md mx-auto">
+<!-- Header Section -->
+<section class="mt-xl mb-lg">
+<div class="flex justify-between items-center mb-base">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Bank Account Details</h1>
+<div class="px-sm py-[2px] bg-[#E8F5E9] text-[#2E7D32] text-[11px] font-bold rounded-full uppercase tracking-wider">
+                    Required
+                </div>
+</div>
+<p class="text-on-surface-variant text-label-sm">
+                Your bank details ensure your salary reaches you correctly and on time.
+            </p>
+<!-- Progress Bar -->
+<div class="mt-lg w-full bg-surface-container h-1 overflow-hidden">
+<div class="bg-primary h-full w-2/3 transition-all duration-700 ease-out"></div>
+</div>
+<div class="flex justify-between mt-base">
+<span class="text-[11px] font-label-sm-bold text-on-surface-variant">Step 4 of 6</span>
+<span class="text-[11px] font-label-sm-bold text-on-surface-variant">66% Complete</span>
+</div>
+</section>
+<!-- Form Section -->
+<div class="space-y-xl">
+<!-- Account Number -->
+<div class="group">
+<label class="input-label" for="acc-num">Account Number</label>
+<input class="input-field border-outline-variant" id="acc-num" placeholder="Enter account number" type="password" value="1234567890"/>
+</div>
+<!-- Re-enter Account Number -->
+<div class="group">
+<label class="input-label" for="acc-num-re">Re-enter Account Number</label>
+<input class="input-field border-outline-variant" id="acc-num-re" placeholder="Repeat account number" type="text" value="1234567890"/>
+</div>
+<!-- IFSC Code with Live Lookup -->
+<div class="group">
+<label class="input-label" for="ifsc">IFSC Code</label>
+<div class="relative">
+<input class="input-field border-primary" id="ifsc" placeholder="Enter IFSC code" type="text" value="HDFC0000411"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-[#2E7D32]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Confidence Check Block -->
+<div class="mt-sm p-md bg-surface-container-low border border-outline-variant flex gap-sm items-start">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">account_balance</span>
+<div>
+<p class="text-body-md-bold text-on-surface leading-none">HDFC Bank</p>
+<p class="text-label-sm text-on-surface-variant mt-[2px]">Koramangala Branch, Bangalore</p>
+</div>
+</div>
+</div>
+<!-- Account Type -->
+<div class="group">
+<label class="input-label" for="acc-type">Account Type</label>
+<div class="relative">
+<select class="input-field appearance-none border-outline-variant pr-huge" id="acc-type">
+<option>Salary</option>
+<option>Savings</option>
+<option>Current</option>
+</select>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Status Indicator Section -->
+<div class="space-y-md">
+<!-- Penny-drop message -->
+<div class="flex items-center gap-sm px-md py-sm bg-surface-container border border-outline-variant animate-pulse">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">hourglass_empty</span>
+<p class="text-label-sm-bold text-on-surface">Penny-drop verification in progress</p>
+</div>
+<!-- Success State -->
+<div class="flex items-center justify-between px-md py-sm bg-[#F1F8E9] border border-[#C5E1A5]">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[#2E7D32]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<p class="text-label-sm-bold text-[#1B5E20]">Verified</p>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[#1B5E20] text-[16px]">lock</span>
+<span class="text-[11px] font-bold text-[#1B5E20] uppercase tracking-wide">Secured for salary payment</span>
+</div>
+</div>
+</div>
+<!-- DPDP Consent Block -->
+<div class="p-lg border border-outline-variant bg-surface-container-lowest">
+<div class="flex gap-md items-start">
+<div class="mt-1">
+<input class="w-5 h-5 rounded-none border-outline-variant text-primary focus:ring-0" id="consent" type="checkbox"/>
+</div>
+<div class="flex-1">
+<label class="text-label-sm text-on-surface-variant leading-relaxed" for="consent">
+                            I hereby provide my explicit consent under the Digital Personal Data Protection (DPDP) Act for HROS to process and store my bank account details solely for the purpose of payroll processing, tax compliance, and statutory benefits. I understand that my data is encrypted and stored in compliance with enterprise security standards.
+                        </label>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-[64px] left-0 w-full px-mobile-margin py-md bg-background/80 backdrop-blur-md border-t border-outline-variant z-40">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold active:scale-[0.98] transition-transform duration-200" onclick="window.top.goTo('journey_map_current_stage_expanded')">
+                Confirm &amp; Continue
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center h-huge px-md pb-safe">
+<!-- Journey Tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</button>
+<!-- Tasks Tab (Active) -->
+<button class="flex flex-col items-center justify-center text-primary font-label-sm-bold hover:bg-surface-container-high transition-colors active:scale-95 duration-200" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</button>
+<!-- Feed Tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</button>
+<!-- AI Tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</button>
+<!-- You Tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</button>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+        // Micro-interaction for input fields
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('.input-label').classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('.input-label').classList.remove('text-primary');
+            });
+        });
+
+        // Simple feedback for the FAB
+        const fab = document.querySelector('.fixed.bottom-32');
+        fab.addEventListener('click', () => {
+            alert("AI Concierge: 'Need help with your IFSC code? Most codes are 11 characters long.'");
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

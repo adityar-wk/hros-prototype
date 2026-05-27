@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data Capture - Master Pattern Template</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        /* Hide scrollbar but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
+        }
+
+        .hairline-border {
+            border: 1px solid #E5E7EB;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f2e1b7",
+                        "outline-variant": "#c8c5cd",
+                        "error": "#ba1a1a",
+                        "background": "#fcf8fa",
+                        "on-surface": "#1c1b1d",
+                        "secondary-fixed": "#dce2f3",
+                        "on-tertiary-container": "#493f20",
+                        "on-secondary-fixed": "#151c27",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fcf8fa",
+                        "on-secondary-fixed-variant": "#404754",
+                        "inverse-surface": "#313032",
+                        "secondary": "#585f6c",
+                        "on-surface-variant": "#47464c",
+                        "tertiary-container": "#b9aa83",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-secondary-container": "#5e6572",
+                        "inverse-on-surface": "#f4f0f2",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-dim": "#ddd9db",
+                        "tertiary": "#695d3c",
+                        "surface-container-high": "#ebe7e9",
+                        "surface-tint": "#5d5c74",
+                        "surface-container": "#f1edef",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "surface-container-low": "#f6f2f4",
+                        "surface-bright": "#fcf8fa",
+                        "on-background": "#1c1b1d",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "primary-container": "#1a1a2e",
+                        "primary": "#00000b",
+                        "on-tertiary-fixed": "#231b02",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#dce2f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-variant": "#e5e1e3",
+                        "on-primary-fixed": "#1a1a2e",
+                        "primary-fixed": "#e2e0fc",
+                        "on-primary-container": "#83829b",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#c6c4df",
+                        "outline": "#78767d",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "touch-target-min": "44px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xxl": "48px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "huge": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-40">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky bg-background dark:bg-background border-b border-outline-variant dark:border-outline-variant z-50 flex justify-between items-center px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary dark:text-on-primary-fixed">signal_cellular_alt</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-on-primary-fixed tracking-tight">HROS</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline dark:text-outline-variant hover:opacity-80 transition-opacity duration-200">notifications</span>
+<span class="material-symbols-outlined text-outline dark:text-outline-variant hover:opacity-80 transition-opacity duration-200">search</span>
+</div>
+</header>
+<main class="px-mobile-margin py-lg max-w-[375px] mx-auto">
+<!-- Category Header -->
+<section class="mb-lg">
+<div class="flex justify-between items-start mb-base">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Personal Details</h2>
+<span class="bg-tertiary-container/20 text-tertiary font-label-sm-bold text-label-sm px-sm py-1 rounded-full">In Progress</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">This information ensures your payroll and statutory benefits are set up correctly.</p>
+<!-- Progress Tracker -->
+<div class="space-y-base">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-outline">
+<span>Category Progress</span>
+<span class="font-label-sm-bold text-primary">65%</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%] transition-all duration-500"></div>
+</div>
+</div>
+</section>
+<!-- DPDP Consent Block -->
+<section class="mb-lg p-md bg-surface-container-low hairline-border rounded-xl">
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified_user</span>
+<h3 class="font-label-sm-bold text-label-sm text-primary uppercase tracking-wider">Privacy &amp; Consent (DPDP)</h3>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                We collect your full name, birth date, and PAN for the purpose of identity verification and payroll processing. Your data is shared with licensed banking partners and statutory bodies as required by law. We retain this data for the duration of your employment plus 7 years of statutory compliance.
+            </p>
+<div class="mt-sm flex items-center gap-sm">
+<input class="w-touch-target-min h-touch-target-min rounded border-outline text-primary focus:ring-primary" id="dpdp" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="dpdp">I have read and agree to the data processing terms.</label>
+</div>
+</section>
+<!-- Form Area -->
+<div class="space-y-lg">
+<!-- Readiness Signal Example -->
+<div class="flex items-center gap-xs">
+<div class="w-[12px] h-[12px] rounded-full bg-error animate-pulse"></div>
+<h3 class="font-body-md-bold text-body-md">Required Information</h3>
+</div>
+<!-- Input Group: PAN -->
+<div class="space-y-base">
+<label class="font-label-sm-bold text-label-sm text-on-surface">Permanent Account Number (PAN)</label>
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="ABCDE1234F" type="text"/>
+<p class="font-label-sm text-label-sm text-outline">Enter your 10-character PAN (e.g. ABCDE1234F)</p>
+</div>
+<!-- Input Group: Full Name -->
+<div class="space-y-base">
+<label class="font-label-sm-bold text-label-sm text-on-surface">Full Name (As per PAN)</label>
+<input class="w-full h-touch-target-min px-md bg-surface hairline-border rounded-lg text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="Arjun Sharma"/>
+</div>
+<!-- Upload Zone -->
+<div class="space-y-base">
+<label class="font-label-sm-bold text-label-sm text-on-surface">PAN Card Document</label>
+<div class="grid grid-cols-2 gap-md">
+<button class="flex flex-col items-center justify-center h-huge bg-surface-container-lowest hairline-border rounded-xl hover:bg-surface-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary mb-base">photo_camera</span>
+<span class="font-label-sm text-label-sm">Camera</span>
+</button>
+<button class="flex flex-col items-center justify-center h-huge bg-surface-container-lowest hairline-border rounded-xl hover:bg-surface-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary mb-base">upload_file</span>
+<span class="font-label-sm text-label-sm">Files</span>
+</button>
+</div>
+<div class="mt-sm p-sm bg-surface-container-highest/30 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+<span class="font-label-sm text-label-sm text-on-surface">pan_card_copy.pdf</span>
+</div>
+<span class="material-symbols-outlined text-error cursor-pointer">close</span>
+</div>
+</div>
+</div>
+<!-- Visual Anchor: Profile Context -->
+<div class="mt-xxl pt-lg border-t border-outline-variant">
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A professional studio portrait of a young Indian man with a warm, confident expression. The lighting is soft and directional, creating a clean corporate aesthetic against a neutral grey background. The image has a crisp, high-resolution feel suitable for a modern enterprise application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTEs0tsZIuw-7qCC5oQGPVBX3cHPhcbHTb2g56C731-uHuuv0DKIAfwbC-noJLTzRE6zjoOD5y2nxfNW2ioO5DuU47fpUp1um1h-5nBBn5bQItZB2Q5ehKmjk5PqkBY2LZ8Q24g_hdY__NbQ-1jk7gSQELleZrCp8D87FKr80_qkVluXog26MHc19vcyZKElMNZeWT59OiitWXdQWnrmU0m8wQnqpTipXdqe35zcRmQqUW83F91mElGX0uDzpQ7yIYuXmD-WZ55lzi"/>
+<div>
+<p class="font-body-md-bold text-body-md">Arjun Sharma</p>
+<p class="font-label-sm text-label-sm text-outline">Onboarding Category: Personal (A-0)</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Declaration & Submit Footer -->
+<div class="fixed bottom-16 left-0 w-full bg-surface-container-lowest border-t border-outline-variant px-mobile-margin py-md z-40">
+<div class="flex items-start gap-sm mb-md">
+<input class="mt-1 w-5 h-5 rounded border-outline text-primary focus:ring-primary" id="confirm" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="confirm">
+                I confirm the above information is true and accurate to the best of my knowledge. I understand providing false info may delay my benefits.
+            </label>
+</div>
+<button onclick="window.top.goTo('data_capture_personal_records_category_a')">
+                Submit Personal Details
+            </button>
+</div>
+<!-- AI Concierge Trigger -->
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-base pb-safe h-16 bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform duration-150 active:scale-90 scale-95" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 scale-95 transition-transform duration-150 active:scale-90" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform duration-150 active:scale-90 scale-95" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform duration-150 active:scale-90 scale-95" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform duration-150 active:scale-90 scale-95" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</a>
+</nav>
+<script>
+        // Simple interaction for the AI Concierge
+        const aiButton = document.querySelector('.fixed.bottom-36');
+        aiButton.addEventListener('click', () => {
+            alert('AI Concierge: I can help you fill your PAN details using your uploaded document. Should I start OCR?');
+        });
+
+        // Form submission simulation
+        const submitBtn = document.querySelector('button.bg-primary');
+        submitBtn.addEventListener('click', () => {
+            const confirmCheck = document.getElementById('confirm');
+            const dpdpCheck = document.getElementById('dpdp');
+            
+            if (!dpdpCheck.checked) {
+                alert('Please review and accept the DPDP consent block.');
+                return;
+            }
+            if (!confirmCheck.checked) {
+                alert('Please check the declaration box to proceed.');
+                return;
+            }
+            
+            submitBtn.innerText = "Processing...";
+            submitBtn.classList.add('opacity-70');
+            setTimeout(() => {
+                alert('Personal Details submitted successfully!');
+                submitBtn.innerText = "Submit Personal Details";
+                submitBtn.classList.remove('opacity-70');
+            }, 1500);
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

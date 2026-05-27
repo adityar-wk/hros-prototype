@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "tertiary-container": "#b9aa83",
+                    "on-primary-container": "#83829b",
+                    "tertiary-fixed": "#f2e1b7",
+                    "background": "#fcf8fa",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface-dim": "#ddd9db",
+                    "inverse-surface": "#313032",
+                    "on-tertiary-fixed": "#231b02",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1c1b1d",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed": "#dce2f3",
+                    "outline-variant": "#c8c5cd",
+                    "inverse-primary": "#c6c4df",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-primary-fixed-variant": "#45455b",
+                    "primary-fixed-dim": "#c6c4df",
+                    "outline": "#78767d",
+                    "surface-variant": "#e5e1e3",
+                    "on-secondary-container": "#5e6572",
+                    "on-primary-fixed": "#1a1a2e",
+                    "tertiary": "#695d3c",
+                    "on-surface": "#1c1b1d",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#ebe7e9",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-container": "#f1edef",
+                    "secondary-container": "#dce2f3",
+                    "secondary": "#585f6c",
+                    "on-tertiary-container": "#493f20",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf8fa",
+                    "surface-tint": "#5d5c74",
+                    "primary-fixed": "#e2e0fc",
+                    "on-error": "#ffffff",
+                    "primary": "#00000b",
+                    "surface-container-low": "#f6f2f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "touch-target-min": "44px",
+                    "sm": "12px",
+                    "huge": "64px",
+                    "xl": "32px",
+                    "xxl": "48px",
+                    "mobile-margin": "24px",
+                    "xs": "8px"
+            },
+            "fontFamily": {
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .dimmed-overlay {
+            pointer-events: none;
+            opacity: 0.5;
+            filter: grayscale(0.4);
+        }
+        .hairline-border {
+            border: 1px solid #E5E7EB;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar - Destination Suppressed per Rules (Task-Focused) -->
+<header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-mobile-margin h-touch-target-min border-b border-outline-variant">
+<div class="flex items-center gap-base">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-primary" data-icon="close">close</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">HROS</h1>
+<div class="w-touch-target-min flex justify-end">
+<!-- Trailing avatar placeholder -->
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User Profile" data-alt="A professional headshot of a young professional male in a corporate setting. He is smiling warmly, wearing a clean white shirt against a neutral, softly blurred office background. The lighting is bright and natural, reflecting a clean light-mode aesthetic with high-key exposure and crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4OTasr8LXFsSlHe-H1KNNmjL-j3DEertlzk18Zg5Cq7iNz1qQ-chzNbzzO-OV62Augwrj0P3EZLgRkSmFDDfvinVG4SRhrcHcAlW5Lp6Scs-diu77leGlKkHhnZj9VB46X4ftTzlWlU0UdGJ8ovmU4C2PcT7zkyIGf8FLlyqW5alqGBgWmgJPLTXyvZh_zzFUlJp1vVrK0CTexoucO_NFo61lgatcWa9edOVbmzK202Ph6motOp2t4oUb8sVpkeK2ep1cZjCHluq_"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-huge pb-xxl px-mobile-margin">
+<!-- Expiration Message Block -->
+<section class="mt-lg mb-xl animate-fade-in">
+<div class="flex items-center gap-xs mb-base">
+<span class="material-symbols-outlined text-error" data-icon="history_toggle_off">history_toggle_off</span>
+<span class="font-label-sm-bold text-label-sm-bold text-error uppercase">Offer Status: Expired</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-md">Your offer, Arjun</h2>
+<div class="bg-error-container/10 border border-error/20 p-md rounded-xl">
+<p class="font-body-md text-body-md text-on-surface mb-sm">
+                    This offer has expired.
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    We'd still love to have you. Please reach out to your recruiter to discuss next steps.
+                </p>
+</div>
+</section>
+<!-- Recruiter Interaction Card (AI Concierge/Primary Focus) -->
+<section class="mb-xl">
+<div class="hairline-border bg-surface-container-lowest p-lg rounded-xl flex items-center gap-md">
+<div class="relative">
+<img alt="Megha" class="w-14 h-14 rounded-full object-cover" data-alt="A professional studio portrait of a woman with a confident and friendly expression, representing a modern human resources recruiter. She is wearing a dark navy blazer over a light top, with soft studio lighting that creates a clean, corporate atmosphere. The background is a minimalist, light grey studio setting to maintain a high-end, professional UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGPXQUtkQHDX_hnzzDHxh94_dtJybnJPec9bSkN12GF3a9MPmhxJ7Wv5rnywnLPXSbfqYq63AFsgStKFruWZzfKcsxk2tT9hR6msdgRkkXB-NUIVtz6Xn1oSK3YGDSdm1eVRv3o6htFvFhEkF67XLJ68cm0bXyVZfnfqf3F89weaE-o_INbM2Vs0FXVmGnjqRLn4hYw5N37k9Y-lFeXVbRI2ZGeEz8lRcH2K2y3T_nfAa3ggukFwi0GadQOJdMK1vrkhHRPQf1oaTW"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary rounded-full border-2 border-surface"></div>
+</div>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Recruitment Lead</p>
+<p class="font-body-md-bold text-body-md-bold text-primary">Megha Malhotra</p>
+<p class="font-label-sm text-label-sm text-secondary">Active 5m ago</p>
+</div>
+<button class="bg-primary text-on-primary h-touch-target-min px-md rounded-lg font-body-md-bold flex items-center gap-xs transition-transform active:scale-95 shadow-sm" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span>Talk to Megha</span>
+</button>
+</div>
+</section>
+<!-- Dimmed Offer Details (Read-only State) -->
+<section class="dimmed-overlay space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-body-md-bold text-body-md-bold">Role Details</h3>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+</div>
+<div class="hairline-border bg-surface-container-lowest p-md rounded-xl space-y-md">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Position</p>
+<p class="font-body-md-bold text-body-md-bold">Senior Product Designer</p>
+</div>
+<div class="bg-surface-container-highest px-sm py-xs rounded-full">
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Full-time</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Annual Base</p>
+<p class="font-body-md text-body-md">₹32,00,000</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Stock Options</p>
+<p class="font-body-md text-body-md">0.05% Equity</p>
+</div>
+</div>
+<div class="pt-sm border-t border-outline-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+<span class="font-body-md text-body-md text-secondary">Bangalore, IN (Hybrid)</span>
+</div>
+</div>
+</div>
+<!-- Bento-style supplemental cards -->
+<div class="grid grid-cols-2 gap-md">
+<div class="hairline-border bg-surface-container-lowest p-md rounded-xl">
+<span class="material-symbols-outlined text-tertiary mb-xs" data-icon="medical_services">medical_services</span>
+<p class="font-label-sm-bold text-label-sm-bold">Insurance</p>
+<p class="font-label-sm text-label-sm">Family Cover</p>
+</div>
+<div class="hairline-border bg-surface-container-lowest p-md rounded-xl">
+<span class="material-symbols-outlined text-tertiary mb-xs" data-icon="flight_takeoff">flight_takeoff</span>
+<p class="font-label-sm-bold text-label-sm-bold">Relocation</p>
+<p class="font-label-sm text-label-sm">Standard Pkg</p>
+</div>
+</div>
+</section>
+<!-- Compliance / Consent (Dimmed) -->
+<section class="mt-xl dimmed-overlay">
+<div class="hairline-border p-md rounded-lg bg-surface-container">
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                    By viewing this offer, you acknowledge the terms under the Indian Digital Personal Data Protection (DPDP) Act. All offer information provided herein is confidential and for recruitment purposes only.
+                </p>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Transactional/Success State suppressed navigation) -->
+<!-- Per Rule: Fixed bottom-bar containing a full-width Primary CTA button -->
+<footer class="fixed bottom-0 w-full bg-surface p-lg border-t border-outline-variant z-50">
+<div class="flex flex-col gap-md">
+<!-- Disabled Accept Button as requested -->
+<button class="w-full h-touch-target-min bg-surface-container-highest text-outline font-body-md-bold rounded-lg cursor-not-allowed flex items-center justify-center gap-xs" disabled="">
+<span class="material-symbols-outlined" data-icon="block">block</span>
+<span>Offer Expired</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-secondary">
+                This document is now in read-only mode.
+            </p>
+</div>
+</footer>
+<!-- Persistent AI Concierge Trigger (Distinctive Layer) -->
+<div class="fixed bottom-huge right-lg z-50">
+<button class="w-14 h-14 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105 active:scale-90" style="box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</button>
+</div>
+<script>
+        // Simple micro-interaction for the talk button
+        document.querySelector('button.bg-primary')?.addEventListener('click', () => {
+            alert('Initiating secure chat with Megha...');
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

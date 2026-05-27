@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#5e6572",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#313032",
+                        "on-primary-container": "#83829b",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "primary-container": "#1a1a2e",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary-fixed": "#151c27",
+                        "primary-fixed": "#e2e0fc",
+                        "primary": "#00000b",
+                        "tertiary-fixed": "#f2e1b7",
+                        "tertiary-container": "#b9aa83",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary-container": "#493f20",
+                        "surface-container": "#f1edef",
+                        "on-primary-fixed": "#1a1a2e",
+                        "surface-container-low": "#f6f2f4",
+                        "on-error": "#ffffff",
+                        "background": "#fcf8fa",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-surface-variant": "#47464c",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "on-error-container": "#93000a",
+                        "secondary": "#585f6c",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "secondary-fixed": "#dce2f3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-tint": "#5d5c74",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1c1b1d",
+                        "secondary-container": "#dce2f3",
+                        "outline": "#78767d",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface-variant": "#e5e1e3",
+                        "surface-dim": "#ddd9db",
+                        "surface": "#fcf8fa",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "huge": "64px",
+                        "lg": "24px",
+                        "touch-target-min": "44px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf8fa;
+            color: #1c1b1d;
+            font-family: 'Geist', sans-serif;
+            max-width: 375px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        .glass-layer {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background border-b border-outline-variant z-50 flex items-center justify-between px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-sm">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a corporate employee in a bright modern office. The lighting is soft and natural, emphasizing a clean and efficient workspace. The color palette is composed of neutrals with subtle cool tones, fitting a high-end enterprise software aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOWcdtJTdw5tXrl8unD_ZAyz_qbz7fZ90AnA8yGnD9QxwxLqZMY_IHTCw_oPPq7SkFgDmfzqEbUcC3ATKOhGYMFJsXGzItcE-I5EuWIkPAsajbfc-HzrYwaBu-rKtAvU-2PaeY_HaCPB6bmKb3pXTrw1ZUMz-TZOM2fnRllZQsSL_hTR297XN0__1IGTY1OKpq8ZJ_2Ef7G2YKECJ8IFuIiXWCMqzO3kDaTtRnhGEPW_e3FtQGDjTDhmk0jp6cdB6_y9TKRQ1JJckI"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">HROS</h1>
+</div>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors p-xs rounded-full active:opacity-80">notifications</button>
+</header>
+<!-- Main Content: AI Chat Interface -->
+<main class="flex-grow flex flex-col p-mobile-margin pb-[120px]">
+<!-- Conversation Flow -->
+<div class="space-y-lg flex-grow">
+<!-- User Dismissal Context (Implicit) -->
+<div class="flex flex-col items-end w-full">
+<div class="bg-primary-container text-on-primary rounded-xl rounded-tr-none px-md py-sm max-w-[85%]">
+<p class="font-body-md text-body-md">No thanks, I'll handle it myself.</p>
+</div>
+</div>
+<!-- AI Response -->
+<div class="flex flex-col items-start w-full">
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Pulse AI</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl rounded-tl-none px-md py-sm max-w-[90%]">
+<p class="font-body-md text-body-md text-on-surface">No problem. Good luck with the call.</p>
+</div>
+</div>
+<!-- Default State Prompt -->
+<div class="mt-huge text-center">
+<div class="inline-block p-xl bg-surface-container rounded-3xl border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[48px] mb-md" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface-variant mb-xs">All clear</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Ask anything about HROS...</p>
+</div>
+</div>
+</div>
+<!-- Chat Input Layer -->
+<div class="fixed bottom-[72px] left-0 w-full px-mobile-margin py-md bg-gradient-to-t from-background via-background to-transparent pointer-events-none">
+<div class="pointer-events-auto flex items-center gap-sm bg-surface-container-lowest border border-outline-variant p-xs rounded-full shadow-sm">
+<button class="material-symbols-outlined p-xs text-on-surface-variant">add</button>
+<input class="flex-grow bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface h-touch-target-min" placeholder="Ask anything about HROS..." type="text"/>
+<button class="w-touch-target-min h-touch-target-min rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- AI Concierge Floating Trigger (The "Intelligent Layer") -->
+<div class="fixed bottom-24 right-mobile-margin z-40">
+<button class="w-[56px] h-[56px] rounded-2xl bg-primary text-on-primary shadow-lg flex items-center justify-center transition-transform active:scale-95 border border-white/20">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-sm py-xs bg-surface border-t border-outline-variant z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all active:scale-95" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm-bold text-label-sm-bold">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all active:scale-95" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm-bold text-label-sm-bold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all active:scale-95" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm-bold text-label-sm-bold">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl p-xs hover:bg-surface-container transition-all active:scale-95" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm-bold text-label-sm-bold">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all active:scale-95" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">You</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for input focus
+        const chatInput = document.querySelector('input');
+        const inputContainer = chatInput.parentElement;
+
+        chatInput.addEventListener('focus', () => {
+            inputContainer.classList.add('border-primary');
+            inputContainer.classList.remove('border-outline-variant');
+        });
+
+        chatInput.addEventListener('blur', () => {
+            inputContainer.classList.remove('border-primary');
+            inputContainer.classList.add('border-outline-variant');
+        });
+
+        // Simple haptic-like scale effect on all buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('touchend', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

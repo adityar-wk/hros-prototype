@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar suppression */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e5e1e3",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-bright": "#fcf8fa",
+                        "on-background": "#1c1b1d",
+                        "surface-container-low": "#f6f2f4",
+                        "error": "#ba1a1a",
+                        "background": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "on-primary-container": "#83829b",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#404754",
+                        "tertiary-fixed": "#f2e1b7",
+                        "tertiary-container": "#b9aa83",
+                        "surface-dim": "#ddd9db",
+                        "tertiary": "#695d3c",
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface-container": "#f1edef",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-secondary-fixed": "#151c27",
+                        "primary": "#00000b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5e6572",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ebe7e9",
+                        "on-primary-fixed": "#1a1a2e",
+                        "outline": "#78767d",
+                        "on-tertiary-container": "#493f20",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#47464c",
+                        "inverse-surface": "#313032",
+                        "on-surface": "#1c1b1d",
+                        "surface-tint": "#5d5c74",
+                        "primary-container": "#1a1a2e",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "outline-variant": "#c8c5cd",
+                        "primary-fixed": "#e2e0fc",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed": "#dce2f3",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface": "#fcf8fa",
+                        "on-primary-fixed-variant": "#45455b",
+                        "secondary-container": "#dce2f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "16px",
+                        "huge": "64px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "mobile-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-huge">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center px-mobile-margin h-touch-target-min w-full max-w-md mx-auto">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKeiSUTykqVlW2WBdWNORuPJgMoVuQT2gn-Mxe9kKOCzMDSWCp6LwRN7IfVYdVoLKWARrdqE7TIqTAnSJeAyMfUFB2sBblhm-DcomuKxW-xyucXQ5SfNX2JkoLAxc97QHQpUUv75OQN2wEAucWVgVPEGMl0w9J3JnjqDyXL9oFR9qZ45j4wxzALnL5YJ7tuINjZPDyznkuM2gVtacsZMd5YjL5J-MT0-VuGqeaaKxaGDmklNIjNCyxYvCMiryRLGV5jhWApLcRMs7K"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed-dim">Organisation</h1>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-xs rounded-full active:scale-95 transition-transform">
+                notifications
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-huge px-mobile-margin max-w-md mx-auto space-y-lg">
+<!-- Welcome Header -->
+<section class="mt-lg">
+<div class="flex items-center gap-xs mb-base">
+<div class="w-3 h-3 rounded-full bg-[#10B981]"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-secondary uppercase tracking-wider">Your Context</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Understanding how HROS is structured and where your impact begins.</p>
+</section>
+<!-- Active/Primary BU Card (Engineering Operations) -->
+<section class="relative bg-surface-container-lowest border border-primary rounded-xl p-md overflow-hidden shadow-sm transition-all duration-300">
+<!-- You Are Here Label -->
+<div class="absolute top-0 right-0 bg-primary text-on-primary px-sm py-xs rounded-bl-lg">
+<span class="font-label-sm-bold text-label-sm-bold">YOU ARE HERE</span>
+</div>
+<div class="space-y-md pt-sm">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">Engineering Operations</h2>
+<p class="font-label-sm text-label-sm text-secondary">BU Leader: Rahul Verma</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                    "Building the core HROS infrastructure."
+                </p>
+<div class="space-y-sm">
+<h3 class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase">Key Functions</h3>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface border border-outline-variant">Platform Engineering</span>
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface border border-outline-variant">Site Reliability</span>
+<span class="px-sm py-xs bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface border border-outline-variant">Developer Experience</span>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant pt-md mt-sm">
+<div class="flex -space-x-2">
+<img alt="Rahul Verma" class="w-8 h-8 rounded-full border-2 border-surface-container-lowest" data-alt="A professional headshot of Rahul Verma, a South Asian male executive with a warm smile, wearing a modern charcoal blazer. He is positioned in a brightly lit, minimalist office environment with clean lines and soft daylight. The aesthetic is professional and approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlHNTRLhurA8DAxrpi1ChMF6Xn-Cm0V_TjsRdneo5tKOb5CMgiP_EV7zRZ2CI-Wi5fi4S5CSI-GXeZD5_CftqsIZm7cKQq5BdEnk0CVkb4k2GvHztJYpbYuLO59OtjaL751nxSRZESGd6UTI8YaQCh_z-YQW_bpY0c3fi1OZKYcwCRCbefI6amod3a2LMNAil5En4Ao-_gUG-KY59AwGPSbYagZhsSPxHAPJ3lkbkf-M2GbXpSdo4kI2jSbSPO9dHMx__lpSe1wjzQ"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-surface-container-high flex items-center justify-center text-xs font-bold">+24</div>
+</div>
+<button class="flex items-center gap-xs font-label-sm-bold text-label-sm-bold text-primary active:scale-95 transition-transform">
+                        Meet the team <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Horizontal Hierarchy Label -->
+<h2 class="font-label-sm-bold text-label-sm-bold text-secondary uppercase pt-md">Other Business Units</h2>
+<!-- Collapsed BU Cards -->
+<div class="space-y-sm">
+<!-- Product & Design -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Ananya Singh" class="w-full h-full object-cover" data-alt="A high-resolution portrait of a professional woman with a creative style, featuring soft studio lighting against a neutral, high-key background. She represents the Product and Design leadership, exhaling a sense of focused innovation and minimalist elegance consistent with a modern enterprise interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgsKRpPkO8yU4KetmLJFhIqQ8FrlABNSbd86JFz7L5cWPYQg63-509zUWSAynHNLJ_JWkPVVowHy5X_Vgk4rY4ca32LUFLVqC6fcKnpjjw2Hr6mQl8V3QFM1izequgiyx8MOW6Kx0vzFCFsoBmLcMisnVOhLu1eyamQiVs6de9MIxOxdNrhwlBqTrPj9pNDDt7mqj35_VuNZtiCArJLxTu_B5B7lN8nnOpEWQZIAjoE5nwFYXZWd1cfk72HGTvt8lqGCmYPYYx8_Ti"/>
+</div>
+<div class="overflow-hidden">
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface truncate">Product &amp; Design</h3>
+<p class="font-label-sm text-label-sm text-secondary truncate">Ananya Singh · Crafting intuitive user journeys.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<!-- Sales & Marketing -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Vikram Malhotra" class="w-full h-full object-cover" data-alt="A confident male professional in business casual attire, set against a blurred corporate backdrop with soft, natural lighting. The image conveys a sense of trustworthy leadership and dynamic energy suitable for a high-growth enterprise marketing leader. Minimalist and clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-fORMg8IM4ziiWlXA91rvkawCEiZJcqT3Awiw76CMTrb2w2K-NfWOAKpT7C7BAhIA1nVNOyhyjaw6UrbxKuw-WY6hKjoLYzpxFCA-n2WJXxEBUYrquKkErhvX_fny_-n-2fJpNbo2PTuTjoH7Nq3fG7FOxe4gVrZbarY9nxXbJXi1S5D7UWex3ccFMSxupfCt4tFNE4M6CQCALaM0n-R7cZmyLqDgBfbyBrBKPzDxkVdrQcNkqrdQDAaJOqmC5U1Ud9AF2gC4rRU2"/>
+</div>
+<div class="overflow-hidden">
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface truncate">Sales &amp; Marketing</h3>
+<p class="font-label-sm text-label-sm text-secondary truncate">Vikram Malhotra · Driving global growth and outreach.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<!-- Finance & Admin -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">account_balance</span>
+</div>
+<div class="overflow-hidden">
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface truncate">Finance &amp; Admin</h3>
+<p class="font-label-sm text-label-sm text-secondary truncate">Sanjay Gupta · Managing fiscal discipline.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- AI Concierge Trigger -->
+
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-safe h-huge bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline rounded-t-lg">
+<!-- Journey: ACTIVE -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-xs py-base active:scale-90 transition-all duration-200" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-label-sm-bold text-label-sm-bold">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-xs py-base hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">checklist</span>
+<span class="font-label-sm-bold text-label-sm-bold">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-xs py-base hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-label-sm-bold text-label-sm-bold">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-xs py-base hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm-bold text-label-sm-bold">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-xs py-base hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">You</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.cursor-pointer').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.add('bg-surface-container-high');
+                setTimeout(() => {
+                    this.classList.remove('bg-surface-container-high');
+                }, 150);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

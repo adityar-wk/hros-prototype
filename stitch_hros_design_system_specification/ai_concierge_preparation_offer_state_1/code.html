@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px 0 rgba(0, 0, 11, 0.05);
+        }
+        /* Custom scrollbar for chat area */
+        .chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #e5e1e3;
+            border-radius: 10px;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#5e6572",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#313032",
+                        "on-primary-container": "#83829b",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e5e1e3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "primary-container": "#1a1a2e",
+                        "on-primary-fixed-variant": "#45455b",
+                        "surface-container-high": "#ebe7e9",
+                        "on-secondary-fixed": "#151c27",
+                        "primary-fixed": "#e2e0fc",
+                        "primary": "#00000b",
+                        "tertiary-fixed": "#f2e1b7",
+                        "tertiary-container": "#b9aa83",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary-container": "#493f20",
+                        "surface-container": "#f1edef",
+                        "on-primary-fixed": "#1a1a2e",
+                        "surface-container-low": "#f6f2f4",
+                        "on-error": "#ffffff",
+                        "background": "#fcf8fa",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-surface-variant": "#47464c",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "on-error-container": "#93000a",
+                        "secondary": "#585f6c",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "secondary-fixed": "#dce2f3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-tint": "#5d5c74",
+                        "primary-fixed-dim": "#c6c4df",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1c1b1d",
+                        "secondary-container": "#dce2f3",
+                        "outline": "#78767d",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary-fixed": "#231b02",
+                        "surface-variant": "#e5e1e3",
+                        "surface-dim": "#ddd9db",
+                        "surface": "#fcf8fa",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "huge": "64px",
+                        "lg": "24px",
+                        "touch-target-min": "44px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface font-body-md flex flex-col min-h-screen max-w-[375px] mx-auto overflow-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background border-b border-outline-variant flex items-center justify-between px-mobile-margin h-touch-target-min z-50">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A high-resolution professional close-up of a young adult user profile picture. The lighting is soft and corporate, set against a neutral, minimal office background that aligns with the HROS clean aesthetic. The person has a friendly, professional expression, perfectly framed within a circular container for a mobile interface design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsAH67hcBapO_Iet-pylfgX0CreTGJT3zS2YZCrNqgR25ke8mdZ4JRKqFJTQEUbNIVAGlyhuNXw2AqHU1YNIvASuehuLMC_BjREUt2tEAwT9XSNyNTl5A24vWiSZYdvn3l3fuOJ4m4LtPZKiqfUT5fZTBQt1ggK_qnEMBUEAzzQPirC6Wmk1utBt0lop0b3VzJKDVGIYXnAjHPf8qEwneupFM0ffkbQRPXVvZF246h0PxEkaXCqrDboP3LL-a6bXbg8Q-gS4XtcORu"/>
+</div>
+<span class="text-body-md-bold font-body-md-bold text-primary">HROS</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</div>
+</header>
+<!-- Main Content Area: Chat Flow -->
+<main class="flex-1 flex flex-col overflow-hidden relative">
+<!-- Chat History -->
+<div class="flex-1 overflow-y-auto chat-scroll px-mobile-margin pt-lg space-y-lg pb-huge">
+<!-- AI Message -->
+<div class="flex gap-md items-start">
+<div class="w-8 h-8 flex-shrink-0 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="max-w-[80%] bg-surface-container-low rounded-xl rounded-tl-none p-md border border-outline-variant">
+<p class="font-body-md text-on-surface">Hi Arjun, I'm here to help with your transition.</p>
+</div>
+</div>
+</div>
+<!-- Proactive Preparation Offer Card (Sticky above input) -->
+<div class="px-mobile-margin pb-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md ai-glow flex flex-col gap-md transition-all duration-300">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<div class="flex items-center gap-xs mb-1">
+<div class="w-2 h-2 rounded-full bg-[#10b981]"></div> <!-- Readiness Signal: Green -->
+<span class="font-label-sm-bold text-label-sm-bold text-on-secondary-container tracking-wider">MANAGER READINESS</span>
+</div>
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Manager Call Readiness</h3>
+</div>
+<span class="material-symbols-outlined text-outline">close</span>
+</div>
+<div class="flex items-center gap-md bg-surface-container-low/50 p-sm rounded-lg border border-outline-variant/30">
+<img alt="Siddharth Jain" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a corporate manager named Siddharth Jain. He is wearing a minimalist, modern business-casual outfit. The lighting is bright and clean, typical of a professional Indian enterprise environment. The background is a soft-focus, minimalist white office space that complements the Radical Reduction design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDktbw0G6pebIml6jPUTLlVGRtxDA2fVW6r0wmJddguj5in5W0MZgOEevHT4lDs0gDONOJCIz_KyHcnRj-HLR_i5HltbaMTMzjZwEsXjSgAbfEyt-OB4jyGtmiAF54b93HSxm_c1_zCrbwUhmaEPE5IdqSqb2fWwteRtR7lIon1MixJXI67DVXHqS4ejHTQcgppq4qdSjtqARteEvPfYjmRhPtXpcLXA3US_SwUElGus7wGOYmYXerEw-R8Pz7as4bQrX38O5WRDR_a"/>
+<div class="flex flex-col">
+<span class="font-body-md-bold text-body-md-bold text-on-surface">Siddharth Jain</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span class="font-label-sm text-label-sm">Tomorrow, 10:30 AM</span>
+</div>
+</div>
+</div>
+<div class="flex gap-xs">
+<button class="flex-1 h-touch-target-min bg-primary text-on-primary rounded-lg font-body-md-bold text-body-md-bold flex items-center justify-center hover:opacity-90 active:scale-95 transition-all">
+                        Help me prepare
+                    </button>
+<button class="flex-1 h-touch-target-min border border-outline-variant text-on-surface rounded-lg font-body-md-bold text-body-md-bold flex items-center justify-center hover:bg-surface-container-low active:scale-95 transition-all">
+                        No thanks
+                    </button>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="bg-background px-mobile-margin pb-[88px]"> <!-- Extra padding for BottomNavBar -->
+<div class="relative flex items-center group">
+<input class="w-full h-touch-target-min bg-surface-container-low border border-outline-variant rounded-full px-lg pr-[52px] text-body-md focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Ask anything about HROS..." type="text"/>
+<div class="absolute right-2 w-9 h-9 bg-primary text-on-primary rounded-full flex items-center justify-center cursor-pointer active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">arrow_upward</span>
+</div>
+</div>
+</div>
+<!-- AI Concierge persistent Trigger (AI Layer Signal) -->
+<div class="fixed bottom-24 right-mobile-margin z-40">
+<button class="w-12 h-12 rounded-full bg-primary-container text-on-primary-fixed ai-glow flex items-center justify-center shadow-lg border border-primary-fixed/20 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-sm py-xs bg-surface border-t border-outline-variant z-50 rounded-t-xl">
+<!-- Journey -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-sm-bold text-label-sm-bold">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm-bold text-label-sm-bold">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm-bold text-label-sm-bold">Feed</span>
+</a>
+<!-- AI (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl p-xs transition-all" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm-bold text-label-sm-bold">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-container transition-all" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm-bold text-label-sm-bold">You</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for input field
+        const inputField = document.querySelector('input');
+        inputField.addEventListener('focus', () => {
+            console.log('Input focused');
+        });
+
+        // Simple mock for "No thanks" dismissal
+        const noThanksBtn = document.querySelectorAll('button')[2]; // Targeting second button in the card
+        noThanksBtn?.addEventListener('click', (e) => {
+            const card = e.target.closest('.ai-glow');
+            if (card) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(10px)';
+                setTimeout(() => card.style.display = 'none', 300);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

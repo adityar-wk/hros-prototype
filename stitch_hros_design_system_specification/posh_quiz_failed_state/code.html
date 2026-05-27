@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PoSH Quiz Result - Failed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f2e1b7",
+                        "surface-tint": "#5d5c74",
+                        "on-tertiary-container": "#493f20",
+                        "surface-container-high": "#ebe7e9",
+                        "error": "#ba1a1a",
+                        "surface": "#fcf8fa",
+                        "on-primary-fixed-variant": "#45455b",
+                        "outline": "#78767d",
+                        "tertiary-container": "#b9aa83",
+                        "surface-container-low": "#f6f2f4",
+                        "on-secondary-fixed": "#151c27",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#1a1a2e",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e5e1e3",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#dce2f3",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-surface-variant": "#47464c",
+                        "primary": "#00000b",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container": "#f1edef",
+                        "surface-container-highest": "#e5e1e3",
+                        "primary-fixed": "#e2e0fc",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-tertiary-fixed": "#231b02",
+                        "secondary": "#585f6c",
+                        "primary-container": "#1a1a2e",
+                        "on-secondary-container": "#5e6572",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-container": "#dce2f3",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#313032",
+                        "inverse-primary": "#c6c4df",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-background": "#1c1b1d",
+                        "outline-variant": "#c8c5cd",
+                        "on-primary-container": "#83829b",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "background": "#fcf8fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "mobile-margin": "24px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "huge": "64px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #fcf8fa; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="flex flex-col min-h-screen text-on-surface antialiased">
+<!-- Top App Bar -->
+<header class="bg-surface border-b border-outline-variant flex items-center justify-between px-mobile-margin w-full h-[64px] fixed top-0 z-50">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary active:scale-95 transition-transform duration-200">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-on-surface">Policies</h1>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Step 2 of 4</span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow pt-[64px] pb-[80px] px-mobile-margin">
+<!-- Progress Bar Indicator -->
+<div class="py-lg">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error w-1/4"></div>
+</div>
+</div>
+<!-- Result Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg mb-lg">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-error uppercase tracking-wider">Quiz Feedback</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs">Not quite right</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">
+                You can report to any member of the ICC, not just your manager. Refer to Clause 4.2 of the policy.
+            </p>
+<!-- Question Review Area -->
+<div class="bg-surface-container-low rounded-lg p-md border border-outline-variant/30">
+<div class="flex items-start gap-md mb-md">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-base">Question 1</p>
+<p class="font-body-md-bold text-body-md-bold">Who can an employee report an incident of sexual harassment to?</p>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm p-sm bg-error-container rounded-md border border-error/20">
+<span class="material-symbols-outlined text-error text-sm">close</span>
+<p class="font-label-sm text-label-sm text-on-error-container">Only their immediate reporting manager</p>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-highest rounded-md border border-outline-variant/50">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">check_circle</span>
+<p class="font-label-sm text-label-sm text-on-surface">Any member of the Internal Committee (IC)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold flex items-center justify-center gap-sm active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+            Try Question Again
+        </button>
+<!-- Informational Footer within Canvas -->
+<div class="mt-xl p-md border border-dashed border-outline-variant rounded-xl flex flex-col gap-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                You must pass the assessment to proceed with the legal declaration and signature.
+            </p>
+<button class="w-full h-touch-target-min bg-surface-container-highest text-outline rounded-xl font-body-md-bold flex items-center justify-center gap-sm cursor-not-allowed opacity-60" disabled="">
+                Sign Policy
+                <span class="material-symbols-outlined text-[18px]">lock</span>
+</button>
+</div>
+</main>
+<!-- AI Concierge Trigger (As defined in Style Guidance) -->
+
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 h-[80px] bg-surface border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 duration-150" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-sm text-label-sm">Documents</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for the "Try Again" button
+        document.querySelector('button.bg-primary').addEventListener('click', function() {
+            this.style.opacity = '0.7';
+            setTimeout(() => {
+                this.style.opacity = '1';
+            }, 150);
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

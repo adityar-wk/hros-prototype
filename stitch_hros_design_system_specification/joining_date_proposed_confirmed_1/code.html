@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-secondary-container": "#5e6572",
+                    "primary-fixed": "#e2e0fc",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "tertiary-container": "#b9aa83",
+                    "surface-bright": "#fcf8fa",
+                    "primary": "#00000b",
+                    "on-surface-variant": "#47464c",
+                    "surface-variant": "#e5e1e3",
+                    "on-error": "#ffffff",
+                    "background": "#fcf8fa",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "primary-container": "#1a1a2e",
+                    "on-primary-fixed": "#1a1a2e",
+                    "outline": "#78767d",
+                    "surface-dim": "#ddd9db",
+                    "secondary": "#585f6c",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-container-high": "#ebe7e9",
+                    "inverse-surface": "#313032",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-primary-fixed-variant": "#45455b",
+                    "error-container": "#ffdad6",
+                    "surface": "#fcf8fa",
+                    "on-secondary-fixed": "#151c27",
+                    "outline-variant": "#c8c5cd",
+                    "surface-container-low": "#f6f2f4",
+                    "on-tertiary-container": "#493f20",
+                    "on-primary-container": "#83829b",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-surface": "#1c1b1d",
+                    "tertiary": "#695d3c",
+                    "secondary-container": "#dce2f3",
+                    "on-background": "#1c1b1d",
+                    "tertiary-fixed": "#f2e1b7",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#dce2f3",
+                    "inverse-primary": "#c6c4df",
+                    "surface-tint": "#5d5c74",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f1edef",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f4f0f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "sm": "12px",
+                    "mobile-margin": "24px",
+                    "xl": "32px",
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "md": "16px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "huge": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm-bold": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif !important;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-progress {
+            background: linear-gradient(90deg, #00000b 25%, #e5e1e3 25%);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center">
+<!-- Top Navigation Anchor (Suppressed shell, but keeping identity) -->
+<header class="w-full max-w-[375px] h-touch-target-min flex items-center justify-between px-mobile-margin bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-primary active:scale-95 transition-transform">arrow_back</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Accept Offer</span>
+</div>
+<div class="flex items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Step 1 of 4</span>
+</div>
+</header>
+<!-- Progress Indicator -->
+<div class="w-full max-w-[375px] h-1 bg-surface-container-highest">
+<div class="h-full bg-primary w-1/4 transition-all duration-500"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-[375px] px-mobile-margin py-xl flex flex-col gap-xl">
+<!-- Welcome Section -->
+<section class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs">
+<span class="font-label-sm-bold text-label-sm-bold text-primary uppercase tracking-wider">Onboarding</span>
+<div class="w-2 h-2 rounded-full bg-[#10B981]"></div> <!-- Readiness Signal: Ready -->
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Welcome, Arjun.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">We're excited to have you join the team. Let's start by finalizing your first day.</p>
+</section>
+<!-- Primary Option Card -->
+<section class="flex flex-col gap-md">
+<label class="font-label-sm-bold text-label-sm-bold text-on-surface-variant" style="font-family: 'Geist', sans-serif;">PROPOSED JOINING DATE</label>
+<div class="p-lg bg-surface-container-lowest border border-primary rounded-xl relative overflow-hidden group active:scale-[0.98] transition-all">
+<div class="flex justify-between items-start mb-base">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary" style="font-family: 'Geist', sans-serif;">Oct 15, 2024</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs flex items-center gap-xs" style="font-family: 'Geist', sans-serif;">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                            Tuesday • Standard Onboarding Cycle
+                        </p>
+</div>
+<div class="bg-primary text-on-primary p-xs rounded-full">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Request Different Date Button - Opens Calendar -->
+<button class="w-full flex items-center justify-between p-md bg-surface-container-low border border-outline-variant rounded-xl active:bg-surface-container-high transition-colors" onclick="toggleCalendar()" style="font-family: 'Geist', sans-serif;">
+<span class="font-body-md text-body-md text-on-surface">Request a different date</span>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+
+<!-- Calendar Picker (Hidden by default) -->
+<div id="calendar-section" class="hidden flex flex-col gap-md p-md bg-surface-container-low border border-outline-variant rounded-xl">
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface" style="font-family: 'Geist', sans-serif;">Select a different joining date</h3>
+<div class="grid grid-cols-4 gap-xs">
+<button class="p-sm border border-outline-variant rounded-lg hover:bg-primary hover:text-on-primary transition-colors" onclick="selectAlternateDate('Oct 1, 2024')" style="font-family: 'Geist', sans-serif;">Oct 1</button>
+<button class="p-sm border border-outline-variant rounded-lg hover:bg-primary hover:text-on-primary transition-colors" onclick="selectAlternateDate('Oct 8, 2024')" style="font-family: 'Geist', sans-serif;">Oct 8</button>
+<button class="p-sm border border-outline-variant rounded-lg hover:bg-primary hover:text-on-primary transition-colors" onclick="selectAlternateDate('Oct 22, 2024')" style="font-family: 'Geist', sans-serif;">Oct 22</button>
+<button class="p-sm border border-outline-variant rounded-lg hover:bg-primary hover:text-on-primary transition-colors" onclick="selectAlternateDate('Oct 29, 2024')" style="font-family: 'Geist', sans-serif;">Oct 29</button>
+<button class="p-sm border border-outline-variant rounded-lg hover:bg-primary hover:text-on-primary transition-colors" onclick="selectAlternateDate('Nov 5, 2024')" style="font-family: 'Geist', sans-serif;">Nov 5</button>
+<button class="p-sm border border-outline-variant rounded-lg hover:bg-primary hover:text-on-primary transition-colors" onclick="selectAlternateDate('Nov 12, 2024')" style="font-family: 'Geist', sans-serif;">Nov 12</button>
+<button class="p-sm border border-outline-variant rounded-lg hover:bg-primary hover:text-on-primary transition-colors" onclick="selectAlternateDate('Nov 19, 2024')" style="font-family: 'Geist', sans-serif;">Nov 19</button>
+<button class="p-sm border border-outline-variant rounded-lg hover:bg-primary hover:text-on-primary transition-colors" onclick="selectAlternateDate('Nov 26, 2024')" style="font-family: 'Geist', sans-serif;">Nov 26</button>
+</div>
+</div>
+
+<!-- Pending Approval Section (Hidden by default) -->
+<div id="pending-section" class="hidden flex flex-col gap-md p-md bg-surface-container-low border border-[#FFC107] rounded-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-[24px] text-[#FFC107]">schedule</span>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface" style="font-family: 'Geist', sans-serif;">Awaiting approval</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant" style="font-family: 'Geist', sans-serif;" id="pending-date">Your requested date has been sent to Siddharth V. for approval</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why We Ask / Info Section -->
+<section class="p-lg bg-surface-container-low border border-outline-variant rounded-xl flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">info</span>
+<h3 class="font-body-md-bold text-body-md-bold text-primary">Why we ask</h3>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">laptop_mac</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                        Confirming your date allows us to ship your equipment to arrive 48 hours before Day 1.
+                    </p>
+</div>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">assignment_ind</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                        We’ll pair you with your Onboarding Buddy and schedule your initial 1:1 sessions.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Visual Hero (Atmospheric) -->
+<div class="w-full rounded-xl overflow-hidden aspect-[16/9] border border-outline-variant">
+<img alt="Modern Office" class="w-full h-full object-cover grayscale opacity-80" data-alt="A hyper-minimalist, high-end corporate office interior in India featuring clean architectural lines and expansive floor-to-ceiling glass windows. The space is flooded with soft, natural morning sunlight, creating a bright and professional atmosphere. The design follows a strict monochromatic palette of whites and soft greys with sharp black accents, embodying a calm and efficient operating system aesthetic. No people are visible, emphasizing the quiet, focused workspace ready for a new team member." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkcBNZ3QWvMo6_TslvUg-gub2dyb_nVaAlm_BnKCJ5Wb_jwhiHMGYM_egcep_MslMoO2kLvaJ56bCwsDsVU0CoHLPF6g6cKKn3N4MkmOZaBc8ePKrPfRJByuBVDaojfpqB9hqY8COoyTfoPlXsK5n-lLglJ2M2Yz3PBa3HbP8NhBKbYWkyZCJjiam3mnF7XtqqsMbByX8efBU3ajyjnY17lSy4xHlZlUzDdtAwq6lfqffVBONUgTWxhtaAiZ6-jm3tB8912TyKSzJI"/>
+</div>
+<div class="h-24"></div> <!-- Spacer for fixed footer -->
+</main>
+<!-- Fixed Bottom Action Block -->
+<footer class="fixed bottom-0 left-0 w-full flex justify-center bg-surface/80 backdrop-blur-md p-mobile-margin z-50">
+<div class="w-full max-w-[375px] flex flex-col gap-md">
+<div class="flex items-start gap-sm">
+<input class="mt-1 w-5 h-5 rounded border-outline text-primary focus:ring-primary" id="consent" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant leading-tight" for="consent" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+                    I confirm my availability and acknowledge that this date will initiate my payroll and equipment setup processes.
+                </label>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold text-body-md-bold rounded-full flex items-center justify-center active:scale-95 transition-all opacity-50 cursor-not-allowed" disabled="" id="confirm-btn" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+                Continue
+            </button>
+</div>
+</footer>
+<!-- AI Concierge Trigger -->
+
+<script>
+        const checkbox = document.getElementById('consent');
+        const confirmBtn = document.getElementById('confirm-btn');
+        let selectedAlternateDate = null;
+
+        // Toggle calendar visibility
+        function toggleCalendar() {
+            const calendarSection = document.getElementById('calendar-section');
+            const pendingSection = document.getElementById('pending-section');
+            calendarSection.classList.toggle('hidden');
+            if (!calendarSection.classList.contains('hidden')) {
+                pendingSection.classList.add('hidden');
+            }
+        }
+
+        // Handle date selection from calendar
+        function selectAlternateDate(date) {
+            selectedAlternateDate = date;
+            const calendarSection = document.getElementById('calendar-section');
+            const pendingSection = document.getElementById('pending-section');
+            const pendingDateText = document.getElementById('pending-date');
+
+            // Hide calendar and show pending approval
+            calendarSection.classList.add('hidden');
+            pendingSection.classList.remove('hidden');
+            pendingDateText.textContent = `Your requested date (${date}) has been sent to Siddharth V. for approval`;
+
+            // Auto-trigger approval after 2 seconds
+            setTimeout(() => {
+                autoApproveAndContinue();
+            }, 2000);
+        }
+
+        // Auto approve and continue (called automatically after date selection)
+        function autoApproveAndContinue() {
+            const pendingSection = document.getElementById('pending-section');
+            const pendingDateText = document.getElementById('pending-date');
+
+            // Update status to approved
+            pendingDateText.innerHTML = '<span class="material-symbols-outlined text-[#10B981]">check_circle</span> Your date has been approved!';
+
+            // Auto-redirect after 1.5 seconds
+            setTimeout(() => {
+                window.top.goTo('acceptance_confirmation_moment_1');
+            }, 1500);
+        }
+
+        checkbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                confirmBtn.disabled = false;
+                confirmBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                confirmBtn.classList.add('hover:bg-primary/90');
+            } else {
+                confirmBtn.disabled = true;
+                confirmBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                confirmBtn.classList.remove('hover:bg-primary/90');
+            }
+        });
+
+        // Confirm proposed date (Oct 15) - goes straight to acceptance
+        confirmBtn.addEventListener('click', () => {
+            if (!confirmBtn.disabled) {
+                confirmBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+                setTimeout(() => {
+                    confirmBtn.innerHTML = 'Confirmed ✓';
+                    confirmBtn.classList.replace('bg-primary', 'bg-[#10B981]');
+                    setTimeout(() => {
+                        window.location.href = '../acceptance_confirmation_moment_1/code.html';
+                    }, 600);
+                }, 1500);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

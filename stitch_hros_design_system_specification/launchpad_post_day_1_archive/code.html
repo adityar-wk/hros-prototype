@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Launchpad (Archived)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#b9aa83",
+                    "on-tertiary-container": "#493f20",
+                    "on-secondary-container": "#5e6572",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-surface": "#1c1b1d",
+                    "surface-container-low": "#f6f2f4",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#231b02",
+                    "inverse-primary": "#c6c4df",
+                    "secondary-fixed": "#dce2f3",
+                    "surface-container-highest": "#e5e1e3",
+                    "outline": "#78767d",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "surface-container": "#f1edef",
+                    "surface-dim": "#ddd9db",
+                    "on-secondary-fixed": "#151c27",
+                    "primary-fixed-dim": "#c6c4df",
+                    "outline-variant": "#c8c5cd",
+                    "error-container": "#ffdad6",
+                    "background": "#fcf8fa",
+                    "inverse-on-surface": "#f4f0f2",
+                    "on-primary-fixed": "#1a1a2e",
+                    "secondary-container": "#dce2f3",
+                    "secondary": "#585f6c",
+                    "surface-variant": "#e5e1e3",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#e2e0fc",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "surface-tint": "#5d5c74",
+                    "tertiary": "#695d3c",
+                    "primary-container": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#313032",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-container-high": "#ebe7e9",
+                    "on-primary-container": "#83829b",
+                    "on-background": "#1c1b1d",
+                    "primary": "#00000b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "mobile-margin": "24px",
+                    "xl": "32px",
+                    "touch-target-min": "44px",
+                    "huge": "64px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "md": "16px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "body-md-bold": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"]
+            },
+            "fontSize": {
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .archived-mask {
+            pointer-events: none;
+            user-select: none;
+            opacity: 0.03;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 8rem;
+            font-weight: 900;
+            white-space: nowrap;
+            z-index: 0;
+        }
+        .archived-card {
+            filter: grayscale(0.2);
+            transition: filter 0.3s ease;
+        }
+        .archived-card:hover {
+            filter: grayscale(0);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col pb-[80px]">
+<!-- Archived Watermark -->
+<div class="archived-mask">ARCHIVED</div>
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline flex justify-between items-center px-lg h-[64px]">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<span class="material-symbols-outlined text-on-surface-variant">history</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Launchpad (Archived)</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional close-up portrait of a corporate professional in a modern office setting. The lighting is soft and neutral, reflecting a light-mode aesthetic with high clarity. The background is slightly blurred with muted grey and white tones, emphasizing a minimalist and dependable atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy673CL3lc15IaB0t6SeV3PyOCdWHxGKx10eqO_fiKD-E6fr42Zidq7B8ubETUxC8dJFEAhJpGRASsUoBWNcY0IdfIp6-tFx-9Am1-AkyAETVbPm02_BZIsZHd1qhOpnR4DbUuITIuNkhoOQMTWh2EMSRLejzWoZuIRjjWYW6orRedsDxNYOn_fVwksoi_QXDdp34YfSS3uH_l5E62tnRvcsFmGwvNuC3vefbXX6pvFf5b-eHRkTST-WyNq46liWulCUP6J62ngWnE"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-mobile-margin py-lg space-y-lg relative z-10">
+<!-- Archive Header Banner -->
+<section class="bg-surface-container-low border border-outline-variant rounded-lg p-md flex items-center gap-md opacity-80">
+<span class="material-symbols-outlined text-outline">archive</span>
+<div>
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">View Only Mode</p>
+<p class="font-label-sm text-label-sm text-outline">This record was completed on Oct 12, 2023.</p>
+</div>
+</section>
+<!-- Summary Section -->
+<section class="space-y-md">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-on-tertiary-container"></div>
+<h2 class="font-body-md-bold text-body-md-bold">Day 1 Retrospective</h2>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<!-- Logistics Card -->
+<div class="archived-card bg-surface-container-lowest border border-outline-variant rounded-lg p-md space-y-md shadow-sm">
+<div class="flex justify-between items-start">
+<div class="space-y-base">
+<span class="font-label-sm text-label-sm text-outline">Location &amp; Timing</span>
+<h3 class="font-body-md-bold text-body-md-bold">Gurugram HQ - Floor 4</h3>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-sm py-[2px] rounded-full font-label-sm-bold text-label-sm-bold">09:30 AM</span>
+</div>
+<div class="flex items-center gap-md py-sm border-t border-outline-variant">
+<span class="material-symbols-outlined text-primary">distance</span>
+<div class="flex-1">
+<p class="font-label-sm text-label-sm text-outline">Reporting Manager</p>
+<p class="font-body-md text-body-md">Arjun Mehta</p>
+</div>
+</div>
+<div class="h-32 w-full rounded-lg overflow-hidden border border-outline-variant grayscale opacity-60">
+<img alt="Office Lobby" class="w-full h-full object-cover" data-alt="A wide-angle interior shot of a minimalist, high-end corporate lobby in Gurugram. The space features white marble floors, clean architectural lines, and large glass windows. The lighting is bright and natural, creating a serene and professional environment. A few indoor plants add a touch of organic green to the neutral grey and white color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBulFZnXpEm0QeKvzCC9TNAz0D1dirJfgcKtCmkTvyT66LQ1NKjJRFk61Aw74QcGjWM8yBrJPn27u-FIbyFpjkCwDsv2gKRAm_ZqGmOj5K-_0nzymgEz854pACI_EuscfTTq6hfSnlr3XZqAYTlrd4CQFsUMrVsd7tfbVdwdd2Z3XP9r_hz_6efN5IZPNTJDRskowhcUbWpH7x3NpplrbIXNLv0GW82WGDq_BOVo9GjYdbV-kLdOMUoTzZaB0kpg8dvHsr-hzODGFqE"/>
+</div>
+</div>
+<!-- IT Assets Card -->
+<div class="archived-card bg-surface-container-lowest border border-outline-variant rounded-lg p-md space-y-md shadow-sm">
+<div class="flex justify-between items-center">
+<h3 class="font-body-md-bold text-body-md-bold">Asset Provisioning</h3>
+<span class="flex items-center gap-xs text-on-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-label-sm-bold text-label-sm-bold">Verified</span>
+</span>
+</div>
+<ul class="space-y-sm">
+<li class="flex items-center justify-between p-sm bg-surface-container-low rounded">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline">laptop_mac</span>
+<span class="font-label-sm text-label-sm">MacBook Pro M2 - 14"</span>
+</div>
+<span class="font-label-sm text-outline italic">SN: 4492-X</span>
+</li>
+<li class="flex items-center justify-between p-sm bg-surface-container-low rounded">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline">badge</span>
+<span class="font-label-sm text-label-sm">ID Access Card</span>
+</div>
+<span class="font-label-sm text-outline italic">Active</span>
+</li>
+</ul>
+</div>
+<!-- Bento Grid for Documentation -->
+<div class="grid grid-cols-2 gap-md">
+<div class="archived-card bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col justify-between">
+<span class="material-symbols-outlined text-on-surface-variant mb-md">description</span>
+<div>
+<p class="font-label-sm-bold text-label-sm-bold">Compliance</p>
+<p class="font-label-sm text-label-sm text-outline">12 Documents signed</p>
+</div>
+</div>
+<div class="archived-card bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col justify-between">
+<span class="material-symbols-outlined text-on-surface-variant mb-md">groups</span>
+<div>
+<p class="font-label-sm-bold text-label-sm-bold">Team Intro</p>
+<p class="font-label-sm text-label-sm text-outline">8 Buddies met</p>
+</div>
+</div>
+</div>
+<!-- DPDP Consent (Archived State) -->
+<div class="bg-surface-container-high border border-outline rounded-lg p-md space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">verified_user</span>
+<h4 class="font-label-sm-bold text-label-sm-bold">Data Privacy Record</h4>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                        Digital Personal Data Protection (DPDP) consent was provided by the candidate on 2023-10-12 at 10:45 AM IST. Consent encompasses background verification and payroll processing within the enterprise ecosystem.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Spacer for FAB -->
+<div class="h-huge"></div>
+</main>
+<!-- AI Concierge Trigger (Archived View doesn't have major FAB actions, but stays for system layer) -->
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 h-[80px] bg-surface dark:bg-background border-t border-outline-variant dark:border-outline flex justify-around items-center px-md pb-safe">
+<!-- Journey Tab (Active) -->
+<a class="flex flex-col items-center justify-center gap-1 text-primary dark:text-primary-fixed font-label-sm-bold text-label-sm-bold active:scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" data-icon="route" style="font-variation-settings: 'FILL' 1;">route</span>
+<span>Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-150" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-150" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span>Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-150" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span>AI</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-150" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>You</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.archived-card').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.opacity = '1';
+                card.style.filter = 'grayscale(0)';
+            });
+            card.addEventListener('touchend', () => {
+                setTimeout(() => {
+                    card.style.opacity = '0.9';
+                    card.style.filter = 'grayscale(0.2)';
+                }, 500);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

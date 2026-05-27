@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Launchpad - Pre-Day 1 Brief</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#b9aa83",
+                      "on-tertiary-container": "#493f20",
+                      "on-secondary-container": "#5e6572",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed-dim": "#c0c7d6",
+                      "on-surface": "#1c1b1d",
+                      "surface-container-low": "#f6f2f4",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#231b02",
+                      "inverse-primary": "#c6c4df",
+                      "secondary-fixed": "#dce2f3",
+                      "surface-container-highest": "#e5e1e3",
+                      "outline": "#78767d",
+                      "tertiary-fixed-dim": "#d5c59d",
+                      "surface-container": "#f1edef",
+                      "surface-dim": "#ddd9db",
+                      "on-secondary-fixed": "#151c27",
+                      "primary-fixed-dim": "#c6c4df",
+                      "outline-variant": "#c8c5cd",
+                      "error-container": "#ffdad6",
+                      "background": "#fcf8fa",
+                      "inverse-on-surface": "#f4f0f2",
+                      "on-primary-fixed": "#1a1a2e",
+                      "secondary-container": "#dce2f3",
+                      "secondary": "#585f6c",
+                      "surface-variant": "#e5e1e3",
+                      "on-secondary-fixed-variant": "#404754",
+                      "on-tertiary-fixed-variant": "#514627",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#e2e0fc",
+                      "on-secondary": "#ffffff",
+                      "surface": "#fcf8fa",
+                      "surface-tint": "#5d5c74",
+                      "tertiary": "#695d3c",
+                      "primary-container": "#1a1a2e",
+                      "on-surface-variant": "#47464c",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#313032",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#f2e1b7",
+                      "on-primary-fixed-variant": "#45455b",
+                      "surface-container-high": "#ebe7e9",
+                      "on-primary-container": "#83829b",
+                      "on-background": "#1c1b1d",
+                      "primary": "#00000b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "mobile-margin": "24px",
+                      "xl": "32px",
+                      "touch-target-min": "44px",
+                      "huge": "64px",
+                      "base": "4px",
+                      "xxl": "48px",
+                      "lg": "24px",
+                      "xs": "8px",
+                      "md": "16px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "body-md-bold": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "label-sm-bold": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "display": ["Geist"]
+              },
+              "fontSize": {
+                      "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #fcf8fa;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .bento-card-full {
+            grid-column: span 2;
+        }
+        .hairline-border {
+            border: 1px solid #E5E7EB;
+        }
+        .ai-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+        .updated-glow {
+            animation: pulse-border 2s infinite ease-in-out;
+        }
+        @keyframes pulse-border {
+            0% { border-color: #E5E7EB; }
+            50% { border-color: #5d5c74; }
+            100% { border-color: #E5E7EB; }
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant flex justify-between items-center px-lg h-[64px]">
+<div class="flex items-center gap-md">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<img alt="Profile" class="w-8 h-8 rounded-full" data-alt="A professional headshot of a young Indian executive in a bright, modern corporate office. The photography is high-key with soft natural light streaming from a large window. The background is a clean, minimalist workspace with white walls and subtle grey accents, maintaining a professional and warm aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGm8awiHdq2dkpMXtBRgCsAeAF5kCEgK96QgsuBZpyZr7tv-lFDTja2J8CDqynBBpjO_PgPy--wp6mp9Zli0TH8xl9Lq09uA2DtGCJX_HaK5DWVuA26CZ2sQ62U1lP87d0kpOAEKL6cQlrD9G0B5Ckcq5EmEGDZ19vk-2bITM1FhmeExn-bop0Uokda8u7w-xLuICvjo-GVcwo7n8icRsL3OYt2m0pq9kRc8IXPLSRKTktMkhCvCyojYr5rBziSVgK0SZBzTZF3QNQ"/>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">HROS</h1>
+</div>
+<button class="active:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container-low" onclick="window.location.href='../launchpad_day_1_active/code.html'">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-[375px] px-mobile-margin py-lg flex-1 pb-[100px]">
+<!-- Update Banner -->
+<div class="mb-lg bg-primary-container p-md rounded-lg flex items-center gap-sm text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="info">info</span>
+<p class="font-label-sm-bold text-label-sm-bold">Manager contact updated since your last view</p>
+</div>
+<section class="mb-huge">
+<div class="flex items-center gap-xs mb-sm">
+<div class="w-[12px] h-[12px] rounded-full bg-[#10B981]"></div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile">Launchpad</h2>
+</div>
+<p class="font-body-md text-on-surface-variant mb-xl">Your Day 1 countdown has begun. Here is everything you need to know before you start.</p>
+<div class="bento-grid">
+<!-- Manager Card (Updated Highlight) -->
+<div class="bento-card-full bg-surface-container-lowest hairline-border p-md rounded-xl updated-glow">
+<div class="flex justify-between items-start mb-md">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Reporting Manager</span>
+<span class="bg-[#e2e0fc] text-primary px-2 py-0.5 rounded-full text-[11px] font-label-sm-bold">Updated</span>
+</div>
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A close-up portrait of a senior manager, Arjun Sharma, a professional man in his early 40s with a kind and focused expression. He is wearing a crisp white dress shirt in a bright, modern office setting. The lighting is soft and even, highlighting a clean, high-end professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx7BHrxZXZHFv49PkzssomyGvIzOhmDPOGhGotMjbtlwBPmqhARU9OQ00qFrQwa_Exueo_PGExrm9jeI4AufLKpKt6GreosU5QN4qofRyKv1mcFZrAdycwdim_7RL3PcJY6rYx1NlCdW3_BYujQUgYrPr2l3Lk9dsT7bXS-wxhBPkg6RakZQEhZHp9BVBlaSS1cjxjICNCLR4dNvablocNPfk_JZL83mD8UC5BClCapZt7YJiGeoDWAIJQCYBFA2PF8XwSggo42r40"/>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold">Arjun Sharma</h3>
+<p class="font-label-sm text-on-surface-variant">VP of Engineering</p>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-outline-variant space-y-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline" data-icon="call">call</span>
+<span class="font-body-md text-primary">+91 98765 43210</span>
+</div>
+<!-- Specific change indicator -->
+<div class="flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-label-sm-bold text-[11px] text-primary">NEW</span>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline" data-icon="mail">mail</span>
+<span class="font-body-md text-primary">arjun.s@hros.ai</span>
+</div>
+</div>
+</div>
+<!-- Office Location -->
+<div class="bg-surface-container-lowest hairline-border p-md rounded-xl">
+<span class="text-label-sm font-label-sm text-on-surface-variant mb-md block">Office</span>
+<div class="h-20 w-full rounded-lg bg-surface-container mb-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stylized minimalist map of a high-tech business district in Bangalore, featuring clean white roads and soft grey building outlines. One prominent pin indicates the HROS headquarters. The style is modern and clean, avoiding clutter to maintain the radical reduction aesthetic." data-location="Bangalore" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJn33AgJBVTV6VN3nwFuJCI7zSQbyegJBYSvCwryEEOyXMy4FkHcsV6svL3SR0gxOGfyLKIXaEtc_yC4AWImA-XDMF-AxUYnP4j12RS7FilQwxnGOhViO5aE04I5heUq72Bw1QQd1_oBqxaQF0RJKHF9Uu55QrwLIJ5NyQjW9HAWphT2TZ8S0m89RGeoGguIZtBU7WDKBG973-bs_sNmaCXnRV5ll0B3oscbYoOZkk0HNjmjOzurlbNIydDGxNzuNJDKGP66qOqG02"/>
+</div>
+<h4 class="font-label-sm-bold text-label-sm-bold">HROS HQ, BLR</h4>
+<p class="text-[12px] text-on-surface-variant leading-tight">Prestige Tech Park, Block B</p>
+</div>
+<!-- IT Assets -->
+<div class="bg-surface-container-lowest hairline-border p-md rounded-xl">
+<span class="text-label-sm font-label-sm text-on-surface-variant mb-md block">IT Assets</span>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="laptop_mac">laptop_mac</span>
+<span class="font-label-sm-bold text-label-sm-bold">MacBook Pro</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="badge">badge</span>
+<span class="font-label-sm-bold text-label-sm-bold">Access Card</span>
+</div>
+</div>
+</div>
+<!-- Next Task Card -->
+<div class="bento-card-full bg-surface-container-lowest hairline-border p-md rounded-xl">
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-body-md-bold text-body-md-bold">Complete Induction Prep</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-error text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm-bold text-label-sm-bold text-error">2h left</span>
+</div>
+</div>
+<p class="font-label-sm text-on-surface-variant mb-md">Review the company handbook and sign the digital security policy.</p>
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-lg font-label-sm-bold hover:bg-opacity-90 active:scale-95 transition-all">
+                        Start Task
+                    </button>
+</div>
+</div>
+</section>
+<!-- Compliance Block -->
+<section class="bg-surface-container-low hairline-border p-md rounded-xl mb-lg">
+<h4 class="font-label-sm-bold text-label-sm-bold mb-xs">DPDP Consent</h4>
+<p class="text-[11px] leading-relaxed text-on-surface-variant mb-md">
+                We value your privacy. Your contact details are shared only with relevant departments for onboarding purposes in accordance with Indian DPDP Act guidelines.
+            </p>
+<label class="flex items-start gap-sm cursor-pointer group">
+<input class="mt-1 rounded border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-[12px] text-on-surface select-none group-active:opacity-70 transition-opacity">I acknowledge that I have read and understood the privacy policy.</span>
+</label>
+</section>
+</main>
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 h-[80px] bg-surface border-t border-outline-variant flex justify-around items-center px-md pb-safe">
+<!-- Journey Tab (Active) -->
+<button class="flex flex-col items-center justify-center gap-1 text-primary font-label-sm-bold text-label-sm-bold active:scale-95 transition-transform duration-150" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route" data-weight="fill" style="font-variation-settings: 'FILL' 1;">route</span>
+<span>Journey</span>
+</button>
+<!-- Tasks Tab -->
+<button class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150 rounded-lg p-1" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>Tasks</span>
+</button>
+<!-- Feed Tab -->
+<button class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150 rounded-lg p-1" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span>Feed</span>
+</button>
+<!-- AI Tab -->
+<button class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150 rounded-lg p-1" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span>AI</span>
+</button>
+<!-- You Tab -->
+<button class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150 rounded-lg p-1" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>You</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for the checkbox and task button
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if(this.checked) {
+                    console.log('Consent granted');
+                }
+            });
+        });
+
+        // Interactive states for bento cards
+        document.querySelectorAll('.bento-grid > div').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
+

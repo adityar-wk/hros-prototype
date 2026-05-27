@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HROS - Employee Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #fcf8fa;
+        }
+        .video-progress-bar {
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .video-progress-fill {
+            height: 100%;
+            background: #ffffff;
+            width: 35%;
+            transition: width 0.1s linear;
+        }
+        .glass-overlay {
+            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.4);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#313032",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#5e6572",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#83829b",
+                    "on-primary-fixed-variant": "#45455b",
+                    "primary-container": "#1a1a2e",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-secondary-fixed-variant": "#404754",
+                    "primary": "#00000b",
+                    "primary-fixed": "#e2e0fc",
+                    "surface-container-high": "#ebe7e9",
+                    "on-secondary-fixed": "#151c27",
+                    "outline-variant": "#c8c5cd",
+                    "on-tertiary-container": "#493f20",
+                    "tertiary-container": "#b9aa83",
+                    "tertiary-fixed": "#f2e1b7",
+                    "background": "#fcf8fa",
+                    "surface-container-low": "#f6f2f4",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f1edef",
+                    "on-primary-fixed": "#1a1a2e",
+                    "inverse-primary": "#c6c4df",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-surface-variant": "#47464c",
+                    "inverse-on-surface": "#f4f0f2",
+                    "tertiary": "#695d3c",
+                    "secondary": "#585f6c",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1c1b1d",
+                    "secondary-fixed": "#dce2f3",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "surface-tint": "#5d5c74",
+                    "primary-fixed-dim": "#c6c4df",
+                    "secondary-container": "#dce2f3",
+                    "outline": "#78767d",
+                    "on-background": "#1c1b1d",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-bright": "#fcf8fa",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#ddd9db",
+                    "surface": "#fcf8fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "touch-target-min": "44px",
+                    "lg": "24px",
+                    "sm": "12px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "huge": "64px",
+                    "mobile-margin": "24px",
+                    "xs": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "display": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md": ["Geist"],
+                    "body-md-bold": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-huge">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-mobile-margin h-touch-target-min w-full">
+<div class="flex items-center gap-sm">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Profile" data-alt="A professional headshot of a corporate employee with a warm, confident expression. The photo is taken in a brightly lit, minimalist office environment with soft focus on the background. The lighting is natural and high-key, aligning with the clean, professional light-mode aesthetic of the HR operating system. Subtle cool tones and sharp detail emphasize quality and dependability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr5CuMQX5P3-ELhXh-a3j-2TsHrVUDroFPJcXfy_O113ZdCe7zYlpH2mPOWmdrDr6bQzZ1FqvSzD0GXpCjVtoElOgfhKWgcudk1HZNkOia9FOCvaIHs8gHMxrHA9G3RF4LvFJF9pWaG7jUYA5IDiqiQUFUFnnmNb548Vg77Q0XeWqPFQZ5QRjZWD8ueLKGhPSux0IP5dEbS5EXmnmNLS8T6hQd3xwdrQWWtCVf9J9FGBFiPmN3Aw6cAe9DfVUAFDkdihgUE_C0YbbC"/>
+</div>
+</div>
+<h1 class="font-display text-headline-lg-mobile font-bold text-primary">HROS</h1>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full" onclick="window.location.href='../feed_active_content_mix/code.html'">
+            notifications
+        </button>
+</header>
+<main class="mt-touch-target-min px-mobile-margin py-lg space-y-lg">
+<!-- Section Header -->
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-[#10b981]"></div>
+<h2 class="font-body-md-bold text-on-surface">Community Feed</h2>
+</div>
+<!-- Featured Video Card: CHRO Welcome -->
+<section class="relative w-full rounded-xl overflow-hidden bg-white border border-outline-variant shadow-sm aspect-[4/5] group">
+<img alt="CHRO Video Content" class="w-full h-full object-cover" data-alt="A sophisticated female executive speaking directly to the camera in a modern, glass-walled boardroom. The lighting is soft and cinematic, casting a professional glow that feels approachable yet authoritative. The interior design behind her is minimalist and high-end, featuring clean lines and a neutral palette of whites and soft greys, perfectly mirroring the brand's 'Radical Reduction' design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqqpzY0e64OsHusigWaF1yP35TzkfQAphoFIfTPScBtkMR61WI9oLLIZBDAAS8XI1oF_hv1FOBqppRC3uAH2lRaZubiCdplEKJDaOBmlCP_SpxrhBwt_8DJX5hu3IU0zflxklEeOsfvSLWQh7fixKRxc2YwpgbVpWfrf1PUDWecWcC9qiXgH_XdMvxAiNRryp6TMEAYCbtoPe1fFrJEFFLZcYTj54oFEHc73IcoIBS1elf6GyXfVDeSqR35wzD4zGrlEpG2uyM3E8T"/>
+<!-- Video UI Overlays -->
+<div class="absolute inset-0 flex flex-col justify-between p-lg pointer-events-none">
+<div class="flex justify-between items-start w-full">
+<span class="bg-primary/80 text-white font-label-sm-bold px-3 py-1 rounded-full backdrop-blur-sm">CHRO UPDATES</span>
+<button class="material-symbols-outlined text-white pointer-events-auto">more_vert</button>
+</div>
+<div class="space-y-sm">
+<h3 class="text-white font-headline-lg-mobile font-bold leading-tight drop-shadow-md">"Welcome to our culture"</h3>
+<p class="text-white/90 font-label-sm drop-shadow-sm">A message from Sarah Chen on our 2024 vision.</p>
+</div>
+</div>
+<!-- Tap for Sound Overlay -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="glass-overlay rounded-full px-lg py-sm flex items-center gap-xs border border-white/20">
+<span class="material-symbols-outlined text-white text-sm">volume_off</span>
+<span class="text-white font-label-sm-bold">Tap for sound</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="video-progress-bar">
+<div class="video-progress-fill" id="videoProgress"></div>
+</div>
+</section>
+<!-- New Content Badge / Toast -->
+<div class="flex justify-center -mt-md">
+<button class="bg-primary text-on-primary font-label-sm-bold px-lg py-2 rounded-full shadow-lg flex items-center gap-xs active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+                New content available
+            </button>
+</div>
+<!-- Secondary Feed Item: News/Post -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">campaign</span>
+</div>
+<div>
+<h4 class="font-body-md-bold text-on-surface">Annual Hackathon Results</h4>
+<p class="font-label-sm text-on-surface-variant">Team 'AI First' takes the grand prize.</p>
+</div>
+</div>
+<div class="w-full aspect-video rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Hackathon Team" data-alt="A group of diverse professionals cheering and high-fiving in a vibrant, sunlit co-working space. The atmosphere is energetic and collaborative. The setting is modern with large windows, minimalist wooden furniture, and clean architectural details. The color palette is bright and optimistic, emphasizing professional joy and team achievement within a high-performance corporate culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpHezEk1EKLzxlysLaxgkNqkFMC92WnjE_VAkeAbohEFtDWULSpawHyQMvI1OxDa3UHOUK_mpvQ5zBquvitMuEaFWRYc0X4DbZZ61-UOQEePVCzPZ7HExo-griAOF-HcwUJGZrThg6N4XFtNAIKhs_H90cLyEmLL5dSU6ywFSHJsmn_XArvskh7lOcMg_fg1bUmp8LPVL39FMCxT7uDCDzjC3LgE4EPEI4BCe9n9zKjTCVZFOAkvSbYrAR25yW39pmW8dWZY5hBN9s"/>
+</div>
+<div class="flex justify-between items-center pt-base">
+<div class="flex gap-md">
+<button class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span class="font-label-sm">24</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">chat_bubble</span>
+<span class="font-label-sm">8</span>
+</button>
+</div>
+<span class="font-label-sm text-outline">2h ago</span>
+</div>
+</article>
+<!-- DPDP Consent Block -->
+<div class="border border-outline-variant rounded-xl p-md bg-surface-container-low/50">
+<div class="flex items-start gap-md">
+<div class="pt-1">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" id="consent" type="checkbox"/>
+</div>
+<label class="font-label-sm text-on-surface-variant leading-relaxed" for="consent">
+                    I acknowledge that this content is for internal use only under the DPDP Act. By viewing the feed, I agree to maintain data privacy standards of the enterprise OS.
+                </label>
+</div>
+</div>
+</main>
+
+<!-- You -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction for video progress bar simulation
+        const progressFill = document.getElementById('videoProgress');
+        let progress = 35;
+        setInterval(() => {
+            progress += 0.2;
+            if (progress > 100) progress = 0;
+            progressFill.style.width = progress + '%';
+        }, 100);
+
+        // Simple scale interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.classList.add('scale-95');
+            });
+            btn.addEventListener('touchend', () => {
+                btn.classList.remove('scale-95');
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
+

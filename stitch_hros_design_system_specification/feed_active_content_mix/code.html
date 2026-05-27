@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+  <style>
+    * { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    body { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    h1 { font-family: 'Geist', sans-serif; font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-family: 'Geist', sans-serif; font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-family: 'Geist', sans-serif; font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-family: 'Geist', sans-serif; font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-family: 'Geist', sans-serif; font-weight: 400; font-size: 12px; color: #78767d; }
+
+    .featured-card { background: linear-gradient(135deg, #00000b 0%, #2a2a4e 100%); color: #fff; border-radius: 12px; padding: 24px; margin-bottom: 16px; position: relative; overflow: hidden; font-family: 'Geist', sans-serif; }
+    .featured-card::before { content: ''; position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; }
+    .featured-label { font-family: 'Geist', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; opacity: 0.8; margin-bottom: 8px; position: relative; z-index: 1; }
+    .featured-title { font-family: 'Geist', sans-serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; position: relative; z-index: 1; }
+    .featured-desc { font-family: 'Geist', sans-serif; font-size: 13px; opacity: 0.9; margin-bottom: 12px; position: relative; z-index: 1; line-height: 1.5; }
+    .featured-cta { font-family: 'Geist', sans-serif; display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; }
+    .featured-cta:hover { background: rgba(255,255,255,0.3); }
+
+    .content-card { font-family: 'Geist', sans-serif; background: #fff; border: 1px solid #c8c5cd; border-radius: 12px; padding: 16px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s; }
+    .content-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .content-card.expandable .content-body { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+    .content-card.expandable.expanded .content-body { max-height: 500px; }
+
+    .content-header { font-family: 'Geist', sans-serif; display: flex; gap: 12px; align-items: flex-start; }
+    .content-icon { width: 48px; height: 48px; background: #f1edef; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 24px; }
+    .content-meta { flex: 1; font-family: 'Geist', sans-serif; }
+    .content-title { font-family: 'Geist', sans-serif; font-weight: 600; color: #1c1b1d; font-size: 14px; margin-bottom: 4px; }
+    .content-date { font-family: 'Geist', sans-serif; font-size: 12px; color: #78767d; }
+    .content-desc { font-family: 'Geist', sans-serif; font-size: 13px; color: #47464c; margin-top: 8px; line-height: 1.5; }
+    .expand-btn { font-family: 'Geist', sans-serif; background: none; border: none; cursor: pointer; padding: 4px; }
+
+    .video-placeholder { font-family: 'Geist', sans-serif; width: 100%; height: 180px; background: linear-gradient(135deg, #e2e0fc 0%, #dce2f3 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-top: 12px; font-size: 48px; }
+
+    .section-header { font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; color: #45455b; margin: 24px 0 12px 0; }
+
+    .fab { font-family: 'Geist', sans-serif; position: fixed; bottom: 88px; right: 16px; width: 56px; height: 56px; border-radius: 50%; background: #00000b; color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 40; }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col" style="background:#fcf8fa; color:#1c1b1d;">
+
+<!-- Top App Bar -->
+<header style="background:#fcf8fa; border-bottom:1px solid #c8c5cd;" class="w-full top-0 sticky z-40 flex justify-between items-center px-4 h-14">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+  <div class="flex-grow">
+    <h1 style="margin:0; font-size:18px;">Feed</h1>
+  </div>
+  <div style="width:40px;"></div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-grow px-6 pt-6 pb-24 hide-scrollbar overflow-y-auto">
+
+  <!-- Welcome Video Section -->
+  <div class="featured-card">
+    <div class="featured-label">🎬 Welcome Video</div>
+    <div class="featured-title">Message from Our Founder</div>
+    <div class="featured-desc">Watch a personalized welcome message from our CEO. Learn about our mission, culture, and what makes us unique.</div>
+    <div class="video-placeholder">▶️</div>
+    <button class="featured-cta" onclick="alert('Video player would open here')">Watch Video</button>
+  </div>
+
+  <!-- Joining Resources -->
+  <div class="section-header">📚 Joining Resources</div>
+
+  <div class="content-card expandable" onclick="toggleExpand(this)">
+    <div class="content-header">
+      <div class="content-icon">📋</div>
+      <div class="content-meta">
+        <div class="content-title">Onboarding Checklist</div>
+        <div class="content-date">Updated today</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">expand_more</span>
+    </div>
+    <div class="content-body" style="padding-top:12px; border-top:1px solid #e0e0e0; margin-top:12px;">
+      <div class="content-desc">Your complete onboarding checklist with step-by-step instructions. Complete each section to ensure a smooth start.</div>
+      <div style="margin-top:12px; display:flex; gap:8px;">
+        <span style="padding:4px 8px; background:#dce2f3; border-radius:4px; font-size:11px; font-weight:600;">Getting Started</span>
+        <span style="padding:4px 8px; background:#dce2f3; border-radius:4px; font-size:11px; font-weight:600;">5 sections</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card expandable" onclick="toggleExpand(this)">
+    <div class="content-header">
+      <div class="content-icon">🏢</div>
+      <div class="content-meta">
+        <div class="content-title">Office Guide</div>
+        <div class="content-date">2 days ago</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">expand_more</span>
+    </div>
+    <div class="content-body" style="padding-top:12px; border-top:1px solid #e0e0e0; margin-top:12px;">
+      <div class="content-desc">Everything you need to know about our office facilities, amenities, parking, cafeteria, and getting around the building.</div>
+      <div style="margin-top:12px; display:flex; gap:8px;">
+        <span style="padding:4px 8px; background:#f3e5f5; border-radius:4px; font-size:11px; font-weight:600;">Facilities</span>
+        <span style="padding:4px 8px; background:#f3e5f5; border-radius:4px; font-size:11px; font-weight:600;">Getting Around</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card expandable" onclick="toggleExpand(this)">
+    <div class="content-header">
+      <div class="content-icon">🎓</div>
+      <div class="content-meta">
+        <div class="content-title">Learning & Development</div>
+        <div class="content-date">1 week ago</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">expand_more</span>
+    </div>
+    <div class="content-body" style="padding-top:12px; border-top:1px solid #e0e0e0; margin-top:12px;">
+      <div class="content-desc">Access our learning portal with courses, certifications, and development resources. Start your growth journey with us.</div>
+      <div style="margin-top:12px; display:flex; gap:8px;">
+        <span style="padding:4px 8px; background:#e3f2fd; border-radius:4px; font-size:11px; font-weight:600;">Learning Paths</span>
+        <span style="padding:4px 8px; background:#e3f2fd; border-radius:4px; font-size:11px; font-weight:600;">Certifications</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest Updates -->
+  <div class="section-header">📰 Latest Updates</div>
+
+  <div class="content-card expandable" onclick="toggleExpand(this)">
+    <div class="content-header">
+      <div class="content-icon">🚀</div>
+      <div class="content-meta">
+        <div class="content-title">Q4 Product Roadmap Announced</div>
+        <div class="content-date">Today</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">expand_more</span>
+    </div>
+    <div class="content-body" style="padding-top:12px; border-top:1px solid #e0e0e0; margin-top:12px;">
+      <div class="content-desc">Exciting updates about our upcoming features and product launches. Read the full announcement from our product team.</div>
+    </div>
+  </div>
+
+  <div class="content-card expandable" onclick="toggleExpand(this)">
+    <div class="content-header">
+      <div class="content-icon">🎉</div>
+      <div class="content-meta">
+        <div class="content-title">Team Lunch This Friday!</div>
+        <div class="content-date">Yesterday</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">expand_more</span>
+    </div>
+    <div class="content-body" style="padding-top:12px; border-top:1px solid #e0e0e0; margin-top:12px;">
+      <div class="content-desc">Join us for a casual team lunch to celebrate new joiners and bond with your teammates. RSVP in the comments!</div>
+    </div>
+  </div>
+
+  <!-- Team Intros -->
+  <div class="section-header">👥 Meet Your Team</div>
+
+  <div class="content-card" onclick="alert('Team member profile')">
+    <div class="content-header">
+      <div class="content-icon" style="background:linear-gradient(135deg, #00000b, #4a4a7e); color:#fff;">👨‍💼</div>
+      <div class="content-meta">
+        <div class="content-title">Siddharth V. - Your HRBP</div>
+        <div class="content-date">Always available</div>
+        <div class="content-desc">Your dedicated HR Business Partner. Reach out for any onboarding questions or support needs.</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">arrow_forward_ios</span>
+    </div>
+  </div>
+
+  <div class="content-card" onclick="alert('Team member profile')">
+    <div class="content-header">
+      <div class="content-icon" style="background:linear-gradient(135deg, #695d3c, #8b7d5c); color:#fff;">👩‍💻</div>
+      <div class="content-meta">
+        <div class="content-title">Engineering Team</div>
+        <div class="content-date">Say hello</div>
+        <div class="content-desc">Meet the amazing engineers who will be working alongside you. Check out their profiles and expertise.</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">arrow_forward_ios</span>
+    </div>
+  </div>
+
+  <!-- Culture & Values -->
+  <div class="section-header">💡 Culture & Values</div>
+
+  <div class="content-card expandable" onclick="toggleExpand(this)">
+    <div class="content-header">
+      <div class="content-icon">🤝</div>
+      <div class="content-meta">
+        <div class="content-title">Our Company Values</div>
+        <div class="content-date">Core to everything we do</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">expand_more</span>
+    </div>
+    <div class="content-body" style="padding-top:12px; border-top:1px solid #e0e0e0; margin-top:12px;">
+      <div class="content-desc">Integrity • Innovation • Inclusivity • Impact. These values guide our decisions and define our culture.</div>
+      <div style="margin-top:12px; padding:12px; background:#f1edef; border-radius:8px;">
+        <div style="font-size:13px; color:#1c1b1d; line-height:1.6;">
+          <strong>Integrity:</strong> We do the right thing, always.<br/>
+          <strong>Innovation:</strong> We embrace new ideas and challenge the status quo.<br/>
+          <strong>Inclusivity:</strong> Everyone's voice matters and is valued.<br/>
+          <strong>Impact:</strong> We create meaningful change in the world.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card expandable" onclick="toggleExpand(this)">
+    <div class="content-header">
+      <div class="content-icon">🌍</div>
+      <div class="content-meta">
+        <div class="content-title">Diversity & Inclusion</div>
+        <div class="content-date">We're committed to this</div>
+      </div>
+      <span class="material-symbols-outlined" style="color:#78767d;">expand_more</span>
+    </div>
+    <div class="content-body" style="padding-top:12px; border-top:1px solid #e0e0e0; margin-top:12px;">
+      <div class="content-desc">We believe diverse teams create better products. Learn about our D&I initiatives and employee resource groups.</div>
+    </div>
+  </div>
+
+  <div style="height:24px;"></div>
+
+</main>
+
+<!-- AI Floating Action Button -->
+<button class="fab" onclick="window.top.openAIChat ? window.top.openAIChat('ai_concierge_active_chat') : alert('AI not available')">
+  <span class="material-symbols-outlined" style="font-size:28px;">auto_awesome</span>
+</button>
+
+<!-- Bottom Nav Bar -->
+<nav style="position:fixed; bottom:0; left:0; width:100%; z-index:50; display:flex; justify-content:space-around; align-items:center; padding:12px 4px 12px; background:#fff; border-top:1px solid #c8c5cd; height:64px;">
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../tasks_active_state/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">assignment</span>
+    <span style="font-size:12px; margin-top:2px;">Tasks</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; background:#e2e0fc; color:#1a1a2e; border-radius:8px; padding:8px 12px; text-decoration:none; flex:1; margin:0 2px;" href="../feed_active_content_mix/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px; font-variation-settings:'FILL' 1;">dynamic_feed</span>
+    <span style="font-size:12px; font-weight:600; margin-top:2px;">Feed</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../journey_map_current_stage_expanded/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">route</span>
+    <span style="font-size:12px; margin-top:2px;">Journey</span>
+  </a>
+  <a style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#47464c; text-decoration:none; flex:1; margin:0 2px;" href="../data_rights_pane/code.html">
+    <span class="material-symbols-outlined" style="font-size:24px;">person</span>
+    <span style="font-size:12px; margin-top:2px;">Profile</span>
+  </a>
+</nav>
+
+<script>
+function toggleExpand(card) {
+  card.classList.toggle('expanded');
+}
+</script>
+
+</body>
+</html>

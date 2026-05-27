@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=375, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .schedule-line::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            bottom: -24px;
+            width: 1px;
+            background-color: #E5E7EB;
+        }
+        .schedule-item:last-child .schedule-line::before {
+            display: none;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f2e1b7",
+                        "primary": "#00000b",
+                        "on-surface-variant": "#47464c",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary-fixed": "#231b02",
+                        "background": "#fcf8fa",
+                        "outline-variant": "#c8c5cd",
+                        "tertiary-container": "#b9aa83",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1edef",
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#78767d",
+                        "on-secondary-container": "#5e6572",
+                        "on-primary-fixed-variant": "#45455b",
+                        "primary-fixed-dim": "#c6c4df",
+                        "secondary-container": "#dce2f3",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2e0fc",
+                        "surface-container-high": "#ebe7e9",
+                        "surface": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#404754",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-background": "#1c1b1d",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-primary-container": "#83829b",
+                        "surface-tint": "#5d5c74",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed": "#dce2f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#151c27",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "primary-container": "#1a1a2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "huge": "64px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- Top AppBar Component -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-on-secondary-fixed-variant flex justify-between items-center px-mobile-margin h-touch-target-min w-full fixed top-0 z-50">
+<div class="flex items-center gap-2">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional studio headshot of a young employee with a warm, welcoming smile, set against a clean, minimalist off-white background. The lighting is soft and even, emphasizing a modern corporate aesthetic with high-key tones and crisp details. The color palette is composed of neutrals and soft blues, matching a minimalist-professional UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqEVeQZAUepv4pSVBjwqN1ObRZp9yXYQej5bKm1J-YJz1cpeQzu-h2VAOmFhU-ibyH3SQKLj9XBr7owqPs1hIOCeRkv9oNdooZ06KY4vCw09hNhnzSRl2zLvGHiI7i43xNF5D9hAX_3JrfrdGcLGIgS0v_lZoJWgLaLzBtp5pLSXfF1YcX5M9XNlEOZHSGKHFEYSp20Z-66NODE8frfdDEd4_Lwak1uwfRtUxv0hGh9CR_9n6SyEOY_81kvNx3hHUlxG2rSBe24Pqo"/>
+</div>
+<span class="font-display text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">HROS</span>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low transition-colors p-2 rounded-full">
+            notifications
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-[375px] pt-huge pb-32 px-mobile-margin flex flex-col gap-lg">
+<!-- Hero Header -->
+<section class="mt-md animate-fade-in">
+<div class="flex items-center gap-2 mb-xs">
+<div class="w-3 h-3 rounded-full bg-[#10b981]"></div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Active Journey</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Today is your Day 1</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Welcome to the team, Sarah. We're glad you're here.</p>
+</section>
+<!-- Bento Grid Layout: Featured Task -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Schedule Card (Elevated Focus) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-body-md-bold text-body-md-bold text-primary">Today's Schedule</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded">Monday, Oct 23</span>
+</div>
+<div class="flex flex-col gap-lg relative">
+<!-- Event 1 -->
+<div class="schedule-item relative flex gap-md">
+<div class="schedule-line flex flex-col items-center">
+<div class="w-4 h-4 rounded-full border-2 border-primary bg-background z-10"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm-bold text-label-sm-bold text-primary">09:30 AM</span>
+<span class="font-body-md-bold text-body-md-bold">Manager Welcome Call</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Virtual • Meet Link</span>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="schedule-item relative flex gap-md">
+<div class="schedule-line flex flex-col items-center">
+<div class="w-4 h-4 rounded-full border-2 border-outline bg-background z-10"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">11:00 AM</span>
+<span class="font-body-md-bold text-body-md-bold">HRBP Onboarding Session</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Meeting Room Delta • 4F</span>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="schedule-item relative flex gap-md">
+<div class="schedule-line flex flex-col items-center">
+<div class="w-4 h-4 rounded-full border-2 border-outline bg-background z-10"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">01:00 PM</span>
+<span class="font-body-md-bold text-body-md-bold">Team Lunch</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">restaurant</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">The Commons Cafeteria</span>
+</div>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="schedule-item relative flex gap-md">
+<div class="schedule-line flex flex-col items-center">
+<div class="w-4 h-4 rounded-full border-2 border-outline bg-background z-10"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">03:00 PM</span>
+<span class="font-body-md-bold text-body-md-bold">Buddy Check-in</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">chat_bubble</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Office Lounge area</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Action: Hardware Setup -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-md flex items-center justify-between">
+<div class="flex gap-md items-center">
+<div class="w-12 h-12 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+</div>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold">Hardware Setup</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Pending verification</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</section>
+<!-- Compliance Block (Radical Reduction) -->
+<section class="bg-white border border-outline-variant rounded-xl p-md">
+<div class="flex items-center gap-2 mb-sm">
+<span class="material-symbols-outlined text-tertiary">gavel</span>
+<h3 class="font-body-md-bold text-body-md-bold">Digital Consent</h3>
+</div>
+<div class="bg-surface-container-low p-sm rounded border border-outline-variant mb-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant italic">
+                        By proceeding, you acknowledge the DPDP 2023 guidelines regarding personal data processing for workplace integration.
+                    </p>
+</div>
+<div class="flex items-center gap-md">
+<input class="w-6 h-6 rounded border-outline text-primary focus:ring-primary" id="dpdp" type="checkbox"/>
+<label class="font-label-sm text-label-sm" for="dpdp">I agree to the data processing terms.</label>
+</div>
+</section>
+</div>
+</main>
+<!-- AI Concierge Trigger (Ambient Shadow) -->
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/95 backdrop-blur-md border-t border-outline-variant dark:border-on-secondary-fixed-variant flex justify-around items-center h-huge px-xs">
+<!-- Journey (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-secondary-container/50 dark:bg-on-secondary-fixed-variant/30 rounded-lg px-3 py-1 scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm semibold">Journey</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm semibold">Tasks</span>
+</a>
+<!-- Feed -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm semibold">Feed</span>
+</a>
+<!-- AI -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm semibold">AI</span>
+</a>
+<!-- You -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the consent checkbox
+        document.getElementById('dpdp').addEventListener('change', function(e) {
+            if(e.target.checked) {
+                e.target.parentElement.classList.add('opacity-60');
+            } else {
+                e.target.parentElement.classList.remove('opacity-60');
+            }
+        });
+
+        // Atmospheric fade-in effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.schedule-item');
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    item.style.transition = 'all 0.4s ease-out';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100 * (index + 1));
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

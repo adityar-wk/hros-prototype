@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1c1b1d",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#ebe7e9",
+                    "on-secondary-fixed": "#151c27",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#ddd9db",
+                    "on-primary-container": "#83829b",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#47464c",
+                    "surface-container": "#f1edef",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1a1a2e",
+                    "background": "#fcf8fa",
+                    "on-primary-fixed": "#1a1a2e",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-fixed": "#dce2f3",
+                    "on-tertiary-fixed": "#231b02",
+                    "tertiary": "#695d3c",
+                    "on-secondary-container": "#5e6572",
+                    "primary-fixed": "#e2e0fc",
+                    "tertiary-container": "#b9aa83",
+                    "on-secondary-fixed-variant": "#404754",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "secondary-container": "#dce2f3",
+                    "outline": "#78767d",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "surface-variant": "#e5e1e3",
+                    "on-tertiary-container": "#493f20",
+                    "surface-tint": "#5d5c74",
+                    "primary": "#00000b",
+                    "outline-variant": "#c8c5cd",
+                    "tertiary-fixed": "#f2e1b7",
+                    "on-primary-fixed-variant": "#45455b",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "surface-container-low": "#f6f2f4",
+                    "secondary": "#585f6c",
+                    "inverse-surface": "#313032",
+                    "inverse-primary": "#c6c4df",
+                    "inverse-on-surface": "#f4f0f2",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "on-background": "#1c1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "mobile-margin": "24px",
+                    "xxl": "48px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "touch-target-min": "44px",
+                    "huge": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm-bold": ["Geist"],
+                    "display": ["Geist"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-[120px]">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-surface flex justify-between items-center w-full px-mobile-margin h-[64px] border-b border-outline-variant dark:border-outline fixed top-0 z-50">
+<div class="flex items-center gap-3">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a person with a friendly expression, set against a neutral studio background. The lighting is soft and even, highlighting modern professional attire in a minimalist light-mode aesthetic. The color palette is composed of soft whites and subtle greys with deep black accents, creating a calm and dependable executive feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAndDvAAU96ihg8iufD5rvZAlxrrrHMVUNxTAucZxNYlbDNQjHGUN15MgPZNwwL-GgSdXZVTtyt6RTCuLGMkPUtopDieZwhwgviKfOSpQKCJJ9kQ7RgrbXR4HHgU0-s0F22ucdJUrfL3kohPcTmG13VvI6s7s5KvQKkvjCpjzdGAKjxqHjOaWg2Kqgs3E4m4ZIXD0Vyhshpdhjk3uTtU_PfveBcDh1Ux5YjSmpfVnWnmc9we1uXnvxdz9dYehHnVo2fvqIw_7NF1Lac"/>
+</div>
+<span class="font-body-md-bold text-body-md-bold tracking-tight text-primary dark:text-primary-fixed">OS_1</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors p-2 rounded-full">notifications</button>
+</div>
+</header>
+<main class="pt-[80px] px-mobile-margin max-w-[600px] mx-auto">
+<!-- Section Header -->
+<div class="mb-lg">
+<div class="flex items-center gap-2 mb-base">
+<div class="w-3 h-3 bg-green-500 rounded-full" title="Ready"></div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Medical Insurance</h1>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Your health coverage for you and your family — effective from your joining date.</p>
+</div>
+<!-- Coverage Summary (Visible Post-Enrolment Context) -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-md mb-lg">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-on-surface">Coverage Summary</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Status: <span class="text-primary font-semibold">Enrolment sent to Star Health TPA</span></p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full text-[12px] font-bold">
+                    ACTIVE
+                </div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sum Insured</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">₹5,00,000</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Effective Date</p>
+<p class="font-body-md-bold text-body-md-bold text-on-surface">Joining Date</p>
+</div>
+</div>
+</section>
+<!-- Form Section -->
+<form class="space-y-lg" id="benefits-form">
+<!-- Coverage Scope Selection -->
+<div class="space-y-md">
+<label class="font-body-md-bold text-body-md-bold">Coverage Scope Selection</label>
+<div class="grid grid-cols-2 gap-sm">
+<button class="border border-outline-variant p-md rounded-xl text-left hover:bg-surface-container transition-colors active:scale-95 duration-100 flex flex-col gap-1" type="button">
+<span class="font-body-md-bold text-body-md-bold">Self only</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Individual cover</span>
+</button>
+<button class="border border-outline-variant p-md rounded-xl text-left hover:bg-surface-container transition-colors active:scale-95 duration-100 flex flex-col gap-1" type="button">
+<span class="font-body-md-bold text-body-md-bold">Self + Spouse</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Standard couple plan</span>
+</button>
+<button class="bg-primary-container text-white border border-primary p-md rounded-xl text-left active:scale-95 duration-100 flex flex-col gap-1 ring-1 ring-primary" type="button">
+<span class="font-body-md-bold text-body-md-bold text-on-primary-fixed">Self + Family</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Nuclear family plan</span>
+</button>
+<button class="border border-outline-variant p-md rounded-xl text-left hover:bg-surface-container transition-colors active:scale-95 duration-100 flex flex-col gap-1" type="button">
+<span class="font-body-md-bold text-body-md-bold">Add Parents</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Extended family cover</span>
+</button>
+</div>
+</div>
+<!-- Dependents Section -->
+<div class="space-y-md">
+<div class="flex justify-between items-center">
+<label class="font-body-md-bold text-body-md-bold">Dependents</label>
+<button class="text-primary font-label-sm-bold text-label-sm-bold" type="button">+ ADD NEW</button>
+</div>
+<div class="space-y-sm">
+<!-- Dependent Card 1 -->
+<div class="bg-white border border-outline-variant p-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">woman</span>
+</div>
+<div>
+<p class="font-body-md-bold text-body-md-bold">Anita Sharma</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Spouse • 32 Years</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant" type="button">edit_note</button>
+</div>
+<!-- Dependent Card 2 -->
+<div class="bg-white border border-outline-variant p-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">child_care</span>
+</div>
+<div>
+<p class="font-body-md-bold text-body-md-bold">Rahul Sharma</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Son • 6 Years</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant" type="button">edit_note</button>
+</div>
+</div>
+</div>
+<!-- Nominee Section -->
+<div class="space-y-md">
+<label class="font-body-md-bold text-body-md-bold">Nominee <span class="text-error">*</span></label>
+<div class="relative">
+<select class="w-full h-touch-target-min border border-outline-variant rounded-lg px-md bg-white font-body-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20">
+<option selected="" value="priya_sharma">Priya Sharma (Sister)</option>
+<option value="anita_sharma">Anita Sharma (Spouse)</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- DPDP Consent Block -->
+<div class="bg-surface-container border border-outline-variant rounded-lg p-md mt-xl">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md leading-relaxed">
+                    By proceeding, I agree to share the data of my dependents for the purpose of medical insurance enrollment as per the Digital Personal Data Protection (DPDP) Act. I confirm that I have obtained necessary consent from my adult dependents to share their information with the insurance vendor and TPA partners.
+                </p>
+<label class="flex items-start gap-md cursor-pointer group">
+<div class="relative flex items-center pt-0.5">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" required="" type="checkbox"/>
+</div>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface">I declare all information provided is accurate and I accept the terms of the insurance policy.</span>
+</label>
+</div>
+</form>
+</main>
+
+<!-- You -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-xl" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<script>
+        // Simple form interaction
+        document.getElementById('benefits-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Your enrolment details have been submitted to Star Health TPA.');
+        });
+
+        // Toggle selection logic for scope
+        const scopeButtons = document.querySelectorAll('button[type="button"].border');
+        scopeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                scopeButtons.forEach(b => {
+                    b.classList.remove('bg-primary-container', 'text-white', 'ring-1', 'ring-primary');
+                    b.classList.add('bg-transparent', 'border-outline-variant');
+                });
+                btn.classList.add('bg-primary-container', 'text-white', 'ring-1', 'ring-primary');
+                btn.classList.remove('bg-transparent', 'border-outline-variant');
+            });
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

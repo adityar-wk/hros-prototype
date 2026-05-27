@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-surface": "#1c1b1d",
+                  "outline": "#78767d",
+                  "on-primary-fixed-variant": "#45455b",
+                  "surface-container-highest": "#e5e1e3",
+                  "tertiary-fixed": "#f2e1b7",
+                  "on-error-container": "#93000a",
+                  "primary-fixed-dim": "#c6c4df",
+                  "on-surface-variant": "#47464c",
+                  "secondary-fixed-dim": "#c0c7d6",
+                  "secondary": "#585f6c",
+                  "surface-dim": "#ddd9db",
+                  "on-secondary-fixed": "#151c27",
+                  "tertiary-container": "#b9aa83",
+                  "background": "#fcf8fa",
+                  "on-secondary-fixed-variant": "#404754",
+                  "error": "#ba1a1a",
+                  "surface-variant": "#e5e1e3",
+                  "surface-container-lowest": "#ffffff",
+                  "on-primary-container": "#83829b",
+                  "secondary-container": "#dce2f3",
+                  "on-tertiary-container": "#493f20",
+                  "on-secondary-container": "#5e6572",
+                  "on-tertiary-fixed-variant": "#514627",
+                  "surface-tint": "#5d5c74",
+                  "primary-fixed": "#e2e0fc",
+                  "on-primary-fixed": "#1a1a2e",
+                  "inverse-on-surface": "#f4f0f2",
+                  "secondary-fixed": "#dce2f3",
+                  "on-tertiary": "#ffffff",
+                  "surface-bright": "#fcf8fa",
+                  "primary": "#00000b",
+                  "on-primary": "#ffffff",
+                  "surface": "#fcf8fa",
+                  "surface-container-high": "#ebe7e9",
+                  "inverse-primary": "#c6c4df",
+                  "tertiary-fixed-dim": "#d5c59d",
+                  "surface-container": "#f1edef",
+                  "primary-container": "#1a1a2e",
+                  "on-error": "#ffffff",
+                  "tertiary": "#695d3c",
+                  "surface-container-low": "#f6f2f4",
+                  "error-container": "#ffdad6",
+                  "on-background": "#1c1b1d",
+                  "on-tertiary-fixed": "#231b02",
+                  "on-secondary": "#ffffff",
+                  "outline-variant": "#c8c5cd",
+                  "inverse-surface": "#313032"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "touch-target-min": "44px",
+                  "xs": "8px",
+                  "xxl": "48px",
+                  "sm": "12px",
+                  "lg": "24px",
+                  "huge": "64px",
+                  "xl": "32px",
+                  "md": "16px",
+                  "base": "4px",
+                  "mobile-margin": "24px"
+          },
+          "fontFamily": {
+                  "label-sm-bold": ["Geist"],
+                  "headline-lg-mobile": ["Geist"],
+                  "display": ["Geist"],
+                  "label-sm": ["Geist"],
+                  "headline-lg": ["Geist"],
+                  "body-md": ["Geist"],
+                  "body-md-bold": ["Geist"]
+          },
+          "fontSize": {
+                  "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                  "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    body {
+      font-family: 'Geist', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 0px;
+    }
+    .active-scale:active {
+      transform: scale(0.95);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-[160px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-mobile-margin h-touch-target-min w-full bg-background border-b border-outline-variant">
+
+    $o = <!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-surface": "#1c1b1d",
+                  "outline": "#78767d",
+                  "on-primary-fixed-variant": "#45455b",
+                  "surface-container-highest": "#e5e1e3",
+                  "tertiary-fixed": "#f2e1b7",
+                  "on-error-container": "#93000a",
+                  "primary-fixed-dim": "#c6c4df",
+                  "on-surface-variant": "#47464c",
+                  "secondary-fixed-dim": "#c0c7d6",
+                  "secondary": "#585f6c",
+                  "surface-dim": "#ddd9db",
+                  "on-secondary-fixed": "#151c27",
+                  "tertiary-container": "#b9aa83",
+                  "background": "#fcf8fa",
+                  "on-secondary-fixed-variant": "#404754",
+                  "error": "#ba1a1a",
+                  "surface-variant": "#e5e1e3",
+                  "surface-container-lowest": "#ffffff",
+                  "on-primary-container": "#83829b",
+                  "secondary-container": "#dce2f3",
+                  "on-tertiary-container": "#493f20",
+                  "on-secondary-container": "#5e6572",
+                  "on-tertiary-fixed-variant": "#514627",
+                  "surface-tint": "#5d5c74",
+                  "primary-fixed": "#e2e0fc",
+                  "on-primary-fixed": "#1a1a2e",
+                  "inverse-on-surface": "#f4f0f2",
+                  "secondary-fixed": "#dce2f3",
+                  "on-tertiary": "#ffffff",
+                  "surface-bright": "#fcf8fa",
+                  "primary": "#00000b",
+                  "on-primary": "#ffffff",
+                  "surface": "#fcf8fa",
+                  "surface-container-high": "#ebe7e9",
+                  "inverse-primary": "#c6c4df",
+                  "tertiary-fixed-dim": "#d5c59d",
+                  "surface-container": "#f1edef",
+                  "primary-container": "#1a1a2e",
+                  "on-error": "#ffffff",
+                  "tertiary": "#695d3c",
+                  "surface-container-low": "#f6f2f4",
+                  "error-container": "#ffdad6",
+                  "on-background": "#1c1b1d",
+                  "on-tertiary-fixed": "#231b02",
+                  "on-secondary": "#ffffff",
+                  "outline-variant": "#c8c5cd",
+                  "inverse-surface": "#313032"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "touch-target-min": "44px",
+                  "xs": "8px",
+                  "xxl": "48px",
+                  "sm": "12px",
+                  "lg": "24px",
+                  "huge": "64px",
+                  "xl": "32px",
+                  "md": "16px",
+                  "base": "4px",
+                  "mobile-margin": "24px"
+          },
+          "fontFamily": {
+                  "label-sm-bold": ["Geist"],
+                  "headline-lg-mobile": ["Geist"],
+                  "display": ["Geist"],
+                  "label-sm": ["Geist"],
+                  "headline-lg": ["Geist"],
+                  "body-md": ["Geist"],
+                  "body-md-bold": ["Geist"]
+          },
+          "fontSize": {
+                  "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                  "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    body {
+      font-family: 'Geist', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 0px;
+    }
+    .active-scale:active {
+      transform: scale(0.95);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-[160px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-mobile-margin h-touch-target-min w-full bg-background border-b border-outline-variant">
+<button class="active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary text-center">Background Verification</h1>
+<div class="w-touch-target-min flex justify-end">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[64px] px-mobile-margin max-w-[420px] mx-auto">
+<!-- Hero / Progress Section -->
+<section class="mt-lg mb-xl">
+<div class="flex items-center gap-xs mb-base">
+<span class="w-3 h-3 rounded-full bg-[#f59e0b] shadow-sm"></span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-surface-variant">Action Required</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Consent for background verification — helps us confirm the details in your application.
+      </p>
+</section>
+<!-- Vendor Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md mb-lg">
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h3 class="font-body-md-bold text-body-md-bold text-on-surface">AuthBridge</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Verified Partner</p>
+</div>
+</div>
+</div>
+<div class="space-y-sm">
+<p class="font-label-sm-bold text-label-sm-bold text-on-surface-variant uppercase tracking-wider">Verification Scope</p>
+<div class="grid grid-cols-1 gap-xs">
+<div class="flex items-center gap-xs p-xs bg-surface-container-low rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="school">school</span>
+<span class="font-label-sm text-label-sm">Education</span>
+</div>
+<div class="flex items-center gap-xs p-xs bg-surface-container-low rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="work">work</span>
+<span class="font-label-sm text-label-sm">Employment History</span>
+</div>
+<div class="flex items-center gap-xs p-xs bg-surface-container-low rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="badge">badge</span>
+<span class="font-label-sm text-label-sm">Identity</span>
+</div>
+<div class="flex items-center gap-xs p-xs bg-surface-container-low rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="gavel">gavel</span>
+<span class="font-label-sm text-label-sm">Criminal Record Check</span>
+</div>
+</div>
+</div>
+<div class="mt-md pt-sm border-t border-outline-variant">
+<a class="flex items-center justify-between group" href="#">
+<span class="font-label-sm text-label-sm text-primary underline">Vendor Privacy Summary</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- DPDP Consent Block -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<div class="flex gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="policy">policy</span>
+<h4 class="font-label-sm-bold text-label-sm-bold">DPDP Compliance</h4>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md leading-normal">
+        Under the Digital Personal Data Protection (DPDP) Act, HROS requires your explicit consent to share your personal data with AuthBridge for the purposes of employment verification. Your data will be processed securely and only for the scope listed above.
+      </p>
+<label class="flex items-start gap-sm cursor-pointer select-none group">
+<div class="relative mt-1">
+<input class="peer appearance-none w-5 h-5 border-2 border-outline rounded bg-transparent checked:bg-primary checked:border-primary transition-all cursor-pointer" id="dpdp-checkbox" type="checkbox"/>
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-[14px] opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface leading-snug">
+          I hereby provide explicit consent to HROS to share my data with AuthBridge for the specified verification checks.
+        </span>
+</label>
+</div>
+</main>
+<!-- Fixed Footer CTA -->
+<footer class="fixed bottom-[80px] left-0 w-full bg-surface-container-lowest p-mobile-margin border-t border-outline-variant z-40">
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-xl font-body-md-bold active:scale-95 transition-all opacity-50 cursor-not-allowed" disabled="" id="cta-button">
+      Provide Consent
+    </button>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs pb-safe bg-surface-container-lowest border-t border-outline-variant h-[80px]">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150" onclick="window.location.href='../journey_map_current_stage_expanded/code.html'">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-md py-xs active:scale-95 transition-transform duration-150" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment" data-weight="fill" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150" onclick="window.location.href='../feed_active_content_mix/code.html'">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150" onclick="window.location.href='../ai_concierge_active_chat/code.html'">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150" onclick="window.location.href='../data_rights_pane/code.html'">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+    // Simple micro-interaction for the checkbox/CTA state
+    const checkbox = document.getElementById('dpdp-checkbox');
+    const cta = document.getElementById('cta-button');
+
+    checkbox.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        cta.disabled = false;
+        cta.classList.remove('opacity-50', 'cursor-not-allowed');
+      } else {
+        cta.disabled = true;
+        cta.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    });
+
+    cta.addEventListener('click', () => {
+      if (!cta.disabled) {
+        cta.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>';
+        setTimeout(() => {
+          cta.innerHTML = 'Consent Received';
+          cta.classList.replace('bg-primary', 'bg-green-600');
+          cta.style.backgroundColor = '#16a34a'; // Fallback to a standard green for success
+        }, 1500);
+      }
+    });
+  </script>
+<script src="../nav.js"></script>
+</body></html>.Groups[3].Value
+    if ($o -notmatch 'window\.location') { $o = $o -replace '>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs pb-safe bg-surface-container-lowest border-t border-outline-variant h-[80px]">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-md py-xs active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="assignment" data-weight="fill" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+    // Simple micro-interaction for the checkbox/CTA state
+    const checkbox = document.getElementById('dpdp-checkbox');
+    const cta = document.getElementById('cta-button');
+
+    checkbox.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        cta.disabled = false;
+        cta.classList.remove('opacity-50', 'cursor-not-allowed');
+      } else {
+        cta.disabled = true;
+        cta.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    });
+
+    cta.addEventListener('click', () => {
+      if (!cta.disabled) {
+        cta.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>';
+        setTimeout(() => {
+          cta.innerHTML = 'Consent Received';
+          cta.classList.replace('bg-primary', 'bg-green-600');
+          cta.style.backgroundColor = '#16a34a'; // Fallback to a standard green for success
+        }, 1500);
+      }
+    });
+  </script>
+<script src="../nav.js"></script>
+</body></html>, " onclick=""window.location.href='../bgv_status_tracker/code.html'"">" }
+    $o + $i + $cl
+
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs pb-safe bg-surface-container-lowest border-t border-outline-variant h-[80px]">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-md py-xs active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="assignment" data-weight="fill" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-label-sm text-label-sm">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">You</span>
+</div>
+</nav>
+<!-- AI Concierge Trigger -->
+
+<script>
+    // Simple micro-interaction for the checkbox/CTA state
+    const checkbox = document.getElementById('dpdp-checkbox');
+    const cta = document.getElementById('cta-button');
+
+    checkbox.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        cta.disabled = false;
+        cta.classList.remove('opacity-50', 'cursor-not-allowed');
+      } else {
+        cta.disabled = true;
+        cta.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    });
+
+    cta.addEventListener('click', () => {
+      if (!cta.disabled) {
+        cta.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>';
+        setTimeout(() => {
+          cta.innerHTML = 'Consent Received';
+          cta.classList.replace('bg-primary', 'bg-green-600');
+          cta.style.backgroundColor = '#16a34a'; // Fallback to a standard green for success
+        }, 1500);
+      }
+    });
+  </script>
+<script src="../nav.js"></script>
+</body></html>
+
+
+

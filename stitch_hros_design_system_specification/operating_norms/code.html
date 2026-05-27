@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operating Norms | Nexus Labs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
+            opacity: 0;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            opacity: 1;
+            padding-bottom: 24px;
+        }
+        .accordion-item.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+        /* Custom Ambient Shadow for AI Concierge */
+        .ai-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 12px -4px rgba(0, 0, 0, 0.05);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#b9aa83",
+                        "outline-variant": "#c8c5cd",
+                        "on-primary-container": "#83829b",
+                        "on-secondary-fixed": "#151c27",
+                        "surface-bright": "#fcf8fa",
+                        "primary-container": "#1a1a2e",
+                        "on-tertiary-fixed": "#231b02",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "on-secondary-container": "#5e6572",
+                        "on-background": "#1c1b1d",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#695d3c",
+                        "primary": "#00000b",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f6f2f4",
+                        "surface": "#fcf8fa",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#dce2f3",
+                        "on-tertiary-container": "#493f20",
+                        "surface-tint": "#5d5c74",
+                        "surface-container-highest": "#e5e1e3",
+                        "background": "#fcf8fa",
+                        "on-surface-variant": "#47464c",
+                        "surface-container-high": "#ebe7e9",
+                        "inverse-surface": "#313032",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-primary-fixed-variant": "#45455b",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "outline": "#78767d",
+                        "inverse-primary": "#c6c4df",
+                        "on-primary": "#ffffff",
+                        "secondary": "#585f6c",
+                        "on-primary-fixed": "#1a1a2e",
+                        "primary-fixed": "#e2e0fc",
+                        "surface-dim": "#ddd9db",
+                        "surface-container": "#f1edef",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "tertiary-fixed": "#f2e1b7",
+                        "secondary-container": "#dce2f3",
+                        "inverse-on-surface": "#f4f0f2",
+                        "on-surface": "#1c1b1d",
+                        "surface-variant": "#e5e1e3",
+                        "primary-fixed-dim": "#c6c4df"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "sm": "12px",
+                        "mobile-margin": "24px",
+                        "lg": "24px",
+                        "huge": "64px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "display": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-[120px]">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-background border-b border-outline-variant flex items-center px-lg h-touch-target-min transition-colors duration-200">
+<div class="flex items-center gap-md w-full">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Operating Norms</h1>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="px-mobile-margin py-xl bg-surface-container-lowest">
+<div class="max-w-md mx-auto">
+<div class="flex items-center gap-xs mb-sm">
+<span class="w-[12px] h-[12px] rounded-full bg-[#10b981]"></span>
+<span class="font-label-sm-bold text-label-sm-bold uppercase tracking-wider text-on-surface-variant">Policy Active</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-xs">How Nexus Labs works</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Everything you need to know to hit the ground running on Day 1.</p>
+</div>
+</section>
+<!-- Content Canvas: Accordion -->
+<main class="px-mobile-margin py-lg max-w-md mx-auto">
+<div class="space-y-md">
+<!-- Accordion Item 1 -->
+<div class="accordion-item border-b border-outline-variant group">
+<button class="w-full py-lg flex justify-between items-center text-left hover:bg-surface-container-low transition-colors rounded-lg px-base" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="schedule">schedule</span>
+<span class="font-body-md-bold text-body-md-bold text-primary">Work Hours &amp; Hybrid</span>
+</div>
+<span class="material-symbols-outlined arrow-icon transition-transform duration-300 text-outline" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content px-[44px]">
+<div class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between border-b border-surface-container-high pb-xs">
+<span>Standard Hours</span>
+<span class="text-primary font-body-md-bold">9 AM - 6 PM</span>
+</div>
+<div class="flex justify-between border-b border-surface-container-high pb-xs">
+<span>Core Hours</span>
+<span class="text-primary font-body-md-bold">11 AM - 4 PM</span>
+</div>
+<div class="bg-surface-container p-md rounded-lg">
+<span class="font-label-sm-bold text-label-sm-bold block mb-xs">WFH Policy</span>
+<p>3 days office, 2 days remote weekly. Coordination with leads via Slack.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="accordion-item border-b border-outline-variant">
+<button class="w-full py-lg flex justify-between items-center text-left hover:bg-surface-container-low transition-colors rounded-lg px-base" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="forum">forum</span>
+<span class="font-body-md-bold text-body-md-bold text-primary">Communication</span>
+</div>
+<span class="material-symbols-outlined arrow-icon transition-transform duration-300 text-outline" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content px-[44px]">
+<div class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<p><strong class="text-primary">Slack</strong> is our primary nervous system. Keep status updated.</p>
+<ul class="list-disc pl-md space-y-xs">
+<li>2 hour response time for DMs within core hours.</li>
+<li><strong class="text-primary">No-meeting Wednesdays</strong> for deep focused work.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="accordion-item border-b border-outline-variant">
+<button class="w-full py-lg flex justify-between items-center text-left hover:bg-surface-container-low transition-colors rounded-lg px-base" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="event_available">event_available</span>
+<span class="font-body-md-bold text-body-md-bold text-primary">Leave</span>
+</div>
+<span class="material-symbols-outlined arrow-icon transition-transform duration-300 text-outline" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content px-[44px]">
+<div class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<p>Apply via <span class="text-primary underline">HROS portal</span>.</p>
+<div class="grid grid-cols-2 gap-sm">
+<div class="p-sm bg-surface-container rounded">
+<span class="block font-label-sm-bold text-label-sm-bold text-primary">Planned</span>
+<span class="text-label-sm">2 weeks notice</span>
+</div>
+<div class="p-sm bg-surface-container rounded">
+<span class="block font-label-sm-bold text-label-sm-bold text-primary">Sick Leave</span>
+<span class="text-label-sm">Notify by 9 AM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Accordion Item 4 -->
+<div class="accordion-item border-b border-outline-variant">
+<button class="w-full py-lg flex justify-between items-center text-left hover:bg-surface-container-low transition-colors rounded-lg px-base" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="payments">payments</span>
+<span class="font-body-md-bold text-body-md-bold text-primary">Expenses</span>
+</div>
+<span class="material-symbols-outlined arrow-icon transition-transform duration-300 text-outline" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content px-[44px]">
+<div class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<p>Deadline: <span class="font-body-md-bold text-primary">25th of every month</span>.</p>
+<div class="flex items-center gap-xs py-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="account_tree">account_tree</span>
+<span>Manager → Finance</span>
+</div>
+<p class="text-label-sm italic text-on-surface-variant">Reimbursement timing: Next salary cycle.</p>
+</div>
+</div>
+</div>
+<!-- Accordion Item 5 -->
+<div class="accordion-item border-b border-outline-variant">
+<button class="w-full py-lg flex justify-between items-center text-left hover:bg-surface-container-low transition-colors rounded-lg px-base" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="checkroom">checkroom</span>
+<span class="font-body-md-bold text-body-md-bold text-primary">Dress Code</span>
+</div>
+<span class="material-symbols-outlined arrow-icon transition-transform duration-300 text-outline" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content px-[44px]">
+<div class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<p><strong class="text-primary">Smart casuals</strong> daily. Business formals required only for client-facing meetings or site visits.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Card (Bento Style) -->
+<div class="mt-huge bg-primary-container text-on-primary-container p-lg rounded-xl flex flex-col gap-sm">
+<span class="material-symbols-outlined text-huge opacity-20 self-end absolute" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-body-md-bold text-body-md-bold text-surface-container-lowest">AI Support Enabled</h3>
+<p class="font-label-sm text-label-sm text-outline-variant leading-relaxed">Need clarification on these norms? Tap the Concierge button to ask about specific edge cases or complex policies.</p>
+</div>
+</main>
+<!-- AI Concierge Trigger (Ambient Shadow) -->
+
+<!-- Sticky Confirmation Bar -->
+<div class="fixed bottom-[72px] left-0 w-full bg-surface border-t border-outline-variant p-md px-mobile-margin z-40">
+<div class="max-w-md mx-auto flex flex-col gap-md">
+<label class="flex items-center gap-md cursor-pointer">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary transition-all" id="consent-check" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">I acknowledge that I have read and understood the operating norms of Nexus Labs.</span>
+</label>
+<button class="w-full h-touch-target-min bg-primary text-on-primary rounded-full font-body-md-bold opacity-50 cursor-not-allowed transition-all duration-200" disabled="" id="cta-button">
+                I've read the operating norms
+            </button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center px-mobile-margin py-xs h-[72px]">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-md py-xs rounded-full">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<!-- Tasks (ACTIVE) -->
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-md py-xs active:scale-95 transition-transform duration-150" onclick="window.location.href='../tasks_active_state/code.html'">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<!-- Inbox -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-md py-xs rounded-full">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</div>
+<!-- Directory -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-md py-xs rounded-full">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm">Directory</span>
+</div>
+<!-- Profile -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-md py-xs rounded-full">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+<script>
+        function toggleAccordion(btn) {
+            const item = btn.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close other items
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Checkbox interaction
+        const checkbox = document.getElementById('consent-check');
+        const cta = document.getElementById('cta-button');
+
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                cta.disabled = false;
+                cta.classList.remove('opacity-50', 'cursor-not-allowed');
+                cta.classList.add('active:scale-95');
+            } else {
+                cta.disabled = true;
+                cta.classList.add('opacity-50', 'cursor-not-allowed');
+                cta.classList.remove('active:scale-95');
+            }
+        });
+
+        cta.addEventListener('click', () => {
+            if(!cta.disabled) {
+                cta.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>';
+                setTimeout(() => {
+                    cta.innerHTML = 'Confirmed';
+                    cta.classList.replace('bg-primary', 'bg-[#10b981]');
+                }, 1000);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

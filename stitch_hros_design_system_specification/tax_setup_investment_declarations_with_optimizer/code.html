@@ -1,0 +1,426 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-background": "#1c1b1d",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#404754",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#ebe7e9",
+                        "surface": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "primary-container": "#1a1a2e",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dce2f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "inverse-primary": "#c6c4df",
+                        "on-primary-container": "#83829b",
+                        "surface-tint": "#5d5c74",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary-fixed": "#1a1a2e",
+                        "outline-variant": "#c8c5cd",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary-fixed": "#231b02",
+                        "background": "#fcf8fa",
+                        "primary": "#00000b",
+                        "on-surface-variant": "#47464c",
+                        "tertiary-fixed": "#f2e1b7",
+                        "primary-fixed": "#e2e0fc",
+                        "secondary-container": "#dce2f3",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c6c4df",
+                        "on-primary-fixed-variant": "#45455b",
+                        "outline": "#78767d",
+                        "on-secondary-container": "#5e6572",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f4f0f2",
+                        "tertiary-container": "#b9aa83",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1edef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "sm": "12px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "mobile-margin": "24px",
+                        "xs": "8px",
+                        "huge": "64px",
+                        "base": "4px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "label-sm-bold": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "body-md-bold": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #fcf8fa; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input:focus { outline: none; border-color: #00000b !important; ring: 0 !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        
+        /* Custom slider styling to match theme */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #e5e1e3;
+            border-radius: 2px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #00000b;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input[type=range]:focus::-webkit-slider-runnable-track {
+            background: #e5e1e3;
+        }
+
+        .drawer-transition {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+<!-- Top App Bar (Shared) -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant flex justify-between items-center px-lg h-[64px]">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary" data-icon="arrow_back" onclick="window.location.href='../tax_setup_regime_comparison/code.html'">arrow_back</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Investment Declarations</h1>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZPpWs_bhu1vFsKY3hcFXmdG6xgoiOXG34Uy-TRVweKJWGh6IW-pMJY23UjvOC3RIgJvOKxCt2JQXQt1olREWqkidk2XthZ39alNB5dH7ye525LKJx-9L2yatluSmHjql2hSmC7tju5SPI3Ik5Wc2PF4iCXTinDH5caosPKvRpVjL0-WmRftKRlETzByYIbRXlhsOFOOK1tz1rkM33kAShKpHDDR-C834fYs91sC2gHBQDQaRHRC2y4PihQ6pqSzq52T_hlBTeb7Zv">
+</div>
+</header>
+<main class="px-mobile-margin pt-lg pb-[280px] max-w-md mx-auto">
+<!-- Status Header -->
+<div class="flex items-center justify-between mb-xl">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-tertiary-container"></div>
+<span class="font-body-md-bold text-body-md-bold">Old Regime Setup</span>
+</div>
+<div class="px-sm py-1 bg-secondary-container rounded-full text-on-secondary-container font-label-sm-bold text-label-sm-bold">
+                In Progress
+            </div>
+</div>
+<!-- Section 1: HRA Exemption -->
+<section class="mb-xxl">
+<div class="flex items-center gap-xs mb-md">
+<div class="w-[3px] h-4 bg-primary rounded-full"></div>
+<h2 class="font-body-md-bold text-body-md-bold">HRA Exemption</h2>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Monthly Rent</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" id="monthly-rent" oninput="calculateSavings(this.value)" placeholder="₹0" type="number">
+</div>
+<!-- Live Feedback Card -->
+<div class="hidden animate-in fade-in slide-in-from-top-2 duration-300" id="hra-feedback">
+<div class="bg-tertiary-container/10 border border-tertiary-container/30 rounded-lg p-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]" data-icon="trending_down">trending_down</span>
+<p class="font-label-sm text-label-sm text-on-tertiary-container">This reduces your monthly TDS by <span class="font-label-sm-bold" id="savings-val">₹0</span></p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Landlord Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" placeholder="Full name" type="text">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Landlord PAN</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" placeholder="ABCDE1234F" type="text">
+</div>
+</div>
+</section>
+<!-- Section 2: Section 80C -->
+<section class="mb-xxl">
+<div class="flex items-center gap-xs mb-md">
+<div class="w-[3px] h-4 bg-primary rounded-full"></div>
+<h2 class="font-body-md-bold text-body-md-bold">Section 80C (Limit ₹1,50,000)</h2>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md">
+<div class="grid grid-cols-2 gap-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">PPF</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" placeholder="₹0" type="number">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">ELSS</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" placeholder="₹0" type="number">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">LIC</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" placeholder="₹0" type="number">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Home Loan Principal</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" placeholder="₹0" type="number">
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Previous Employer Income -->
+<section class="mb-xl">
+<div class="flex items-center gap-xs mb-md">
+<div class="w-[3px] h-4 bg-primary rounded-full"></div>
+<h2 class="font-body-md-bold text-body-md-bold">Previous Employer Income</h2>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Income earned (Apr-Oct)</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" placeholder="₹0" type="number">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">TDS Paid (Apr-Oct)</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg h-touch-target-min px-md font-body-md text-body-md" placeholder="₹0" type="number">
+</div>
+</div>
+</section>
+<!-- DPDP Consent Block -->
+<div class="mt-xl p-md bg-surface-container rounded-lg border border-outline-variant">
+<div class="flex gap-md items-start">
+<input class="mt-1 w-5 h-5 rounded border-outline text-primary focus:ring-0" id="consent" type="checkbox">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="consent">
+                    I hereby declare that the information provided is true and correct. I understand that any false declarations may lead to penal actions as per the Income Tax Act and company policy under DPDP compliance.
+                </label>
+</div>
+</div>
+</main>
+<!-- Tax Optimizer Drawer Trigger / Handle (AI Concierge Style) -->
+<div class="fixed bottom-[180px] left-0 w-full flex justify-center z-50 pointer-events-none">
+<button class="pointer-events-auto bg-primary text-on-primary px-lg py-2 rounded-full shadow-lg flex items-center gap-2 active:scale-95 transition-transform" onclick="toggleOptimizer()">
+<span class="material-symbols-outlined text-[20px]" data-icon="calculate">calculate</span>
+<span class="font-label-sm-bold">Tax Optimizer</span>
+</button>
+</div>
+<!-- Tax Optimizer Drawer -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant rounded-t-[2rem] shadow-[0_-12px_40px_rgba(0,0,0,0.15)] drawer-transition translate-y-full max-w-md mx-auto left-1/2 -translate-x-1/2" id="optimizer-drawer">
+<div class="p-md"><div class="w-12 h-1 bg-outline-variant rounded-full mx-auto mb-md cursor-grab active:cursor-grabbing"></div><div class="flex items-center justify-between mb-lg border-b border-outline-variant pb-md"><div class="flex items-center gap-sm"><div class="w-10 h-10 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center"><span class="material-symbols-outlined" data-icon="insights">insights</span></div><div><h3 class="font-body-md-bold text-body-md-bold text-primary">Tax Strategy Simulator</h3><p class="text-[11px] text-on-surface-variant uppercase tracking-wider">Maximize your in-hand pay</p></div></div><button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high" onclick="toggleOptimizer()"><span class="material-symbols-outlined text-outline" data-icon="close">close</span></button></div><div class="space-y-xl"><div class="space-y-sm"><div class="flex justify-between items-end"><label class="font-label-sm-bold text-on-surface">Section 80C Investment</label><div class="text-right"><span class="block font-body-md-bold text-primary" id="slider-80c-val">₹60,000</span><span class="block text-[11px] text-tertiary-container font-medium">+₹1,250 monthly saving</span></div></div><input class="w-full accent-primary" max="150000" min="0" oninput="updateSim()" step="5000" type="range" value="60000"></div><div class="space-y-sm"><div class="flex justify-between items-end"><label class="font-label-sm-bold text-on-surface">Monthly Rent Amount</label><div class="text-right"><span class="block font-body-md-bold text-primary" id="slider-hra-val">₹25,000</span><span class="block text-[11px] text-tertiary-container font-medium">+₹2,100 monthly saving</span></div></div><input class="w-full accent-primary" max="100000" min="0" oninput="updateSim()" step="1000" type="range" value="25000"></div><div class="bg-primary-container/5 border-l-4 border-primary-container p-md rounded-r-lg"><div class="flex gap-sm items-start"><span class="material-symbols-outlined text-primary-container" data-icon="auto_awesome">auto_awesome</span><div><p class="font-label-sm-bold text-primary-container mb-1">Pro Strategy Insight</p><p class="font-label-sm text-label-sm text-on-primary-container leading-relaxed" id="smart-rec">Increasing your 80C by <span class="font-bold">₹30,000</span> would effectively move you to a lower tax bracket for the remaining year.</p></div></div></div><div class="bg-surface-container-high p-md rounded-xl space-y-md"><div class="flex items-center justify-between"><p class="font-label-sm-bold text-on-surface-variant">Recommended Regime</p><div class="flex bg-surface-container-lowest rounded-full p-1 border border-outline-variant"><button class="px-5 py-1.5 rounded-full text-label-sm-bold bg-primary text-on-primary shadow-sm" id="old-btn">Old</button><button class="px-5 py-1.5 rounded-full text-label-sm-bold text-on-surface-variant" id="new-btn">New</button></div></div><div class="flex justify-between items-center pt-2 border-t border-outline-variant/30"><div class="space-y-0.5"><p class="text-[11px] text-on-surface-variant uppercase font-bold">Monthly In-Hand Increase</p><p class="text-xl font-headline-lg-mobile text-primary" id="regime-delta">+₹3,350 <span class="text-sm font-normal text-on-surface-variant">/ mo</span></p></div><div class="text-right"><p class="text-[10px] bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full font-bold inline-block mb-1">OPTIMAL</p><p class="text-[11px] text-on-surface-variant" id="regime-status">Stay on Old Regime</p></div></div></div></div><button class="w-full mt-xl bg-primary text-on-primary font-body-md-bold h-touch-target-min rounded-lg hover:bg-black transition-colors active:scale-[0.98]" onclick="applySim()">Apply Strategy to Declaration</button></div>
+</div>
+<!-- Footer: Sticky Summary & CTA -->
+<div class="fixed bottom-[80px] left-0 w-full bg-surface-container-lowest border-t border-outline-variant z-40 px-mobile-margin py-md shadow-[0_-4px_16px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between mb-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Projected Monthly TDS</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-primary" id="projected-tds">₹14,291</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-xs py-[2px] bg-tertiary-fixed text-on-tertiary-fixed rounded font-label-sm-bold text-[10px]">OPTIMIZED</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-body-md-bold text-body-md-bold h-touch-target-min rounded-lg active:scale-95 transition-transform" onclick="window.location.href='../tax_setup_verified_locked/code.html'">
+            Submit Declarations
+        </button>
+</div>
+<!-- Bottom Navigation (Shared) -->
+<nav class="fixed bottom-0 w-full z-50 h-[80px] bg-surface border-t border-outline-variant flex justify-around items-center px-md pb-safe">
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<span class="">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-primary font-label-sm-bold text-label-sm-bold hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="">You</span>
+</a>
+</nav>
+
+</div>
+<script>
+        function toggleOptimizer() {
+            const drawer = document.getElementById('optimizer-drawer');
+            if (drawer.classList.contains('translate-y-full')) {
+                drawer.classList.remove('translate-y-full');
+            } else {
+                drawer.classList.add('translate-y-full');
+            }
+        }
+
+        function calculateSavings(val) {
+            const feedback = document.getElementById('hra-feedback');
+            const savingsVal = document.getElementById('savings-val');
+            const projectedTds = document.getElementById('projected-tds');
+            
+            const rent = parseFloat(val) || 0;
+            
+            if (rent > 0) {
+                feedback.classList.remove('hidden');
+                const savings = Math.min(1850, Math.floor(rent * 0.1));
+                savingsVal.innerText = '₹' + savings.toLocaleString();
+                
+                const currentTds = 12450 - savings;
+                projectedTds.innerText = '₹' + currentTds.toLocaleString();
+            } else {
+                feedback.classList.add('hidden');
+                projectedTds.innerText = '₹12,450';
+            }
+        }
+
+        function updateSim() {
+            const sliders = document.querySelectorAll('input[type=range]');
+            const val80c = parseInt(sliders[0].value);
+            const valHra = parseInt(sliders[1].value);
+            
+            document.getElementById('slider-80c-val').innerText = '₹' + val80c.toLocaleString();
+            document.getElementById('slider-hra-val').innerText = '₹' + valHra.toLocaleString();
+            
+            // Smart Recommendation Logic
+            const remaining80c = 150000 - val80c;
+            const monthly80cSavings = Math.floor((remaining80c * 0.2) / 12);
+            
+            const recEl = document.getElementById('smart-rec');
+            if (remaining80c > 0) {
+                recEl.innerHTML = `You are <span class="font-label-sm-bold">₹${remaining80c.toLocaleString()}</span> away from maximizing your 80C benefits. Doing so would save you <span class="font-label-sm-bold">₹${monthly80cSavings.toLocaleString()}/month</span>.`;
+            } else {
+                recEl.innerHTML = `<span class="font-label-sm-bold">Great job!</span> You have maximized your 80C benefits. Consider NPS for an additional ₹50,000 deduction.`;
+            }
+
+            // Update Projected TDS in real-time (simulation)
+            const projectedTds = document.getElementById('projected-tds');
+            const baseTds = 15000;
+            const simSavings = (val80c * 0.1) + (valHra * 0.1); // Dummy math
+            const resultTds = Math.max(2500, baseTds - (simSavings / 12));
+            projectedTds.innerText = '₹' + Math.floor(resultTds).toLocaleString();
+
+            // Regime Toggle logic (Visual only)
+            const regimeStatus = document.getElementById('regime-status');
+            if (val80c < 50000 && valHra < 10000) {
+                regimeStatus.innerText = 'Switch to New Regime';
+                document.getElementById('new-btn').classList.add('bg-primary', 'text-on-primary');
+                document.getElementById('new-btn').classList.remove('text-on-surface-variant');
+                document.getElementById('old-btn').classList.remove('bg-primary', 'text-on-primary');
+                document.getElementById('old-btn').classList.add('text-on-surface-variant');
+            } else {
+                regimeStatus.innerText = 'Stay on Old Regime';
+                document.getElementById('old-btn').classList.add('bg-primary', 'text-on-primary');
+                document.getElementById('old-btn').classList.remove('text-on-surface-variant');
+                document.getElementById('new-btn').classList.remove('bg-primary', 'text-on-primary');
+                document.getElementById('new-btn').classList.add('text-on-surface-variant');
+            }
+        }
+
+        function applySim() {
+            // Close drawer and potentially update the main form inputs
+            toggleOptimizer();
+            // Just for visual effect in the demo
+            document.body.classList.add('opacity-50');
+            setTimeout(() => {
+                document.body.classList.remove('opacity-50');
+            }, 300);
+        }
+
+        // Initialize sim
+        updateSim();
+    </script>
+
+
+<script src="../nav.js"></script>
+</body></html>

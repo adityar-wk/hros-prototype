@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f2e1b7",
+                        "primary": "#00000b",
+                        "on-surface-variant": "#47464c",
+                        "on-tertiary-container": "#493f20",
+                        "on-tertiary-fixed": "#231b02",
+                        "background": "#fcf8fa",
+                        "outline-variant": "#c8c5cd",
+                        "tertiary-container": "#b9aa83",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1edef",
+                        "inverse-on-surface": "#f4f0f2",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#78767d",
+                        "on-secondary-container": "#5e6572",
+                        "on-primary-fixed-variant": "#45455b",
+                        "primary-fixed-dim": "#c6c4df",
+                        "secondary-container": "#dce2f3",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2e0fc",
+                        "surface-container-high": "#ebe7e9",
+                        "surface": "#fcf8fa",
+                        "secondary": "#585f6c",
+                        "inverse-surface": "#313032",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#404754",
+                        "surface-container-low": "#f6f2f4",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e5e1e3",
+                        "surface-container-highest": "#e5e1e3",
+                        "tertiary-fixed-dim": "#d5c59d",
+                        "on-tertiary-fixed-variant": "#514627",
+                        "on-background": "#1c1b1d",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary-fixed": "#1a1a2e",
+                        "on-primary-container": "#83829b",
+                        "surface-tint": "#5d5c74",
+                        "tertiary": "#695d3c",
+                        "on-surface": "#1c1b1d",
+                        "inverse-primary": "#c6c4df",
+                        "secondary-fixed": "#dce2f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#151c27",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#ddd9db",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "primary-container": "#1a1a2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xxl": "48px",
+                        "touch-target-min": "44px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "mobile-margin": "24px",
+                        "base": "4px",
+                        "huge": "64px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm-bold": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display": ["Geist"],
+                        "body-md-bold": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center">
+<!-- Top App Bar (Shared Component) -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-on-secondary-fixed-variant fixed top-0 w-full z-50 flex justify-between items-center px-mobile-margin h-touch-target-min">
+<div class="flex items-center gap-xs">
+  <button onclick="window.top.goBack ? window.top.goBack() : history.back()" style="background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center;">
+    <span class="material-symbols-outlined" style="color:#1c1b1d; font-size:24px;">arrow_back</span>
+  </button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional studio portrait of a young software engineer with a confident smile, set against a clean, minimalist background with soft lighting. The aesthetic is modern and high-key, using the neutral tones of the HROS design system to suggest a high-end corporate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWzZn_Kp1jCPxjTHQuUei1-jqe6BtBo3m_88TcqKC5nLEvePVqoKOgvzNSaZpzRmp98pP_altQHeKYsYDqnyV4OfSlSb5x4gjotyrAc_l7ADeqNseoEyz6mlVfq_NuWKhUNM8BnMc3G3_m1EszojymO9cQ3nswadEtoHOJK9PmvYImQdFq5A6u5czk0m4eD0uDFjqG3ulhENPV0kSBZ0eLpxOuXmjkd4a2mSCHpX2GqBdb5orYd3kVmWd4C7RxhXQfkQ-uTUc4J6PX"/>
+</div>
+<span class="font-display text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">HROS</span>
+</div>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-[375px] pt-huge pb-huge px-mobile-margin min-h-screen relative overflow-hidden">
+<!-- Background: Day 1 Portal Context -->
+<div aria-hidden="true" class="space-y-lg opacity-40 blur-[2px] pointer-events-none">
+<div class="pt-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Day 1 Journey</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Welcome aboard, Alex!</p>
+</div>
+<!-- Journey Progress -->
+<div class="relative pl-md border-l border-outline-variant space-y-xl">
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background"></div>
+<div class="font-body-md-bold text-body-md-bold">IT Asset Collection</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Room 402 • 09:30 AM</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-outline ring-4 ring-background"></div>
+<div class="font-body-md-bold text-body-md-bold">Culture Immersion</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Main Hall • 11:00 AM</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-outline ring-4 ring-background"></div>
+<div class="font-body-md-bold text-body-md-bold">Team Lunch</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Cafeteria • 12:30 PM</div>
+</div>
+</div>
+<!-- Readiness Cards (Fake Background) -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-lg shadow-sm">
+<div class="flex items-center gap-xs mb-xs">
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+<span class="font-label-sm-bold text-label-sm-bold">Access Ready</span>
+</div>
+<div class="font-body-md text-body-md">Your security credentials have been successfully provisioned.</div>
+</div>
+</div>
+<!-- OVERLAY: LinkedIn Sharing Amplification Card -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center bg-primary/10 backdrop-blur-sm p-mobile-margin" id="sharing-overlay">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl w-full shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in duration-300">
+<!-- LinkedIn Header Aesthetic -->
+<div class="p-lg bg-secondary-container/20 border-b border-outline-variant flex items-center gap-md">
+<div class="w-10 h-10 bg-[#0077B5] rounded flex items-center justify-center text-white">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</div>
+<div>
+<h2 class="font-body-md-bold text-body-md-bold text-primary">Share the big news!</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Want to share your new role on LinkedIn?</p>
+</div>
+</div>
+<div class="p-lg space-y-md">
+<!-- Post Preview -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-md relative group">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed" id="post-content">
+                            I’m happy to share that I’m starting a new position as Software Engineer at HROS!
+                        </p>
+<button class="absolute top-2 right-2 text-on-surface-variant hover:text-primary transition-colors p-1" onclick="copyToClipboard()">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<!-- AI Personalization Chip (Micro-interaction hint) -->
+<div class="flex items-center gap-xs py-1 px-xs bg-tertiary-fixed rounded-full w-fit">
+<span class="material-symbols-outlined text-sm text-on-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm-bold text-label-sm-bold text-on-tertiary-fixed">AI Optimized for engagement</span>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm pt-sm">
+<button class="bg-primary text-on-primary h-touch-target-min rounded-lg font-body-md-bold text-body-md-bold w-full active:scale-[0.98] transition-transform" onclick="window.location.href='../day_1_portal_linkedin_shared_confirmation/code.html'">
+                            Share on LinkedIn
+                        </button>
+<button class="bg-surface-container border border-outline-variant text-on-surface h-touch-target-min rounded-lg font-body-md-bold text-body-md-bold w-full active:scale-[0.98] transition-transform" onclick="copyToClipboard()">
+                            Copy to clipboard
+                        </button>
+<button class="text-on-surface-variant font-label-sm-bold text-label-sm-bold py-2 w-full text-center hover:text-primary transition-colors" onclick="document.getElementById('sharing-overlay').remove()">
+                            Skip for now
+                        </button>
+</div>
+</div>
+<!-- Footer branding -->
+<div class="bg-surface-container-highest px-lg py-sm text-center">
+<span class="font-label-sm text-label-sm text-outline">Powered by HROS AI Orchestrator</span>
+</div>
+</div>
+</div>
+<!-- AI Concierge Trigger (Floating) -->
+
+</main>
+<!-- Bottom Navigation Bar (Shared Component) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/95 backdrop-blur-md border-t border-outline-variant dark:border-on-secondary-fixed-variant h-huge flex justify-around items-center px-xs">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-secondary-container/50 dark:bg-on-secondary-fixed-variant/30 rounded-lg px-3 py-1 scale-95 transition-transform duration-150" href="../journey_map_current_stage_expanded/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm semibold">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../tasks_active_state/code.html">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm semibold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../feed_active_content_mix/code.html">
+<span class="material-symbols-outlined">rss_feed</span>
+<span class="font-label-sm text-label-sm semibold">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../ai_concierge_active_chat/code.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm semibold">AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../data_rights_pane/code.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm semibold">You</span>
+</a>
+</nav>
+<script>
+        function copyToClipboard() {
+            const text = document.getElementById('post-content').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.currentTarget;
+                const originalContent = btn.innerHTML;
+                btn.innerHTML = '<span class="material-symbols-outlined text-sm text-green-600">check</span>';
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                }, 2000);
+            });
+        }
+
+        // Simple entry animation trigger
+        window.addEventListener('load', () => {
+            const overlay = document.getElementById('sharing-overlay');
+            overlay.classList.add('opacity-100');
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>

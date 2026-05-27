@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-secondary-container": "#5e6572",
+                    "primary-fixed": "#e2e0fc",
+                    "tertiary-fixed-dim": "#d5c59d",
+                    "tertiary-container": "#b9aa83",
+                    "surface-bright": "#fcf8fa",
+                    "primary": "#00000b",
+                    "on-surface-variant": "#47464c",
+                    "surface-variant": "#e5e1e3",
+                    "on-error": "#ffffff",
+                    "background": "#fcf8fa",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "primary-container": "#1a1a2e",
+                    "on-primary-fixed": "#1a1a2e",
+                    "outline": "#78767d",
+                    "surface-dim": "#ddd9db",
+                    "secondary": "#585f6c",
+                    "on-tertiary-fixed": "#231b02",
+                    "surface-container-high": "#ebe7e9",
+                    "inverse-surface": "#313032",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-primary-fixed-variant": "#45455b",
+                    "error-container": "#ffdad6",
+                    "surface": "#fcf8fa",
+                    "on-secondary-fixed": "#151c27",
+                    "outline-variant": "#c8c5cd",
+                    "surface-container-low": "#f6f2f4",
+                    "on-tertiary-container": "#493f20",
+                    "on-primary-container": "#83829b",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#514627",
+                    "on-surface": "#1c1b1d",
+                    "tertiary": "#695d3c",
+                    "secondary-container": "#dce2f3",
+                    "on-background": "#1c1b1d",
+                    "tertiary-fixed": "#f2e1b7",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#dce2f3",
+                    "inverse-primary": "#c6c4df",
+                    "surface-tint": "#5d5c74",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f1edef",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f4f0f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "sm": "12px",
+                    "mobile-margin": "24px",
+                    "xl": "32px",
+                    "xxl": "48px",
+                    "touch-target-min": "44px",
+                    "md": "16px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "huge": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-md-bold": ["Geist"],
+                    "label-sm-bold": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md-bold": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-sm-bold": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #fcf8fa;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+
+
+    h1 { font-weight: 600; font-size: 24px; color: #1c1b1d; }
+    h2 { font-weight: 600; font-size: 18px; color: #1c1b1d; }
+    h3 { font-weight: 600; font-size: 14px; color: #1c1b1d; }
+    .body-regular { font-weight: 400; font-size: 14px; color: #47464c; }
+    .body-small { font-weight: 400; font-size: 12px; color: #78767d; }
+    .label-text { font-weight: 500; font-size: 12px; color: #45455b; }
+    .meta-text { font-weight: 400; font-size: 11px; color: #999999; }
+</style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation Shell -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant docked full-width top-0 z-50 flex items-center justify-between px-mobile-margin w-full h-touch-target-min">
+<div class="flex items-center gap-sm">
+<button class="flex items-center justify-center w-touch-target-min h-touch-target-min active:scale-95 transition-transform duration-200 hover:bg-surface-container-low" onclick="window.location.href='../joining_date_alternate_rejected_2/code.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Accept Offer</h1>
+</div>
+<div class="w-touch-target-min"></div> <!-- Spacer for centering title if needed by "center_aligned" type -->
+</header>
+<main class="flex-1 px-mobile-margin py-lg flex flex-col gap-lg max-w-[480px] mx-auto w-full pb-32">
+<!-- Error Context / Guidance -->
+<div class="bg-error-container p-md rounded-xl border border-error/10 flex gap-md items-start animate-pulse-once">
+<div class="flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<div class="flex flex-col gap-xs">
+<p class="font-body-md-bold text-on-error-container text-sm">Schedule Conflict</p>
+<p class="font-label-sm text-on-error-container">The date you selected isn't available for your team's schedule. Please choose a different date between Oct 1 and Oct 30.</p>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex items-center gap-xs">
+<div class="w-[12px] h-[12px] rounded-full bg-amber-500"></div> <!-- Readiness Signal: Amber -->
+<h2 class="font-body-md-bold text-on-surface">Select Start Date</h2>
+</div>
+<!-- Calendar Component -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="flex items-center justify-between px-md py-sm border-b border-outline-variant">
+<span class="font-body-md-bold text-primary">October 2024</span>
+<div class="flex gap-xs">
+<button class="p-xs hover:bg-surface-container-low rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-xs hover:bg-surface-container-low rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="p-sm">
+<div class="calendar-grid mb-sm">
+<span class="text-center font-label-sm text-on-surface-variant">S</span>
+<span class="text-center font-label-sm text-on-surface-variant">M</span>
+<span class="text-center font-label-sm text-on-surface-variant">T</span>
+<span class="text-center font-label-sm text-on-surface-variant">W</span>
+<span class="text-center font-label-sm text-on-surface-variant">T</span>
+<span class="text-center font-label-sm text-on-surface-variant">F</span>
+<span class="text-center font-label-sm text-on-surface-variant">S</span>
+</div>
+<div class="calendar-grid gap-y-xs">
+<!-- Placeholder days for end of Sept -->
+<span class="h-10 w-full"></span>
+<span class="h-10 w-full"></span>
+<span class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface-variant/40">1</span>
+<span class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface-variant/40">2</span>
+<span class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface-variant/40">3</span>
+<span class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface-variant/40">4</span>
+<span class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface-variant/40">5</span>
+<!-- Valid October Range -->
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">6</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">7</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">8</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">9</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">10</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">11</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">12</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">13</button>
+<!-- Selection Indicator -->
+<button class="h-10 w-full flex items-center justify-center font-label-sm-bold bg-primary text-on-primary rounded-lg transition-all scale-105 shadow-sm" id="active-date">14</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">15</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">16</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">17</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">18</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">19</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">20</button>
+<!-- Previously Rejected Date -->
+<div class="relative group h-10 w-full flex items-center justify-center">
+<button class="h-8 w-8 flex items-center justify-center font-label-sm text-error/60 line-through cursor-not-allowed">21</button>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-inverse-surface text-inverse-on-surface text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Unavailable</div>
+</div>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">22</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">23</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">24</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">25</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">26</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">27</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">28</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">29</button>
+<button class="h-10 w-full flex items-center justify-center font-label-sm text-on-surface hover:bg-surface-container-high rounded-lg">30</button>
+</div>
+</div>
+</div>
+<!-- Task Info Detail Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Project Phase</span>
+<span class="font-body-md-bold text-primary">Q4 Onboarding Journey</span>
+</div>
+<div class="px-sm py-xs bg-secondary-container text-on-secondary-container rounded-full text-[11px] font-bold uppercase">
+                    Pending
+                </div>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">groups</span>
+<span class="font-label-sm text-on-surface-variant">Team: Product Design &amp; Strategy</span>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Confirmation Bar -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant p-lg flex flex-col gap-md z-40">
+<div class="flex items-center gap-sm">
+<div class="relative flex items-center">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary transition-all cursor-pointer" id="declaration" type="checkbox"/>
+</div>
+<label class="font-label-sm text-on-surface-variant" for="declaration">
+                I understand this change may affect my orientation schedule.
+            </label>
+</div>
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-body-md-bold rounded-xl active:scale-95 transition-all duration-150 disabled:opacity-50 disabled:active:scale-100 flex items-center justify-center gap-sm" id="confirm-btn">
+            Confirm New Date
+            <span class="material-symbols-outlined text-sm">event_available</span>
+</button>
+</footer>
+<!-- AI Concierge persistent trigger -->
+
+<script>
+        // Simple Interaction Logic
+        const confirmBtn = document.getElementById('confirm-btn');
+        const checkbox = document.getElementById('declaration');
+        const activeDate = document.getElementById('active-date');
+        
+        // Initial state
+        confirmBtn.disabled = !checkbox.checked;
+
+        checkbox.addEventListener('change', () => {
+            confirmBtn.disabled = !checkbox.checked;
+        });
+
+        // Toggle dates
+        document.querySelectorAll('.calendar-grid button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (e.currentTarget.classList.contains('cursor-not-allowed')) return;
+                
+                // Clear previous active
+                document.querySelectorAll('.calendar-grid button').forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary', 'font-label-sm-bold', 'scale-105', 'shadow-sm');
+                    b.classList.add('text-on-surface', 'font-label-sm');
+                });
+
+                // Set new active
+                e.currentTarget.classList.add('bg-primary', 'text-on-primary', 'font-label-sm-bold', 'scale-105', 'shadow-sm');
+                e.currentTarget.classList.remove('text-on-surface', 'font-label-sm');
+            });
+        });
+
+        confirmBtn.addEventListener('click', () => {
+            if(!confirmBtn.disabled) {
+                confirmBtn.innerHTML = 'Updating...';
+                setTimeout(() => {
+                    confirmBtn.innerHTML = 'Date Confirmed <span class="material-symbols-outlined text-sm">check_circle</span>';
+                    confirmBtn.classList.replace('bg-primary', 'bg-green-700');
+                }, 800);
+            }
+        });
+    </script>
+<script src="../nav.js"></script>
+</body></html>
