@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hros-prototype",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "3344", "--directory", "C:/Users/PC/Downloads/stitch_hros_design_system_specification"],
+      "port": 3344
+    }
+  ]
+}

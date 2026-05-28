@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HROS · Prototype Navigator</title>
+<style>
+  :root {
+    --sidebar-w: 280px;
+    --topbar-h: 52px;
+    --phone-w: 390px;
+    --phone-h: 844px;
+    --bg: #0f0f13;
+    --surface: #1a1a22;
+    --surface2: #22222e;
+    --border: #2e2e3e;
+    --text: #e8e8f0;
+    --text-muted: #6b6b80;
+    --accent: #6366f1;
+    --accent-dim: rgba(99,102,241,0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Top bar ── */
+  #topbar {
+    height: var(--topbar-h);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+    flex-shrink: 0;
+    z-index: 100;
+  }
+  #topbar .logo {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  #topbar .logo span {
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+  #topbar .sep { color: var(--border); margin: 0 4px; }
+  #screen-title {
+    flex: 1;
+    font-size: 13px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #screen-title strong { color: var(--text); }
+  #topbar .counter {
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--surface2);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  #search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  #search-wrap svg {
+    position: absolute;
+    left: 9px;
+    color: var(--text-muted);
+    width: 14px; height: 14px;
+    pointer-events: none;
+  }
+  #search {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 12px;
+    padding: 5px 10px 5px 30px;
+    border-radius: 6px;
+    width: 180px;
+    outline: none;
+  }
+  #search:focus { border-color: var(--accent); }
+  #search::placeholder { color: var(--text-muted); }
+
+  /* ── Main layout ── */
+  #main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* ── Sidebar ── */
+  #sidebar {
+    width: var(--sidebar-w);
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    flex-shrink: 0;
+    padding-bottom: 24px;
+  }
+  #sidebar::-webkit-scrollbar { width: 4px; }
+  #sidebar::-webkit-scrollbar-track { background: transparent; }
+  #sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px 6px;
+    cursor: pointer;
+    user-select: none;
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+    z-index: 1;
+  }
+  .section-header:hover { background: var(--surface2); }
+  .section-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .section-name {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    flex: 1;
+  }
+  .section-count {
+    font-size: 10px;
+    color: var(--text-muted);
+    background: var(--surface2);
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+  .section-chevron {
+    color: var(--text-muted);
+    font-size: 10px;
+    transition: transform 0.2s;
+  }
+  .section-chevron.open { transform: rotate(90deg); }
+
+  .section-screens {
+    display: none;
+  }
+  .section-screens.open { display: block; }
+
+  .screen-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px 7px 30px;
+    font-size: 12px;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 0;
+    transition: background 0.1s, color 0.1s;
+    line-height: 1.4;
+  }
+  .screen-item:hover {
+    background: var(--surface2);
+    color: var(--text);
+  }
+  .screen-item.active {
+    background: var(--accent-dim);
+    color: #a5b4fc;
+    font-weight: 500;
+  }
+  .screen-item.active .screen-num { color: var(--accent); }
+  .screen-num {
+    font-size: 10px;
+    color: var(--border);
+    width: 18px;
+    flex-shrink: 0;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .screen-name { flex: 1; }
+
+  /* Divider between sidebar sections */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 14px;
+  }
+
+  /* ── Center stage ── */
+  #center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    overflow: hidden;
+    background: var(--bg);
+    position: relative;
+  }
+
+  /* Phone frame */
+  #phone-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #phone-frame {
+    width: var(--phone-w);
+    height: var(--phone-h);
+    border-radius: 50px;
+    background: #1c1c1e;
+    box-shadow:
+      0 0 0 2px #3a3a3c,
+      0 0 0 8px #1c1c1e,
+      0 0 0 10px #3a3a3c,
+      0 50px 100px rgba(0,0,0,0.7);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  /* Side buttons */
+  #phone-frame::before {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: 120px;
+    width: 4px;
+    height: 70px;
+    background: #3a3a3c;
+    border-radius: 2px;
+    z-index: 10;
+  }
+  .phone-btn-left {
+    position: absolute;
+    left: -12px;
+    background: #3a3a3c;
+    border-radius: 2px;
+    z-index: 10;
+  }
+  .btn-l1 { top: 100px; width: 4px; height: 40px; }
+  .btn-l2 { top: 155px; width: 4px; height: 60px; }
+  .btn-l3 { top: 225px; width: 4px; height: 60px; }
+
+  #phone-inner {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 48px;
+    overflow: hidden;
+    background: #fff;
+  }
+  /* Notch */
+  #phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 34px;
+    background: #1c1c1e;
+    border-radius: 0 0 20px 20px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  #phone-notch .camera {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+  }
+  #phone-notch .speaker {
+    width: 40px; height: 4px;
+    background: #0a0a0a;
+    border-radius: 2px;
+  }
+  /* Home indicator */
+  #phone-home {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 5px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+    z-index: 20;
+  }
+  #phone-iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 48px;
+  }
+
+  /* ── Bottom nav bar ── */
+  #bottombar {
+    height: 56px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    flex-shrink: 0;
+  }
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    user-select: none;
+  }
+  .nav-btn:hover:not(:disabled) {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+    color: #a5b4fc;
+  }
+  .nav-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+  .nav-btn svg { width: 14px; height: 14px; }
+
+  #progress-bar-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  #progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  #progress-track {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  #progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  #open-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  #open-btn:hover { background: var(--surface); color: var(--text); }
+  #open-btn svg { width: 13px; height: 13px; }
+
+  /* Scale phone to fit viewport */
+  #scale-wrap {
+    transform-origin: center center;
+  }
+
+  /* Search highlight */
+  .screen-item.search-hidden { display: none; }
+  .section-group.search-empty { display: none; }
+
+  /* Loading overlay */
+  #loading {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.9);
+    border-radius: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  #loading.visible { opacity: 1; }
+  .spinner {
+    width: 28px; height: 28px;
+    border: 3px solid #e5e7eb;
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Keyboard hint */
+  #kbd-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  kbd {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 10px;
+    font-family: inherit;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div id="topbar">
+  <div class="logo">
+    HROS
+    <span>PROTOTYPE</span>
+  </div>
+  <div class="sep">·</div>
+  <div id="screen-title">Select a screen from the sidebar</div>
+  <div id="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input id="search" type="text" placeholder="Search screens…" autocomplete="off"/>
+  </div>
+  <div class="counter" id="total-counter">0 screens</div>
+</div>
+
+<!-- Main -->
+<div id="main">
+
+  <!-- Sidebar -->
+  <div id="sidebar" role="navigation" aria-label="Screen flow">
+  </div>
+
+  <!-- Center phone -->
+  <div id="center">
+    <div id="scale-wrap">
+      <div id="phone-wrap">
+        <!-- side buttons -->
+        <div class="phone-btn-left btn-l1"></div>
+        <div class="phone-btn-left btn-l2"></div>
+        <div class="phone-btn-left btn-l3"></div>
+
+        <div id="phone-frame">
+          <div id="phone-inner">
+            <div id="phone-notch">
+              <div class="speaker"></div>
+              <div class="camera"></div>
+            </div>
+            <iframe id="phone-iframe" title="Screen preview" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+            <div id="loading"><div class="spinner"></div></div>
+            <div id="phone-home"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom bar -->
+<div id="bottombar">
+  <button class="nav-btn" id="prev-btn" disabled>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m15 18-6-6 6-6"/>
+    </svg>
+    Prev
+  </button>
+  <div id="progress-bar-wrap">
+    <div id="progress-info">
+      <span id="flow-label">—</span>
+      <span id="pos-label">—</span>
+    </div>
+    <div id="progress-track"><div id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <button class="nav-btn" id="next-btn" disabled>
+    Next
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m9 18 6-6-6-6"/>
+    </svg>
+  </button>
+  <div class="sep" style="color:var(--border);margin:0 4px">|</div>
+  <div id="kbd-hint"><kbd>←</kbd><kbd>→</kbd> navigate</div>
+  <div class="sep" style="color:var(--border);margin:0 4px">|</div>
+  <a id="open-btn" href="#" target="_blank" title="Open in new tab">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
+    Open
+  </a>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+// FLOW DEFINITION
+// base path relative to this prototype.html
+// ─────────────────────────────────────────────
+const BASE = 'stitch_hros_design_system_specification/';
+
+const FLOW = [
+  {
+    id: 'offer',
+    label: 'Offer Review',
+    desc: 'Pre-portal · Prompt 3',
+    color: '#818cf8',
+    screens: [
+      { id: 'offer_review_default_state',       label: 'Offer — Default State' },
+      { id: 'offer_review_expires_soon',         label: 'Offer — Expires Soon' },
+      { id: 'offer_review_expired',              label: 'Offer — Expired' },
+      { id: 'offer_review_already_accepted',     label: 'Offer — Already Accepted' },
+    ]
+  },
+  {
+    id: 'acceptance',
+    label: 'Acceptance & Date',
+    desc: 'Prompt 4 · Joining date',
+    color: '#a78bfa',
+    screens: [
+      { id: 'joining_date_proposed_confirmed_1',  label: 'Date Confirmation — Step 1' },
+      { id: 'joining_date_proposed_confirmed_2',  label: 'Date Confirmation — Step 2' },
+      { id: 'joining_date_alternate_pending_1',   label: 'Alternate Date Pending — 1' },
+      { id: 'joining_date_alternate_pending_2',   label: 'Alternate Date Pending — 2' },
+      { id: 'joining_date_alternate_rejected_1',  label: 'Alternate Date Rejected — 1' },
+      { id: 'joining_date_alternate_rejected_2',  label: 'Alternate Date Rejected — 2' },
+      { id: 'joining_date_pending_task_1',        label: 'Date Pending (DOJ task) — 1' },
+      { id: 'joining_date_pending_task_2',        label: 'Date Pending (DOJ task) — 2' },
+      { id: 'acceptance_confirmation_moment_1',   label: 'Acceptance Moment — 1' },
+      { id: 'acceptance_confirmation_moment_2',   label: 'Acceptance Moment — 2' },
+    ]
+  },
+  {
+    id: 'portal_entry',
+    label: 'Portal Entry',
+    desc: 'Prompt 5 · Welcome & Journey Map',
+    color: '#38bdf8',
+    screens: [
+      { id: 'welcome_moment_first_entry',          label: 'Welcome — First Entry' },
+      { id: 'joining_experience_dashboard_mobile', label: 'Dashboard — Mobile' },
+      { id: 'journey_map_current_stage_expanded',  label: 'Journey Map — Current Stage' },
+      { id: 'journey_map_milestone_detail',        label: 'Journey Map — Milestone Detail' },
+      { id: 'journey_map_readiness_action_required', label: 'Journey Map — Readiness Alert' },
+      { id: 'journey_home_call_feedback_state_5',  label: 'Journey — Call Feedback' },
+      { id: 'journey_home_feedback_saved_state_6', label: 'Journey — Feedback Saved' },
+    ]
+  },
+  {
+    id: 'tasks',
+    label: 'Tasks',
+    desc: 'Prompt 6 · Task list',
+    color: '#34d399',
+    screens: [
+      { id: 'tasks_active_state',   label: 'Tasks — Active' },
+      { id: 'tasks_overdue_blocked', label: 'Tasks — Overdue / Blocked' },
+      { id: 'tasks_all_completed',  label: 'Tasks — All Completed' },
+    ]
+  },
+  {
+    id: 'ai',
+    label: 'AI Concierge',
+    desc: 'Prompt 7 · AI tab',
+    color: '#fbbf24',
+    screens: [
+      { id: 'ai_concierge_active_chat',              label: 'AI — Active Chat' },
+      { id: 'ai_concierge_preparation_offer',        label: 'AI — Preparation Offer' },
+      { id: 'ai_concierge_suggested_questions_state_2', label: 'AI — Suggested Questions' },
+      { id: 'ai_concierge_sharing_consent_state_3',  label: 'AI — Sharing Consent' },
+      { id: 'ai_concierge_preparation_ready_state_4', label: 'AI — Preparation Ready' },
+      { id: 'ai_concierge_escalation_to_human',      label: 'AI — Escalation to Human' },
+      { id: 'ai_concierge_offer_dismissed',          label: 'AI — Offer Dismissed' },
+    ]
+  },
+  {
+    id: 'feed',
+    label: 'Content Feed',
+    desc: 'Prompt 8 · Feed tab',
+    color: '#f472b6',
+    screens: [
+      { id: 'feed_active_content_mix',     label: 'Feed — Active (Content Mix)' },
+      { id: 'feed_new_content_notification', label: 'Feed — New Content Badge' },
+      { id: 'feed_content_item_detail',    label: 'Feed — Item Detail' },
+      { id: 'feed_active_video_content',   label: 'Feed — Video Content' },
+      { id: 'feed_empty_state',            label: 'Feed — Empty State' },
+    ]
+  },
+  {
+    id: 'data_capture',
+    label: 'Data Capture',
+    desc: 'Prompts 9–17 · Categories A–O',
+    color: '#22d3ee',
+    screens: [
+      { id: 'data_capture_personal_records_category_a',    label: 'Cat A — Personal Records' },
+      { id: 'data_capture_educational_details_category_b', label: 'Cat B — Education' },
+      { id: 'data_capture_previous_employment_category_c', label: 'Cat C — Prior Employment' },
+      { id: 'data_capture_identity_verification_category_f', label: 'Cat F — Identity' },
+      { id: 'data_capture_bank_account_details_category_g', label: 'Cat G — Bank Account' },
+      { id: 'data_capture_correction_required_state',      label: 'Correction Required State' },
+      { id: 'data_capture_submission_status_feedback',     label: 'Submission Status Feedback' },
+      { id: 'data_capture_edge_case_states',               label: 'Edge Case States' },
+    ]
+  },
+  {
+    id: 'bgv_docs',
+    label: 'BGV & Documents',
+    desc: 'Verification & signing',
+    color: '#94a3b8',
+    screens: [
+      { id: 'bgv_consent_state',                          label: 'BGV — Consent' },
+      { id: 'bgv_status_tracker',                         label: 'BGV — Status Tracker' },
+      { id: 'document_signing_queue_state',               label: 'Document Signing — Queue' },
+      { id: 'document_signing_milestone_complete',        label: 'Document Signing — Complete' },
+      { id: 'appointment_letter_preview_consent',         label: 'Appointment Letter — Preview' },
+      { id: 'appointment_letter_signed_confirmation',     label: 'Appointment Letter — Signed' },
+      { id: 'statutory_forms_aadhaar_e_sign',             label: 'Statutory Forms — Aadhaar' },
+      { id: 'post_joining_confirmation_review_window_open', label: 'Post-Joining Confirmation' },
+      { id: 'post_joining_confirmation_declaration_submitted', label: 'Declaration Submitted' },
+      { id: 'post_joining_confirmation_navigated_away',   label: 'Confirmation — Navigated Away' },
+      { id: 'post_joining_confirmation_returned_with_updates', label: 'Confirmation — Updated' },
+    ]
+  },
+  {
+    id: 'family_nominees',
+    label: 'Family & Nominees',
+    desc: 'Nominee data collection',
+    color: '#c084fc',
+    screens: [
+      { id: 'family_nominees_empty_state',      label: 'Nominees — Empty State' },
+      { id: 'family_nominees_nominee_selection', label: 'Nominees — Selection' },
+      { id: 'family_nominees_adding_member',    label: 'Nominees — Adding Member' },
+      { id: 'family_nominees_nomination_summary', label: 'Nominees — Summary' },
+      { id: 'family_nominees_graph_complete',   label: 'Nominees — Graph Complete' },
+    ]
+  },
+  {
+    id: 'benefits',
+    label: 'Benefits & Insurance',
+    desc: 'Enrolment & elections',
+    color: '#4ade80',
+    screens: [
+      { id: 'benefits_insurance_expanded_view',        label: 'Insurance — Expanded View' },
+      { id: 'benefits_policies_reference',             label: 'Benefits Policies Reference' },
+      { id: 'medical_insurance_coverage_dependents',   label: 'Medical Insurance — Dependents' },
+      { id: 'pf_nps_retirement_elections',             label: 'PF / NPS Retirement Elections' },
+      { id: 'flexi_allocation_default_state',          label: 'Flexi Allocation — Default' },
+      { id: 'flexi_allocation_active_allocation',      label: 'Flexi Allocation — Active' },
+      { id: 'flexi_allocation_pool_exhausted_n_a_state', label: 'Flexi Allocation — Exhausted' },
+      { id: 'flexi_allocation_verified_locked',        label: 'Flexi Allocation — Locked' },
+    ]
+  },
+  {
+    id: 'tax_payroll',
+    label: 'Tax & Payroll Readiness',
+    desc: 'Tax regime, declarations, payroll',
+    color: '#fb923c',
+    screens: [
+      { id: 'tax_setup_regime_comparison',                       label: 'Tax — Regime Comparison' },
+      { id: 'tax_setup_regime_comparison_with_calculator',       label: 'Tax — Regime + Calculator' },
+      { id: 'tax_setup_investment_declarations',                 label: 'Tax — Investment Declarations' },
+      { id: 'tax_setup_investment_declarations_with_optimizer',  label: 'Tax — With Optimizer' },
+      { id: 'tax_setup_investment_declarations_with_fixed_optimizer', label: 'Tax — Fixed Optimizer' },
+      { id: 'tax_setup_timing_preference',                       label: 'Tax — Timing Preference' },
+      { id: 'tax_setup_verified_locked',                         label: 'Tax — Verified Locked' },
+      { id: 'payroll_readiness_red_state_blockers',              label: 'Payroll — Red (Blockers)' },
+      { id: 'payroll_readiness_amber_state_pending',             label: 'Payroll — Amber (Pending)' },
+      { id: 'payroll_readiness_green_state_confirmed',           label: 'Payroll — Green (Confirmed)' },
+      { id: 'payroll_readiness_locked_state_view_only',          label: 'Payroll — Locked View' },
+      { id: 'payroll_readiness_override_requested_pending',      label: 'Payroll — Override Pending' },
+    ]
+  },
+  {
+    id: 'salary_preview',
+    label: 'Salary Preview',
+    desc: 'Prompt 28 · First salary',
+    color: '#86efac',
+    screens: [
+      { id: 'salary_preview_review_window_open',        label: 'Salary — Review Window Open' },
+      { id: 'salary_preview_concern_flagged',           label: 'Salary — Concern Flagged' },
+      { id: 'salary_preview_accepted_confirmed',        label: 'Salary — Accepted & Confirmed' },
+      { id: 'salary_preview_component_detail_proration', label: 'Salary — Component Detail' },
+    ]
+  },
+  {
+    id: 'day1',
+    label: 'Day 1 Portal',
+    desc: 'Prompt 23 · Day 1 experience',
+    color: '#818cf8',
+    screens: [
+      { id: 'launchpad_pre_day_1_brief',           label: 'Launchpad — Pre Day 1 Brief' },
+      { id: 'launchpad_day_1_active',              label: 'Launchpad — Day 1 Active' },
+      { id: 'launchpad_updated_since_last_view',   label: 'Launchpad — Updated' },
+      { id: 'day_1_portal_default_state',          label: 'Day 1 Portal — Default' },
+      { id: 'day_1_portal_active_schedule',        label: 'Day 1 Portal — Schedule' },
+      { id: 'day_1_portal_welcome_announcement',   label: 'Day 1 Portal — Welcome' },
+      { id: 'day_1_portal_welcome_dismissed',      label: 'Day 1 Portal — Welcome Dismissed' },
+      { id: 'day_1_portal_linkedin_prompt',        label: 'Day 1 Portal — LinkedIn Prompt' },
+      { id: 'day_1_portal_linkedin_prompt_card',   label: 'Day 1 Portal — LinkedIn Card' },
+      { id: 'day_1_portal_linkedin_prompt_skipped', label: 'Day 1 Portal — LinkedIn Skipped' },
+      { id: 'day_1_portal_linkedin_shared_confirmation', label: 'Day 1 Portal — LinkedIn Shared' },
+      { id: 'day_1_portal_shared_confirmation',    label: 'Day 1 Portal — Shared Confirmation' },
+      { id: 'day_1_portal_clean_state_skipped',    label: 'Day 1 Portal — Clean (Skipped)' },
+      { id: 'launchpad_post_day_1_archive',        label: 'Launchpad — Post Day 1 Archive' },
+    ]
+  },
+  {
+    id: 'week1',
+    label: 'Week 1',
+    desc: 'Prompt 24 · First week',
+    color: '#67e8f9',
+    screens: [
+      { id: 'first_week_schedule',                    label: 'First Week Schedule' },
+      { id: 'know_your_team_relationship_view',       label: 'Know Your Team' },
+      { id: 'self_introduction_introduction_offered', label: 'Self Intro — Offered' },
+      { id: 'self_introduction_writing_with_live_preview', label: 'Self Intro — Writing' },
+      { id: 'self_introduction_audience_selected',    label: 'Self Intro — Audience Selected' },
+      { id: 'self_introduction_published_confirmation', label: 'Self Intro — Published' },
+      { id: 'self_introduction_opted_out',            label: 'Self Intro — Opted Out' },
+      { id: 'hrbp_session_upcoming_detail',           label: 'HRBP Session — Upcoming' },
+      { id: 'hrbp_session_milestone_complete',        label: 'HRBP Session — Complete' },
+      { id: 'ama_sessions_discovery_rsvp',            label: 'AMA Sessions — Discovery & RSVP' },
+      { id: 'stakeholder_map_cross_functional_view',  label: 'Stakeholder Map' },
+      { id: 'bu_horizontal_intro',                    label: 'BU Horizontal Intro' },
+      { id: 'community_surfacing',                    label: 'Community Surfacing' },
+      { id: 'operating_norms',                        label: 'Operating Norms' },
+      { id: 'l_d_toolkit',                            label: 'L&D Toolkit' },
+    ]
+  },
+  {
+    id: 'policies',
+    label: 'Policies & Compliance',
+    desc: 'Consent, POSH, declarations',
+    color: '#f87171',
+    screens: [
+      { id: 'vendor_consent_all_pending',       label: 'Vendor Consent — All Pending' },
+      { id: 'vendor_consent_card_expanded',     label: 'Vendor Consent — Card Expanded' },
+      { id: 'vendor_consent_consent_given',     label: 'Vendor Consent — Consent Given' },
+      { id: 'vendor_consent_mandatory_off',     label: 'Vendor Consent — Mandatory Off' },
+      { id: 'vendor_consent_preferences_saved', label: 'Vendor Consent — Saved' },
+      { id: 'posh_policy_content_quiz',         label: 'POSH Policy — Content & Quiz' },
+      { id: 'posh_quiz_failed_state',           label: 'POSH Quiz — Failed State' },
+      { id: 'conflict_of_interest_declaration', label: 'Conflict of Interest Declaration' },
+      { id: 'legal_case_declaration',           label: 'Legal Case Declaration' },
+      { id: 'policies_milestone_complete',      label: 'Policies — Milestone Complete' },
+      { id: 'policy_queue_pending_state',       label: 'Policy Queue — Pending' },
+      { id: 'data_rights_pane',                 label: 'Data Rights Pane' },
+    ]
+  },
+  {
+    id: 'surveys',
+    label: 'Pulse Surveys',
+    desc: 'Day 30 & Day 60 surveys',
+    color: '#fde68a',
+    screens: [
+      { id: 'pulse_survey_privacy_notice',    label: 'Survey — Privacy Notice' },
+      { id: 'pulse_survey_question_a_success', label: 'Survey — Question (Success)' },
+      { id: 'pulse_survey_question_c_salary', label: 'Survey — Salary Question' },
+      { id: 'pulse_survey_complete_day_30',   label: 'Survey — Day 30 Complete' },
+      { id: 'pulse_survey_jnps_day_60',       label: 'Survey — Day 60 jNPS' },
+    ]
+  },
+  {
+    id: 'special',
+    label: 'Milestones & Special',
+    desc: 'Moments, assets, equity',
+    color: '#d8b4fe',
+    screens: [
+      { id: 'milestone_happy_birthday',             label: 'Milestone — Happy Birthday' },
+      { id: 'milestone_support_moment',             label: 'Milestone — Support Moment' },
+      { id: 'relocation_travel_support',            label: 'Relocation & Travel Support' },
+      { id: 'asset_custody_not_yet_assigned',       label: 'Asset Custody — Not Assigned' },
+      { id: 'asset_custody_awaiting_acknowledgement', label: 'Asset Custody — Awaiting Ack' },
+      { id: 'asset_custody_verified_locked',        label: 'Asset Custody — Verified' },
+      { id: 'asset_custody_dispute_raised',         label: 'Asset Custody — Dispute' },
+      { id: 'equity_grant_pending_state',           label: 'Equity Grant — Pending' },
+      { id: 'equity_grant_active_review',           label: 'Equity Grant — Active Review' },
+      { id: 'bonus_clawback_terms_presentation',    label: 'Bonus Clawback — Terms' },
+      { id: 'bonus_clawback_acknowledged_state',    label: 'Bonus Clawback — Acknowledged' },
+    ]
+  },
+  {
+    id: 'transition',
+    label: 'Resignation & Close',
+    desc: 'Prior employer & Day 60 transition',
+    color: '#9ca3af',
+    screens: [
+      { id: 'resignation_tracker_acceptance_pending',  label: 'Resignation — Acceptance Pending' },
+      { id: 'resignation_tracker_proof_pending',       label: 'Resignation — Proof Pending' },
+      { id: 'resignation_tracker_date_change_pending', label: 'Resignation — Date Change Pending' },
+      { id: 'resignation_tracker_date_change_approved', label: 'Resignation — Date Approved' },
+      { id: 'resignation_tracker_lwd_tight_state',     label: 'Resignation — LWD Tight' },
+      { id: 'probation_active_state',                  label: 'Probation — Active State' },
+      { id: 'post_joining_confirmation_window_expired', label: 'Confirmation — Window Expired' },
+      { id: 'steady_state_transition',                 label: 'Steady State Transition (Day 60)' },
+    ]
+  },
+];
+
+// ─────────────────────────────────────────────
+// Build flat index
+// ─────────────────────────────────────────────
+const ALL_SCREENS = [];
+FLOW.forEach(section => {
+  section.screens.forEach(screen => {
+    ALL_SCREENS.push({ ...screen, sectionId: section.id, sectionLabel: section.label, sectionColor: section.color });
+  });
+});
+
+let currentIndex = -1;
+
+// ─────────────────────────────────────────────
+// DOM refs
+// ─────────────────────────────────────────────
+const sidebar       = document.getElementById('sidebar');
+const iframe        = document.getElementById('phone-iframe');
+const loading       = document.getElementById('loading');
+const prevBtn       = document.getElementById('prev-btn');
+const nextBtn       = document.getElementById('next-btn');
+const screenTitle   = document.getElementById('screen-title');
+const flowLabel     = document.getElementById('flow-label');
+const posLabel      = document.getElementById('pos-label');
+const progressFill  = document.getElementById('progress-fill');
+const totalCounter  = document.getElementById('total-counter');
+const searchInput   = document.getElementById('search');
+const openBtn       = document.getElementById('open-btn');
+const scaleWrap     = document.getElementById('scale-wrap');
+const phoneFrame    = document.getElementById('phone-frame');
+
+// ─────────────────────────────────────────────
+// Build sidebar
+// ─────────────────────────────────────────────
+function buildSidebar() {
+  sidebar.innerHTML = '';
+  let globalIdx = 0;
+
+  FLOW.forEach((section, si) => {
+    const group = document.createElement('div');
+    group.className = 'section-group';
+    group.dataset.sectionId = section.id;
+
+    // Header
+    const hdr = document.createElement('div');
+    hdr.className = 'section-header';
+    hdr.innerHTML = `
+      <div class="section-dot" style="background:${section.color}"></div>
+      <div>
+        <div class="section-name">${section.label}</div>
+      </div>
+      <div class="section-count">${section.screens.length}</div>
+      <div class="section-chevron">▶</div>
+    `;
+
+    const screensDiv = document.createElement('div');
+    screensDiv.className = 'section-screens';
+
+    section.screens.forEach((screen, idx) => {
+      const num = globalIdx + 1;
+      const item = document.createElement('div');
+      item.className = 'screen-item';
+      item.dataset.idx = globalIdx;
+      item.dataset.screenId = screen.id;
+      item.title = screen.label;
+      item.innerHTML = `
+        <span class="screen-num">${num}</span>
+        <span class="screen-name">${screen.label}</span>
+      `;
+      item.addEventListener('click', () => loadScreen(globalIdx));
+      screensDiv.appendChild(item);
+      globalIdx++;
+    });
+
+    hdr.addEventListener('click', () => {
+      const isOpen = screensDiv.classList.contains('open');
+      screensDiv.classList.toggle('open', !isOpen);
+      hdr.querySelector('.section-chevron').classList.toggle('open', !isOpen);
+    });
+
+    group.appendChild(hdr);
+    group.appendChild(screensDiv);
+
+    if (si < FLOW.length - 1) {
+      const div = document.createElement('div');
+      div.className = 'section-divider';
+      group.appendChild(div);
+    }
+
+    sidebar.appendChild(group);
+  });
+
+  totalCounter.textContent = `${ALL_SCREENS.length} screens`;
+}
+
+// ─────────────────────────────────────────────
+// Sync UI to a screen index (no iframe reload)
+// ─────────────────────────────────────────────
+function syncUI(idx) {
+  if (idx < 0 || idx >= ALL_SCREENS.length) return;
+  currentIndex = idx;
+  const screen = ALL_SCREENS[idx];
+
+  openBtn.href = BASE + screen.id + '/code.html';
+  screenTitle.innerHTML = `<strong>${screen.label}</strong> <span style="color:var(--text-muted)">· ${screen.sectionLabel}</span>`;
+  flowLabel.textContent = screen.sectionLabel;
+  posLabel.textContent = `${idx + 1} / ${ALL_SCREENS.length}`;
+  progressFill.style.width = ((idx + 1) / ALL_SCREENS.length * 100) + '%';
+  prevBtn.disabled = idx === 0;
+  nextBtn.disabled = idx === ALL_SCREENS.length - 1;
+
+  document.querySelectorAll('.screen-item').forEach(el => {
+    el.classList.toggle('active', parseInt(el.dataset.idx) === idx);
+  });
+
+  const activeItem = document.querySelector(`.screen-item[data-idx="${idx}"]`);
+  if (activeItem) {
+    const screensDiv = activeItem.parentElement;
+    if (!screensDiv.classList.contains('open')) {
+      screensDiv.classList.add('open');
+      const hdr = screensDiv.previousElementSibling;
+      hdr && hdr.querySelector('.section-chevron').classList.add('open');
+    }
+    setTimeout(() => activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 50);
+  }
+
+  history.replaceState(null, '', '#' + screen.id);
+}
+
+// Extract screen ID from an iframe src/href string
+function screenIdFromUrl(url) {
+  if (!url) return null;
+  const clean = decodeURIComponent(url).replace(/\\/g, '/');
+  const parts = clean.split('/').filter(Boolean);
+  // expect .../screen_folder/code.html
+  if (parts.length >= 2 && parts[parts.length - 1] === 'code.html') {
+    return parts[parts.length - 2];
+  }
+  return null;
+}
+
+// ─────────────────────────────────────────────
+// Load screen (from sidebar click or keyboard)
+// ─────────────────────────────────────────────
+function loadScreen(idx) {
+  if (idx < 0 || idx >= ALL_SCREENS.length) return;
+  const screen = ALL_SCREENS[idx];
+  const path = BASE + screen.id + '/code.html';
+
+  loading.classList.add('visible');
+  iframe.src = path;
+  syncUI(idx);
+}
+
+// ─────────────────────────────────────────────
+// Sync sidebar when nav.js navigates the iframe
+// ─────────────────────────────────────────────
+iframe.addEventListener('load', () => {
+  loading.classList.remove('visible');
+  try {
+    const iframeUrl = iframe.contentWindow && iframe.contentWindow.location.href;
+    const screenId = screenIdFromUrl(iframeUrl);
+    if (screenId) {
+      const idx = ALL_SCREENS.findIndex(s => s.id === screenId);
+      if (idx >= 0 && idx !== currentIndex) {
+        syncUI(idx);
+      }
+    }
+  } catch (e) {
+    // cross-origin guard — ignore
+  }
+});
+
+// ─────────────────────────────────────────────
+// Navigation
+// ─────────────────────────────────────────────
+prevBtn.addEventListener('click', () => loadScreen(currentIndex - 1));
+nextBtn.addEventListener('click', () => loadScreen(currentIndex + 1));
+
+document.addEventListener('keydown', e => {
+  if (e.target === searchInput) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+    e.preventDefault();
+    loadScreen(currentIndex + 1);
+  } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    loadScreen(currentIndex - 1);
+  }
+});
+
+// ─────────────────────────────────────────────
+// Search
+// ─────────────────────────────────────────────
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  document.querySelectorAll('.section-group').forEach(group => {
+    let hasVisible = false;
+    group.querySelectorAll('.screen-item').forEach(item => {
+      const label = item.querySelector('.screen-name').textContent.toLowerCase();
+      const screenId = item.dataset.screenId.toLowerCase();
+      const visible = !q || label.includes(q) || screenId.includes(q);
+      item.classList.toggle('search-hidden', !visible);
+      if (visible) hasVisible = true;
+    });
+    group.classList.toggle('search-empty', !hasVisible);
+
+    // Auto-expand sections that have results when searching
+    if (q && hasVisible) {
+      const screensDiv = group.querySelector('.section-screens');
+      const chevron = group.querySelector('.section-chevron');
+      screensDiv && screensDiv.classList.add('open');
+      chevron && chevron.classList.add('open');
+    }
+  });
+});
+
+// Clear search on Escape
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    searchInput.value = '';
+    searchInput.dispatchEvent(new Event('input'));
+    searchInput.blur();
+  }
+});
+
+// ─────────────────────────────────────────────
+// Scale phone to fit viewport height
+// ─────────────────────────────────────────────
+function scalePhone() {
+  const available = document.getElementById('center').clientHeight - 40;
+  const phoneH = 844;
+  const scale = Math.min(1, available / phoneH);
+  scaleWrap.style.transform = `scale(${scale})`;
+}
+
+window.addEventListener('resize', scalePhone);
+
+// ─────────────────────────────────────────────
+// Init
+// ─────────────────────────────────────────────
+buildSidebar();
+scalePhone();
+
+// Open first section by default
+const firstGroup = document.querySelector('.section-group');
+if (firstGroup) {
+  const screensDiv = firstGroup.querySelector('.section-screens');
+  screensDiv && screensDiv.classList.add('open');
+  const chevron = firstGroup.querySelector('.section-chevron');
+  chevron && chevron.classList.add('open');
+}
+
+// Load from hash or start at first screen
+const hash = location.hash.slice(1);
+const hashIdx = hash ? ALL_SCREENS.findIndex(s => s.id === hash) : -1;
+if (hashIdx >= 0) {
+  loadScreen(hashIdx);
+} else {
+  loadScreen(0);
+}
+</script>
+</body>
+</html>
