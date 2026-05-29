@@ -979,13 +979,12 @@ document.getElementById('ai-popup').addEventListener('click', function(e) {
   if (e.target === this) closeAIChat();
 });
 
-// Start on the offer review screen
-goTo('offer_review_default_state');
-
-
 // ── COMMENTS SYSTEM ──
 let currentScreenId = 'offer_review_default_state';
 const COMMENTS_KEY = 'hros_comments';
+
+// Start on the offer review screen
+goTo('offer_review_default_state');
 
 function initComments() {
   const input = document.getElementById('comment-input');
