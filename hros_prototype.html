@@ -876,6 +876,7 @@ function goTo(id) {
   document.querySelectorAll('.flow-card').forEach(el => {
     el.classList.toggle('active', el.getAttribute('data-id') === id);
   });
+  updateComments();
 }
 
 function goBack() {
@@ -980,7 +981,6 @@ document.getElementById('ai-popup').addEventListener('click', function(e) {
 
 // Start on the offer review screen
 goTo('offer_review_default_state');
-updateComments();
 
 
 // ── COMMENTS SYSTEM ──
